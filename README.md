@@ -16,5 +16,6 @@ From an end user perspective, the workflow would be as follows -
 * The profile page of the user would be visible to the public, which visually renders the information of the user's social medial accounts to the public. The url would be https://juketake.com/users/{artistename}
 
 ## Expectations
-As explicitly mentioned, the front end code is ready for the the pages defined in the Workflow. What is needed is help in packaging this as an app and connecting it with the right database with the required security implementation. I will be working with the developer using GitHub.
+As explicitly mentioned, the front end code is ready for the the pages defined in the Workflow. What is needed is help in packaging this as an app and connecting it with the right database with the required security implementation. I will be working with the developer using GitHub. The initial prototype will be developed in Ruby on Rails.
+
 
