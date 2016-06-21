@@ -1,0 +1,148 @@
+﻿@font-face {
+    font-family: 'bebas';
+    src: url("Fonts/BebasNeuewebfont/BebasNeuewebfont.eot") format("eot"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.woff") format("woff"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.ttf")  format("truetype");
+  
+} 
+
+body { 
+    padding-top: 100px; 
+       
+}
+
+.container-fluid {      /*aligns the navbar elements to the top*/
+    position:relative;
+    top:20px;
+}
+
+
+nav {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+#sidebar {
+    width:200px;    
+}
+
+.active {
+    color:red;
+    display:none;
+    
+}
+
+#sidebar a{
+    position: relative;
+    top:110px;
+    font-size:20px;
+    font-family: bebas;
+    list-style:none;
+    
+}
+
+.navbar-brand img {
+     
+     width:60x;
+     height:60px;
+     position:relative;
+     bottom:20px;
+     object-fit:contain;
+    -webkit-filter: drop-shadow(10px 10px 5px -5px white);
+    filter:  drop-shadow(10px 10px 5px -5px white); 
+  
+   }
+
+
+
+.navbar-nav img {
+    width:50x;
+     height:50px;
+     
+     object-fit:contain;
+     float: right;
+      border-radius:10%;
+      overflow: hidden;
+      position: relative;
+      bottom:13px;
+      
+}
+
+
+.navbar-right {   /*sets the height of the navbar*/
+    position:relative;    
+    height: 90px;
+}
+
+.profile-pic img {
+    width: 200px;
+    height: 200px;
+    max-height:200px;
+    max-width:200px;
+    object-fit: contain;
+}
+
+
+.glyphicon {
+ font-size:26px;     
+}
+
+#searchbtn em{
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 16px;
+}
+
+#pw-btn em {
+margin: 0 auto;
+    text-align: justify;
+    font-size: 16px;
+}
+
+h1 {  /*sets the sizing and font of the headings of the settings page*/
+    font-family: bebas;
+    font-size:40px;
+}
+
+
+
+
+.main {
+    margin-top: 50px;
+    overflow: hidden;
+
+}
+
+.pw {
+    margin-bottom:10px; /*adds some spacing between the password and confirm password box*/
+  }
+
+
+#submit-aboutme { /*aligns the submit button for about me to the right of it*/
+    position: relative; /*makes the button go below the text area and not beside it*/
+    float: right;   /*sticks the button to the right of the text area*/   
+
+}
+
+#youtube {
+    background-color: #c4302b; /*is the youtube color code*/
+    color: white; 
+}
+
+#youtube:hover{
+    color:#fff;
+    background-color:#9A1513;
+    border-color:#9A1513;
+
+}
+
+#youtube:active,#youtube.active{
+    color:#fff;
+    background-color:#7F110F;
+    border-color:#7F110F;
+
+}
+

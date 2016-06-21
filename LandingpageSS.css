@@ -1,0 +1,241 @@
+﻿@font-face {
+    font-family: 'bebas';
+    src: url("Fonts/BebasNeuewebfont/BebasNeuewebfont.eot") format("eot"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.woff") format("woff"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.ttf")  format("truetype");
+  
+} 
+
+nav {
+    position:fixed;
+
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+
+}
+
+.navbar-brand img {
+     
+     width:60px;
+     height:60px;
+     position:relative;
+     bottom:20px;
+     object-fit:contain;
+    -webkit-filter: drop-shadow(10px 10px 5px -5px white);
+    filter:  drop-shadow(10px 10px 5px -5px white); 
+  
+   }
+
+.About  a {
+font-size:25px;
+font-family:bebas;
+}
+
+.navbar-right {   /*pushes the form elements a bit to the left to accomodate the glyphicon login*/
+    position:relative;
+    right:30px;
+}
+
+.How-it-works  a {
+font-size:25px;
+font-family:bebas;
+}
+
+.checkbox {    /*the remember me box is below the username*/
+    float:right;
+    position:relative; 
+    right:417px;
+    color:white;
+}
+
+.forgot-pw a {    /*the Forgot PW is below the password from*/
+    float:right;
+
+    position:relative; 
+    right:73px;
+    top:10px;
+    color:white;
+}
+
+.login {
+    display: block;
+}
+
+.container-fluid {      /*aligns the navbar elements along with the login form*/
+    position:relative;
+    top:20px;
+}
+
+.glyphicon.glyphicon-log-in {
+    font-size:24px;
+    position:absolute;
+    top:5px;
+    right:0px;
+
+
+}
+
+.cover-land {  /*pushes the cover page and its form elements below the navbar*/
+    position:relative;
+    top:85px;
+}
+
+ .cover-land .col-xs-12 {
+     align-content:center;
+     text-align:center;
+     display:block;
+    
+     background:url("images/cover_landingpage.jpg");
+     background-size:cover;
+     height:700px;
+       
+         
+ }
+
+ .cover-land h1{
+
+    font-family: bebas;
+     position:relative;
+     top:30px;
+     color:white;
+ }
+
+.cover-land label{
+     margin-bottom:20px;
+ }
+
+.outside-rect {
+    background-color:black;
+    opacity:0.7;
+    margin-left:auto;
+    margin-right:auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    width:500px;
+    height:480px;
+    position:relative;
+    top:75px;
+}
+
+.form-elements {
+    position:relative;
+    bottom: 350px;
+     margin-left:auto;
+    margin-right:auto;
+    color:dimgray;
+    
+}
+
+.form-elements h1{
+     margin-left:auto;
+    margin-right:auto;
+}
+
+#signup-form input {
+    border-radius:4px;
+    max-width:220px;
+}
+
+.form-elements label {
+    color:white;
+
+}
+
+.cover-land form{
+    font-size:15px;
+    position:relative;
+    top:50px;
+    
+}
+
+.email{
+    position:relative;
+    left:17px;
+}
+
+.help-block {
+    
+    color: lightgray;
+    top:10px;
+}
+
+.button-signup input {
+    width:90px;
+    height:30px;
+    position:relative;
+    
+}
+
+.button-signup input {
+    margin-left:auto;
+    margin-right:auto;
+    background: url("images/tvcolor.jpg");
+    object-fit: contain;
+    background-size:100%; /*fits the image right inside the button*/
+    overflow:hidden;
+    position:relative;  
+    top: 10px;
+     
+}
+
+.button-signup input{
+    color:white;
+    font-family:bebas;
+     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+     font-size:120%;
+}
+
+#do_submit {
+    display:none;
+}
+
+
+.Whatis-content{  /*pushes the What is content below the cover page*/
+    position:relative;
+    top:125px;
+}
+
+.Whatis-content h1 {
+
+    text-align:center;
+    font-family:bebas;
+    font-size:40px;
+    
+}
+
+.Whatis-content p{
+    position:relative;
+    top:20px;
+    text-align:justify;
+    font-size:16px;
+    color:dimgray;
+
+}
+
+
+.Whatis-content img{
+    display:flex;
+    justify-content:flex-end;
+    text-align:right;
+    position:relative;
+    left:90px; 
+
+}
+
+.how-to-content .container {
+   position:relative;
+   top:175px;
+   text-align:center;
+   font-family:bebas;
+   font-size:200px;
+   border-top: 1px solid #9E9E9E; 
+   padding-top:40px;
+}
+
+.how-to-content h1{
+    font-size:40px;
+    padding-bottom:35px;
+}
