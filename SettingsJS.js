@@ -2,9 +2,9 @@
     $(window).scroll(function () {
     var div_one_top = $('#Profile-settings').offset().top; //offset() gives the position relative to the next direction fiven (here it's top). position() gives position relative to parent class
     var div_two_top = $('#social-settings').offset().top;
-    
+
         var scroll_top = $(window).scrollTop();
-   
+
 
         if(scroll_top > div_one_top && scroll_top < div_two_top) {
             //You are now past div one
@@ -14,9 +14,9 @@
             if ( $('a[href="#social-settings"]').hasClass('active')) {
                 $('a[href="#social-settings"]').removeClass('active');
             }
-            
-        } 
-        
+
+        }
+
         else if (scroll_top > div_two_top) {
 
 
@@ -34,6 +34,11 @@
 
 });
 
+$(document).ready(function () {
+
+   $("select").multiselect();
+
+})
 
 $(document).ready(function () {
     $("#sidebar-id").on('click', ".profile-sidebar", function (e) {
@@ -80,10 +85,10 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () { //This confirms if the 2 passwords match   
+$(document).ready(function () { //This confirms if the 2 passwords match
 
     $('#f').on('keyup', '.cnfrm-pw', function (e) {
-         
+
         var pwd1 = document.getElementById("new-pw").value;
         var pwd2 = document.getElementById("cnfrm-pw").value;
 
@@ -93,7 +98,7 @@ $(document).ready(function () { //This confirms if the 2 passwords match
 
         else {
             document.getElementById("cnfrm-pw").setCustomValidity("");
-            //empty string means no validation error        
+            //empty string means no validation error
         }
         e.preventDefault();  //would still work if this wasn't present
     }

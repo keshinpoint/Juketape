@@ -3,7 +3,7 @@
 <head>
     <title></title>
     	<meta charset="utf-8" />
-    
+
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
@@ -12,17 +12,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" tabindex="text/css" href="Social icon bootstrap plugin/bootstrap-social-gh-pages/bootstrap-social.css" /> <!--links the social icon bootstrap plugin-->
-
+    <script type="text/javascript" src="/src_multiselect/jquery.multiselect.js"></script>
 </head>
 <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
-        
+
         <div class="container-fluid">
             <a href="#" class="navbar-brand" >
                 <img src="images/LOGO_border.png" alt="logo" />
-            </a>   
-            
+            </a>
+
             <div class="col-xs-6">
                 <form class="navbar-form" role="search">
                     <div class="input-group">
@@ -32,10 +32,10 @@
                         </span>
                     </div>
                 </form>
-            </div>              
-                      
+            </div>
+
             <ul class="nav navbar-right navbar-nav">
-                
+
                 <li><a href="#"><span class="glyphicon glyphicon-envelope"> </span> </a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"> </span> </a></li>
 
@@ -53,34 +53,34 @@
                 </li>
 
             </ul>
-                      
+
 
         </div>
        </div> <!--closes the nav bar-->
-    
-    
-    
+
+
+
     <div id="main">
         <div class="container clearfix">
 
             <div id="sidebar">
-               
+
                 <nav class="navlinks">
                     <ul style="list-style:none" id="sidebar-id">
 
                         <li class="profile-sidebar"> <a href="#Profile-settings"> Profile </a></li>
                         <li class="social-sidebar"> <a href="#social-settings"> Social Media </a></li>
                         <li> <a href="#"> Logout </a></li>
-                        
+
                     </ul>
-                </nav>       
+                </nav>
              </div>
 
             <div id="content">
 
                 <section id="Profile-settings">
 
-                                     
+
                     <ul class="profile-info" style="list-style:none">
                         <h1> Profile Settings </h1> <!--putting the h1 inside the ul makes it align on top of the list items-->
 
@@ -94,14 +94,14 @@
                                 <input type="file" id="exampleInputFile">
                                 <p class="help-block"> Upload a new profile pic </p> <!--A block of help text that breaks onto a new line and may extend beyond one line-->
                             </div>
-                             
+
                         </li>
 
                         <br />
 
-                        <li> Name: <span class="display-name"> Keshav Vasudevan </span></li> 
-                                                
-                        <li> 
+                        <li> Name: <span class="display-name"> Keshav Vasudevan </span></li>
+
+                        <li>
                             <form action="#" method="post">
                                 <div class="input-group col-xs-5">
                                     <input type="text" class="form-control" required placeholder="Enter new display name" />
@@ -138,7 +138,7 @@
                                 </div>
                             </li>
 
-                            
+
                                 <li>
                                     <div class="input-group col-xs-5">
                                         <input type="password" name="cnfrm-pw" id="cnfrm-pw" class="form-control cnfrm-pw" required placeholder="Confirm new password" />
@@ -151,18 +151,61 @@
 
                             <br/>
 
+                            <h3>Select your style</h3>
+<p>
+	<select title="Basic example" multiple="multiple" name="example-basic" size="5">
+	<option value="option1">Alternative</option>
+	<option value="option2">Anime</option>
+	<option value="option3">Blues</option>
+	<option value="option4">Classical</option>
+	<option value="option5">Country</option>
+	<option value="option6">Dance</option>
+
+	<option value="option8">Hip Hop/Rap</option>
+	<option value="option9">EDM</option>
+	<option value="option10">Pop</option>
+	<option value="option11">Folk</option>
+	<option value="option12">Reggae</option>
+  <option value="option13">R&B</option>
+<option value="option13">Carnatic</option>
+	</select>
+</p>
+
+<h3>Select your instruments</h3>
+<p>
+	<select title="Basic example" multiple="multiple" name="example-basic" size="5">
+	<option value="option1">Bagpipes</option>
+	<option value="option2"> Acoustic Guitar</option>
+	<option value="option3">Percussion</option>
+	<option value="option4">Bell</option>
+	<option value="option5">Bongo</option>
+	<option value="option6">Cello</option>
+
+	<option value="option8">Clarinet</option>
+	<option value="option9">Clavichord</option>
+	<option value="option10">Flute</option>
+	<option value="option11">Piano</option>
+	<option value="option12">Keyboard</option>
+  <option value="option13">Cymbal</option>
+  <option value="option13">Tabla</option>
+<option value="option13">Veena</option>
+<option value="option13">Violin</option>
+<option value="option13">Vocals</option>
+	</select>
+</p>
+
                         <form action="#"  method="post">
                             <li> Describe your act in 200 characters </li>
 
                             <li>
                                 <div class="input-group col-xs-5" id="about-me" >
                                     <textarea type="text" class="form-control" id="field" rows="5" required maxlength="200" placeholder="This displays on your dashfolio" /> </textarea>
-                                    
+
                                     <div>
                                         <button class="btn btn-primary" type="submit" id="submit-aboutme"> <em class="glyphicon glyphicon-circle-arrow-right"> </em>  </button>
                                     </div>
 
-                          <p> No. of characters: <span id="char-num"> 0 </span> </p>          
+                          <p> No. of characters: <span id="char-num"> 0 </span> </p>
                                 </div>
 
                             </li>
@@ -178,7 +221,7 @@
                         <h1> Social Media Accounts </h1> <!--putting the h1 inside the ul makes it align on top of the list items-->
 
                         <br />
-                        
+
                         <li>
                             <a class="btn btn-block btn-social btn-facebook">
                                 <span class="fa fa-facebook"> </span> Add your Facebook account
@@ -186,7 +229,7 @@
                         </li>
 
                         <br />
-                        <li> 
+                        <li>
 
                             <a class="btn btn-block btn-social btn-twitter">
                                 <span class="fa fa-twitter"> </span> Add your Twitter account
@@ -207,7 +250,7 @@
                             <a class="btn btn-block btn-social" id="youtube">
                                 <span class="fa fa-youtube-play"> </span> Add your Youtube account
                             </a>
-                        </li>                      
+                        </li>
 
 </ul>
                 </section>
@@ -216,7 +259,7 @@
     </div>
 
 
-  
+
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"> </script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"> </script>

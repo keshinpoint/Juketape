@@ -1,0 +1,6 @@
+FB: 
+app id: 300418953631254
+app secret: 86afb840360b72798e708fc04f41de05 
+Soundcloud:
+client id: e9f1c9e223815df074834da78116748f
+client secret: 6d5a79b46505c56f3000624ae94ad9e9
