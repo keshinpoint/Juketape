@@ -1,0 +1,89 @@
+﻿@font-face {
+    font-family: 'bebas';
+    src: url("Fonts/BebasNeuewebfont/BebasNeuewebfont.eot") format("eot"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.woff") format("woff"), 
+         url("Fonts/BebasNeuewebfont/BebasNeuewebfont.ttf")  format("truetype");
+  
+} 
+
+body { 
+    padding-top: 100px; 
+       
+}
+
+.container-fluid {      /*aligns the navbar elements to the top*/
+    position:relative;
+    top:20px;
+}
+
+
+nav {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+#sidebar {
+    width:200px;    
+}
+
+.active {
+    color:red;
+    display:none;
+    
+}
+
+#sidebar a{
+    position: relative;
+    top:110px;
+    font-size:20px;
+    font-family: bebas;
+    list-style:none;
+    
+}
+
+.navbar-brand img {
+     
+     width:60x;
+     height:60px;
+     position:relative;
+     bottom:20px;
+     object-fit:contain;
+    -webkit-filter: drop-shadow(10px 10px 5px -5px white);
+    filter:  drop-shadow(10px 10px 5px -5px white); 
+  
+   }
+
+
+
+.navbar-nav img {
+    width:50x;
+     height:50px;
+     
+     object-fit:contain;
+     float: right;
+      border-radius:10%;
+      overflow: hidden;
+      position: relative;
+      bottom:13px;
+      
+}
+
+
+.navbar-right {   /*sets the height of the navbar*/
+    position:relative;    
+    height: 90px;
+}
+
+.glyphicon {
+ font-size:26px;     
+}
+
+
+#searchbtn em {
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 16px;
+}
