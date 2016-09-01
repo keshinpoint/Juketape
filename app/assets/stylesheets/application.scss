@@ -7,6 +7,7 @@
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    height:100%;
 
 }
 
@@ -40,6 +41,52 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 	height: 30px;
 }
 
+.outside-container{
+     min-height:100%; /* this makes sure that the contents of any html page wrapped withhin this has the full length of the browser */
+     position:relative; 
+}
+
+/* logged in header */
+
+.navbar-icon-fa { /*sets the color of the notification and message icon on navbar on top right */
+        color: white;
+}
+
+.navbar-icons > li {
+    display: inline-block;
+     padding: 10px 0;
+     margin-right: 15px;
+     margin-left: 15px;
+
+}
+
+.navbar-icons {
+
+    background-color: #000;
+
+}
+
+.profile-image-header {
+    
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    bottom: 5px;
+    position: relative;
+    
+
+}
+
+/* logged in header */
+
+.footer {
+
+bottom:0;
+position: absolute; /*The div is absolutely positioned bottom:0; this moves it to the bottom of the outside-container div. When there is little content on the page the container div is exactly the height of the browser viewport (because of the min-height:100%;) */
+ width:100%;    
+}
+
+
 .jumbotron {
     margin-bottom: 0px;
     background-image: url(landing_page_cover.jpg);
@@ -69,3 +116,43 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 }
 
 
+/* onboarding-one styles */
+
+.panel-default {
+   
+  width: 55%;
+  
+}
+
+.onboarding-family {
+ position: relative;
+    margin-top: 5%;
+    
+}
+
+.onboarding-submit {
+    
+ display: inline-block; /*inline-block elements are like inline elements but they can have a width and height */
+  padding: 15px 25px;
+  font-size: 15px;
+  cursor: pointer; /* adds a hand pointer */
+  text-align: center;
+  color: white;  
+  border: none;
+  border-radius: 10px;  
+background: rgb(180,221,180); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(180,221,180,1) 0%, rgba(67,142,89,1) 0%, rgba(0,188,28,1) 0%, rgba(14,145,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(180,221,180,1) 0%,rgba(67,142,89,1) 0%,rgba(0,188,28,1) 0%,rgba(14,145,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(180,221,180,1) 0%,rgba(67,142,89,1) 0%,rgba(0,188,28,1) 0%,rgba(14,145,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#0e9100',GradientType=0 ); /* IE6-9 */
+}
+
+
+.onboarding-submit:active {
+
+    background-color: white;
+  transform: translateY(2px);
+
+}
+
+/* onboarding-one style */

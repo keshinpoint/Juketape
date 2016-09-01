@@ -1,0 +1,36 @@
+<!-- Header section -->
+<%= render partial: 'shared/header_onboarding' %>
+
+
+<!-- Container section -->
+<div class="container onboarding">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+           <h3> Profile Setup </h3>
+           <div class = "onboarding-family">
+            <p> <strong>Act Name </strong> </p>
+            <div class="panel panel-default">           
+
+             
+              <div class="panel-body"> <!-- panel-body is a bootstrap class of a box -->
+                
+                <form>               
+
+                  <div class="form-group">
+                    <p> How would you or your act like to be known by on Juketape? </p>
+                   
+                    <input type="text" class="form-control" placeholder = "eg: The Beatles" required>
+                  </div>
+                  
+                  <button type="submit" class="onboarding-submit"> Next </button>
+                </form>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer Section -->
+<%= render partial: 'shared/footer' %>

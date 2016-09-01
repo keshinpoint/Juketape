@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     collection do
       get :setup_one
       get :setup_two
+      get :onboarding_one
+      get :onboarding_two
     end
   end
 end

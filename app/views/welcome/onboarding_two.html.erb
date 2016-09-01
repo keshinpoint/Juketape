@@ -1,0 +1,37 @@
+<!-- Header section -->
+<%= render partial: 'shared/header_onboarding' %>
+
+
+<!-- Container section -->
+<div class="container onboarding">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+           <h3> Profile Setup </h3>
+           <div class = "onboarding-family">
+            <p> <strong>Tag Line </strong> </p>
+            <div class="panel panel-default">           
+
+             
+              <div class="panel-body"> <!-- panel-body is a bootstrap class of a box -->
+                
+                <form>               
+
+                  <div class="form-group">
+                    <p> What's the tagline you'd like to be known by? </p>
+                   
+                    <input type="text" class="form-control" placeholder = "eg: Singer of opera and lover of hummus" required>
+                    <p> (Taglines appear in search results under your act's name on Juketape) </p>
+                  </div>
+                  
+                  <button type="submit" class="onboarding-submit"> Next </button>
+                </form>
+              </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer Section -->
+<%= render partial: 'shared/footer' %>

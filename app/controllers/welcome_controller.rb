@@ -8,4 +8,11 @@ class WelcomeController < ApplicationController
 
   def setup_two
   end
+
+  def onboarding_one  	
+  end
+
+  def onboarding_two 	
+  end
+  
 end
