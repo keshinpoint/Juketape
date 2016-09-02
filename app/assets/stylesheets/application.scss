@@ -156,3 +156,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 /* onboarding-one style */
+
+
+/* begin onboarding-three style (profile pic upload) */
+
+.profile-image-onboarding {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.skip-onboarding {
+    margin-left: 10px;
+    color: red;
+}
+
+/* end of onboarding-three style (profile pic upload) */

@@ -14,5 +14,8 @@ class WelcomeController < ApplicationController
 
   def onboarding_two 	
   end
+
+  def onboarding_three  
+  end
   
 end

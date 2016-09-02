@@ -1,5 +1,5 @@
 <!-- Header section -->
-<%= render partial: 'shared/header_onboarding' %>
+<%= render partial: 'shared/header_logged_in' %>
 
 
 <!-- Container section -->
@@ -8,22 +8,26 @@
         <div class="col-lg-12 col-md-12">
            <h3> Profile Setup </h3>
            <div class = "onboarding-family">
-            <p> <strong>Tag Line </strong> </p>
+            <p> <strong> Profile Picture </strong> </p>
             <div class="panel panel-default">           
 
              
               <div class="panel-body"> <!-- panel-body is a bootstrap class of a box -->
                 
-                <form>               
+                <form>  
+
+                 <%= image_tag("generic_avatar.png", class: "profile-image-onboarding hidden-xs") %> <!--hidden xs is a bootstrap class to not show the image on small screens -->             
 
                   <div class="form-group">
-                    <p> What's the tagline you'd like to be known by? </p>
+                    <br>
+                    <p> Upload a profile picture </p>
                    
-                    <input type="text" class="form-control" placeholder = "eg: Singer of opera and lover of hummus" required>
-                    <p> (Taglines appear in search results under your act's name on Juketape) </p>
+                    <input type="file">
+                   
                   </div>
                   
-                  <button type="submit" class="onboarding-submit"> Next </button>
+                  <button type="submit" class="onboarding-submit"> Next </button> 
+                  <a class = "skip-onboarding", href= "#"> skip </a>
                 </form>
               </div>
             </div>

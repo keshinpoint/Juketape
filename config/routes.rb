@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :setup_two
       get :onboarding_one
       get :onboarding_two
+      get :onboarding_three
     end
   end
 end
