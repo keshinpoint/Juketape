@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-             <%= image_tag 'LOGO_border.png', alt: 'juketape-logo' %>
+          <a class="navbar-brand" href="#">     
+
+             <%= image_tag 'LOGO_border.png', alt: 'logo' %>
           </a>
 
           <button class="navbar-toggle" type = "button" data-toggle="collapse" data-target = ".navbar-collapse"> 
@@ -14,7 +15,7 @@
 
           </button>
 
-            <%= render partial: 'layouts/search_form_header' %> 
+        <%= render partial: 'static/search_header' %>
 
         </div>
 
@@ -24,10 +25,11 @@
             <li> <a href="#"> About </a></li>
             <li><a href="#"> What is it? </a></li>    
           </ul> -->
+        
+        <%= render partial: 'static/login_form_header' %>
 
-
-         <%= render partial: 'layouts/login_form' %>
-
+          
+       
       </div>
 
     </nav>

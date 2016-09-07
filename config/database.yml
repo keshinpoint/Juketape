@@ -9,15 +9,15 @@ default: &default
 
 development:
   <<: *default
-  database: frontend_bootstrap_development
+  database: juketape_development
 
 test:
   <<: *default
-  database: frontend_bootstrap_test
+  database: juketape_test
 
 production:
   <<: *default
-  database: frontend_bootstrap_production
+  database: juketape_production
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: <%= ENV['PROD_DB_SERVER'] %>
