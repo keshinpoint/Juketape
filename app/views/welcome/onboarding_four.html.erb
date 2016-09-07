@@ -1,0 +1,36 @@
+
+
+<!-- Header section -->
+<%= render partial: 'shared/header_logged_in' %>
+
+
+<!-- Container section -->
+<div class="container onboarding">
+	<div class="row">
+		<div class="col-lg-12 col-md-12">
+			<h3> Profile Setup </h3>
+			<div class = "onboarding-family">
+				<p> <strong> Sync Social Media Content </strong> </p>
+				<p> Connect your social media accounts so that Juketape can update your portfolio automatically </p>
+				<div class="panel panel-default">           
+				
+
+					<div class="panel-body"> <!-- panel-body is a bootstrap class of a box -->
+						
+							<%= render partial: 'shared/social_accounts_connect' %>
+							
+							<br>
+
+							<button type="submit" class="onboarding-submit"> Next </button> 
+							<a class = "skip-onboarding", href= "#"> skip </a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Footer Section -->
+<%= render partial: 'shared/footer' %>

@@ -4,6 +4,8 @@
 @import "fonts.css.scss";
 @import "custom_styles";
 
+@import "bootstrap-social";
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -73,6 +75,7 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     object-fit: contain;
     bottom: 5px;
     position: relative;
+   border-radius: 5px;
     
 
 }
@@ -150,7 +153,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 
 .onboarding-submit:active {
 
-    background-color: white;
+  background-color: white;
   transform: translateY(2px);
 
 }
@@ -172,3 +175,268 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 /* end of onboarding-three style (profile pic upload) */
+
+
+
+/* begin _social_accounts_connect style (social media connections) */
+
+.btn-social {
+
+width: 60%;  
+margin-top:6px;
+margin-bottom: 9px;
+
+}
+
+.btn-youtube {
+    background-color: #c4302b; /*is the youtube color code*/
+    color: white; 
+}
+
+.btn-youtube:hover{
+    color:#fff;
+    background-color:#9A1513;
+    border-color:#9A1513;
+
+}
+
+.btn-youtube:active {
+    color:#fff;
+    background-color:#7F110F;
+    border-color:#7F110F;
+
+}
+
+/* end _social_accounts_connect style  */
+
+
+/* begin dashfolio style  */
+
+.bar {  
+
+  width: 30px;
+  height: 275px;
+  max-height: 300px;
+  display: inline-block;
+  margin-left: -5px;
+  padding: 0;
+
+  }
+
+  .right-bars {
+   text-align: right; /* pushes the vertical bars on the right, to the right of the div */
+  }
+
+.bar-red {
+  background-color: red;  
+}
+
+.bar-yellow {
+  background-color: yellow;  
+}
+
+.bar-green {
+  background-color: green;  
+}
+
+.dashfolio-profile-pic-connect-container{ /* houses the profile pic with message connect icon */
+  text-align: center;
+}
+
+.profile-pic-dashfolio {
+
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;  
+
+}
+
+.message-connect-buttons {
+
+margin-top:17px;
+  
+}
+
+
+.message-dashfolio {
+
+width: 70px;
+height: 40px;
+border-radius: 10px;
+color: white;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,2989d8+50,1e5799+100 */
+background: rgb(125,185,232); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(125,185,232,1) 0%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+
+ padding: 0px 25px;
+  font-size: 15px;
+  border: none;
+}
+
+.message-dashfolio:active {
+
+  background-color: white;
+  transform: translateY(2px);
+  
+}
+
+.connect-dashfolio {
+
+
+height: 40px;
+border-radius: 10px;
+color: white;
+
+background: rgb(180,221,180); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(180,221,180,1) 0%, rgba(67,142,89,1) 0%, rgba(0,188,28,1) 0%, rgba(14,145,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(180,221,180,1) 0%,rgba(67,142,89,1) 0%,rgba(0,188,28,1) 0%,rgba(14,145,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(180,221,180,1) 0%,rgba(67,142,89,1) 0%,rgba(0,188,28,1) 0%,rgba(14,145,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#0e9100',GradientType=0 ); /* IE6-9 */
+
+padding: 0px 20px;
+font-size: 15px;
+border: none;
+
+}
+
+.dashfolio-profile-name-container {
+  position: relative;
+  right: 20px;
+}
+
+.tag-container {
+
+font-size: 15px;
+max-width: 200px; /* helps wrap the tags in a specific width */
+
+}
+
+.dashfolio-tag {
+
+  background-color: blue;
+  padding: 5px 10px 5px 10px;
+    display: inline-block;
+}
+
+.location-container {
+  margin-top: 12px;
+  font-size: 20px;
+
+}
+
+.connection-number-dashfolio {
+  font-size: 20px;
+  color: #696969;
+}
+
+.dashfolio-connection {
+
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 1px;
+  margin-right: 3px;
+}
+
+.connection-container {
+
+width: 250px; /*makes the connections profile pis stack up to 4 per row, only checked in mozilla */  
+
+}
+
+.connection-profile-pic {
+  max-width: 100%;
+  max-height: 100%; /*the max width sets the profile images to fit the above 30x30 px dimension set above */
+  border-radius: 15px;
+}
+
+.dashfolio-content-dashbar {
+  
+  height: 60px;
+  margin-top: 0px; 
+  border-radius: 15px;
+   display: inline-block;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2d2d2d+0,070707+100,131313+100 */
+background: rgb(45,45,45); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(45,45,45,1) 0%, rgba(7,7,7,1) 100%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+
+
+.dashfolio-midbar-icons > li {
+float: left;
+position: relative;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+ 
+}
+
+.dashfolio-midbar-icons > li:hover {
+background: #111; 
+height: 60px;
+text-decoration: none;
+}
+
+.dashfolio-midbar-icons > li.active {
+background: #111; 
+}
+
+.dashfolio-midbar-about {
+font-family: 'bebas'; 
+font-size: 20px;
+font-color: white;
+margin-left: 40px;
+
+}
+
+.dashfolio-midbar-pictures {
+   margin-right: 65px; /* pushes the pictures, which is the farthest to the right on he midbar, a little to the left */
+}
+
+.about-header-container {  
+margin-left: 80px;
+margin-top: 10px;
+font-size: 15px;
+display: none;
+}
+
+.header-info {
+  display: none;
+}
+
+
+.header-info.active { /* example "Bio" and "Timeline" */
+  display: block;
+}
+
+.about-header-container>a {
+padding-right: 10px;
+}
+
+
+.tabcontent {
+  margin-top: 20px;
+}
+
+
+.tablink:active {
+  color: red;
+}
+
+.tabcontent {
+    display:none;
+}
+ 
+.tabcontent.active {
+    display:block;
+}
+

@@ -18,4 +18,11 @@ class WelcomeController < ApplicationController
   def onboarding_three  
   end
   
+  def onboarding_four  
+  end
+
+  def dashfolio
+  end
+  
+
 end

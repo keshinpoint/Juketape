@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get :onboarding_one
       get :onboarding_two
       get :onboarding_three
+      get :onboarding_four
+      get :dashfolio
     end
   end
 end

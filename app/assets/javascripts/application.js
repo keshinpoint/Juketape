@@ -15,3 +15,30 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+	$('.midbar-icon a').on('click', function(e){
+		var currentAttrValue = $(this).attr('href');
+
+		$('.main-content ' + currentAttrValue).fadeIn(400).siblings().hide();
+		
+			   e.preventDefault();
+			   e.stopPropagation();
+	});
+
+	$('.tablink').on('click', function(e) {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.dashfolio-about ' + currentAttrValue).fadeIn(400).siblings().hide(); //choose the dashfolio-about parent div, and search for children divs with id = cuurent value attr
+ 
+        // Change/remove current tab to active
+        $(this).addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+
+});
+
+
