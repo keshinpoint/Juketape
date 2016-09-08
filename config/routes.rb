@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
 
   get '/sign_in' => 'sessions#new', as: 'sign_in'
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
@@ -9,7 +7,37 @@ Rails.application.routes.draw do
     root to: 'sessions#new', as: :signed_out_root
   end
 
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'artists#dashfolio'
+  end
+
+  resources :users,
+    controller: 'clearance/users',
+    only: Clearance.configuration.user_actions do
+      resource :password,
+        controller: 'clearance/passwords',
+        only: [:create, :edit, :update]
+    end
+
+
   resource :session
+  resources :registrations, only: [:create]
+  resources :artists do
+    get :dashfolio, on: :collection
+  end
+
+  resources :setup, only: [], path: :profile do
+    collection do
+      get :act_name
+      get :tag_line
+      post :tag_line
+      get :profile_pic
+      post :profile_pic
+      get :social_media
+      post :social_media
+      get :finalize_setup
+    end
+  end
 
   scope '/static' do
     resources :welcome do

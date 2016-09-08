@@ -1,0 +1,8 @@
+<% if (flash.notice || flash.alert)%>
+  <div class="info">
+    <div class="alert alert-<%= !!flash[:notice] ? 'info' : 'warning' %>">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <%= flash[:notice].blank? ? raw(flash[:alert]) : raw(flash[:notice]) %>
+    </div>
+  </div>
+<% end %>
