@@ -20,7 +20,6 @@ module SetupHelper
     end
   end
 
-
   def youtube_oauth_url
     youtube_oauth.authentication_url
   end
@@ -38,6 +37,26 @@ module SetupHelper
       'javascript:void(0);'
     else
       youtube_oauth_url
+    end
+  end
+
+  def facebook_oauth_url
+    fb_url = facebook_oauth.url_for_oauth_code(permissions: FACEBOOK_PERMISSIONS.join(','))
+  end
+
+  def connect_facebook_text
+    if current_user.facebook_network.present?
+      "<span class='fa fa-facebook'></span>Connected Facebook".html_safe
+    else
+      "<span class='fa fa-facebook'></span>Connect Facebook".html_safe
+    end
+  end
+
+  def connect_facebook_link
+    if current_user.facebook_network.present?
+      'javascript:void(0);'
+    else
+      facebook_oauth_url
     end
   end
 end

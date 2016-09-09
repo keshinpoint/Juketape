@@ -68,6 +68,19 @@ class SetupController < ApplicationController
     redirect_to social_media_setup_index_path
   end
 
+  def authorize_facebook
+    unless params[:error].present?
+      token = facebook_oauth.get_access_token(params[:code])
+      network = current_user.create_facebook_network(token: token)
+      flash[:notice] = network.valid? ?
+        'Successfully added Facebook' :
+        'Failed to add Facebook'
+    else
+      flash[:notice] = 'Failed to add Facebook as user denied the permission'
+    end
+    redirect_to social_media_setup_index_path
+  end
+
   private
   def user_attrs(field)
     params.require(:user).permit(field)

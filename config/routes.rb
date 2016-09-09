@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   controller :setup, path: 'setup' do
     get :authorize_soundcloud
     get :authorize_youtube
+    get :authorize_facebook
   end
 
   scope '/static' do

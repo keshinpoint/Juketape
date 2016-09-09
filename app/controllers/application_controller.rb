@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_login
-  helper_method :soundcloud_oauth, :youtube_oauth
+  helper_method :soundcloud_oauth, :youtube_oauth, :facebook_oauth
 
   def authenticate(params)
     User.authenticate(
@@ -24,6 +24,14 @@ class ApplicationController < ActionController::Base
     @youtube_client = Yt::Account.new(
       scopes: ['youtube'],
       redirect_uri: authorize_youtube_url
+    )
+  end
+
+  def facebook_oauth
+    @oauth ||= Koala::Facebook::OAuth.new(
+      ENV['FB_APP_ID'],
+      ENV['FB_SECRET'],
+      authorize_facebook_url()
     )
   end
 
