@@ -19,4 +19,25 @@ module SetupHelper
       soundcloud_oauth_url
     end
   end
+
+
+  def youtube_oauth_url
+    youtube_oauth.authentication_url
+  end
+
+  def connect_youtube_text
+    if current_user.youtube_network.present?
+      "<span class='fa fa-youtube-play'></span>Connected Youtube".html_safe
+    else
+      "<span class='fa fa-youtube-play'></span>Connect YouTube".html_safe
+    end
+  end
+
+  def connect_youtube_link
+    if current_user.youtube_network.present?
+      'javascript:void(0);'
+    else
+      youtube_oauth_url
+    end
+  end
 end

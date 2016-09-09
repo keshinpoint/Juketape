@@ -47,6 +47,27 @@ class SetupController < ApplicationController
     redirect_to social_media_setup_index_path
   end
 
+  def authorize_youtube
+    result = YoutubeNetwork.conn.post '/o/oauth2/token', {
+      code: params[:code],
+      client_id: ENV['YT_CLIENT_ID'],
+      client_secret: ENV['YT_CLIENT_SECRET'],
+      redirect_uri: authorize_youtube_url,
+      grant_type: 'authorization_code'
+    }
+    result_body = JSON.parse(result.body)
+
+    network = current_user.create_youtube_network(
+      access_token: result_body['access_token'],
+      refresh_token: result_body['refresh_token'],
+      expires_in: result_body['expires_in']
+    )
+    flash[:notice] = network.valid? ?
+      'Successfully added Youtube' :
+      'Failed to add Youtube'
+    redirect_to social_media_setup_index_path
+  end
+
   private
   def user_attrs(field)
     params.require(:user).permit(field)
