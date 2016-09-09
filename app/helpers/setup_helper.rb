@@ -4,7 +4,7 @@ module SetupHelper
     soundcloud_oauth.authorize_url(scope: 'non-expiring')
   end
 
-  def connect_soundclound_text
+  def connect_soundcloud_text
     if current_user.soundcloud_network.present?
       "<span class='fa fa-soundcloud'></span>Connected SoundCloud".html_safe
     else
