@@ -30,6 +30,23 @@ class SetupController < ApplicationController
     redirect_to dashfolio_artists_path()
   end
 
+  def authorize_soundcloud
+    unless params[:error].present?
+      token = soundcloud_oauth.exchange_token(code: params[:code])
+      binding.pry
+      network = current_user.create_soundcloud_network(
+        access_token: token[:access_token],
+        refresh_token: token[:refresh_token]
+      )
+      flash[:notice] = network.valid? ?
+        'Successfully added SoundCloud' :
+        'Failed to add SoundCloud'
+    else
+      flash[:notice] = 'Failed to add SoundCloud as user denied the permission'
+    end
+    redirect_to social_media_setup_index_path
+  end
+
   private
   def user_attrs(field)
     params.require(:user).permit(field)

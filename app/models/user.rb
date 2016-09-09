@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :username, :email, presence: true, uniqueness: true
+  has_one :soundcloud_network
 
   def email_optional?
     true

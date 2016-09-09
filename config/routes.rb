@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   delete '/sign_out' => 'clearance/sessions#destroy', as: 'sign_out'
 
   constraints Clearance::Constraints::SignedOut.new do
-    root to: 'sessions#new', as: :signed_out_root
+    root to: 'sessions#new'
   end
 
   constraints Clearance::Constraints::SignedIn.new do
@@ -20,9 +20,9 @@ Rails.application.routes.draw do
     end
 
 
-  resource :session
+  resource :session, only: [:new]
   resources :registrations, only: [:create]
-  resources :artists do
+  resources :artists, only: [] do
     get :dashfolio, on: :collection
   end
 
@@ -37,6 +37,10 @@ Rails.application.routes.draw do
       post :social_media
       get :finalize_setup
     end
+  end
+
+  controller :setup, path: 'setup' do
+    get :authorize_soundcloud
   end
 
   scope '/static' do
