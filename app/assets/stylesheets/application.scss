@@ -13,6 +13,10 @@ body {
 
 }
 
+.navbar-header {  /*adjusts the logo and search bar to align with the login form in the header */
+  margin-top: 10px;
+}
+
 .navbar-brand img {
 	width:40px;
      height:40px;
@@ -68,8 +72,7 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 
 }
 
-.profile-image-header {
-    
+.profile-image-header {    
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -77,8 +80,48 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     position: relative;
    border-radius: 5px;
     
-
 }
+
+/* logged out header- login form */
+
+
+.navbar-form .login-checkbox { /* this is the remember me checkbox in the login form in the header */
+  
+  margin-top: 5px;
+  margin-right: 100px;
+}
+
+
+.login-header-remember-me>label {  /* this is the label in checkbox in the login form in the header */
+  color: white;    
+}
+
+.login-header-forgot-pw>a {
+  color: white;
+}
+
+/* end of logged out header- login form */
+
+
+
+/* error message (found in _error_response_) */
+
+#landing-page-error {
+ width: 100%;
+ position: absolute;
+ top: 0; /* this and the position: absolute has the error message pop up right below the header nav bar in landing page */
+ height: 10%;
+}
+
+.jumbotron .error-message {
+  font-size: 15px;
+  display: inline-block;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+  
+/* end of error message (found in _error_response_) */
+
+
 
 /* logged in header */
 
@@ -107,9 +150,9 @@ position: absolute; /*The div is absolutely positioned bottom:0; this moves it t
 
 }
 
-.signup-form > .input-group {
-	margin-bottom: 5px;
-	width: 75%; /* shortens the width of the signup form fields to align with page */
+.signup-form .input-group {
+	margin-bottom: 10px;
+	width: 70%; /* shortens the width of the signup form fields to align with page */
 }
 
 .signup-submit {

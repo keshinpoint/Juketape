@@ -1,21 +1,32 @@
 <div class='navbar-collapse collapse' id='bs-example-navbar-collapse-1'>
   <%= form_for :session, url: session_path, html: {class: 'navbar-form navbar-right'} do |f| %>
-    <div class='input-group'>
-      <span class='input-group-addon' id='login_username'>
-        <em class='glyphicon glyphicon-user'></em>
-      </span>
-      <%= f.text_field :username, class: 'form-control input-sm', placeholder: 'Username', 'aria-describedby': 'login_username', required: true %>
-    </div>
+  <div class='input-group'>
+    <span class='input-group-addon' id='login_username'>
+      <em class='glyphicon glyphicon-user'></em>
+    </span>
+    <%= f.text_field :username, class: 'form-control input-sm', placeholder: 'Username', 'aria-describedby': 'login_username', required: true %>
+  </div>
 
-    <div class='input-group'>
-      <span class='input-group-addon' id='login_password'>
-        <em class='glyphicon glyphicon-lock'></em>
-      </span>
-      <%= f.password_field :password, class: 'form-control input-sm', placeholder: 'Password', 'aria-describedby': 'login_password', required: true %>
-    </div>
+  <div class='input-group'>
+    <span class='input-group-addon' id='login_password'>
+      <em class='glyphicon glyphicon-lock'></em>
+    </span>
+    <%= f.password_field :password, class: 'form-control input-sm', placeholder: 'Password', 'aria-describedby': 'login_password', required: true %>
+  </div>
 
-    <button type='submit' class='btn btn-default'>
-      <i class='fa fa-arrow-circle-right' aria-hidden='true'></i>
-    </button>
-  <% end %>
-</div>
+  <button type='submit' class='btn btn-default'>
+    <i class='fa fa-arrow-circle-right' aria-hidden='true'></i>
+  </button>
+
+  <br> 
+  <div class="checkbox login-checkbox login-header-remember-me">
+    <label> <input type="checkbox"> Remember me </label> <!-- there's some issue in terms of aligning of the label of the checkbox in Firefox -->
+  </div>
+
+  <div class="checkbox login-checkbox login-header-forgot-pw">
+    <a href= "#"> Forgot password </a>
+  </div
+
+
+    <% end %>
+  </div>
