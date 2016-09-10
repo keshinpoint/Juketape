@@ -1,7 +1,4 @@
-# README
-
-
-#### Application Setup
+## Application Setup
 
 - Install Ruby 2.3.0
 - Install RVM
