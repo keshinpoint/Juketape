@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
 
 
-  resource :session, only: [:new]
+  resource :session, only: [:new, :create]
   resources :registrations, only: [:create]
   resources :artists, only: [] do
     get :dashfolio, on: :collection
