@@ -449,11 +449,13 @@ margin-left: 40px;
 margin-left: 80px;
 margin-top: 10px;
 font-size: 15px;
-display: none;
 }
 
 .header-info {
   display: none;
+margin-left: 80px;
+margin-top: 10px;
+font-size: 15px;
 }
 
 
@@ -470,6 +472,9 @@ padding-right: 10px;
   margin-top: 20px;
 }
 
+.tablink {
+  margin-right: 20px;
+}
 
 .tablink:active {
   color: red;
@@ -483,3 +488,18 @@ padding-right: 10px;
     display:block;
 }
 
+.music-header-container {
+  position: relative;
+  left: 61%;
+
+}
+.music-content {
+  text-align: center;
+}
+
+.music-track-list-items{ /* gives the spacing and positioning between the tracks */
+  
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+}

@@ -16,28 +16,49 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
+$(document).ready(function() {
+	$('.dashfolio-midbar-about a').on('click', function(e){
+		var currentAttrValue1 = $(this).attr('href');
 
-	$('.midbar-icon a').on('click', function(e){
-		var currentAttrValue = $(this).attr('href');
+		$('.dashfolio-about').show()
+		$('.main-content ' + currentAttrValue1).fadeIn(400);		
+		$('.dashfolio-music').hide();
+		e.preventDefault();      
 
-		$('.main-content ' + currentAttrValue).fadeIn(400).siblings().hide();
-		
-			   e.preventDefault();
-			   e.stopPropagation();
 	});
 
-	$('.tablink').on('click', function(e) {
-        var currentAttrValue = $(this).attr('href');
- 
-        // Show/Hide Tabs
-        $('.dashfolio-about ' + currentAttrValue).fadeIn(400).siblings().hide(); //choose the dashfolio-about parent div, and search for children divs with id = cuurent value attr
- 
-        // Change/remove current tab to active
-        $(this).addClass('active').siblings().removeClass('active');
- 
-        e.preventDefault();
-    });
+		$('.dashfolio-midbar-music a').on('click', function(e){
+		var currentAttrValue2 = $(this).attr('href');
+
+		$('.dashfolio-music').show()
+		$('.main-content ' + currentAttrValue2).fadeIn(400);
+		$('.dashfolio-about').hide();
+
+		 e.preventDefault();		
+});
+
+});
+
+$(document).ready(function(){
+
+$('.about-header-container a').on('click', function(e){
+var attribute_tabcontent_about = $(this).attr('href');
+
+$('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
+$('.dashfolio-music').hide();
+e.preventDefault();      
+
+});
+
+$('.music-header-container a').on('click', function(e){
+var attribute_tabcontent_music = $(this).attr('href');
+
+$('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
+console.log("hi");
+$('.dashfolio-about').hide();
+e.preventDefault();  
+
+});
 
 });
 
