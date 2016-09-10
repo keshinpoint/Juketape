@@ -6,3 +6,12 @@ FACEBOOK_PERMISSIONS = [
   'email',
   'manage_pages'
 ]
+
+INSTAGRAM_SCOPE = [
+  'basic',
+  'public_content',
+  'follower_list',
+  'comments',
+  'relationships',
+  'likes'
+]

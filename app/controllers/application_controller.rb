@@ -1,9 +1,12 @@
+require 'instagram'
+
 class ApplicationController < ActionController::Base
   include Clearance::Controller
+
   protect_from_forgery with: :exception
 
   before_action :require_login
-  helper_method :soundcloud_oauth, :youtube_oauth, :facebook_oauth
+  helper_method :soundcloud_oauth, :youtube_oauth, :facebook_oauth, :instagram_oauth
 
   def authenticate(params)
     User.authenticate(
@@ -33,6 +36,12 @@ class ApplicationController < ActionController::Base
       ENV['FB_SECRET'],
       authorize_facebook_url()
     )
+  end
+
+  def instagram_oauth
+    @ig_oauth ||= Instagram.new({
+      redirect_uri: authorize_instagram_url()
+    })
   end
 
   private

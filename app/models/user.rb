@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_one :soundcloud_network
   has_one :youtube_network
   has_one :facebook_network
+  has_one :instagram_network
 
   def email_optional?
     true

@@ -81,6 +81,19 @@ class SetupController < ApplicationController
     redirect_to social_media_setup_index_path
   end
 
+  def authorize_instagram
+    unless params[:error].present?
+      token = instagram_oauth.get_access_token(params[:code])
+      network = current_user.create_instagram_network(access_token: token)
+      flash[:notice] = network.valid? ?
+        'Successfully added Instagram' :
+        'Failed to add Instagram'
+    else
+      flash[:notice] = "Failed to add Instagram as #{params[:error_description]}"
+    end
+    redirect_to social_media_setup_index_path
+  end
+
   private
   def user_attrs(field)
     params.require(:user).permit(field)

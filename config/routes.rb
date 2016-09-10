@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     get :authorize_soundcloud
     get :authorize_youtube
     get :authorize_facebook
+    get :authorize_instagram
   end
 
   scope '/static' do

@@ -59,4 +59,24 @@ module SetupHelper
       facebook_oauth_url
     end
   end
+
+  def instagram_oauth_url
+    instagram_oauth.oauth_url(scope: INSTAGRAM_SCOPE.join('+'))
+  end
+
+  def connect_instagram_text
+    if current_user.instagram_network.present?
+      "<span class='fa fa-instagram'></span>Connected Instagram".html_safe
+    else
+      "<span class='fa fa-instagram'></span>Connect Instagram".html_safe
+    end
+  end
+
+  def connect_instagram_link
+    if current_user.instagram_network.present?
+      'javascript:void(0);'
+    else
+      instagram_oauth_url
+    end
+  end
 end
