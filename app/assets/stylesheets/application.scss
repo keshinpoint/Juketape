@@ -452,7 +452,7 @@ font-size: 15px;
 }
 
 .header-info {
-  display: none;
+display: none;
 margin-left: 80px;
 margin-top: 10px;
 font-size: 15px;
@@ -482,6 +482,7 @@ padding-right: 10px;
 
 .tabcontent {
     display:none;
+
 }
  
 .tabcontent.active {
@@ -497,9 +498,15 @@ padding-right: 10px;
   text-align: center;
 }
 
-.music-track-list-items{ /* gives the spacing and positioning between the tracks */
-  
+.dashfolio-content-li { /* houses all the list items of the videos and music items of dashfolio */
   margin-right: 20px;
-  margin-bottom: 20px;
-  display: inline-block;
+  margin-bottom: 20px;  
+  display: inline-block; /* makes the content inline */
+}
+
+
+#videos-dashfolio { /* contains the videos 
+ /* pushes the videos to the same level as the about and music items */
+  position: absolute;
+  top: 30px; 
 }

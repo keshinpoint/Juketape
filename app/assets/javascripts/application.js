@@ -23,6 +23,7 @@ $(document).ready(function() {
 		$('.dashfolio-about').show()
 		$('.main-content ' + currentAttrValue1).fadeIn(400);		
 		$('.dashfolio-music').hide();
+		$('.dashfolio-videos').hide();
 		e.preventDefault();      
 
 	});
@@ -33,9 +34,19 @@ $(document).ready(function() {
 		$('.dashfolio-music').show()
 		$('.main-content ' + currentAttrValue2).fadeIn(400);
 		$('.dashfolio-about').hide();
-
+		$('.dashfolio-videos').hide();
 		 e.preventDefault();		
 });
+
+		$('.dashfolio-midbar-videos a').on('click', function(e){
+			var currentAttrValue3 = $(this).attr('href');
+
+			$('.dashfolio-video').show();
+			$('.main-content ' + currentAttrValue3).fadeIn(400);
+			$('.dashfolio-music').hide();
+			$('.dashfolio-about').hide();
+			e.preventDefault();
+		});
 
 });
 
@@ -46,6 +57,8 @@ var attribute_tabcontent_about = $(this).attr('href');
 
 $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
 $('.dashfolio-music').hide();
+$('.dashfolio-video').hide();
+
 e.preventDefault();      
 
 });
@@ -54,8 +67,8 @@ $('.music-header-container a').on('click', function(e){
 var attribute_tabcontent_music = $(this).attr('href');
 
 $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
-console.log("hi");
 $('.dashfolio-about').hide();
+$('.dashfolio-video').hide();
 e.preventDefault();  
 
 });
