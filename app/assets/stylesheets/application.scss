@@ -463,6 +463,10 @@ font-size: 15px;
   display: block;
 }
 
+.active-individual-header {
+  text-decoration: underline;
+}
+
 .about-header-container>a {
 padding-right: 10px;
 }
@@ -494,7 +498,15 @@ padding-right: 10px;
   left: 61%;
 
 }
-.music-content {
+.music-content { /* the music tracks will display in the center of the dashfolio*/
+  text-align: center;
+}
+
+.pictures-content { /* the pics will display in the center of the dashfolio */
+
+}
+
+.video-content { /* the videos will display in the center of the dashfolio*/
   text-align: center;
 }
 
@@ -505,8 +517,48 @@ padding-right: 10px;
 }
 
 
-#videos-dashfolio { /* contains the videos 
+#videos-dashfolio { /* contains the videos */
  /* pushes the videos to the same level as the about and music items */
   position: absolute;
   top: 30px; 
+}
+
+#pictures-dashfolio{ /* contains the pics */
+   /* pushes the pictures to the same level as the about and music items */
+  position: absolute;
+  top: 30px;
+
+}
+
+.picture-body { /* the main body of image containers */
+
+  -webkit-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
+-moz-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
+box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
+    height: 370px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ececec;
+}
+
+.picture-account-name { /* eg: 9Gag isntagram acount name, shown in each pic */
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.picture-image {  
+    height: 284px;
+    object-fit: contain;
+    margin: 0 auto;
+    width: 228px;
+    background-color: grey;
+}
+
+
+.picture-logo.pull-right { /* eg:the instagram logo */
+    margin-top: 10px;
+    height: 30px;
+    object-fit: contain;
+    width: 30px;
 }

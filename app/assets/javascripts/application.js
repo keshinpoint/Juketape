@@ -23,10 +23,12 @@ $(document).ready(function() {
 		$('.dashfolio-about').show()
 		$('.main-content ' + currentAttrValue1).fadeIn(400);		
 		$('.dashfolio-music').hide();
-		$('.dashfolio-videos').hide();
+		$('.dashfolio-video').hide();
+		$('.dashfolio-pictures').hide();
 		e.preventDefault();      
+		e.stopPropagation();
 
-	});
+		});
 
 		$('.dashfolio-midbar-music a').on('click', function(e){
 		var currentAttrValue2 = $(this).attr('href');
@@ -34,9 +36,11 @@ $(document).ready(function() {
 		$('.dashfolio-music').show()
 		$('.main-content ' + currentAttrValue2).fadeIn(400);
 		$('.dashfolio-about').hide();
-		$('.dashfolio-videos').hide();
-		 e.preventDefault();		
-});
+		$('.dashfolio-video').hide();
+		$('.dashfolio-pictures').hide();
+		 e.preventDefault();
+		 e.stopPropagation();		
+		});	
 
 		$('.dashfolio-midbar-videos a').on('click', function(e){
 			var currentAttrValue3 = $(this).attr('href');
@@ -45,7 +49,21 @@ $(document).ready(function() {
 			$('.main-content ' + currentAttrValue3).fadeIn(400);
 			$('.dashfolio-music').hide();
 			$('.dashfolio-about').hide();
+			$('.dashfolio-pictures').hide();
 			e.preventDefault();
+			e.stopPropagation();
+		});
+
+		$('.dashfolio-midbar-pictures a').on('click', function(e){
+			var currentAttrValue4 = $(this).attr('href');
+
+			$('.dashfolio-pictures').show();
+			$('.main-content ' + currentAttrValue4).fadeIn(400);
+			$('.dashfolio-music').hide();
+			$('.dashfolio-about').hide();
+			$('.dashfolio-video').hide();
+			e.preventDefault();	
+			e.stopPropagation();
 		});
 
 });
@@ -59,7 +77,8 @@ $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
 $('.dashfolio-music').hide();
 $('.dashfolio-video').hide();
 
-e.preventDefault();      
+e.preventDefault();  
+e.stopPropagation();		    
 
 });
 
@@ -69,7 +88,8 @@ var attribute_tabcontent_music = $(this).attr('href');
 $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
 $('.dashfolio-about').hide();
 $('.dashfolio-video').hide();
-e.preventDefault();  
+e.preventDefault(); 
+e.stopPropagation();		 
 
 });
 
