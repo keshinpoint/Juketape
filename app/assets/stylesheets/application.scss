@@ -463,6 +463,19 @@ font-size: 15px;
   display: block;
 }
 
+.dashfolio-add-media { /* contains the 'add social media' buttons on dashfolio */
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+
+}
+
+.dashfolio-add-media>a {
+  display: inline-block; /* for some unexplained reason, this does the function of margin: 0 auto i.e centering the add-media buttons inside the dashfolio, it's still not known how to get 2 add media buttons on the same line */
+
+}
+
 .active-individual-header {
   text-decoration: underline;
 }
@@ -503,6 +516,8 @@ padding-right: 10px;
 }
 
 .pictures-content { /* the pics will display in the center of the dashfolio */
+  text-align: center;
+  margin: 0 auto;
 
 }
 

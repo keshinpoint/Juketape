@@ -1,13 +1,13 @@
 	<!-- the JS SDK for facebook embeds -->
 	<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=981372658618612";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- the JS SDK for facebook embeds -->
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=981372658618612";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- the JS SDK for facebook embeds -->
 
 	<%= render partial: 'static/header_logged_in' %>
 
@@ -199,9 +199,21 @@
 					<a class = "album-header tablink" href= "#album-dashfolio"> Albums </a> 
 				</div>
 
+
+
 				<div class = "music-content">
+					
 
 					<div class = "tabcontent" id= "tracks-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+
+							<a class="btn btn-block btn-social btn-soundcloud">
+								<span class="fa fa-soundcloud"> </span>
+								Add tracks
+							</a> 
+
+						</div>
 
 						<ul class= "music-tracks-list">
 							<li class = "music-track-list-items dashfolio-content-li">
@@ -228,16 +240,23 @@
 
 							</li>
 
-					</ul>
+						</ul>
 
-				</div>
+					</div>
 
-				
-			
 
-				<div class = "tabcontent" id= "album-dashfolio" >
 
-					<ul class= "music-albums-list">
+
+					<div class = "tabcontent" id= "album-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+							<a class="btn btn-block btn-social btn-soundcloud">
+								<span class="fa fa-soundcloud"> </span>
+								Add albums
+							</a> 
+						</div>
+
+						<ul class= "music-albums-list">
 							<li class = "music-albums-list-items dashfolio-content-li">
 								<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/62171181&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 							</li>
@@ -247,18 +266,32 @@
 							</li>
 						</ul>
 
-				</div>
+					</div>
 
-			</div> 
+				</div> 
 
-		</div>
+			</div>
 
 
-		<div class = "dashfolio-video main-content"> 
+			<div class = "dashfolio-video main-content"> 
 
 				<div class = "video-content">
 
 					<div class = "tabcontent" id= "videos-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+
+							<a class="btn btn-block btn-social btn-youtube"> <!--doesnt exist in the bootstrap-social plugin (gem), so have manually added the css styles -->
+								<span class="fa fa-youtube-play"> </span>
+								Add videos
+							</a> 
+
+							<a class="btn btn-block btn-social btn-facebook" >
+								<span class="fa fa-facebook"></span>
+								Add videos
+							</a> 
+
+						</div>
 
 						<ul class= "video-list">
 							<li class = "video-list-items dashfolio-content-li">
@@ -279,89 +312,96 @@
 
 							</li>
 
-							
-							
-					</ul>
+						</ul>
+
+					</div>
 
 				</div>
 
-			</div>
+			</div> <!-- end of dashfolio-video -->
 
-		</div> <!-- end of dashfolio-video -->
-
-		<div class = "dashfolio-pictures main-content"> 
+			<div class = "dashfolio-pictures main-content"> 
 
 				<div class = "pictures-content">
 
 					<div class = "tabcontent" id= "pictures-dashfolio" >
 
-						<ul class= "pictures-list">
-							<li class = "pictures-list-items dashfolio-content-li">
+						<div class = "dashfolio-add-media">
 
-								<div class = "picture-body">
-									<p class = "picture-account-name"> <strong> Account name </strong> </p>
-									<div class = "picture-image">
-										<a href = "#" class = "picture-link"> 
-											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
-										</a>
-										<a href = "https://www.instagram.com/{account-id}" target="_blank">
-										<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
-										</a>
+							<a class="btn btn-block btn-social btn-instagram">
+								<span class="fa fa-instagram"> </span>
+								Add photos
+								</a>
+
+							</div>
+
+							<ul class= "pictures-list">
+								<li class = "pictures-list-items dashfolio-content-li">
+
+									<div class = "picture-body">
+										<p class = "picture-account-name"> <strong> Account name </strong> </p>
+										<div class = "picture-image">
+											<a href = "#" class = "picture-link"> 
+												<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+											</a>
+											<a href = "https://www.instagram.com/{account-id}" target="_blank">
+												<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+											</a>
+										</div>
 									</div>
-								</div>
 
-							</li>
+								</li>
 
-							<li class = "pictures-list-items dashfolio-content-li">
+								<li class = "pictures-list-items dashfolio-content-li">
 
-								<div class = "picture-body">
-									<p class = "picture-account-name"> <strong> Account name </strong> </p>
-									<div class = "picture-image">
-										<a href = "#" class = "picture-link"> 
-											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
-										</a>
-										<a href = "https://www.instagram.com/{account-id}" target="_blank">
-										<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
-										</a>
+									<div class = "picture-body">
+										<p class = "picture-account-name"> <strong> Account name </strong> </p>
+										<div class = "picture-image">
+											<a href = "#" class = "picture-link"> 
+												<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+											</a>
+											<a href = "https://www.instagram.com/{account-id}" target="_blank">
+												<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+											</a>
+										</div>
 									</div>
-								</div>
 
-							</li>
+								</li>
 
-							<li class = "pictures-list-items dashfolio-content-li">
+								<li class = "pictures-list-items dashfolio-content-li">
 
-								<div class = "picture-body">
-									<p class = "picture-account-name"> <strong> Account name </strong> </p>
-									<div class = "picture-image">
-										<a href = "#" class = "picture-link"> 
-											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
-										</a>
-										<a href = "https://www.instagram.com/{account-id}" target="_blank">
-										<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
-										</a>
+									<div class = "picture-body">
+										<p class = "picture-account-name"> <strong> Account name </strong> </p>
+										<div class = "picture-image">
+											<a href = "#" class = "picture-link"> 
+												<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+											</a>
+											<a href = "https://www.instagram.com/{account-id}" target="_blank">
+												<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+											</a>
+										</div>
 									</div>
-								</div>
 
-							</li>
+								</li>
 
-							
 
-							
-							
-					</ul>
+
+
+
+							</ul>
+
+						</div>
+
+					</div>
 
 				</div>
+
+
+
+
+				<div class = "col-md-1"> </div>
 
 			</div>
 
 		</div>
-
-
-
-
-		<div class = "col-md-1"> </div>
-
-	</div>
-
-</div>
 
