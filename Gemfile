@@ -18,6 +18,8 @@ gem 'yt', '~> 0.25.5'
 gem 'clearance'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 
 # group :assets do
   gem 'sass-rails', '~> 5.0'

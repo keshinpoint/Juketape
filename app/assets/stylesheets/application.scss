@@ -484,10 +484,20 @@ font-size: 15px;
 padding-right: 10px;
 }
 
+#bio-dashfolio { /*makes the about section is a lil more towards the center with right padding */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#timeline-dashfolio { /*makes the about section is a lil more towards the center with right padding */
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
 .tabcontent {
-  margin-top: 20px;
-}
+  margin-top: 40px;
+  }
+
 
 .tablink {
   margin-right: 20px;
