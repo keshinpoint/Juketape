@@ -53,6 +53,8 @@ GEM
       sass (>= 3.3.4)
     bootstrap-social-rails (4.12.0)
       railties (>= 3.1)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (9.0.5)
     carrierwave (0.11.2)
@@ -143,6 +145,8 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    momentjs-rails (2.11.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -287,6 +291,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bootstrap-social-rails
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   carrierwave
   clearance
   coffee-rails (~> 4.1.0)
@@ -300,6 +305,7 @@ DEPENDENCIES
   koala
   listen (~> 3.0.5)
   mini_magick
+  momentjs-rails (>= 2.9.0)
   oauth
   paperclip (~> 5.0.0)
   pg (~> 0.18)
@@ -323,4 +329,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.12.5
+   1.13.0
