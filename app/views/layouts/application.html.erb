@@ -12,6 +12,8 @@
     <%= render partial: 'shared/header' %>
     <%= render partial: 'shared/flash_messages' %>
     <%= yield %>
-    <%= render partial: 'shared/footer' %>
+    <% unless action_name.eql?('dashfolio') %>
+      <%= render partial: 'shared/footer' %>
+    <% end %>
   </body>
 </html>
