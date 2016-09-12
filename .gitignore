@@ -15,6 +15,7 @@
 !/tmp/.keep
 # .env
 # .env.*
+/public/uploads/*
 
 # Ignore Byebug command history file.
 .byebug_history
