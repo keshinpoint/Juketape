@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         only: [:create, :edit, :update]
     end
 
+  resources :users, only: [:update]
 
   resource :session, only: [:new, :create]
   resources :registrations, only: [:create]

@@ -14,10 +14,19 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require best_in_place
+//= require jquery-ui/datepicker
+//= require best_in_place.jquery-ui
 //= require_tree .
 
-//= require jquery-ui/datepicker
+$(document).on('turbolinks:load', function() {
+  $(function() {
+    $('.best_in_place').best_in_place();
+  });
+});
 
+
+// Below is the javascript for static pages
 $(document).ready(function() {
     $(".timeline-start-date-form").datepicker();
     $(".timeline-end-date-form").datepicker();

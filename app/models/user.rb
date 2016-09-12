@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :username, :email, presence: true, uniqueness: true
+  validates :tag_line, :act_name, presence: true, if: :finalized_setup?
   has_one :soundcloud_network
   has_one :youtube_network
   has_one :facebook_network

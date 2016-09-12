@@ -33,7 +33,6 @@ class SetupController < ApplicationController
   def authorize_soundcloud
     unless params[:error].present?
       token = soundcloud_oauth.exchange_token(code: params[:code])
-      binding.pry
       network = current_user.create_soundcloud_network(
         access_token: token[:access_token],
         refresh_token: token[:refresh_token]
