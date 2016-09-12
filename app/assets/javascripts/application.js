@@ -16,28 +16,90 @@
 //= require turbolinks
 //= require_tree .
 
+//= require jquery-ui/datepicker
+
+$(document).ready(function() {
+    $(".timeline-start-date-form").datepicker();
+    $(".timeline-end-date-form").datepicker();
+    
+});
+
+$(document).ready(function() {
+	$('.dashfolio-midbar-about a').on('click', function(e){
+		var currentAttrValue1 = $(this).attr('href');
+
+		$('.dashfolio-about').show()
+		$('.main-content ' + currentAttrValue1).fadeIn(400);		
+		$('.dashfolio-music').hide();
+		$('.dashfolio-video').hide();
+		$('.dashfolio-pictures').hide();
+		e.preventDefault();      
+		e.stopPropagation();
+
+		});
+
+		$('.dashfolio-midbar-music a').on('click', function(e){
+		var currentAttrValue2 = $(this).attr('href');
+
+		$('.dashfolio-music').show()
+		$('.main-content ' + currentAttrValue2).fadeIn(400);
+		$('.dashfolio-about').hide();
+		$('.dashfolio-video').hide();
+		$('.dashfolio-pictures').hide();
+		 e.preventDefault();
+		 e.stopPropagation();		
+		});	
+
+		$('.dashfolio-midbar-videos a').on('click', function(e){
+			var currentAttrValue3 = $(this).attr('href');
+
+			$('.dashfolio-video').show();
+			$('.main-content ' + currentAttrValue3).fadeIn(400);
+			$('.dashfolio-music').hide();
+			$('.dashfolio-about').hide();
+			$('.dashfolio-pictures').hide();
+			e.preventDefault();
+			e.stopPropagation();
+		});
+
+		$('.dashfolio-midbar-pictures a').on('click', function(e){
+			var currentAttrValue4 = $(this).attr('href');
+
+			$('.dashfolio-pictures').show();
+			$('.main-content ' + currentAttrValue4).fadeIn(400);
+			$('.dashfolio-music').hide();
+			$('.dashfolio-about').hide();
+			$('.dashfolio-video').hide();
+			e.preventDefault();	
+			e.stopPropagation();
+		});
+
+});
+
 $(document).ready(function(){
 
-	$('.midbar-icon a').on('click', function(e){
-		var currentAttrValue = $(this).attr('href');
+$('.about-header-container a').on('click', function(e){
+var attribute_tabcontent_about = $(this).attr('href');
 
-		$('.main-content ' + currentAttrValue).fadeIn(400).siblings().hide();
-		
-			   e.preventDefault();
-			   e.stopPropagation();
-	});
+$('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
+$('.dashfolio-music').hide();
+$('.dashfolio-video').hide();
 
-	$('.tablink').on('click', function(e) {
-        var currentAttrValue = $(this).attr('href');
- 
-        // Show/Hide Tabs
-        $('.dashfolio-about ' + currentAttrValue).fadeIn(400).siblings().hide(); //choose the dashfolio-about parent div, and search for children divs with id = cuurent value attr
- 
-        // Change/remove current tab to active
-        $(this).addClass('active').siblings().removeClass('active');
- 
-        e.preventDefault();
-    });
+e.preventDefault();  
+e.stopPropagation();		    
+
+});
+
+$('.music-header-container a').on('click', function(e){
+var attribute_tabcontent_music = $(this).attr('href');
+
+$('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
+$('.dashfolio-about').hide();
+$('.dashfolio-video').hide();
+e.preventDefault(); 
+e.stopPropagation();		 
+
+});
 
 });
 

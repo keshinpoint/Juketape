@@ -2,6 +2,13 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "fonts";
+
+
+ /*
+ *= require jquery-ui/datepicker
+ */
+
+
 @import "custom_styles";
 
 @import "bootstrap-social";
@@ -11,6 +18,10 @@ body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     height:100%;
 
+}
+
+.navbar-header {  /*adjusts the logo and search bar to align with the login form in the header */
+  margin-top: 10px;
 }
 
 .navbar-brand img {
@@ -68,8 +79,7 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 
 }
 
-.profile-image-header {
-    
+.profile-image-header {    
     width: 30px;
     height: 30px;
     object-fit: contain;
@@ -77,8 +87,48 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     position: relative;
    border-radius: 5px;
     
-
 }
+
+/* logged out header- login form */
+
+
+.navbar-form .login-checkbox { /* this is the remember me checkbox in the login form in the header */
+  
+  margin-top: 5px;
+  margin-right: 100px;
+}
+
+
+.login-header-remember-me>label {  /* this is the label in checkbox in the login form in the header */
+  color: white;    
+}
+
+.login-header-forgot-pw>a {
+  color: white;
+}
+
+/* end of logged out header- login form */
+
+
+
+/* error message (found in _error_response_) */
+
+#landing-page-error {
+ width: 100%;
+ position: absolute;
+ top: 0; /* this and the position: absolute has the error message pop up right below the header nav bar in landing page */
+ height: 10%;
+}
+
+.jumbotron .error-message {
+  font-size: 15px;
+  display: inline-block;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+  
+/* end of error message (found in _error_response_) */
+
+
 
 /* logged in header */
 
@@ -107,9 +157,9 @@ position: absolute; /*The div is absolutely positioned bottom:0; this moves it t
 
 }
 
-.signup-form > .input-group {
-	margin-bottom: 5px;
-	width: 75%; /* shortens the width of the signup form fields to align with page */
+.signup-form .input-group {
+	margin-bottom: 10px;
+	width: 70%; /* shortens the width of the signup form fields to align with page */
 }
 
 .signup-submit {
@@ -406,11 +456,13 @@ margin-left: 40px;
 margin-left: 80px;
 margin-top: 10px;
 font-size: 15px;
-display: none;
 }
 
 .header-info {
-  display: none;
+display: none;
+margin-left: 80px;
+margin-top: 10px;
+font-size: 15px;
 }
 
 
@@ -418,15 +470,45 @@ display: none;
   display: block;
 }
 
+.dashfolio-add-media { /* contains the 'add social media' buttons on dashfolio */
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+
+}
+
+.dashfolio-add-media>a {
+  display: inline-block; /* for some unexplained reason, this does the function of margin: 0 auto i.e centering the add-media buttons inside the dashfolio, it's still not known how to get 2 add media buttons on the same line */
+
+}
+
+.active-individual-header {
+  text-decoration: underline;
+}
+
 .about-header-container>a {
 padding-right: 10px;
 }
 
-
-.tabcontent {
-  margin-top: 20px;
+#bio-dashfolio { /*makes the about section is a lil more towards the center with right padding */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
+#timeline-dashfolio { /*makes the about section is a lil more towards the center with right padding */
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.tabcontent {
+  margin-top: 40px;
+  }
+
+
+.tablink {
+  margin-right: 20px;
+}
 
 .tablink:active {
   color: red;
@@ -434,9 +516,81 @@ padding-right: 10px;
 
 .tabcontent {
     display:none;
+
 }
  
 .tabcontent.active {
     display:block;
 }
 
+.music-header-container {
+  position: relative;
+  left: 61%;
+
+}
+.music-content { /* the music tracks will display in the center of the dashfolio*/
+  text-align: center;
+}
+
+.pictures-content { /* the pics will display in the center of the dashfolio */
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+.video-content { /* the videos will display in the center of the dashfolio*/
+  text-align: center;
+}
+
+.dashfolio-content-li { /* houses all the list items of the videos and music items of dashfolio */
+  margin-right: 20px;
+  margin-bottom: 20px;  
+  display: inline-block; /* makes the content inline */
+}
+
+
+#videos-dashfolio { /* contains the videos */
+ /* pushes the videos to the same level as the about and music items */
+  position: absolute;
+  top: 30px; 
+}
+
+#pictures-dashfolio{ /* contains the pics */
+   /* pushes the pictures to the same level as the about and music items */
+  position: absolute;
+  top: 30px;
+
+}
+
+.picture-body { /* the main body of image containers */
+
+  -webkit-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
+-moz-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
+box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
+    height: 370px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ececec;
+}
+
+.picture-account-name { /* eg: 9Gag isntagram acount name, shown in each pic */
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.picture-image {  
+    height: 284px;
+    object-fit: contain;
+    margin: 0 auto;
+    width: 228px;
+    background-color: grey;
+}
+
+
+.picture-logo.pull-right { /* eg:the instagram logo */
+    margin-top: 10px;
+    height: 30px;
+    object-fit: contain;
+    width: 30px;
+}

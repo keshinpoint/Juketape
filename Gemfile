@@ -16,6 +16,7 @@ gem 'yt', '~> 0.25.5'
 gem 'clearance'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -23,6 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'bootstrap-social-rails'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5' #gives jquery ui
 
 group :development, :test do
   gem 'pry-byebug'

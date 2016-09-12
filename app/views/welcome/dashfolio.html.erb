@@ -1,4 +1,16 @@
+	<!-- the JS SDK for facebook embeds -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=981372658618612";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- the JS SDK for facebook embeds -->
+
 	<%= render partial: 'static/header_logged_in' %>
+
 
 	<div class = "container">
 		<div class = "row">
@@ -109,7 +121,7 @@
 					</li>	
 
 					<li class = "dashfolio-midbar-pictures pull-right midbar-icon">
-						<a href="#">
+						<a href="#pictures-dashfolio">
 							<i class="fa fa-photo fa-2x navbar-icon-fa" aria-hidden="true"></i>
 							<!--<span class="label">23</span> -->
 						</i>                 
@@ -117,7 +129,7 @@
 				</li>	
 
 				<li class = "dashfolio-midbar-videos pull-right midbar-icon"> <!--the pull-right pulls the div to the right, the first div with this class goes the farthest right, then the rest. Hence the videos icon has this first and not the music ne below -->
-					<a href="#">
+					<a href="#videos-dashfolio">
 						<i class="fa fa-video-camera fa-2x navbar-icon-fa" aria-hidden="true"></i>
 						<!--<span class="label">23</span> -->
 					</i>                 
@@ -126,8 +138,8 @@
 
 
 
-			<li class = "dashfolio-midbar-music pull-right">
-				<a href="#">
+			<li class = "dashfolio-midbar-music pull-right midbar-icon">
+				<a href="#music-header">
 					<i class="fa fa-music fa-2x navbar-icon-fa" aria-hidden="true"></i>
 					<!--<span class="label">23</span> -->
 				</i>                 
@@ -173,7 +185,64 @@
 
 					<div class = "tabcontent" id = "timeline-dashfolio">
 
-						<p> Random text is awesome don't you think bro </p>
+						<h3 class = "timeline-title"> Title 1 </h3>
+						<p class = "timeline-date"> 2014- present </p>
+						<p class = "timeline-description"> Random text is awesome don't you think.Random text is awesome don't you think.Random text is awesome don't you think.Random text is awesome don't you think. </p> 
+
+						<form class="dashfolio-timeline-form">
+
+							<div class="form-group">
+								<label> Title </label>
+								<input type="text" class="form-control timeline-title-form" placeholder="Enter the title of your timeline experience" required>
+							</div>
+
+							<div class="form-group">
+								<label> Description </label>
+								<input type="text" class="form-control timeline-description-form" placeholder="Enter the details of your timeline experience" required>
+							</div>
+
+							<div class="form-group">
+								<label> Start date </label>
+								<input type="text" class="form-control timeline-start-date-form" placeholder="Start date" required>
+
+								<label> End date </label>
+								<input type="text" class="form-control timeline-end-date-form" placeholder="End date" required>
+							</div>
+
+							<!--
+							<div class="form-group">
+
+							-
+							<div class='col-md-3'>
+								<div class="form-group">
+									<div class='input-group date' id='datetimepicker6'>
+										<input type='text' placeholder = "Start date" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+							
+							<div class='col-md-3'>
+								<div class="form-group">
+									<div class='input-group date' id='datetimepicker7'>
+										<input type='text' placeholder = "End date" class="form-control" />
+										<span class="input-group-addon">
+											<span class="glyphicon glyphicon-calendar"></span>
+										</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					-->
+							
+							<button type="submit" class="btn btn-default signup-submit" >
+								SIGN UP
+							</button>
+
+						</form>					
 
 					</div>
 
@@ -183,32 +252,209 @@
 			<div class = "dashfolio-music main-content"> 
 
 				<div class= "music-header-container header-info" id = "music-header">
-					<a class = "tracks-header tablink" href= "#tracks-dashfolio"> Album </a> 
-					<a class = "album-header tablink" href= "#album-dashfolio"> Tracks </a> 
+					<a class = "tracks-header tablink" href= "#tracks-dashfolio"> Tracks </a> 
+					<a class = "album-header tablink" href= "#album-dashfolio"> Albums </a> 
 				</div>
 
+
+
 				<div class = "music-content">
+					
 
 					<div class = "tabcontent" id= "tracks-dashfolio" >
 
-						<p> music text </p>
+						<div class = "dashfolio-add-media">
+
+							<a class="btn btn-block btn-social btn-soundcloud">
+								<span class="fa fa-soundcloud"> </span>
+								Add tracks
+							</a> 
+
+						</div>
+
+						<ul class= "music-tracks-list">
+							<li class = "music-track-list-items dashfolio-content-li">
+
+								<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/34019569&amp;color=0066cc"> </iframe>
+
+							</li>
+
+							<li class = "music-track-list-items dashfolio-content-li">		
+
+								<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56667759&amp;color=0066cc"> </iframe>
+
+							</li>
+
+							<li class = "music-track-list-items dashfolio-content-li">		
+
+								<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56667759&amp;color=0066cc"> </iframe>
+
+							</li>
+
+							<li class = "music-track-list-items dashfolio-content-li">		
+
+								<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/56667759&amp;color=0066cc"> </iframe>
+
+							</li>
+
+						</ul>
+
+					</div>
+
+
+
+
+					<div class = "tabcontent" id= "album-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+							<a class="btn btn-block btn-social btn-soundcloud">
+								<span class="fa fa-soundcloud"> </span>
+								Add albums
+							</a> 
+						</div>
+
+						<ul class= "music-albums-list">
+							<li class = "music-albums-list-items dashfolio-content-li">
+								<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/62171181&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+							</li>
+
+							<li class = "music-albums-list-items dashfolio-content-li">
+								<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/62171181&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+							</li>
+						</ul>
+
+					</div>
+
+				</div> 
+
+			</div>
+
+
+			<div class = "dashfolio-video main-content"> 
+
+				<div class = "video-content">
+
+					<div class = "tabcontent" id= "videos-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+
+							<a class="btn btn-block btn-social btn-youtube"> <!--doesnt exist in the bootstrap-social plugin (gem), so have manually added the css styles -->
+								<span class="fa fa-youtube-play"> </span>
+								Add videos
+							</a> 
+
+							<a class="btn btn-block btn-social btn-facebook" >
+								<span class="fa fa-facebook"></span>
+								Add videos
+							</a> 
+
+						</div>
+
+						<ul class= "video-list">
+							<li class = "video-list-items dashfolio-content-li">
+
+								<iframe width="400" height="225" src="https://www.youtube.com/embed/3fa4HUiFJ6c?rel=0" frameborder="0" allowfullscreen> </iframe>					
+
+							</li>
+
+							<li class = "video-list-items dashfolio-content-li">
+
+								<iframe width="400" height="225" src="https://www.youtube.com/embed/3fa4HUiFJ6c?rel=0" frameborder="0" allowfullscreen> </iframe>					
+
+							</li>
+
+							<li class = "video-list-items dashfolio-content-li">
+
+								<iframe width="400" height="225" src="https://www.youtube.com/embed/3fa4HUiFJ6c?rel=0" frameborder="0" allowfullscreen> </iframe>					
+
+							</li>
+
+						</ul>
 
 					</div>
 
 				</div>
 
-				<div class = "tabcontent" id = "album-dashfolio">
+			</div> <!-- end of dashfolio-video -->
 
-					<p> Album text </p>
+			<div class = "dashfolio-pictures main-content"> 
+
+				<div class = "pictures-content">
+
+					<div class = "tabcontent" id= "pictures-dashfolio" >
+
+						<div class = "dashfolio-add-media">
+
+							<a class="btn btn-block btn-social btn-instagram">
+								<span class="fa fa-instagram"> </span>
+								Add photos
+							</a>
+
+						</div>
+
+						<ul class= "pictures-list">
+							<li class = "pictures-list-items dashfolio-content-li">
+
+								<div class = "picture-body">
+									<p class = "picture-account-name"> <strong> Account name </strong> </p>
+									<div class = "picture-image">
+										<a href = "#" class = "picture-link"> 
+											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+										</a>
+										<a href = "https://www.instagram.com/{account-id}" target="_blank">
+											<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+										</a>
+									</div>
+								</div>
+
+							</li>
+
+							<li class = "pictures-list-items dashfolio-content-li">
+
+								<div class = "picture-body">
+									<p class = "picture-account-name"> <strong> Account name </strong> </p>
+									<div class = "picture-image">
+										<a href = "#" class = "picture-link"> 
+											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+										</a>
+										<a href = "https://www.instagram.com/{account-id}" target="_blank">
+											<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+										</a>
+									</div>
+								</div>
+
+							</li>
+
+							<li class = "pictures-list-items dashfolio-content-li">
+
+								<div class = "picture-body">
+									<p class = "picture-account-name"> <strong> Account name </strong> </p>
+									<div class = "picture-image">
+										<a href = "#" class = "picture-link"> 
+											<%= image_tag("generic_avatar.png", class: "instagram-picture picture-image") %>
+										</a>
+										<a href = "https://www.instagram.com/{account-id}" target="_blank">
+											<%= image_tag("instagram_logo.png", class: "picture-logo pull-right") %>
+										</a>
+									</div>
+								</div>
+
+							</li>
+
+						</ul>
+
+					</div>
 
 				</div>
 
 			</div>
 
 
-		<div class = "col-md-1"> </div>
+
+
+			<div class = "col-md-1"> </div>
+
+		</div>
 
 	</div>
-
-</div>
 
