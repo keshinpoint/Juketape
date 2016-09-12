@@ -4,36 +4,22 @@
     <div class='col-md-10'>
       <div class='dashfolio-about main-content'>
         <div class= 'about-header-container header-info' id='about-header' style='display: block;'>
-          <a class='bio-header tablink' href='#bio-dashfolio'>Bio</a>
-          <a class='timeline-header tablink' href='#timeline-dashfolio'>Timeline</a>
+          <a class='bio-header tablink' href='#bio-dashfolio' data-turbolink='false'>Bio</a>
+          <a class='timeline-header tablink' href='#timeline-dashfolio' data-turbolink='false'>Timeline</a>
         </div>
         <div class='about-content'>
           <div class='tabcontent' id='bio-dashfolio' style='display: block;'>
             <p><%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add your Bio' %></p>
           </div>
           <div class='tabcontent' id='timeline-dashfolio'>
-            <h3 class='timeline-title'>Title 1</h3>
-            <p class='timeline-date'>2014- present</p>
-            <p class='timeline-description'>Random text is awesome don't you think.Random text is awesome don't you think.Random text is awesome don't you think.Random text is awesome don't you think.</p>
-            <form class='dashfolio-timeline-form'>
-              <div class='form-group'>
-                <label>Title</label>
-                <input type='text' class='form-control timeline-title-form' placeholder='Enter the title of your timeline experience' required>
-              </div>
-              <div class='form-group'>
-                <label>Description</label>
-                <input type='text' class='form-control timeline-description-form' placeholder='Enter the details of your timeline experience' required>
-              </div>
-              <div class='form-group'>
-                <label>Start date</label>
-                <input type='text' class='form-control timeline-start-date-form' placeholder='Start date' required>
-                <label>End date</label>
-                <input type='text' class='form-control timeline-end-date-form' placeholder='End date' required>
-              </div>
-              <button type='submit' class='btn btn-default signup-submit' >
-                Create Event
-              </button>
-            </form>
+            <% artist.timeline_events.each do  |event| %>
+              <h3 class='timeline-title'><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></h3>
+              <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
+              <p class='timeline-description'><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></p>
+              <p class='timeline-location'><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></p>
+              <hr/>
+            <% end %>
+            <%= render partial: 'timeline_events/form' %>
           </div>
         </div>
       </div>

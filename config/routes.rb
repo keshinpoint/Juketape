@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :artists, only: [] do
     get :dashfolio, on: :collection
   end
+  resources :timeline_events, only: [:create, :update]
 
   resources :setup, only: [], path: :profile do
     collection do

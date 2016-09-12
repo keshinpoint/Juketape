@@ -1,23 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-social";
+@import "jquery-ui/datepicker";
 @import "font-awesome";
 @import "fonts";
-
-
- /*
- *= require jquery-ui/datepicker
- */
-
-
 @import "custom_styles";
-
-@import "bootstrap-social";
 
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     height:100%;
 
+}
+
+.ui-datepicker {
+  padding: 0.2em 1.2em 0 0.3em;
+  background: #eee;
 }
 
 .navbar-header {  /*adjusts the logo and search bar to align with the login form in the header */

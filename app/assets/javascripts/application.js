@@ -22,17 +22,29 @@
 $(document).on('turbolinks:load', function() {
   $(function() {
     $('.best_in_place').best_in_place();
+    $('.datepicker_input').datepicker({
+      dateFormat: "dd/mm/yy"
+    });
+  });
+
+  $('form.dashfolio-timeline-form').on('ajax:error', function(jqXHR, error) {
+    var $errorObj = $('form.dashfolio-timeline-form .errors');
+    $errorObj.html(error.responseText);
+  });
+
+  $('#event_end_date_checkbox').on('change', function() {
+    $('.timeline-end-date-form').prop('disabled', function(i, v) { return !v; });
+  });
+
+  $('.about-header-container a').on('click', function(e){
+    e.preventDefault();
+    var attribute_tabcontent_about = $(this).attr('href');
+    $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
   });
 });
 
 
 // Below is the javascript for static pages
-$(document).ready(function() {
-    $(".timeline-start-date-form").datepicker();
-    $(".timeline-end-date-form").datepicker();
-    
-});
-
 $(document).ready(function() {
 	$('.dashfolio-midbar-about a').on('click', function(e){
 		var currentAttrValue1 = $(this).attr('href');
@@ -87,17 +99,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 
-$('.about-header-container a').on('click', function(e){
-var attribute_tabcontent_about = $(this).attr('href');
 
-$('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
-$('.dashfolio-music').hide();
-$('.dashfolio-video').hide();
-
-e.preventDefault();  
-e.stopPropagation();		    
-
-});
 
 $('.music-header-container a').on('click', function(e){
 var attribute_tabcontent_music = $(this).attr('href');
