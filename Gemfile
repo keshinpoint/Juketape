@@ -28,6 +28,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42' #https://eonasdan.github.io/
   gem 'bootstrap-sass'
   gem "font-awesome-rails"
   gem 'bootstrap-social-rails'
+  gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5' #gives jquery ui
 # end
 
 group :development, :test do
