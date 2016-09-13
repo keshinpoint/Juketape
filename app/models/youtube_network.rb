@@ -14,28 +14,6 @@ class YoutubeNetwork < ApplicationRecord
     end
   end
 
-  def user_videos
-    return all_videos if selected_items.blank?
-    all_videos.select { |x| selected_items.include?(x[:id].to_s) }
-  end
-
-  def all_videos
-    @all_videos ||= videos
-  end
-
-  def channel_stats
-    begin
-      channel = load_youtube.channel
-      {
-        subscribers_count: channel.subscriber_count,
-        views_count: channel.view_count,
-        videos_count: user_videos.count
-      }
-    rescue
-      return {}
-    end
-  end
-
   def get_new_access_token
     data = {
       client_id: ENV['YT_CLIENT_ID'],
@@ -57,8 +35,6 @@ class YoutubeNetwork < ApplicationRecord
     end
   end
 
-  private
-
   def videos
     begin
       channel_vidoes = load_youtube.videos
@@ -66,12 +42,7 @@ class YoutubeNetwork < ApplicationRecord
         {
           id: video.id,
           title: video.title,
-          # likes_count: video.likes.total,
-          likes_count: "NA",
-          published_at: video.published_at,
-          thumbnail_url: video.thumbnail_url,
-          watch_url: "https://www.youtube.com/watch?v=#{video.id}",
-          duration: video.duration
+          embeded_url: "https://www.youtube.com/embed/#{video.id}?rel=0"
         }
       end
     rescue

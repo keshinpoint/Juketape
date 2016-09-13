@@ -1,0 +1,23 @@
+<div class='dashfolio-video main-content'>
+  <div class='video-content'>
+    <div class='tabcontent' id='videos-dashfolio'>
+      <div class='dashfolio-add-media'>
+        <a class='btn btn-block btn-social btn-youtube'>
+          <span class='fa fa-youtube-play'></span>
+          Add videos
+        </a> 
+        <a class='btn btn-block btn-social btn-facebook'>
+          <span class='fa fa-facebook'></span>
+          Add videos
+        </a>
+      </div>
+      <ul class='video-list'>
+        <% artist.youtube_network.videos.each do |video| %>
+          <li class='video-list-items dashfolio-content-li'>
+            <iframe width='400' height='225' src='<%= video[:embeded_url] %>' frameborder='0' allowfullscreen></iframe>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
