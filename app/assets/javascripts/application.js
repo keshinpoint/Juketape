@@ -33,43 +33,25 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('#event_end_date_checkbox').on('change', function() {
-    $('.timeline-end-date-form').prop('disabled', function(i, v) { return !v; });
+    $('.timeline-form-end-date').prop('disabled', function(i, v) { return !v; });
+  });
+
+  $('.timeline-event-add').on('click', function(){
+    $('.timeline-form-panel').slideDown();
+    $('.timeline-event-cancel').show();
+  })
+
+  $('.timeline-event-cancel, #timeline-event-cancel').on('click', function(){
+    $('.timeline-form-panel').slideUp();
+    $('.timeline-event-cancel').hide();
   });
 
   $('.about-header-container a').on('click', function(e){
     e.preventDefault();
     var attribute_tabcontent_about = $(this).attr('href');
-    $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
+    $('.about-content' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
   });
 });
-
-$(document).ready(function(){
-	$('.timeline-event-add').on('click', function(){
-		$('.timeline-form-panel').slideDown();
-		$('.timeline-event-cancel').show();
-
-	})
-
-	$('.timeline-event-cancel').on('click', function(){ //this is for the cancel button that shows up beside the add new event button on the timeline
-		$('.timeline-form-panel').slideUp();
-		$(this).hide();
-	});
-
-	$('#timeline-event-cancel').on('click', function(){
-		$('.timeline-form-panel').slideUp();
-		$('.timeline-event-cancel').hide();
-
-	});
-
-	$('#event_end_date_checkbox').change(function(){
-    if ($(this).checked) {
-           ("#timeline-form-end-date").removeAttr("disabled");
-        } 
-});
-
-});
-
-
 
 // Below is the javascript for static pages
 $(document).ready(function() {
