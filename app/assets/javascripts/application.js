@@ -49,7 +49,7 @@ $(document).on('turbolinks:load', function() {
   $('.about-header-container a').on('click', function(e){
     e.preventDefault();
     var attribute_tabcontent_about = $(this).attr('href');
-    $('.about-content' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
+    $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
   });
 });
 
