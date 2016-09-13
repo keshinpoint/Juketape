@@ -468,11 +468,14 @@ font-size: 15px;
   display: block;
 }
 
+.timeline-event-cancel {
+  display: none;
+}
+
 .dashfolio-add-media { /* contains the 'add social media' buttons on dashfolio */
   width: 300px;
   margin: 0 auto;
   margin-bottom: 10px;
-
 
 }
 
@@ -592,3 +595,15 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
     object-fit: contain;
     width: 30px;
 }
+
+/*timeline-form add new event form */
+
+.timeline-form-panel { /*overrides the panel styles used in the onboarding pages */
+  
+  width: 100%;
+  display: none;
+  margin-top: 30px;
+
+}
+
+/*timeline-form add new event */

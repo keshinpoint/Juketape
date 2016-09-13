@@ -43,6 +43,33 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
+$(document).ready(function(){
+	$('.timeline-event-add').on('click', function(){
+		$('.timeline-form-panel').slideDown();
+		$('.timeline-event-cancel').show();
+
+	})
+
+	$('.timeline-event-cancel').on('click', function(){ //this is for the cancel button that shows up beside the add new event button on the timeline
+		$('.timeline-form-panel').slideUp();
+		$(this).hide();
+	});
+
+	$('#timeline-event-cancel').on('click', function(){
+		$('.timeline-form-panel').slideUp();
+		$('.timeline-event-cancel').hide();
+
+	});
+
+	$('#event_end_date_checkbox').change(function(){
+    if ($(this).checked) {
+           ("#timeline-form-end-date").removeAttr("disabled");
+        } 
+});
+
+});
+
+
 
 // Below is the javascript for static pages
 $(document).ready(function() {
@@ -97,10 +124,9 @@ $(document).ready(function() {
 
 });
 
+
+
 $(document).ready(function(){
-
-
-
 $('.music-header-container a').on('click', function(e){
 var attribute_tabcontent_music = $(this).attr('href');
 

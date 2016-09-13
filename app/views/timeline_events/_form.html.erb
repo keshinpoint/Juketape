@@ -1,3 +1,5 @@
+<div class="panel panel-default timeline-form-panel">
+  <div class="panel-body">
 <h3>Create new timeline event</h3>
 <%= form_for :timeline_event, url: timeline_events_path, html: {class: 'dashfolio-timeline-form'}, remote: true do |f| %>
   <div class='errors'></div>
@@ -10,20 +12,39 @@
     <label>Description</label>
     <%= f.text_field :description, placeholder: 'Enter the details of your timeline experience',
       class: 'form-control timeline-description-form', required: true %>
+
+      
+
   </div>
   <div class='form-group'>
     <label>Location</label>
     <%= f.text_field :location, placeholder: 'Enter the location of your timeline experience',
       class: 'form-control timeline-location-form' %>
   </div>
-  <div class='form-group'>
-    <label>Start date</label>
+
+   <label> Duration </label>
+
+  <div class='form-group form-inline'>    
+
+    <div class="input-group">
+     <span class="input-group-addon"> <em class="glyphicon glyphicon-calendar"> </em> </span>
     <%= f.text_field :start_date, placeholder: 'Start date', class: 'form-control datepicker_input', required: true %>
   </div>
-  <div class='form-group'>
-    <label>End date</label>
-    <%= f.text_field :end_date, placeholder: 'End date', class: 'form-control datepicker_input', disabled: true, required: true %>
-    <label><%= f.check_box :at_present, {id: 'event_end_date_checkbox', checked: true}, true, false %>  At Present</label>
+   
+    <div class="input-group">
+     <span class="input-group-addon"> <em class="glyphicon glyphicon-calendar"> </em> </span>
+    <%= f.text_field :end_date, placeholder: 'End date', class: 'form-control datepicker_input timeline-form-end-date', disabled: true, required: true %>
+      </div>
+
+    <label><%= f.check_box :at_present, {id: 'event_end_date_checkbox', checked: true}, true, false %> Present</label>
+
   </div>
-  <%= f.submit 'Create Event', class: 'btn btn-default signup-submit' %>
+
+  <%= f.submit 'Create Event', class: 'btn btn-success' %>
+  <button type="button" class="btn btn-danger" id = "timeline-event-cancel"> Cancel </button>
+
 <% end %>
+
+</div>
+</div>
+
