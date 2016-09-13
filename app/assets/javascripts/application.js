@@ -71,7 +71,8 @@ $(document).ready(function() {
 		$('.dashfolio-midbar-music a').on('click', function(e){
 		var currentAttrValue2 = $(this).attr('href');
 
-		$('.dashfolio-music').show()
+		$('.dashfolio-music').show();
+    $('#tracks-dashfolio').show();
 		$('.main-content ' + currentAttrValue2).fadeIn(400);
 		$('.dashfolio-about').hide();
 		$('.dashfolio-video').hide();

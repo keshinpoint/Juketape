@@ -1,1 +1,10 @@
-<%= render partial: 'about_header', locals: { artist: artist } %>
+<div class='container'>
+  <div class='row' >
+    <div class='col-md-1'></div>
+    <div class='col-md-10'>
+      <%= render partial: 'about_header', locals: { artist: artist } %>
+      <%= render partial: 'music_container', locals: { artist: artist } %>
+    </div>
+    <div class='col-md-1'> </div>
+  </div>
+</div>

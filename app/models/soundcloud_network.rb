@@ -8,48 +8,28 @@ class SoundcloudNetwork < ApplicationRecord
     sc_client = SoundCloud.new(access_token: access_token)
   end
 
-  def all_tracks
-    @tracks ||= tracks
+  def track_widgets
+    get_me('tracks').map do |track|
+      "https://w.soundcloud.com/player/?url=#{track[:uri]}&amp;color=0066cc"
+    end
   end
 
-  def user_tracks
-    return all_tracks if selected_items.blank?
-    all_tracks.select { |x| selected_items.include?(x[:id].to_s) }
-  end
-
-  def profile
-    @data ||= load_soundcloud.get('/me')
-    {
-      followers_count: @data.followers_count,
-      followings_count: @data.followings_count,
-      tracks_count: user_tracks.count
-    }
+  def playlist_widgets
+    get_me('playlists').map do |playlist|
+      "https://w.soundcloud.com/player/?url=#{playlist[:uri]}&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true"
+    end
   end
 
   private
 
-  def tracks
+  def get_me(type)
     begin
-      response = load_soundcloud.get('/me/tracks')
+      response = load_soundcloud.get("/me/#{type}")
       response.map do |track|
         {
           id: track.id,
           title: track.title,
-          permalink: track.permalink,
-          permalink_url: track.permalink_url,
-          artist_permalink: track.user.permalink,
-          artist_permalink_url: track.user.permalink_url,
-          sharing: track.sharing,
-          description: track.description,
-          duration: track.duration,
-          genre: track.genre,
-          stream_url: track.stream_url,
-          artwork_url: track.artwork_url,
-          waveform_url: track.waveform_url,
-          playback_count: track.playback_count,
-          created_at: track.created_at,
-          favoritings_count: track.favoritings_count,
-          artwork: track.artwork_url || track.user.avatar_url
+          uri: track.uri
         }
       end
     rescue
