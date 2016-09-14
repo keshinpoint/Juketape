@@ -357,18 +357,62 @@ border: none;
 }
 
 .tag-container {
+max-width: 300px; /* helps wrap the tags in a specific width */
 
-font-size: 15px;
-max-width: 200px; /* helps wrap the tags in a specific width */
+}
 
+.tag-container:after {
+visibility: hidden; 
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
 }
 
 .dashfolio-tag {
-
+  cursor:pointer;
   background-color: blue;
   padding: 5px 10px 5px 10px;
-    display: inline-block;
+  display: inline-block;
+  margin-top: 3px; /*incase tags go in next line, will space */
+  color:#fff;
+  background:#789;
+  padding-right: 20px; /* adds space inside the tags for the 'x' button */
+ 
 }
+
+
+
+.dashfolio-tag:hover{
+  opacity:0.7;
+}
+
+.dashfolio-tag:after { 
+
+ position:absolute;
+ content:"×";
+ padding:2px 2px;
+ margin-left:2px;
+ font-size:11px;
+}
+
+#add-tag-input {
+  background:#eee;
+  border:0;
+  margin:6px 6px 6px 0px ; /* t r b l */
+  padding:5px;
+  width:auto;
+}
+
+.add-tag-input-group {
+  display: none;
+}
+
+.add-tag-dashfolio {
+  margin-top: 5px;
+}
+
 
 .location-container {
   margin-top: 12px;
