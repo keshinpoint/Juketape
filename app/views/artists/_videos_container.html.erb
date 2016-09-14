@@ -16,7 +16,7 @@
           <li class='video-list-items dashfolio-content-li'>
             <iframe width='400' height='225' src='<%= video[:embeded_url] %>' frameborder='0' allowfullscreen></iframe>
           </li>
-        <% end %>
+        <% end if artist.youtube_network.present? %>
       </ul>
     </div>
   </div>

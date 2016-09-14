@@ -16,7 +16,7 @@
           <li class='music-track-list-items dashfolio-content-li'>
             <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= source %>"></iframe>
           </li>
-        <% end %>
+        <% end if artist.soundcloud_network.present? %>
       </ul>
     </div>
     <div class='tabcontent' id='album-dashfolio' >
@@ -31,7 +31,7 @@
           <li class='music-albums-list-items dashfolio-content-li'>
             <iframe width='100%' height='450' scrolling='no' frameborder='no' src="<%= source %>"></iframe>
           </li>
-        <% end %>
+        <% end if artist.soundcloud_network.present? %>
       </ul>
     </div>
   </div> 
