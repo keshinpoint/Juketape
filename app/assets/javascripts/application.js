@@ -176,4 +176,15 @@ e.stopPropagation();
 
 });
 
+//conenction request invite 
 
+$(document).ready(function() {
+	
+  $('input[type=radio]').change(function() {
+    if ($('#connection-invite-other-radio').is(':checked')) {
+      $('#connection-invite-other').show();
+    } else {
+      $('#connection-invite-other').hide();
+    }
+  });
+});

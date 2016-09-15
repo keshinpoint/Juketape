@@ -1,0 +1,42 @@
+<%= render partial: 'static/header_logged_in' %>
+
+<div class = "container">
+
+	<div class = "row">
+		<div class = "col-md-12">
+
+			<h3> Send Connection Request </h3>
+			<div class = "connection-invite">
+				<p> How do you know <strong> Artist_Name </strong> ? </p>
+				<div class="panel panel-default">           
+
+
+					<div class="panel-body connection-invite-panel"> <!-- panel-body is a bootstrap class of a box -->
+
+						<div class="radio">
+							<label><input type="radio" name="optradio">Friend</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="optradio"> Worked together </label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="optradio"> Studied together</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="optradio" id="connection-invite-other-radio"> Other </label>
+						</div>
+
+						<div class="form-group" id="connection-invite-other">
+
+							<input type="text" class="form-control" >
+						</div>
+
+						<button type="button" class="btn btn-success">Submit </button>
+						<button type="button" class="btn btn-danger"> Cancel </button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

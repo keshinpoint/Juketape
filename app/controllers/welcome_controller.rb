@@ -26,5 +26,7 @@ class WelcomeController < ApplicationController
   def dashfolio
   end
   
+   def invite
+  end
 
 end

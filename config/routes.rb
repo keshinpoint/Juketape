@@ -56,6 +56,7 @@ Rails.application.routes.draw do
         get :onboarding_three
         get :onboarding_four
         get :dashfolio
+        get :invite
       end
     end
   end
