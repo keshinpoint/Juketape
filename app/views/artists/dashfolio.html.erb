@@ -1,3 +1,18 @@
 <%= render partial: 'top_container', locals: { artist: @artist } %>
 <%= render partial: 'mid_nav_container', locals: { artist: @artist } %>
 <%= render partial: 'main_container', locals: { artist: @artist } %>
+
+<div class="modal fade" id="filterContentModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Filter Content</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

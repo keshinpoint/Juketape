@@ -1,0 +1,6 @@
+var data = '<%= escape_javascript(render partial: get_content_partial, locals: { artist: current_user }) %>';
+var $updatedHtml = $(data).find('.media-content').html();
+$('.' + '<%= params[:container] %>' + ' .media-content').html($updatedHtml);
+$('.' + '<%= params[:container] %>').show();
+$('.' + '<%= params[:container] %>' + ' .tabcontent').fadeIn();
+$('#filterContentModal .close').click();

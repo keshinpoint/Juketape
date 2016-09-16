@@ -104,6 +104,24 @@ $(document).on('turbolinks:load', function() {
     var attribute_tabcontent_about = $(this).attr('href');
     $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
   });
+
+  $('#filterContentModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var location = button.data('url');
+    var content_type = button.data('content');
+    var container = button.data('container');
+    var $modal = $(this);
+    $modal.find('.modal-title').text('Filter Content');
+    $modal.find('.modal-body').html('<a href="#" class="btn btn-info disabled" role="button">Loading...</a>');
+    $modal.find('.modal-footer').html('<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>');
+    $.ajax({
+      method: 'GET',
+      url: location,
+      data: { content_type: content_type, container: container }
+    }).done(function(resp) {
+      $modal.find('.modal-content').html(resp);
+    });
+  })
 });
 
 // Below is the javascript for static pages

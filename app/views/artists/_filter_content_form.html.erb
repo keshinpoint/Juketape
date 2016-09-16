@@ -1,0 +1,37 @@
+<div class='modal-header'>
+  <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+  <h4 class='modal-title'>Select <%= content_type.humanize %></h4>
+</div>
+<%= form_tag filter_content_artists_path, method: :put, id: 'filter_content_form', data: {result_container: 'dashfolio-pictures'}, remote: true do %>
+  <%= hidden_field_tag :content_type, content_type %>
+  <%= hidden_field_tag :container, container %>
+  <div class='modal-body'>
+    <ul>
+      <% if content_type == 'instagram_images' %>
+        <% content.each do |image| %>
+          <li class='dashfolio-content-li'>
+            <%= image_tag(image['url'], class: 'img-thumbnail', size: '150x150') %><br/>
+            <span>
+              <input id="checkbox<%= image['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= image['id'] %>'>
+              <label for="checkbox<%= image['id'] %>">&nbsp;&nbsp;Select</label>
+            </span>
+          </li>
+        <% end %>
+      <% else %>
+        <% content.each do |file| %>
+          <li class='dashfolio-content-li'>
+            <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= file['url'] %>"></iframe><br/>
+            <span>
+              <input id="checkbox<%= file['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= file['id'] %>'>
+              <label for="checkbox<%= file['id'] %>">&nbsp;&nbsp;Select</label>
+            </span>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class='modal-footer'>
+    <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+    <button type='submit' class='btn btn-primary save_content'>Save to Dashfolio</button>
+  </div>
+<% end %>

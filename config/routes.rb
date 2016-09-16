@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   resources :registrations, only: [:create]
   resources :artists, only: [] do
     get :dashfolio, on: :collection
+    get :fetch_content, on: :collection
+    put :filter_content, on: :collection
+
   end
   resources :timeline_events, only: [:create, :update]
 

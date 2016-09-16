@@ -1,8 +1,10 @@
 <div class='dashfolio-pictures main-content'> 
-  <div class='pictures-content'>
+  <div class='pictures-content media-content'>
     <div class='tabcontent' id='pictures-dashfolio' >
       <div class='dashfolio-add-media'>
-        <a class='btn btn-block btn-social btn-instagram'>
+        <a class='btn btn-block btn-social btn-instagram' data-toggle='modal'
+          data-target='#filterContentModal' data-url='<%= fetch_content_artists_path %>'
+          data-content='instagram_images', data-container='dashfolio-pictures'>
           <span class='fa fa-instagram'> </span>
           Add photos
         </a>
@@ -12,13 +14,13 @@
           <li class='pictures-list-items dashfolio-content-li'>
             <div class='picture-body'>
               <p class='picture-account-name'>
-                <strong><%= image[:user_full_name] %></strong>
+                <strong><%= image['user_full_name'] %></strong>
               </p>
               <div class='picture-image'>
-                <a href='<%= image[:link] %>' class='picture-link' target='_blank'> 
-                  <%= image_tag(image[:url], class: 'instagram-picture picture-image') %>
+                <a href='<%= image['link'] %>' class='picture-link' target='_blank'> 
+                  <%= image_tag(image['url'], class: 'instagram-picture picture-image') %>
                 </a>
-                <a href='https://www.instagram.com/<%= image[:username] %>' target='_blank'>
+                <a href='https://www.instagram.com/<%= image['username'] %>' target='_blank'>
                   <%= image_tag('instagram_logo.png', class: 'picture-logo pull-right') %>
                 </a>
               </div>

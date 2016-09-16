@@ -10,33 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160912175346) do
+ActiveRecord::Schema.define(version: 20160914194659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "facebook_networks", force: :cascade do |t|
-    t.string   "token",      default: ""
-    t.string   "secret",     default: ""
-    t.string   "page_token", default: ""
-    t.integer  "user_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "token",           default: ""
+    t.string   "secret",          default: ""
+    t.string   "page_token",      default: ""
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "selected_videos", default: [],              array: true
+    t.json     "all_videos",      default: [],              array: true
   end
 
   create_table "instagram_networks", force: :cascade do |t|
-    t.string   "access_token", default: ""
-    t.integer  "user_id",                   null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "access_token",    default: ""
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "selected_images", default: [],              array: true
+    t.json     "all_images",      default: [],              array: true
   end
 
   create_table "soundcloud_networks", force: :cascade do |t|
-    t.string   "access_token",               null: false
-    t.string   "refresh_token", default: ""
-    t.integer  "user_id",                    null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "access_token",                 null: false
+    t.string   "refresh_token",   default: ""
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "selected_tracks", default: [],              array: true
+    t.string   "selected_albums", default: [],              array: true
+    t.json     "all_tracks",      default: [],              array: true
+    t.json     "all_albums",      default: [],              array: true
   end
 
   create_table "timeline_events", force: :cascade do |t|
@@ -70,12 +78,14 @@ ActiveRecord::Schema.define(version: 20160912175346) do
   end
 
   create_table "youtube_networks", force: :cascade do |t|
-    t.string   "access_token",  default: ""
-    t.string   "refresh_token", default: ""
-    t.string   "expires_in",    default: ""
-    t.integer  "user_id",                    null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "access_token",    default: ""
+    t.string   "refresh_token",   default: ""
+    t.string   "expires_in",      default: ""
+    t.integer  "user_id",                      null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "selected_videos", default: [],              array: true
+    t.json     "all_videos",      default: [],              array: true
   end
 
 end

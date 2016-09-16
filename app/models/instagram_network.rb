@@ -2,6 +2,7 @@ require 'instagram'
 class InstagramNetwork < ApplicationRecord
   belongs_to :user
   validates :access_token, presence: true
+  after_create :fetch_and_update_all_images
 
   def load_instagram
     @client ||= Instagram.new(access_token: access_token)
@@ -12,8 +13,18 @@ class InstagramNetwork < ApplicationRecord
   end
 
   def images
+    all_images.select {|image| selected_images.include?(image['id'])}
+  end
+
+  private
+  def fetch_and_update_all_images
+    self.update_attributes(all_images: get_images)
+  end
+
+  def get_images
     load_instagram.recent_images.map do |image|
       {
+        id: image['id'],
         link: image['link'],
         url: image['images']['standard_resolution']['url'],
         user_full_name: image['user']['full_name'],
