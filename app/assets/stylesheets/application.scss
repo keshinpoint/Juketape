@@ -263,8 +263,8 @@ margin-bottom: 9px;
 .bar {  
 
   width: 30px;
-  height: 275px;
-  max-height: 300px;
+  height: 340px;
+  max-height: 350px;
   display: inline-block;
   margin-left: -5px;
   padding: 0;
@@ -275,17 +275,33 @@ margin-bottom: 9px;
    text-align: right; /* pushes the vertical bars on the right, to the right of the div */
   }
 
-.bar-red {
-  background-color: red;  
+.bar-first {
+  background-color: #C22326;  
 }
 
-.bar-yellow {
-  background-color: yellow;  
+.bar-second {
+  background-color: #F37338;  
 }
 
-.bar-green {
-  background-color: green;  
+.bar-third {
+  background-color: #FDB632;  
 }
+
+
+.bar-fourth {
+  background-color: #FDB632;    
+}
+
+.bar-fifth {
+
+    background-color: #027878; 
+}
+
+
+.bar-sixth {
+  background-color: #801638;
+}
+
 
 .dashfolio-profile-pic-connect-container{ /* houses the profile pic with message connect icon */
   text-align: center;
@@ -504,7 +520,13 @@ font-size: 15px;
 display: none;
 margin-left: 80px;
 margin-top: 10px;
-font-size: 15px;
+width:200px;
+
+padding:10px;
+border:10px solid yellowgreen; 
+text-align:center;
+
+  font-size: 0px;
 }
 
 
@@ -552,11 +574,16 @@ padding-right: 10px;
 
 
 .tablink {
-  margin-right: 20px;
+
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
 .tablink:active {
   color: red;
+  background-color: red;
 }
 
 .tabcontent {
