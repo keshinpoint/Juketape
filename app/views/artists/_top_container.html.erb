@@ -16,18 +16,23 @@
       </div>
       <div class='col-md-4 dashfolio-profile-name-container'>
         <h2><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></h2>
+
         <p class='dashfolio-tagline'><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></p>
+
         <div class='tag-container' id='tag-container'>
           <span class='dashfolio-tag'>Tag1</span>
           <span class='dashfolio-tag'>Tag2</span>
           <span class='dashfolio-tag'>Tag3</span>
         </div>
+
+
         <div class='add-tag-dashfolio'>
           <button type='button' class='btn btn-primary' id='add-tag-form-button'>
             <i class='fa fa-plus-square' aria-hidden='true'></i>
             Tag
           </button>
-          <div class='input-group add-tag-input-group'>
+
+          <div class='input-group', id = 'add-tag-input-group'>
             <input type='text' class='form-control' value='' placeholder='Add a tag' id='add-tag-input'>
             <span class='input-group-btn'>
               <button class='btn btn-danger' id='cancel-tag-form-button' type='button'>
@@ -36,13 +41,15 @@
             </span>
           </div>
         </div>
+
+
         <div class='location-container'>
-          <p>
+          
             <i class='fa fa-map-marker' aria-hidden='true'></i>
             <span class='dashfolio-location'>
               <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location' %>
             </span>
-          </p>
+          
         </div>
         <span class='connection-number-dashfolio'> <strong> 500 connections</strong> </span>
         <div class='connection-container'>

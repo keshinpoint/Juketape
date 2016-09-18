@@ -35,9 +35,13 @@ $(function(){
     },
     keyup : function(ev) {
       // if: comma|enter (delimit more keyCodes with | pipe)
-      if(/(188|13)/.test(ev.which)) $(this).focusout(); 
+      if(/(188|13)/.test(ev.which)) {
+
+        $(this).focusout(); 
+        }
     }
   });
+
   $('.tag-container').on('click', 'span', function() {
     if(confirm("Remove "+ $(this).text() +"?")) $(this).remove(); 
   });
@@ -46,12 +50,12 @@ $(function(){
 
 //clicking'add tag button 
 $('#add-tag-form-button').on('click', function(){
-	$('.add-tag-input-group').show();
+	$('#add-tag-input-group').show();
 	$(this).hide();
 });
 
 $('#cancel-tag-form-button').on('click', function(){
-	$('.add-tag-input-group').hide();
+	$('#add-tag-input-group').hide();
 	$('#add-tag-form-button').show();
 
 });
