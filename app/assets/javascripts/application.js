@@ -99,11 +99,7 @@ $(document).on('turbolinks:load', function() {
     $('.timeline-event-cancel').hide();
   });
 
-  $('.about-header-container a').on('click', function(e){
-    e.preventDefault();
-    var attribute_tabcontent_about = $(this).attr('href');
-    $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
-  });
+
 
   $('#filterContentModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget);
@@ -128,6 +124,7 @@ $(document).on('turbolinks:load', function() {
 $(document).ready(function() {
 	$('.dashfolio-midbar-about a').on('click', function(e){
 		var currentAttrValue1 = $(this).attr('href');
+ 
 
 		$('.dashfolio-about').show()
 		$('.main-content ' + currentAttrValue1).fadeIn(400);		
@@ -183,14 +180,31 @@ $(document).ready(function() {
 $(document).ready(function(){
 $('.music-header-container a').on('click', function(e){
 var attribute_tabcontent_music = $(this).attr('href');
+$(this).addClass("music-header-container-active");
+ $(this).siblings().removeClass("music-header-container-active");
+
 
 $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
 $('.dashfolio-about').hide();
 $('.dashfolio-video').hide();
+$('.dashfolio-pictures').hide();
 e.preventDefault(); 
 e.stopPropagation();		 
 
 });
+
+  $('.about-header-container a').on('click', function(e){
+
+    var attribute_tabcontent_about = $(this).attr('href');
+    $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
+
+    $(this).addClass("about-header-container-active");
+    $(this).siblings().removeClass("about-header-container-active");
+    $('.dashfolio-music').hide();
+    $('.dashfolio-video').hide();
+    $('.dashfolio-pictures').hide();
+        e.preventDefault();
+  });
 
 });
 
@@ -201,7 +215,8 @@ $(document).ready(function() {
   $('input[type=radio]').change(function() {
     if ($('#connection-invite-other-radio').is(':checked')) {
       $('#connection-invite-other').show();
-    } else {
+    } 
+    else {
       $('#connection-invite-other').hide();
     }
   });
