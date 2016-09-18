@@ -403,6 +403,8 @@ height: 0;
   color:#fff;
   background:#789;
   padding-right: 20px; /* adds space inside the tags for the 'x' button */
+  /* the below two help in adding space between new tags */ 
+  /*http://stackoverflow.com/questions/39482063/creating-a-tag-box */
   margin-right: 4px;
   float: left;
  
@@ -443,9 +445,10 @@ display: none;
 }
 
 
-.location-container {
-  margin-top: 5px;
+.location-container { /* has the no. of connections and preview of connections in dashfolio top container*/
+  margin-top: 20px;
   font-size: 15px;
+  padding-bottom: 15px;
 
 }
 
