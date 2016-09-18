@@ -2,5 +2,5 @@ var data = '<%= escape_javascript(render partial: get_content_partial, locals: {
 var $updatedHtml = $(data).find('.media-content').html();
 $('.' + '<%= params[:container] %>' + ' .media-content').html($updatedHtml);
 $('.' + '<%= params[:container] %>').show();
-$('.' + '<%= params[:container] %>' + ' .tabcontent').fadeIn();
+$('.' + '<%= params[:container] %>' + ' #' + '<%= get_tab_content_id %>').fadeIn();
 $('#filterContentModal .close').click();

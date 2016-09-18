@@ -15,4 +15,19 @@ module ApplicationHelper
     end
   end
 
+  def get_tab_content_id
+    case params[:content_type]
+    when 'instagram_images'
+      'pictures-dashfolio'
+    when 'soundcloud_tracks'
+      'tracks-dashfolio'
+    when 'soundcloud_albums'
+      'album-dashfolio'
+    when 'facebook_videos'
+      'videos-dashfolio'
+    when 'youtube_videos'
+      'videos-dashfolio'
+    end
+  end
+
 end
