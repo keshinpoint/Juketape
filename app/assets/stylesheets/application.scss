@@ -787,3 +787,53 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 }
 
 /* end of connection invite page */
+
+/* end of dashfolio styles */
+
+/* start of inbox styles*/
+
+
+
+.inbox-preview
+{
+    background-color: red;
+    width:400px;
+    height:100%;
+    float:left;
+    position: absolute;
+    z-index:1;
+    overflow-y: scroll; /* makes it scrollable */
+    /*http://stackoverflow.com/questions/13337646/scroll-inside-of-a-fixed-sidebar */ 
+}
+
+.inbox-preview-items {
+  list-style: none;
+}
+
+.inbox-preview-profile-pic-container {
+  display: inline-block;
+
+}
+
+.inbox-preview-name-container{
+  display: inline-block;
+
+}
+
+.inbox-preview-profile-pic{
+
+  object-fit: contain;
+  width: 75px;
+  height: 75px;
+  border-radius: 8px;
+
+}
+
+.message-full-preview{
+  position: relative;
+  width: 100%;
+  margin-left: 400px;
+   display: inline-block;
+
+}
+
