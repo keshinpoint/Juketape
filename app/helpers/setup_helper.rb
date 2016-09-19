@@ -6,7 +6,7 @@ module SetupHelper
 
   def connect_soundcloud_text
     if current_user.soundcloud_network.present?
-      "<span class='fa fa-soundcloud'></span>Connected SoundCloud".html_safe
+      "<span class='fa fa-soundcloud'></span>Connected SoundCloud as #{current_user.soundcloud_network.display_name}".html_safe
     else
       "<span class='fa fa-soundcloud'></span>Connect SoundCloud".html_safe
     end
@@ -66,7 +66,7 @@ module SetupHelper
 
   def connect_instagram_text
     if current_user.instagram_network.present?
-      "<span class='fa fa-instagram'></span>Connected Instagram".html_safe
+      "<span class='fa fa-instagram'></span>Connected Instagram as #{current_user.instagram_network.display_name}".html_safe
     else
       "<span class='fa fa-instagram'></span>Connect Instagram".html_safe
     end

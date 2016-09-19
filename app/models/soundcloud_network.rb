@@ -3,7 +3,7 @@ require 'soundcloud'
 class SoundcloudNetwork < ApplicationRecord
   belongs_to :user
   validates :access_token, presence: true
-  after_create :fetch_and_update_all_tracks_and_albums
+  after_create :fetch_and_update_all_tracks_and_albums, :update_display_name
 
   def load_soundcloud
     sc_client = SoundCloud.new(access_token: access_token)
@@ -17,7 +17,15 @@ class SoundcloudNetwork < ApplicationRecord
     all_albums.select {|album| selected_albums.include?(album['id'].to_s)}
   end
 
+  def user_info
+    load_soundcloud.get('/me')
+  end
+
   private
+  def update_display_name
+    self.update_attributes(display_name: user_info['username'])
+  end
+
   def fetch_and_update_all_tracks_and_albums
     self.all_tracks = get_me('tracks')
     self.all_albums = get_me('playlists')

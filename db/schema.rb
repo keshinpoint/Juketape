@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918162526) do
+ActiveRecord::Schema.define(version: 20160919213527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160918162526) do
     t.datetime "updated_at",                   null: false
     t.string   "selected_videos", default: [],              array: true
     t.json     "all_videos",      default: [],              array: true
+    t.string   "display_name"
   end
 
   create_table "instagram_networks", force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160918162526) do
     t.datetime "updated_at",                   null: false
     t.string   "selected_images", default: [],              array: true
     t.json     "all_images",      default: [],              array: true
+    t.string   "display_name"
   end
 
   create_table "soundcloud_networks", force: :cascade do |t|
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160918162526) do
     t.string   "selected_albums", default: [],              array: true
     t.json     "all_tracks",      default: [],              array: true
     t.json     "all_albums",      default: [],              array: true
+    t.string   "display_name"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -93,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160918162526) do
     t.datetime "updated_at",                   null: false
     t.string   "selected_videos", default: [],              array: true
     t.json     "all_videos",      default: [],              array: true
+    t.string   "display_name"
   end
 
 end
