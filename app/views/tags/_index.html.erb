@@ -8,6 +8,6 @@
     </span>
   <% end %>
 </div>
-<% if current_user.tags.count < 3 %>
+<% if current_user.tags.count < 5 %>
   <%= render partial: 'tags/form' %>
 <% end %>

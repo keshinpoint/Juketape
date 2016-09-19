@@ -70,7 +70,7 @@ $(document).on('turbolinks:load', function() {
       $('#add-tag-input').val('');
       $('#tag-container .tags-list').append(jqXHR.content);
       console.log(jqXHR.content);
-      if(jqXHR.tags_count >= 3) {
+      if(jqXHR.tags_count >= 5) {
         $('#add-tag-input-group').hide();
       }
     }).on('ajax:error', function(jqXHR, error) {

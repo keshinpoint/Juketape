@@ -43,7 +43,11 @@ class SetupController < ApplicationController
     else
       flash[:notice] = 'Failed to add SoundCloud as user denied the permission'
     end
-    redirect_to social_media_setup_index_path
+    if current_user.finalized_setup?
+      redirect_to dashfolio_artists_path()
+    else
+      redirect_to social_media_setup_index_path
+    end
   end
 
   def authorize_youtube
@@ -64,7 +68,11 @@ class SetupController < ApplicationController
     flash[:notice] = network.valid? ?
       'Successfully added Youtube' :
       'Failed to add Youtube'
-    redirect_to social_media_setup_index_path
+    if current_user.finalized_setup?
+      redirect_to dashfolio_artists_path()
+    else
+      redirect_to social_media_setup_index_path
+    end
   end
 
   def authorize_facebook
@@ -77,7 +85,11 @@ class SetupController < ApplicationController
     else
       flash[:notice] = 'Failed to add Facebook as user denied the permission'
     end
-    redirect_to social_media_setup_index_path
+    if current_user.finalized_setup?
+      redirect_to dashfolio_artists_path()
+    else
+      redirect_to social_media_setup_index_path
+    end
   end
 
   def authorize_instagram
@@ -90,7 +102,11 @@ class SetupController < ApplicationController
     else
       flash[:notice] = "Failed to add Instagram as #{params[:error_description]}"
     end
-    redirect_to social_media_setup_index_path
+    if current_user.finalized_setup?
+      redirect_to dashfolio_artists_path()
+    else
+      redirect_to social_media_setup_index_path
+    end
   end
 
   private
