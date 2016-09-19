@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     get :dashfolio, on: :collection
     get :fetch_content, on: :collection
     put :filter_content, on: :collection
+    resources :tags, only: [:create, :destroy]
   end
   resources :timeline_events, only: [:create, :update]
 

@@ -3,7 +3,7 @@ module ApplicationHelper
   def get_content_partial
     case params[:content_type]
     when 'instagram_images'
-      'image_container'
+      'images_container'
     when 'soundcloud_tracks'
       'music_container'
     when 'soundcloud_albums'

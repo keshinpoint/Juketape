@@ -1,0 +1,6 @@
+<span class='dashfolio-tag tag_item_<%= tag.id %>'>
+  <%= tag.name %>
+  <span class='close'>
+    <%= link_to 'x', artist_tag_path(current_user, tag), method: :delete, remote: true %>
+  </span>
+</span>

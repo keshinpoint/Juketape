@@ -19,58 +19,6 @@
 //= require best_in_place.jquery-ui
 //= require_tree .
 
-//adds tags
-$(document).ready(function(){
-
-	//this is for the tag forms
-	// http://stackoverflow.com/questions/39482063/creating-a-tag-box/39482253#39482253
-$(function(){ 
-
-  $("#add-tag-input").on({
-    focusout : function() {
-      var txt = this.value.replace(/[^a-z0-9\+\-\.\#]/ig,''); // allowed characters
-      if(txt) $("<span/>", {text:txt.toLowerCase(), appendTo:"#tag-container", class:"dashfolio-tag"});
-
-      this.value = "";
-    },
-    keyup : function(ev) {
-      // if: comma|enter (delimit more keyCodes with | pipe)
-      if(/(188|13)/.test(ev.which)) $(this).focusout(); 
-    }
-  });
-  $('.tag-container').on('click', 'span', function() {
-    if(confirm("Remove "+ $(this).text() +"?")) $(this).remove(); 
-  });
-
-});
-
-//clicking'add tag button 
-$('#add-tag-form-button').on('click', function(){
-	$('.add-tag-input-group').show();
-	$(this).hide();
-});
-
-$('#cancel-tag-form-button').on('click', function(){
-	$('.add-tag-input-group').hide();
-	$('#add-tag-form-button').show();
-
-});
-
-/*
-var no_of_tags = $('.dashfolio-tag').length;
-
-if ( no_of_tags > 5) {
-
-	$('.add-tag-dashfolio').hide();
-	$('.add-tag-input-group').hide();
-};
-
-*/
-
-
-
-});
-
 
 $(document).on('turbolinks:load', function() {
   $(function() {
@@ -121,11 +69,35 @@ $(document).on('turbolinks:load', function() {
     }).done(function(resp) {
       $modal.find('.modal-content').html(resp);
     });
-  })
+  });
+
+
+  $('form#add_tag_form')
+    .on('ajax:success', function(data, jqXHR) {
+      $('#add-tag-input').val('');
+      $('#tag-container .tags-list').append(jqXHR.content);
+      console.log(jqXHR.content);
+      if(jqXHR.tags_count >= 3) {
+        $('.add-tag-input-group').hide();
+      }
+    }).on('ajax:error', function(jqXHR, error) {
+      console.log('Its Error')
+    });
 });
 
 // Below is the javascript for static pages
 $(document).ready(function() {
+  $('#add-tag-form-button').on('click', function(){
+    $('.add-tag-input-group').show();
+    $(this).hide();
+  });
+
+  $('#cancel-tag-form-button').on('click', function(){
+    $('.add-tag-input-group').hide();
+    $('#add-tag-form-button').show();
+  });
+
+
 	$('.dashfolio-midbar-about a').on('click', function(e){
 		var currentAttrValue1 = $(this).attr('href');
 

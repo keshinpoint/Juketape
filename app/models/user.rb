@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one :facebook_network
   has_one :instagram_network
   has_many :timeline_events
+  has_many :tags
 
   def email_optional?
     true

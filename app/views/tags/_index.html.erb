@@ -1,0 +1,13 @@
+<div class='tags-list'>
+  <% current_user.tags.each do |tag| %>
+    <span class='dashfolio-tag tag_item_<%= tag.id %>'>
+      <%= tag.name %>
+      <span class='close'>
+        <%= link_to 'x', artist_tag_path(current_user, tag),  data: { confirm: "Are you sure to delete ?", method: :delete, remote: true } %>
+      </span>
+    </span>
+  <% end %>
+</div>
+<% if current_user.tags.count < 3 %>
+  <%= render partial: 'tags/form' %>
+<% end %>

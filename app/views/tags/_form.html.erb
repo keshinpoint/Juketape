@@ -1,0 +1,17 @@
+<div class='add-tag-dashfolio'>
+  <button type='button' class='btn btn-primary' id='add-tag-form-button'>
+    <i class='fa fa-plus-square' aria-hidden='true'></i>
+    Tag
+  </button>
+  <div class='input-group add-tag-input-group'>
+    <%= form_for :tag, url: artist_tags_path(current_user), html: { method: :post, id: 'add_tag_form' }, remote: true do |f| %>
+      <%= text_field_tag :name, nil, placeholder: 'Add a tag', class: 'form-control', id: 'add-tag-input',
+            required: 'true' %>
+      <span class='input-group-btn'>
+        <button class='btn btn-danger' id='cancel-tag-form-button' type='button'>
+          <i class='fa fa-close' aria-hidden='true'></i>
+        </button>
+      </span>
+    <% end %>
+  </div>
+</div>
