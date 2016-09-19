@@ -796,7 +796,7 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 
 .inbox-preview
 {
-    background-color: red;
+  
     width:400px;
     height:100%;
     float:left;
@@ -808,6 +808,7 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 
 .inbox-preview-items {
   list-style: none;
+  margin-top: 15px;
 }
 
 .inbox-preview-profile-pic-container {
@@ -817,7 +818,23 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 
 .inbox-preview-name-container{
   display: inline-block;
+  margin-top: 3px;
+  position: relative;
+  top: 25px;
+  left: 5px;
 
+}
+
+.inbox-preview-date{
+font-size: 10px;
+margin-top: 10px;
+opacity: 0.5;  
+}
+
+.inbox-peview-divider {
+  position: relative;
+  right: 20px;
+  width: 350px;
 }
 
 .inbox-preview-profile-pic{
@@ -832,8 +849,65 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 .message-full-preview{
   position: relative;
   width: 100%;
-  margin-left: 400px;
-   display: inline-block;
+  margin-left: 300px;
+}
+
+.inbox-sender-info-container{
+-webkit-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
+-moz-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
+box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
+width: 70%;
+border-radius: 10px;
+cursor: pointer;
+margin-bottom: 20px;
+border:2px solid #FDB632;
+padding: 10px; 
 
 }
 
+.inbox-title {
+  font-family: 'neutra-demi';
+  margin-bottom: 30px;
+}
+
+.inbox-main-profile-pic-container{
+  display: inline-block;
+}
+
+.inbox-main-profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  object-fit: contain;
+  display: inline-block;
+  position: relative;
+  bottom: 15px;
+
+}
+
+.inbox-main-name-tagline-container {
+  display: inline-block;
+} 
+
+.inbox-main-message-subject {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.inbox-main-message-container {
+  width: 75%;
+  border:2px solid #027878;
+  padding: 18px;
+  border-radius: 10px;
+  max-height: 400px;
+
+}
+
+.inbox-main-message-body {
+   overflow-y: scroll;
+   max-height: 300px;  
+}
+
+.inbox-main-action-buttons {
+  margin-top: 45px;
+}

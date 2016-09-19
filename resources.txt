@@ -1,1 +1,5 @@
 http://alessandraragionieri.com/fonts/
+
+Creating a rails message system: https://medium.com/@danamulder/tutorial-create-a-simple-messaging-system-on-rails-d9b94b0fbca1#.oc6z6dza7 
+
+Fixing a div on scroll: http://stackoverflow.com/questions/1216114/how-can-i-make-a-div-stick-to-the-top-of-the-screen-once-its-been-scrolled-to
