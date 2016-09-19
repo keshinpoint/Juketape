@@ -29,4 +29,7 @@ class WelcomeController < ApplicationController
    def invite
   end
 
+  def inbox
+  end
+
 end

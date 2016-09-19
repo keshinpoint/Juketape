@@ -1,10 +1,10 @@
 $('#tag-container').html('<%= escape_javascript(render partial: "tags/index") %>');
 $('#add-tag-form-button').on('click', function(){
-  $('.add-tag-input-group').show();
+  $('#add-tag-input-group').show();
   $(this).hide();
 });
 
 $('#cancel-tag-form-button').on('click', function(){
-  $('.add-tag-input-group').hide();
+  $('#add-tag-input-group').hide();
   $('#add-tag-form-button').show();
 });

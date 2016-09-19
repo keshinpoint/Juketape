@@ -3,7 +3,7 @@
     <i class='fa fa-plus-square' aria-hidden='true'></i>
     Tag
   </button>
-  <div class='input-group add-tag-input-group'>
+  <div class='input-group' id='add-tag-input-group'>
     <%= form_for :tag, url: artist_tags_path(current_user), html: { method: :post, id: 'add_tag_form' }, remote: true do |f| %>
       <%= text_field_tag :name, nil, placeholder: 'Add a tag', class: 'form-control', id: 'add-tag-input',
             required: 'true' %>
