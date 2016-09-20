@@ -15,6 +15,10 @@ class User < ApplicationRecord
     true
   end
 
+  def ordered_timeline_events
+    timeline_events.order('end_date DESC NULLS FIRST')
+  end
+
   def self.authenticate(username, password)
     return nil  unless user = find_by_username(username)
     return user if     user.authenticated?(password)
