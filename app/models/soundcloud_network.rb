@@ -28,7 +28,7 @@ class SoundcloudNetwork < ApplicationRecord
 
   def fetch_and_update_all_tracks_and_albums
     self.all_tracks = get_me('tracks')
-    self.all_albums = get_me('playlists')
+    self.all_albums = get_albums
     self.save
   end
 
@@ -39,12 +39,17 @@ class SoundcloudNetwork < ApplicationRecord
         {
           id: track.id,
           title: track.title,
-          url: iframe_url(track.uri, type)
+          url: iframe_url(track.uri, type),
+          playlist_type: track.playlist_type
         }
       end
     rescue
       return []
     end
+  end
+
+  def get_albums
+    get_me('playlists').select {|album| album[:playlist_type] == 'album'}
   end
 
   def iframe_url(url, type)
