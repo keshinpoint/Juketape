@@ -1,16 +1,11 @@
 class TimelineEventsController < ApplicationController
 
   def create
-    event = current_user.timeline_events.new(event_params)
-    if event.save
-      flash.now[:notice] = 'Event added successfully'
-      redirect_to dashfolio_artists_path
-    else
-      if request.xhr?
-        render status: 422,
-          partial: 'shared/error_response',
-          locals: { message: event.errors.full_messages.join('<br/>') } and return
-      end
+    @event = current_user.timeline_events.create(event_params)
+    unless @event.valid?
+      render status: 422,
+        partial: 'shared/error_response',
+        locals: { message: @event.errors.full_messages.join('<br/>') } and return
     end
   end
 

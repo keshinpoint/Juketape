@@ -1,0 +1,10 @@
+<button type="button" class="btn btn-primary timeline-event-add"> Add Timeline Event </button>
+<button type="button" class="btn btn-danger timeline-event-cancel"> Cancel </button>
+<%= render partial: 'timeline_events/form' %>
+<% artist.timeline_events.each do  |event| %>
+  <h3 class='timeline-title'><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></h3>
+  <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
+  <p class='timeline-description'><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></p>
+  <p class='timeline-location'><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></p>
+  <hr/>
+<% end %>
