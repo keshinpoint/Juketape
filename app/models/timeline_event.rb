@@ -1,6 +1,6 @@
 class TimelineEvent < ApplicationRecord
   validates :title, :description, :start_date, presence: true
-  # validates :end_date_validation
+  validate :end_date_validation
 
   def end_time
     at_present? ? 'present' : end_date
@@ -9,8 +9,11 @@ class TimelineEvent < ApplicationRecord
   private
 
   def end_date_validation
-    if end_date.blank? && !at_present?
+    return true if at_present?
+    if end_date.blank?
       errors.add(:base, 'Please select End date')
+    elsif end_date < start_date
+      errors.add(:base, 'End date should be greater than or equals to Start date')
     end
   end
 end
