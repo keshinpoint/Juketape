@@ -1,4 +1,4 @@
-$('#tag-container').html('<%= escape_javascript(render partial: "tags/index") %>');
+$('#tag-container').html('<%= escape_javascript(render partial: "tags/index", locals: {artist: @artist}) %>');
 $('#add-tag-form-button').on('click', function(){
   $('#add-tag-input-group').show();
   $(this).hide();

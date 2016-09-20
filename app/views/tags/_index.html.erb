@@ -1,13 +1,15 @@
 <div class='tags-list'>
-  <% current_user.tags.each do |tag| %>
+  <% artist.tags.each do |tag| %>
     <span class='dashfolio-tag tag_item_<%= tag.id %>'>
       <%= tag.name %>
-      <span class='close'>
-        <%= link_to 'x', artist_tag_path(current_user, tag),  data: { confirm: "Are you sure to delete the tag?", method: :delete, remote: true } %>
-      </span>
+      <% if artist == current_user %>
+        <span class='close'>
+          <%= link_to 'x', artist_tag_path(artist, tag),  data: { confirm: "Are you sure to delete the tag?", method: :delete, remote: true } %>
+        </span>
+      <% end %>  
     </span>
   <% end %>
 </div>
-<% if current_user.tags.count < 5 %>
-  <%= render partial: 'tags/form' %>
+<% if artist.tags.count < 5 && artist == current_user %>
+  <%= render partial: 'tags/form', locals: { artist: artist } %>
 <% end %>

@@ -5,7 +5,13 @@
   </div>
   <div class='about-content'>
     <div class='tabcontent' id='bio-dashfolio' style='display: block;'>
-      <p><%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add your Bio' %></p>
+      <p>
+        <% if artist == current_user %>
+          <%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add your Bio' %>
+        <% else %>
+          <%= artist.bio %>
+        <% end %>
+      </p>
     </div>
     <div class='tabcontent' id='timeline-dashfolio'>
       <%= render partial: 'timeline_events/index', locals: {artist: artist} %>

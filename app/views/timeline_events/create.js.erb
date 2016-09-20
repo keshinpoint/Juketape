@@ -1,4 +1,4 @@
-$('#timeline-dashfolio').html('<%= escape_javascript(render partial: "timeline_events/index", locals: {artist: current_user}) %>');
+$('#timeline-dashfolio').html('<%= escape_javascript(render partial: "timeline_events/index", locals: {artist: @artist}) %>');
 $('.timeline-event-add').on('click', function(){
   $('.timeline-form-panel').slideDown();
   $('.timeline-event-cancel').show();

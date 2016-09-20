@@ -8,29 +8,33 @@
         <div class='bar bar-third'> </div>
       </div>
       <div class='col-md-4 dashfolio-profile-pic-connect-container'>
-        <%= image_tag(current_user.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
+        <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
           <button class='message-dashfolio'> <i class='fa fa-envelope' aria-hidden='true'></i>  </button>
           <button class='connect-dashfolio'> <i class='fa fa-user-plus' aria-hidden='true'></i> Connect </button>
         </div>
       </div>
       <div class='col-md-4 dashfolio-profile-name-container'>
-        <h2><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></h2>
-
-        <p class='dashfolio-tagline'><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></p>
-
+        <% if artist == current_user %>
+          <h2><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></h2>
+          <p class='dashfolio-tagline'><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></p>
+        <% else %>
+          <h2><%= artist.act_name %></h2>
+          <p class='dashfolio-tagline'><%= artist.tag_line %></p>
+        <% end %>
         <div class='tag-container' id='tag-container'>
-          <%= render partial: 'tags/index' %>
+          <%= render partial: 'tags/index', locals: { artist: artist } %>
         </div>
 
-
         <div class='location-container'>
-          
-            <i class='fa fa-map-marker' aria-hidden='true'></i>
-            <span class='dashfolio-location'>
+          <i class='fa fa-map-marker' aria-hidden='true'></i>
+          <span class='dashfolio-location'>
+            <% if artist == current_user %>
               <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location' %>
-            </span>
-          
+            <% else %>
+              <%= artist.location %>
+            <% end %>
+          </span>
         </div>
         <span class='connection-number-dashfolio'> <strong> 500 connections</strong> </span>
         <div class='connection-container'>

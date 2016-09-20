@@ -1,7 +1,7 @@
 class TimelineEventsController < ApplicationController
 
   def create
-    @event = current_user.timeline_events.create(event_params)
+    @event = artist.timeline_events.create(event_params)
     unless @event.valid?
       render status: 422,
         partial: 'shared/error_response',
@@ -20,7 +20,11 @@ class TimelineEventsController < ApplicationController
   private
 
   def event
-    @event ||= current_user.timeline_events.find(params.require(:id))
+    @event ||= artist.timeline_events.find(params.require(:id))
+  end
+
+  def artist
+    @artist ||= current_user
   end
 
   def event_params

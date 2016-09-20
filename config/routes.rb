@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     put :filter_content, on: :collection
     resources :tags, only: [:create, :destroy]
   end
+  get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio
   resources :timeline_events, only: [:create, :update]
 
   resources :setup, only: [], path: :profile do
