@@ -65,7 +65,7 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
-  $('form#add_tag_form')
+  $('#add_tag_form')
     .on('ajax:success', function(data, jqXHR) {
       $('#add-tag-input').val('');
       $('#tag-container .tags-list').append(jqXHR.content);
