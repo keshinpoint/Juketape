@@ -19,6 +19,12 @@
 //= require best_in_place.jquery-ui
 //= require_tree .
 
+$(document).ready(function(){ //contains the notification counter and notifications on the header navbar
+
+ $('#nav-notif-counter').css({ opacity: 0 }).text('7').animate({ top: '-1px', opacity: 1 }, 500); // the CSS opacity to 0 initially transits to opacity 1 in the nest animate property
+});
+
+
 
 $(document).on('turbolinks:load', function() {
   $(function() {

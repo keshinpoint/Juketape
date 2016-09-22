@@ -87,6 +87,21 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     
 }
 
+.nav-counter{
+       display:block;
+        position:absolute;
+        background:#E1141E;
+        color:#FFF;
+        font-size:12px;
+        font-weight:normal;
+        padding:1px 3px;
+    
+        border-radius:2px;
+        -moz-border-radius:2px; 
+        -webkit-border-radius:2px;
+        z-index:1;
+}
+
 /* logged out header- login form */
 
 
@@ -951,7 +966,7 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 .notif-name-tag-container {
   display: inline-block;
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 
 
