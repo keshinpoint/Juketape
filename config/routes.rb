@@ -62,6 +62,7 @@ Rails.application.routes.draw do
         get :dashfolio
         get :invite
         get :inbox
+        get :notification
       end
     end
   end
