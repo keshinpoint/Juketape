@@ -31,6 +31,14 @@ Rails.application.routes.draw do
   end
   get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio
   resources :timeline_events, only: [:create, :update]
+  post '/invite' => 'invitations#invite', as: :invite_artist
+  resources :invitations, only: [:new, :create] do
+    member do
+      put :accept
+      put :reject
+    end
+  end
+  resources :notifications, only: [:index]
 
   resources :setup, only: [], path: :profile do
     collection do

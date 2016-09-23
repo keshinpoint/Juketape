@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919213527) do
+ActiveRecord::Schema.define(version: 20160923074525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20160919213527) do
     t.string   "selected_images", default: [],              array: true
     t.json     "all_images",      default: [],              array: true
     t.string   "display_name"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer  "initiator_id",             null: false
+    t.integer  "invitee_id",               null: false
+    t.boolean  "accepted"
+    t.string   "known_by"
+    t.date     "sent_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "status",       default: 0
   end
 
   create_table "soundcloud_networks", force: :cascade do |t|

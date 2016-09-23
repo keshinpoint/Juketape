@@ -11,7 +11,19 @@
         <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
           <button class='message-dashfolio'> <i class='fa fa-envelope' aria-hidden='true'></i>  </button>
-          <button class='connect-dashfolio'> <i class='fa fa-user-plus' aria-hidden='true'></i> Connect </button>
+          <% if can_connect_with?(current_user, artist) %>
+            <%= form_tag invite_artist_path(), method: :post, style: 'display: inline-block;' do %>
+              <%= hidden_field_tag :invitee, artist.username %>
+              <%= hidden_field_tag :invitee_act_name, artist.act_name %>
+              <button class='connect-dashfolio' type="submit">
+                <i class='fa fa-user-plus' aria-hidden='true'></i> connect
+              </button>
+            <% end %>
+          <% else %>
+            <button class='connect-dashfolio disabled' disabled="true" style='opacity: 0.3;' data-toggle='tooltip' data-placement='right' title='<%= unable_connect_tooltip(current_user, artist) %>'>
+              <i class='fa fa-user-plus' aria-hidden='true'></i> Connect
+            </button>
+          <% end %>
         </div>
       </div>
       <div class='col-md-4 dashfolio-profile-name-container'>
@@ -36,23 +48,17 @@
             <% end %>
           </span>
         </div>
-        <span class='connection-number-dashfolio'> <strong> 500 connections</strong> </span>
+        <span class='connection-number-dashfolio'><strong><%= pluralize(artist.connections.count, 'connection') %></strong> </span>
         <div class='connection-container'>
-          <div class='dashfolio-connection'>
-            <img class='connection-profile-pic' src='/assets/generic_avatar-fa56ca290420c79308d1d387f152f0c6bf0ea9bcdab81eed808ec7fdfcb4f3f9.png' alt='Generic avatar'>
-          </div>
-          <div class='dashfolio-connection'>
-            <img class='connection-profile-pic' src='/assets/generic_avatar-fa56ca290420c79308d1d387f152f0c6bf0ea9bcdab81eed808ec7fdfcb4f3f9.png' alt='Generic avatar'>
-          </div>
-          <div class='dashfolio-connection'>
-            <img class='connection-profile-pic' src='/assets/generic_avatar-fa56ca290420c79308d1d387f152f0c6bf0ea9bcdab81eed808ec7fdfcb4f3f9.png' alt='Generic avatar'>
-          </div>
-          <div class='dashfolio-connection'>
-            <img class='connection-profile-pic' src='/assets/generic_avatar-fa56ca290420c79308d1d387f152f0c6bf0ea9bcdab81eed808ec7fdfcb4f3f9.png' alt='Generic avatar'>
-          </div>
-          <!-- max number of connections should be 4 -->
+          <% artist.connections.sample(4).each do |friend| %>
+            <div class='dashfolio-connection'>
+              <%= link_to artist_dashfolio_path(friend.username) do %>
+                <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'connection-profile-pic', title: friend.act_name) %>
+              <% end %>
+            </div>
+          <% end %>
           <div>
-            <a class='all-connection-anchor' href='#'> See all connections </a>
+            <a class='all-connection-anchor' href='javascrip:void(0)'> See all connections </a>
           </div>
         </div>
       </div>

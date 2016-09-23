@@ -10,9 +10,35 @@ class User < ApplicationRecord
   has_one :instagram_network
   has_many :timeline_events
   has_many :tags
+  has_many :invitations, foreign_key: :initiator_id
+  has_many :accepted_invitations_as_initiator, -> { where(status: Invitation.statuses[:accepted]) },
+    class_name: 'Invitation', foreign_key: :initiator_id
+  has_many :pending_invitations, -> { where(status: Invitation.statuses[:pending]) },
+    class_name: 'Invitation', foreign_key: :invitee_id
+  has_many :accepted_invitations_as_invitee, -> { where(status: Invitation.statuses[:accepted]) },
+    class_name: 'Invitation', foreign_key: :invitee_id
+  has_many :invited_connections, through: :accepted_invitations_as_invitee, source: :initiator
+  has_many :initiated_connections, through: :accepted_invitations_as_initiator, source: :invitee
+    
 
   def email_optional?
     true
+  end
+
+  def connections
+    invited_connections + initiated_connections
+  end
+
+  def is_connected_to?(friend)
+    connections.include?(friend)
+  end
+
+  def already_invited?(friend)
+    invited_friends.include?(friend)
+  end
+
+  def invited_friends
+    invitations.map(&:invitee) + pending_invitations.map(&:initiator)
   end
 
   def ordered_timeline_events

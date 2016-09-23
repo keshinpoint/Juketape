@@ -1,0 +1,46 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h1 class='notif-title'> Notifications </h1>
+      <hr>
+      <h3 class='notif-connection-title'> Connection Requests </h3>
+      <% if @pending_invitations.count > 0 %>
+        <% @pending_invitations.each do |invitation| %>
+          <% initiator = invitation.initiator %>
+          <div class='notif-container'>         
+            <div class='notif-profile-pic-container'>
+              <%= image_tag(initiator.image.thumb.url || 'generic_avatar.png', class: 'notif-profile-pic') %>
+            </div>
+            <div class='notif-name-tag-container'>
+              <div class='notif-name'>
+                <h4><%= initiator.act_name %></h4>
+              </div>
+              <div class='notif-tagine'>
+                <p><%= initiator.tag_line %></p>
+              </div>
+              <div class='tag-container' id='tag-container'>
+                <% initiator.tags.each do |tag| %>
+                  <span class='dashfolio-tag'>
+                    <%= tag.name %>
+                  </span>
+                <% end %>
+              </div>
+            </div> <!--end of tags -->
+            <div class='inbox-main-action-buttons pull-right'>
+              <%= link_to reject_invitation_path(invitation), method: :put do %>
+                <button type='button' class='btn btn-danger'> <i class='fa fa-times' aria-hidden='true'></i>
+                </i> </button>
+              <% end %>
+              <%= link_to accept_invitation_path(invitation), method: :put do %>
+                <button type='button' class='btn btn-success'> <i class='fa fa-check' aria-hidden='true'></i>
+                Accept </button>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <h5>You don't have any pending connection requests</h5>
+      <% end %>
+    </div>
+  </div>
+</div>

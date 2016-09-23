@@ -1,0 +1,36 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h3> Send Connection Request </h3>
+      <div class='connection-invite'>
+        <p> How do you know <strong> <%= params[:invitee_act_name] %> </strong> ? </p>
+        <div class='panel panel-default'>           
+          <div class='panel-body connection-invite-panel'>
+            <%= form_for :invitation, url: invitations_path(), html: {method: :post} do |f| %>
+              <%= hidden_field_tag :invitee, params[:invitee] %>
+              <div class='radio'>
+                <label><%= f.radio_button :known_by, 'Friend', checked: true %>Friend</label>
+              </div>
+              <div class='radio'>
+                <label><%= f.radio_button :known_by, 'Worked together' %> Worked together </label>
+              </div>
+              <div class='radio'>
+                <label><%= f.radio_button :known_by, 'Studied together' %> Studied together</label>
+              </div>
+              <div class='radio'>
+                <label><%= f.radio_button :known_by, 'Other', id: 'connection-invite-other-radio' %> Other </label>
+              </div>
+              <div class='form-group' id='connection-invite-other'>
+                <%= f.text_field :known_by, class: 'form-control', disabled: true, required: true %>
+              </div>
+              <%= f.submit 'Submit', class: 'btn btn-success' %>
+              <button type='button' class='btn btn-danger'>
+                <%= link_to 'Cancel', artist_dashfolio_path(username: params[:invitee]), style: 'color: #fff;' %>
+              </button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

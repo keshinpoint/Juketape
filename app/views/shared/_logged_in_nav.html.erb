@@ -1,28 +1,26 @@
 <ul class='navbar navbar-right navbar-icons' style='list-style-type: none;'>
   <li>
-    <a href='#'>
+    <%= link_to root_path do %>
       <i class='fa fa-envelope fa-2x navbar-icon-fa' aria-hidden='true'></i>
         <!--<span class='label'>23</span> -->
       </i>
-     </a>
+    <% end %>
   </li>
-  <li class = "nav-notification-container">
-
-    <div id = "nav-notif-counter" class = "nav-counter">
-
-
-    </div>
-
-    <a href='#'>
+  <li class='nav-notification-container'>
+    <% if current_user.pending_invitations.count > 0 %>
+      <div id='nav-notif-counter' class='nav-counter'>
+        <%= current_user.pending_invitations.count %>
+      </div>
+    <% end %>
+    <%= link_to notifications_path do %>
       <i class='fa fa-exclamation fa-2x navbar-icon-fa' aria-hidden='true'></i>
-        <!--<span class='label'>23</span> -->
       </i>
-     </a>
+    <% end %>
   </li>
 
   <li class='dropdown'>
     <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-      <%= image_tag('generic_avatar.png', class: 'profile-image-header') %>
+      <%= image_tag(current_user.image.thumb.url || 'generic_avatar.png', class: 'profile-image-header') %>
     </a>
 
     <ul class='dropdown-menu'>

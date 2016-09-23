@@ -21,7 +21,7 @@
 
 $(document).ready(function(){ //contains the notification counter and notifications on the header navbar
 
- $('#nav-notif-counter').css({ opacity: 0 }).text('7').animate({ top: '-1px', opacity: 1 }, 500); // the CSS opacity to 0 initially transits to opacity 1 in the nest animate property
+ $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500); // the CSS opacity to 0 initially transits to opacity 1 in the nest animate property
 });
 
 
@@ -189,9 +189,11 @@ $(document).ready(function() {
   $('input[type=radio]').change(function() {
     if ($('#connection-invite-other-radio').is(':checked')) {
       $('#connection-invite-other').show();
+      $('#connection-invite-other input').prop('disabled', false);
     } 
     else {
       $('#connection-invite-other').hide();
+      $('#connection-invite-other input').prop('disabled', true);
     }
   });
 });
