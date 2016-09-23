@@ -55,6 +55,9 @@ GEM
       sass (>= 3.3.4)
     bootstrap-social-rails (4.12.0)
       railties (>= 3.1)
+    bootstrap-tooltip-rails (0.1)
+      rails (>= 3.1)
+      thor
     builder (3.2.2)
     byebug (9.0.5)
     carrierwave (0.11.2)
@@ -229,6 +232,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   bootstrap-social-rails
+  bootstrap-tooltip-rails
   carrierwave
   clearance
   coffee-rails (~> 4.1.0)

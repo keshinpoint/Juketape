@@ -17,6 +17,7 @@
 //= require best_in_place
 //= require jquery-ui/datepicker
 //= require best_in_place.jquery-ui
+//= require bootstrap/bootstrap-tooltip
 //= require_tree .
 
 $(document).ready(function(){ //contains the notification counter and notifications on the header navbar
@@ -32,6 +33,7 @@ $(document).on('turbolinks:load', function() {
     $('.datepicker_input').datepicker({
       dateFormat: "dd/mm/yy"
     });
+    $('[data-toggle="tooltip"]').tooltip()
   });
 
   $('form.dashfolio-timeline-form').on('ajax:error', function(jqXHR, error) {

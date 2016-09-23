@@ -24,6 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'bootstrap-social-rails'
+gem 'bootstrap-tooltip-rails'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5' #gives jquery ui
 gem 'best_in_place', '~> 3.0.1'
 
