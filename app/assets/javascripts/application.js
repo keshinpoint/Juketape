@@ -71,7 +71,8 @@ $(document).on('turbolinks:load', function() {
     }).done(function(resp) {
       $modal.find('.modal-content').html(resp);
     });
-  });
+
+  }); //end of $('#filterContentModal')
 
   $('#add_tag_form')
     .on('ajax:success', function(data, jqXHR) {
@@ -81,6 +82,7 @@ $(document).on('turbolinks:load', function() {
       if(jqXHR.tags_count >= 5) {
         $('#add-tag-input-group').hide();
       }
+      
     }).on('ajax:error', function(jqXHR, error) {
       console.log('Its Error')
     });

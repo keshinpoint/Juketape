@@ -41,7 +41,7 @@ module ApplicationHelper
   def unable_connect_tooltip(current_user, artist)
     return 'Please Login to connect' if current_user.nil?
     return 'You already connected with this Artist' if current_user.is_connected_to?(artist)
-    return 'You can not connect with yourself' if current_user == artist
+    return 'You cannot connect with yourself' if current_user == artist
     return 'You have a pending connection request' if current_user.already_invited?(artist)
   end
 

@@ -917,7 +917,6 @@ padding: 10px;
   border:2px solid #027878;
   padding: 18px;
   border-radius: 10px;
-  max-height: 400px;
 
 }
 
@@ -927,8 +926,43 @@ padding: 10px;
 }
 
 .inbox-main-action-buttons {
-  margin-top: 45px;
+margin-top: 15px;
+  
 }
+
+.inbox-main-message-exchange{
+ max-width: 60%;
+ position: relative;
+ margin-bottom: 20px;
+
+border-radius: 15px;
+padding: 20px;
+}
+
+#inbox-main-message-them {
+   background-color: #F0F0F0; 
+     margin-left: 4px;
+}
+
+
+#inbox-main-message-you {
+  background-color: #C7FCD6;
+  margin-right: 4px;
+}
+
+.inbox-main-reply-body {
+    
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px 20px 60px 20px; /* top right bottom left */
+    background-color: #FCF4C6;
+}
+
+.inbox-main-reply-body>textarea {
+    border-radius: 10px;
+
+}
+
 
 /* end of inbox styles */
 
