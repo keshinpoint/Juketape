@@ -967,6 +967,24 @@ padding: 20px;
 /* end of inbox styles */
 
 
+/*start of new message styles */
+
+.new-message-to-info-container {
+   border: 2px solid #fdb632;
+    border-radius: 10px;
+    box-shadow: 4px 7px 22px -20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    margin-right: 100px;
+    padding: 10px;
+
+    width: 81%;
+
+}
+
+/* end of new message styles */
+
 /* start the notifications styles */
 
 .notif-title {

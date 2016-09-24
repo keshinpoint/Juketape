@@ -1,0 +1,74 @@
+<%= render partial: 'shared/header' %>
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-12" >
+
+			<h1> New Message </h1>
+
+			<hr>
+
+
+             <div class = "new-message-to-info-container col-md-10">
+
+                <div class = "inbox-main-profile-pic-container">
+                    <%= image_tag("generic_avatar.png", class: "inbox-main-profile-pic") %>  
+                </div>
+
+                <div class = "inbox-main-name-tagline-container">
+                   <div class = "inbox-main-profile-name">
+                    <p class = "inbox-main-artist-name"> <strong> Artist Name </strong> <p>
+                    </div>
+
+                    <div class = "inbox-main-profile-tagline">
+                        <p class = "inbox-main-artist-tagline"> Tagline Tagline </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+			<form>
+				<div class=" col-md-10 form-group">
+					<label>Subject</label>
+					<input type="text" class="form-control">
+				</div>
+
+				<div class="col-md-10 form-group">
+					<label for="formGroupExampleInput2"> Message </label>
+					<textarea class="form-control" rows="8"></textarea>
+
+				</div>
+
+
+			</form>
+
+
+				</div>
+
+				<div class = "container">
+	<div class = "row">
+		<div class = "col-md-4" > </div>
+		<div class = "col-md-4" > </div>
+
+
+				 <div class = "new-message-action-buttons col-md-4">
+
+				 	  <button type="button" class="btn btn-danger"> <i class="fa fa-close" aria-hidden="true"></i>
+                                    Cancel </button>
+
+                                <button type="button" class="btn btn-success"> <i class="fa fa-paper-plane" aria-hidden="true"></i>
+
+                                   Send </button>
+                                 
+                                </div>
+
+
+
+
+
+			</div>
+		</div>
+
+
+

@@ -71,6 +71,7 @@ Rails.application.routes.draw do
         get :invite
         get :inbox
         get :notification
+        get :new_message
       end
     end
   end

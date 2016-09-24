@@ -32,4 +32,7 @@ class WelcomeController < ApplicationController
   def inbox
   end
 
+  def new_message
+  end
+
 end
