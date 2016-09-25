@@ -6,7 +6,7 @@ class Message < ApplicationRecord
 
   private
   def update_thread_last_reply_at
-    message_thread.update_attributes(last_reply_at: sent_at)
+    message_thread.update_attributes(last_reply_at: sent_at, seen_by_receiver: false)
   end
 
 end

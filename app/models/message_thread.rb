@@ -11,6 +11,10 @@ class MessageThread < ApplicationRecord
     messages.last
   end
 
+  def seen!
+    update_attributes!(seen_by_receiver: true)
+  end
+
   private
   def generate_slug
     self.slug = SecureRandom.urlsafe_base64(9)

@@ -1,7 +1,7 @@
 <ul class="inbox-preview-items">
   <% current_user.message_threads.each do |thread| %>
     <% artist = thread.sender == current_user ? thread.receiver : thread.sender %>
-    <li class='message_thread_<%= thread.slug %>'>
+    <li class='message_thread_<%= thread.slug %> <%= 'unseen' if !thread.seen_by_receiver %>'>
       <%= link_to message_show_path(slug: thread.slug) do %>
         <div class="inbox-preview-profile-pic-container">
           <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'inbox-preview-profile-pic') %>
