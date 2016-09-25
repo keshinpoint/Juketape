@@ -1,0 +1,47 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12' >
+      <div class='message-full-preview'>
+        <h1 class='inbox-title'> Inbox </h1>
+        <% artist = thread.sender == current_user ? thread.receiver : thread.sender %>
+        <div class='inbox-sender-info-container'>
+          <div class='inbox-main-profile-pic-container'>
+            <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'inbox-main-profile-pic') %>
+          </div>
+          <div class='inbox-main-name-tagline-container'>
+            <div class='inbox-main-profile-name'>
+              <p class='inbox-main-artist-name'> <strong><%= artist.act_name %></strong> <p>
+            </div>
+            <div class='inbox-main-profile-tagline'>
+              <p class='inbox-main-artist-tagline'><%= artist.tag_line %></p>
+            </div>
+          </div>
+        </div>
+        <div class='inbox-main-message-container'>
+          <div class='inbox-main-message-subject'>
+            <p><strong>Subject:</strong> <%= thread.subject %></p>
+          </div>
+          <div>
+            <hr>
+          </div>
+          <div class='inbox-main-message-body'>
+            <% thread.messages.each do |message| %>
+              <% if message.sender == current_user %>
+                <div class='inbox-main-message-exchange pull-right inbox-main-message-you'>
+                  <p><%= message.body %></p>
+                  <span><%= message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></span>
+                </div>
+              <% else %>
+                <div class='inbox-main-message-exchange pull-left inbox-main-message-them'>
+                  <p><%= message.body %></p>
+                  <span><%= message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></span>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <%= render partial: 'reply_form', locals: { thread: thread } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

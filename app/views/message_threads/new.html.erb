@@ -1,0 +1,52 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h1> New Message </h1>
+      <hr>
+      <div class='new-message-to-info-container col-md-10'>
+        <div class='inbox-main-profile-pic-container'>
+          <%= image_tag(@receiver.image.thumb.url || 'generic_avatar.png', class: 'inbox-main-profile-pic') %>
+        </div>
+        <div class='inbox-main-name-tagline-container'>
+          <div class='inbox-main-profile-name'>
+            <p class='inbox-main-artist-name'>
+              <strong><%= @receiver.act_name %></strong>
+            </p>
+          </div>
+          <div class='inbox-main-profile-tagline'>
+            <p class='inbox-main-artist-tagline'>
+              <%= @receiver.tag_line %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <%= form_tag message_threads_path(), method: :post do |f| %>
+        <%= hidden_field_tag :receiver, @receiver.username %>
+        <div class=' col-md-10 form-group'>
+          <label>Subject</label>
+          <%= text_field_tag 'subject', nil, class: 'form-control', required: true %>
+        </div>
+        <div class='col-md-10 form-group'>
+          <label for='formGroupExampleInput2'> Message </label>
+          <%= text_area_tag 'body', nil, class: 'form-control', rows: 8, required: true %>
+        </div>
+        <div class='container'>
+          <div class='row'>
+            <div class='col-md-4' > </div>
+            <div class='col-md-4' > </div>
+            <div class='new-message-action-buttons col-md-4'>
+              <%= link_to artist_dashfolio_path(username: @receiver.username) do %>
+                <button type='button' class='btn btn-danger'>
+                  <i class='fa fa-close' aria-hidden='true'></i> Cancel
+                </button>
+              <% end %>
+              <button type='submit' class='btn btn-success'>
+                <i class='fa fa-paper-plane' aria-hidden='true'></i> Send
+              </button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

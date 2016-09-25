@@ -937,15 +937,20 @@ margin-top: 15px;
 
 border-radius: 15px;
 padding: 20px;
+clear: both;
 }
 
-#inbox-main-message-them {
+.inbox-main-message-exchange span {
+  font-size: 10px;
+}
+
+.inbox-main-message-them {
    background-color: #F0F0F0; 
      margin-left: 4px;
 }
 
 
-#inbox-main-message-you {
+.inbox-main-message-you {
   background-color: #C7FCD6;
   margin-right: 4px;
 }

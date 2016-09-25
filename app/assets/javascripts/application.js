@@ -20,9 +20,8 @@
 //= require bootstrap/bootstrap-tooltip
 //= require_tree .
 
-$(document).ready(function(){ //contains the notification counter and notifications on the header navbar
-
- $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500); // the CSS opacity to 0 initially transits to opacity 1 in the nest animate property
+$(document).ready(function() {
+  $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500);
 });
 
 
@@ -33,7 +32,8 @@ $(document).on('turbolinks:load', function() {
     $('.datepicker_input').datepicker({
       dateFormat: "dd/mm/yy"
     });
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".inbox-main-message-body").scrollTop($('.inbox-main-message-body')[0].scrollHeight);
   });
 
   $('form.dashfolio-timeline-form').on('ajax:error', function(jqXHR, error) {

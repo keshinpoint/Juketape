@@ -10,7 +10,18 @@
       <div class='col-md-4 dashfolio-profile-pic-connect-container'>
         <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
-          <button class='message-dashfolio'> <i class='fa fa-envelope' aria-hidden='true'></i>  </button>
+          <% if current_user.is_connected_to?(artist) %>
+            <%= form_tag new_message_path(), method: :post, style: 'display: inline-block;' do %>
+              <%= hidden_field_tag :receiver, artist.username %>
+              <button class='message-dashfolio'>
+              <i class='fa fa-envelope' aria-hidden='true'></i>
+            </button>
+            <% end %>
+          <% else %>
+            <button class='message-dashfolio disabled' style='opacity: 0.3;'>
+              <i class='fa fa-envelope' aria-hidden='true'></i>
+            </button>
+          <% end %>
           <% if can_connect_with?(current_user, artist) %>
             <%= form_tag invite_artist_path(), method: :post, style: 'display: inline-block;' do %>
               <%= hidden_field_tag :invitee, artist.username %>
@@ -53,7 +64,7 @@
           <% artist.connections.sample(4).each do |friend| %>
             <div class='dashfolio-connection'>
               <%= link_to artist_dashfolio_path(friend.username) do %>
-                <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'connection-profile-pic', title: friend.act_name) %>
+                <%= image_tag(friend.image.thumb.url || 'generic_avatar.png', class: 'connection-profile-pic', title: friend.act_name) %>
               <% end %>
             </div>
           <% end %>
