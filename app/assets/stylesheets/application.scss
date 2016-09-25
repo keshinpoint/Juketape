@@ -280,6 +280,23 @@ margin-bottom: 9px;
   
 }
 
+.dashfolio-main-row {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.dashfolio-main-container {
+  border-left: 2px solid #027878;
+  border-right: 2px solid #027878;
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
+
+}
+
+
 .bar {  
 
   width: 30px;
@@ -510,6 +527,16 @@ background: -moz-linear-gradient(top,  rgba(45,45,45,1) 0%, rgba(7,7,7,1) 100%, 
 background: -webkit-linear-gradient(top,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+.dashfolio-content-dashbar.sticky {
+ position: fixed;
+ top:0; 
+z-index: 3;
+left: 10%;
+width: 80%;
 }
 
 
@@ -621,7 +648,7 @@ text-decoration: none !important;
 .music-header-container {
   position: relative;
   left: 61%;
-  border:10px solid #FDB632; 
+  border:10px solid #027878; 
 }
 
 .music-header-container-active {
@@ -629,14 +656,14 @@ text-decoration: none !important;
 
 position: relative;
 color: white;
-background-color: #FDB632;  
+background-color: #027878;  
 height: 100%;
 text-decoration: none !important;
 
 }
 
 .music-header-container >a:hover{
-  background-color: #FDB632;  
+  background-color: #027878;  
   height: 100%;
   position: relative;  
   color: white;

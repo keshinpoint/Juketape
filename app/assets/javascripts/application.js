@@ -20,6 +20,21 @@
 //= require bootstrap/bootstrap-tooltip
 //= require_tree .
 
+
+
+$(document).ready( function() {
+
+    $(window).scroll( function() {
+        if ($(window).scrollTop() > $('#dashfolio-main-row').offset().top)
+            $('.dashfolio-content-dashbar').addClass('sticky');         
+
+        else
+            $('.dashfolio-content-dashbar').removeClass('sticky');
+    } );
+
+} );
+
+
 $(document).ready(function(){ //contains the notification counter and notifications on the header navbar
 
  $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500); // the CSS opacity to 0 initially transits to opacity 1 in the nest animate property
