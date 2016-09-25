@@ -22,7 +22,6 @@ class MessageThreadsController < ApplicationController
 
   def show
     @thread = current_user.message_threads.find_by_slug(params.require(:slug))
-    @thread.seen!
   end
 
   def add_reply
