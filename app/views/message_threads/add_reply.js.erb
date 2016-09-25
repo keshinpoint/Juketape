@@ -1,0 +1,5 @@
+$('.inbox-main-message-body').append('<%= escape_javascript(render partial: "message_threads/right_message_body", locals: {message: @message}) %>');
+$(".inbox-main-message-body").animate({ scrollTop: $('.inbox-main-message-body')[0].scrollHeight}, 500);
+$('.inbox-main-reply-body form').trigger("reset");
+$('.message_thread_<%= @thread.slug %>').prependTo('.inbox-preview-items');
+$('.message_thread_<%= @thread.slug %> p.inbox-preview-date').text("<%= @message.sent_at.strftime('%I:%M %p, %d %B, %Y') %>");

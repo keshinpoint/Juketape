@@ -39,6 +39,14 @@ Rails.application.routes.draw do
     end
   end
   resources :notifications, only: [:index]
+  resources :message_threads, only: [:create], param: :slug do
+    member do
+      post :add_reply
+    end
+  end
+  post 'messages/new' => 'message_threads#new', as: :new_message
+  get '/inbox' => 'message_threads#index', as: :artist_inbox
+  get '/inbox/:slug' => 'message_threads#show', as: :message_show
 
   resources :setup, only: [], path: :profile do
     collection do

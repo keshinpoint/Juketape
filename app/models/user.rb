@@ -19,7 +19,6 @@ class User < ApplicationRecord
     class_name: 'Invitation', foreign_key: :invitee_id
   has_many :invited_connections, through: :accepted_invitations_as_invitee, source: :initiator
   has_many :initiated_connections, through: :accepted_invitations_as_initiator, source: :invitee
-    
 
   def email_optional?
     true
@@ -48,6 +47,14 @@ class User < ApplicationRecord
   def self.authenticate(username, password)
     return nil  unless user = find_by_username(username)
     return user if     user.authenticated?(password)
+  end
+
+  def message_threads
+    MessageThread.where('message_threads.sender_id = ? or message_threads.receiver_id = ?', self.id, self.id).order(last_reply_at: :desc)
+  end
+
+  def recent_thread
+    message_threads.first
   end
 
 end
