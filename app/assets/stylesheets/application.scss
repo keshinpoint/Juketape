@@ -7,11 +7,24 @@
 @import "custom_styles";
 @import "bootstrap/bootstrap-tooltip";
 
+body, html {
+
+      margin:0;
+  padding:0;
+  height:100%;
+}
+
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     height:100%;
 
+}
+
+.wrapper {
+    min-height:100%;
+  position:relative;
 }
 
 .ui-datepicker {
@@ -147,10 +160,12 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 /* logged in header */
 
 .footer {
-
+display: none;
 bottom:0;
-position: absolute; /*The div is absolutely positioned bottom:0; this moves it to the bottom of the outside-container div. When there is little content on the page the container div is exactly the height of the browser viewport (because of the min-height:100%;) */
- width:100%;    
+ /*The div is absolutely positioned bottom:0; this moves it to the bottom of the outside-container div. When there is little content on the page the container div is exactly the height of the browser viewport (because of the min-height:100%;) */
+ width:100%;  
+ position: absolute;  
+ clear: both;
 }
 
 

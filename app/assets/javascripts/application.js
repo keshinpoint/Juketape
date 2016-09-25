@@ -20,7 +20,6 @@
 //= require bootstrap/bootstrap-tooltip
 //= require_tree .
 
-<<<<<<< HEAD
 
 
 $(document).ready( function() {

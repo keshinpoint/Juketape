@@ -8,12 +8,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='<%= "#{controller_name} #{action_name}" %>'>
+  <body class='<%= "#{controller_name} #{action_name}" %>' style = "overflow: auto; padding-bottom: 30px;">
+    <div class = "wrapper">
     <%= render partial: 'shared/header' %>
     <%= render partial: 'shared/flash_messages' %>
     <%= yield %>
     <% unless action_name.eql?('dashfolio') %>
       <%= render partial: 'shared/footer' %>
     <% end %>
+  </div>
   </body>
 </html>
