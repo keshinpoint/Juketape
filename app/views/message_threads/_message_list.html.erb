@@ -29,12 +29,12 @@
               <% if message.sender == current_user %>
                 <div class='inbox-main-message-exchange pull-right inbox-main-message-you'>
                   <p><%= message.body %></p>
-                  <span><%= message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></span>
+                  <span><%= local_time(message.sent_at) %></span>
                 </div>
               <% else %>
                 <div class='inbox-main-message-exchange pull-left inbox-main-message-them'>
                   <p><%= message.body %></p> 
-                  <span class = "inbox-main-message-them-time"><%= message.sent_at.strftime('%I:%M %p, %d %B %Y') %></span>
+                  <span class = "inbox-main-message-them-time"><%= local_time(message.sent_at) %></span>
                 </div>
               <% end %>
             <% end %>

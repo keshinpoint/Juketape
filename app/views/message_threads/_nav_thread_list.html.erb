@@ -8,8 +8,8 @@
         </div>
         <div class="inbox-preview-name-container">
           <p class="inbox-preview-name"> <strong><%= artist.act_name %></strong> </p>
-          <p class="inbox-preview-subject"><%= thread.subject %></p>
-          <p class="inbox-preview-date"><%= thread.last_message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></p>
+          <p class="inbox-preview-subject"><%= truncate(thread.subject, length: 35) %></p>
+          <p class="inbox-preview-date"><%= local_time(thread.last_message.sent_at) %></p>
         </div>
       <% end %>
       <div class="inbox-peview-divider">

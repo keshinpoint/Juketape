@@ -1,5 +1,5 @@
 <div class='inbox-main-message-exchange pull-right inbox-main-message-you'>
   <p><%= message.body %></p> 
-  <span><%= message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></span> 
+  <span><%= local_time(message.sent_at) %></span> 
 </div>
 

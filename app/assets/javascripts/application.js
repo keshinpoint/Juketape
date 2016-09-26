@@ -18,6 +18,7 @@
 //= require jquery-ui/datepicker
 //= require best_in_place.jquery-ui
 //= require bootstrap/bootstrap-tooltip
+//= require local_time
 //= require_tree .
 
 

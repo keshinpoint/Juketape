@@ -2,4 +2,5 @@ $('.inbox-main-message-body').append('<%= escape_javascript(render partial: "mes
 $(".inbox-main-message-body").animate({ scrollTop: $('.inbox-main-message-body')[0].scrollHeight}, 500);
 $('.inbox-main-reply-body form').trigger("reset");
 $('.message_thread_<%= @thread.slug %>').prependTo('.inbox-preview-items');
-$('.message_thread_<%= @thread.slug %> p.inbox-preview-date').text("<%= @message.sent_at.strftime('%I:%M %p, %d %B, %Y') %>");
+$('.message_thread_<%= @thread.slug %> p.inbox-preview-date').html('<%= local_time(@message.sent_at).html_safe %>');
+LocalTime.run();
