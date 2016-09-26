@@ -39,7 +39,12 @@ module ApplicationHelper
   end
 
   def unable_send_message_tooltip(current_user, artist)
-    return 'The user needs to be in your network to send messages' unless current_user.is_connected_to?(artist)
+
+    if current_user != artist && !current_user.is_connected_to?(artist)
+      return 'The user needs to be in your network to send messages'
+    end
+
+
   end
 
   def unable_connect_tooltip(current_user, artist)
