@@ -986,14 +986,16 @@ padding: 20px;
 clear: both;
 }
 
-.inbox-main-message-exchange span {
+.inbox-main-message-exchange span { /* the sent dates for messages in inbox message exchanges */
   font-size: 10px;
+  font-style: italic;
 }
 
 .inbox-main-message-them {
    background-color: #F0F0F0; 
-     margin-left: 4px;
+   margin-left: 4px;
 }
+
 
 
 .inbox-main-message-you {

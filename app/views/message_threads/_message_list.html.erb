@@ -33,8 +33,8 @@
                 </div>
               <% else %>
                 <div class='inbox-main-message-exchange pull-left inbox-main-message-them'>
-                  <p><%= message.body %></p>
-                  <span><%= message.sent_at.strftime('%I:%M %p, %d %B, %Y') %></span>
+                  <p><%= message.body %></p> 
+                  <span class = "inbox-main-message-them-time"><%= message.sent_at.strftime('%I:%M %p, %d %B %Y') %></span>
                 </div>
               <% end %>
             <% end %>

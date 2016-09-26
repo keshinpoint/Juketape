@@ -18,7 +18,7 @@
             </button>
             <% end %>
           <% else %>
-            <button class='message-dashfolio disabled' style='opacity: 0.3;'>
+            <button class='message-dashfolio disabled' style='opacity: 0.3;' data-toggle='tooltip' data-placement='bottom' title='<%= unable_send_message_tooltip(current_user, artist) %>'>
               <i class='fa fa-envelope' aria-hidden='true'></i>
             </button>
           <% end %>
