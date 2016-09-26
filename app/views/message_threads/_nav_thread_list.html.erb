@@ -7,7 +7,10 @@
           <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'inbox-preview-profile-pic') %>
         </div>
         <div class="inbox-preview-name-container">
-          <p class="inbox-preview-name"> <strong><%= artist.act_name %></strong> </p>
+          <p class="inbox-preview-name">
+            <span class='label label-info'><%= thread.sender == current_user ? 'To' : 'from' %></span>
+            <strong><%= artist.act_name %></strong>
+          </p>
           <p class="inbox-preview-subject"><%= truncate(thread.subject, length: 35) %></p>
           <p class="inbox-preview-date"><%= local_time(thread.last_message.sent_at) %></p>
         </div>
