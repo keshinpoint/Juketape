@@ -22,6 +22,8 @@ class MessageThreadsController < ApplicationController
 
   def show
     @thread = current_user.message_threads.find_by_slug(params.require(:slug))
+    last_msg = @thread.last_message
+    last_msg.seen! unless last_msg.sender == current_user
   end
 
   def add_reply

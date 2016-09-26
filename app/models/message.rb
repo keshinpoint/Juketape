@@ -4,6 +4,10 @@ class Message < ApplicationRecord
   belongs_to :sender, class_name: 'User'
   after_create :update_thread_last_reply_at
 
+  def seen!
+    update_attributes!(seen: true)
+  end
+
   private
   def update_thread_last_reply_at
     message_thread.update_attributes(last_reply_at: sent_at)

@@ -54,4 +54,8 @@ module ApplicationHelper
     return 'You have a pending connection request' if current_user.already_invited?(artist)
   end
 
+  def get_unseen_klass(current_user, message)
+    return 'unseen' if message.sender != current_user && !message.seen?
+  end
+
 end
