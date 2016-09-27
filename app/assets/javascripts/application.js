@@ -218,3 +218,22 @@ $(document).ready(function() {
     }
   });
 });
+
+
+//search navigation JS
+
+$(document).ready(function(){
+
+$('#search-navigation-user').on('click', function(e){
+$('.search-name-container').fadeIn(400).siblings().hide();
+e.preventDefault();
+});
+
+
+$('#search-navigation-tag').on('click', function(e){ 
+
+$('.search-tag-container').fadeIn(400).siblings().hide();
+});
+
+
+});

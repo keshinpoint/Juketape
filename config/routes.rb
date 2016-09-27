@@ -80,6 +80,7 @@ Rails.application.routes.draw do
         get :inbox
         get :notification
         get :new_message
+        get :search
       end
     end
   end

@@ -35,4 +35,7 @@ class WelcomeController < ApplicationController
   def new_message
   end
 
+  def search
+  end
+
 end
