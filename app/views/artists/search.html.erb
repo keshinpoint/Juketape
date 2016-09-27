@@ -1,0 +1,31 @@
+<div class='search-navigation-bar'> 
+  <div class='search-navigation' id= 'search-navigation-user'>
+    <p class='search-navigation-p'> Search by name <span class='search-number'> <%= @name_search.count %></span> </p>
+  </div>
+  <div class='search-navigation' id='search-navigation-tag'>
+    <p class='search-navigation-p'> Search by tag  <span class='search-number'> <%= @tag_search.count %></span></p>
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='main-search-results'> 
+        <div class='search-header'>
+          <h1> Search Juketape</h1>
+          <h3> Showing searches for <span> "<%= params[:search] %>" </span></h3>
+        </div>
+        <hr>
+        <div class='search-main-container'>
+          <div class='search-name-container'>
+            <%= render partial: 'search_artists_list', locals: {artists: @name_search} %>
+          </div>
+
+          <div class='search-tag-container'>
+            <%= render partial: 'search_artists_list', locals: {artists: @tag_search} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

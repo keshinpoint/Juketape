@@ -1,0 +1,22 @@
+<% artists.each do |artist| %>
+  <div class='search-name-individual col-md-8'>
+    <div class='search-profile-name-tag-container'>
+      <div class='search-profile-pic-container'>
+        <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'search-profile-pic') %> 
+      </div>
+      <div class='search-tagline-container'>
+        <div class='search-profile-name'>
+          <p class='search-artist-name'> <strong><%= artist.act_name %></strong> </p>
+        </div>
+        <div class='search-tagline'>
+          <p class='search-artist-tagline'><%= artist.tag_line %></p>
+        </div>
+        <div class='search-tags-list'>
+          <% artist.tags.each do |tag| %>
+            <span class='dashfolio-tag'><%= tag.name %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
