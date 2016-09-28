@@ -20,3 +20,7 @@
     </div>
   </div>
 <% end %>
+<div class='paginator'>
+  <%= will_paginate artists, params: {search_by: search_by, search: params[:search]} %>
+</div>
+

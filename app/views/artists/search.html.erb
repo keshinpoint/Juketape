@@ -18,11 +18,11 @@
         <hr>
         <div class='search-main-container'>
           <div class='search-name-container'>
-            <%= render partial: 'search_artists_list', locals: {artists: @name_search} %>
+            <%= render partial: 'search_artists_list', locals: {artists: @name_search, search_by: 'name'} %>
           </div>
 
           <div class='search-tag-container'>
-            <%= render partial: 'search_artists_list', locals: {artists: @tag_search} %>
+            <%= render partial: 'search_artists_list', locals: {artists: @tag_search, search_by: 'tag'} %>
           </div>
         </div>
       </div>

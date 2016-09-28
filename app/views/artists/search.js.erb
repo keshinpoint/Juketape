@@ -1,0 +1,10 @@
+<% if params[:search_by] == 'name' %>
+  var data = '<%= escape_javascript(render partial: "search_artists_list", locals: {artists: @name_search, search_by: "name"}) %>';
+  $('.search-name-container').html(data);
+<% elsif params[:search_by] == 'tag' %>
+  var data = '<%= escape_javascript(render partial: "search_artists_list", locals: {artists: @tag_search, search_by: "tag"}) %>';
+  $('.search-tag-container').html(data);
+<% end %>
+$('.pagination > a').attr('data-remote', 'true');
+$('.pagination > a').attr('method', 'post');
+console.log('Sagar')

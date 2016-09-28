@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'local_time'
+gem 'will_paginate', '~> 3.1.0'
 
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
