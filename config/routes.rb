@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     get :fetch_content, on: :collection
     put :filter_content, on: :collection
     post :search, on: :collection
+    get :search, on: :collection
     resources :tags, only: [:create, :destroy]
   end
   get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio

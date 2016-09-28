@@ -50,7 +50,11 @@ $(document).on('turbolinks:load', function() {
       dateFormat: "dd/mm/yy"
     });
     $('[data-toggle="tooltip"]').tooltip();
-    $(".inbox-main-message-body").scrollTop($('.inbox-main-message-body')[0].scrollHeight);
+    if ($('.inbox-main-message-body').length > 0) {
+      $(".inbox-main-message-body").scrollTop($('.inbox-main-message-body')[0].scrollHeight);
+    };
+    $('.pagination > a').attr('data-remote', 'true');
+    $('.pagination > a').attr('method', 'post');
   });
 
   $('form.dashfolio-timeline-form').on('ajax:error', function(jqXHR, error) {
