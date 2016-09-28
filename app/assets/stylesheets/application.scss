@@ -26,10 +26,10 @@ body {
 
 .navbar-brand img {
 	width:40px;
-     height:40px;
-     position:relative;
-     bottom:10px;
-     object-fit:contain;
+    height:40px;
+    position:relative;
+    bottom:10px;
+    object-fit:contain;
     -webkit-filter: drop-shadow(10px 10px 5px -5px white);
     filter:  drop-shadow(10px 10px 5px -5px white); 
 }
@@ -290,6 +290,7 @@ margin-bottom: 9px;
 .dashfolio-main-container {
   border-left: 2px solid #027878;
   border-right: 2px solid #027878;
+    border-bottom: 2px solid #027878;
   border-radius: 10px;
 
   -webkit-box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
@@ -700,7 +701,7 @@ text-decoration: none !important;
 
 .dashfolio-audio-add-button {
   position: relative;
-  bottom: 75px;
+  bottom: 90px;
 }
 
 .dashfolio-picture-add-button {
@@ -770,14 +771,14 @@ padding-right: 10px;
 
 #videos-dashfolio { /* contains the videos */
  /* pushes the videos to the same level as the about and music items */
-  position: absolute;
-  top: 30px; 
+  position: relative;
+  top: 20px; 
 }
 
 #pictures-dashfolio{ /* contains the pics */
    /* pushes the pictures to the same level as the about and music items */
-  position: absolute;
-  top: 30px;
+  position: relative;
+  top: 20px;
 
 }
 
@@ -1093,7 +1094,7 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  margin-top: 100px;
+  margin-top: 200px;
 
 }
 
@@ -1142,7 +1143,7 @@ float: right;
 }
 
 .search-main-container {
-;
+
 }
 
 .search-name-container {
