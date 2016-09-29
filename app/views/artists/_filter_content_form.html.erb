@@ -5,7 +5,7 @@
 <%= form_tag filter_content_artists_path, method: :put, id: 'filter_content_form', data: {result_container: 'dashfolio-pictures'}, remote: true do %>
   <%= hidden_field_tag :content_type, content_type %>
   <%= hidden_field_tag :container, container %>
-  <div class='modal-body'>
+  <div class='modal-body filter-content-modal-body'>
     <ul>
       <% if content_type == 'instagram_images' %>
         <% content.each do |image| %>
