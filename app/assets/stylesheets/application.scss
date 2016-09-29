@@ -358,6 +358,12 @@ box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
   width: 250px;
   height: 250px;  
   object-fit: contain;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+padding: 5px;
+background: #FAFAFA;
 }
 
 .message-connect-buttons {
@@ -374,16 +380,17 @@ height: 40px;
 border-radius: 10px;
 color: white;
 
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,2989d8+50,1e5799+100 */
-background: rgb(125,185,232); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(125,185,232,1) 0%, rgba(41,137,216,1) 50%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(125,185,232,1) 0%,rgba(41,137,216,1) 50%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7db9e8', endColorstr='#1e5799',GradientType=0 ); /* IE6-9 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4f5087+0,3f4c6b+100 */
+background: rgb(79,80,135); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(79,80,135,1) 0%, rgba(63,76,107,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(79,80,135,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(79,80,135,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f5087', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
 
  padding: 0px 25px;
   font-size: 15px;
   border: none;
+  border-bottom: 2px solid 
 }
 
 .message-dashfolio:active {
@@ -602,6 +609,9 @@ text-align:center;
 font-size: 0px;
 margin-top: 10px;
 border-radius: 5px;
+-webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
 }
 
 .tablink { 
@@ -809,7 +819,7 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
     object-fit: contain;
     margin: 0 auto;
     width: 228px;
-    background-color: grey;
+    background-color: black;
 }
 
 
@@ -913,7 +923,7 @@ opacity: 0.5;
 -webkit-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
 -moz-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
 box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
-width: 70%;
+width: 75%;
 border-radius: 10px;
 cursor: pointer;
 margin-bottom: 20px;
