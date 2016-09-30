@@ -590,16 +590,15 @@ background: #111;
 
 }
 
-.dashfolio-midbar-about-active {
+.dashfolio-midbar-active {
   text-decoration: none;
+  background: #111; 
+  height: 60px;
+  /* note: webkit text decorations override normal ones */
 
-  text-shadow: 0px 2px 3px rgba(150, 150, 150, 0.94);
-  color: #FDB632;
-
-
-
-
+   -webkit-text-fill-color: #dcdede;
 }
+
 
 .dashfolio-midbar-about {
 font-family: 'neutra-demi'; 

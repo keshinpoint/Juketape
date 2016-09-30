@@ -125,6 +125,9 @@ $(document).ready(function() {
 	$('.dashfolio-midbar-about a').on('click', function(e){
 		var currentAttrValue1 = $(this).attr('href');   
 
+    //below adds the active styles to midbar navigation icons
+    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    //
 
 		$('.dashfolio-about').show()
 		$('.main-content ' + currentAttrValue1).fadeIn(400);		
@@ -139,6 +142,11 @@ $(document).ready(function() {
 		$('.dashfolio-midbar-music a').on('click', function(e){
 		var currentAttrValue2 = $(this).attr('href');
 
+
+    //below adds the active styles to midbar navigation icons
+    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    //
+
 		$('.dashfolio-music').show();
     $('#tracks-dashfolio').show();
 		$('.main-content ' + currentAttrValue2).fadeIn(400);
@@ -152,6 +160,11 @@ $(document).ready(function() {
 		$('.dashfolio-midbar-videos a').on('click', function(e){
 			var currentAttrValue3 = $(this).attr('href');
 
+
+    //below adds the active styles to midbar navigation icons
+    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    //
+
 			$('.dashfolio-video').show();
 			$('.main-content ' + currentAttrValue3).fadeIn(400);
 			$('.dashfolio-music').hide();
@@ -163,6 +176,11 @@ $(document).ready(function() {
 
 		$('.dashfolio-midbar-pictures a').on('click', function(e){
 			var currentAttrValue4 = $(this).attr('href');
+
+      
+    //below adds the active styles to midbar navigation icons
+    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    //
 
 			$('.dashfolio-pictures').show();
 			$('.main-content ' + currentAttrValue4).fadeIn(400);
