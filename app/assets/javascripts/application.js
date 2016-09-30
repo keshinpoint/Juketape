@@ -123,7 +123,8 @@ $(document).ready(function() {
 
 
 	$('.dashfolio-midbar-about a').on('click', function(e){
-		var currentAttrValue1 = $(this).attr('href');
+		var currentAttrValue1 = $(this).attr('href');   
+
 
 		$('.dashfolio-about').show()
 		$('.main-content ' + currentAttrValue1).fadeIn(400);		
@@ -177,13 +178,15 @@ $(document).ready(function() {
 
 
 $(document).ready(function(){
+
+
 $('.music-header-container a').on('click', function(e){
+
 var attribute_tabcontent_music = $(this).attr('href');
+$('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
+
 $(this).addClass("music-header-container-active");
  $(this).siblings().removeClass("music-header-container-active");
-
-
-$('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
 $('.dashfolio-about').hide();
 $('.dashfolio-video').hide();
 $('.dashfolio-pictures').hide();
@@ -203,6 +206,7 @@ e.stopPropagation();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
         e.preventDefault();
+        e.stopPropagation();
   });
 
 });
