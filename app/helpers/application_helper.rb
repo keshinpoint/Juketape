@@ -58,4 +58,8 @@ module ApplicationHelper
     return 'unseen' if message.sender != current_user && !message.seen?
   end
 
+  def my_dashfolio_class
+    return 'my_dashfolio' if @artist.present? && current_user == @artist
+  end
+
 end
