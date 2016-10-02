@@ -11,9 +11,24 @@ body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     height:100%;
+    min-height: 100%;
+    margin: 0;
+      box-sizing: border-box;
 
 }
 
+html, body {
+  height:100%;
+  width:100%;
+  float:left;
+}
+
+* {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+}
 
 .ui-datepicker {
   padding: 0.2em 1.2em 0 0.3em;
@@ -144,15 +159,20 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 /* end of error message (found in _error_response_) */
 
 
-
 /* logged in header */
 
 .footer {
-display: none;
+
 bottom:0;
  /*The div is absolutely positioned bottom:0; this moves it to the bottom of the outside-container div. When there is little content on the page the container div is exactly the height of the browser viewport (because of the min-height:100%;) */
  width:100%;  
- position: absolute;  
+ position: absolute;
+ display: none; 
+
+   right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem; 
 }
 
 
@@ -1241,3 +1261,108 @@ float: right;
   clear: both;
 }
 /* end of search styles */
+
+
+/*start of settings styles  */
+
+.settings-navigation-bar {
+    float: left;
+    height: 100%;
+    position: fixed;
+    width: 400px;
+    z-index: 1;
+    border-right: 1px solid #DDDDDD;
+
+}
+
+.settings-navigation {
+  cursor: pointer;
+  padding: 7px;
+  margin: 0 auto;
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+
+}
+
+.settings-navigation:hover {
+ 
+  border-left: 4px solid #027878;
+  color: #027878;
+}
+
+.settings-navigation-active {
+border-left: 4px solid #027878;
+  
+}
+
+.settings-anchor-active {
+-webkit-text-fill-color: #027878;
+  
+}
+
+.settings-navigation-bar-contents {
+
+  padding: 100px;
+
+}
+
+.settings-navigation-a{
+  color: gray;
+}
+
+.settings-navigation-a:hover{
+  text-decoration: none;
+   color: gray;
+}
+
+.settings-navigation-a:focus{
+  text-decoration: none;
+  color: gray;
+}  
+
+.main-settings-container {
+  margin-left: 200px;
+}
+
+.main-settings-header {
+  font-family: "neutra-demi";
+}
+
+.main-settings-social-individual>a {
+  display: inline-block;
+}
+
+#main-settings-account{
+  display: none;
+}
+
+.main-settings-form {
+  width: 50%;
+  display: none;
+}
+
+.main-settings-form-buttons { 
+  text-align: right;
+}
+
+.main-settings-current-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.main-settings-form-input {
+  margin-bottom: 10px;
+}
+
+.main-settings-profile-pic-buttons {
+  margin-top: 10px;
+}
+
+.main-settings-social-individual {
+  width: 80%;
+}
+/* end of settings styles */

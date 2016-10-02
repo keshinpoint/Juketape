@@ -83,6 +83,7 @@ Rails.application.routes.draw do
         get :notification
         get :new_message
         get :search
+        get :settings
       end
     end
   end

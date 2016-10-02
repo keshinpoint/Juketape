@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Juketape</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Juketape</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body class='<%= "#{controller_name} #{action_name}" %>'>
+<body class='<%= "#{controller_name} #{action_name}" %>'>
 
-    <%= render partial: 'shared/header' %>
-    <%= render partial: 'shared/flash_messages' %>
-    <%= yield %>
-    <% unless action_name.eql?('dashfolio') %>
-      <%= render partial: 'shared/footer' %>
-    <% end %>
+ <div class="letter_s">
 
-  </body>
+  <%= render partial: 'shared/header' %>
+  <%= render partial: 'shared/flash_messages' %>
+
+  <%= yield %>
+
+  <%= render partial: 'shared/footer' %>
+
+</div>
+
+
+</body>
 </html>

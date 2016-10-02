@@ -38,4 +38,7 @@ class WelcomeController < ApplicationController
   def search
   end
 
+  def settings
+  end
+
 end

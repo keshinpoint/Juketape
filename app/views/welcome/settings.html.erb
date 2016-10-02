@@ -1,0 +1,241 @@
+ <%= render partial: 'shared/header' %>
+
+ <div class = "settings-navigation-bar">
+
+ 	<div class = "settings-navigation-bar-contents">	 	
+
+ 		<div class = "settings-navigation" id = "settings-navigation-profile">
+ 			<a class = "settings-navigation-a" href= "#main-settings-profile" > <i class="fa fa-user" aria-hidden="true"></i>
+ 				&nbsp;Profile </a>
+ 			</div>
+
+ 			<hr>
+
+ 			<div class = "settings-navigation" id= "settings-navigation-account">
+ 				<a class = "settings-navigation-a" href= "#main-settings-account" > <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+ 					&nbsp;Account </a>
+ 				</div>
+
+ 				<hr> 
+
+ 				<div class = "settings-navigation" id = "settings-navigation-profile">
+ 					<a class = "settings-navigation-a" href= "#" > <i class="fa fa-sign-out" aria-hidden="true"></i>
+ 						&nbsp;Logout </a>
+ 					</div>
+
+ 				</div>
+
+
+ 			</div>
+
+ 			<div class = "container">
+ 				<div class = "row">
+ 					<div class = "col-md-12">
+
+ 						<div class = "main-settings-container">
+
+ 							<div class = "main-settings" id = "main-settings-profile">
+
+ 								<div class = "main-settings-header">
+ 									<h2> Profile Settings</h2>
+ 									<hr> 
+ 								</div>
+
+ 								<div class = "main-settings-profile-content">
+
+ 									
+ 									<div class="main-settings-profile-pic">
+
+ 										<%= image_tag("generic_avatar.png", class: "main-settings-current-pic") %>
+ 										<!-- this will show the current picture of the user -->
+
+ 										<p> <a class = "main-settings-edit" href ="#main-settings-form-pic"> Upload a new profile picture </a></p>								
+
+ 										<br>
+ 										
+
+ 										<div class = "form-group main-settings-form" id = "main-settings-form-pic">
+
+ 											<input type="file">
+
+ 											<div class = "main-settings-profile-pic-buttons"> 
+ 												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+ 												<button type="button" class="btn btn-success">Upload</button>
+
+ 												<hr>
+
+ 											</div>
+ 										</div>
+
+ 									</div>
+
+ 									
+ 									<div class = "main-settings-profile-name">
+ 										<p>  <strong> Act name </strong>	 : <span class = "main-setting-profile-current-name"> The Beatles </span> 
+ 											<a class = "main-settings-edit" href="#main-settings-form-name"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+ 										</p>
+
+ 										<div class = "form-group main-settings-form" id = "main-settings-form-name">
+ 											<input class="form-control main-settings-form-input" placeholder="Enter your act's new name">
+
+ 											<div class = "main-settings-form-buttons">
+ 												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+ 												<button type="button" class="btn btn-success">Save</button>
+ 												<hr>
+
+ 											</div>								
+ 										</div>
+
+ 									</div>	
+
+ 									<div class = "main-settings-profile-location">
+
+ 										<p>  <strong> Location </strong> : <span class = "main-setting-profile-current-location"> Boston </span> 
+ 											<a class = "main-settings-edit" href="#main-settings-form-location"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+ 										</p>
+
+ 										<div class = "form-group main-settings-form" id = "main-settings-form-location">
+ 											<input class="form-control main-settings-form-input" placeholder="Enter your new location">
+
+ 											<div class = "main-settings-form-buttons">
+ 												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+ 												<button type="button" class="btn btn-success">Save</button>
+ 												<hr>
+
+ 											</div>								
+ 										</div>
+
+ 									</div>
+ 									<hr>
+
+ 									<div class = "main-settings-profile-social">
+
+ 										<p> <strong> Configure your social accounts </strong> </p>
+
+
+ 										<div class = "main-settings-profile-social-accounts">
+
+ 											<div class = "main-settings-social-individual">
+ 												<a class="btn btn-block btn-social btn-soundcloud">
+ 													<span class="fa fa-soundcloud"></span>
+ 													Connect SoundCloud
+ 												</a> 
+
+ 												<button type="button" class="btn btn-danger main-settings-social-disconect"> <i class="fa fa-times" aria-hidden="true"></i>
+ 												</button>
+ 											</div>
+
+ 											<div class = "main-settings-social-individual">
+ 												<a class="btn btn-block btn-social btn-youtube"> <!--doesnt exist in the bootstrap-social plugin (gem), so have manually added the css styles -->
+
+ 													<span class="fa fa-youtube-play"></span>
+ 													Connect YouTube
+ 												</a>
+
+ 												<button type="button" class="btn btn-danger main-settings-social-disconect"> <i class="fa fa-times" aria-hidden="true"></i>
+ 												</button>
+
+ 											</div>
+
+ 											<div class = "main-settings-social-individual">
+ 												<a class="btn btn-block btn-social btn-instagram">
+ 													<span class="fa fa-instagram"></span>
+ 													Connect Instagram
+ 												</a>
+
+ 												<button type="button" class="btn btn-danger main-settings-social-disconect"> <i class="fa fa-times" aria-hidden="true"></i>
+ 												</button> 
+ 											</div>
+
+ 											<div class = "main-settings-social-individual">
+ 												<a class="btn btn-block btn-social btn-facebook">
+ 													<span class="fa fa-facebook"></span>
+ 													Connect Facebook
+ 												</a>
+
+ 												<button type="button" class="btn btn-danger main-settings-social-disconect"> <i class="fa fa-times" aria-hidden="true"></i>
+ 												</button>
+ 											</div> 									
+
+ 										</div>
+
+ 									</div>
+
+
+
+ 								</div> <!-- end of main-settings-profile-content -->
+
+ 							</div> <!-- end of #main-settings-profile -->
+
+ 							<div class = "main-settings" id = "main-settings-account">
+
+ 								<div class = "main-settings-header">
+ 									<h2> General Account Settings</h2>
+ 									<hr> 
+ 								</div>
+
+ 								<div class = "main-settings-account-content">
+ 									
+ 									<div class = "main-settings-account-username">
+ 										<p>  
+ 											<strong> Username </strong>	 : <span class = "main-setting-account-current-uname"> Kesh </span>
+ 										</p> 
+
+ 									</div>	
+
+ 									<div class = "main-settings-account-email">
+
+ 										<p>  <strong> Email </strong> : <span class = "main-setting-account-current-email"> keshav@swagger.io </span>  <a class = "main-settings-edit" href = "#main-settings-form-email"> <i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+ 										</p>
+
+ 										<div class = "form-group main-settings-form" id = "main-settings-form-email">
+ 											<input class="form-control main-settings-form-input" placeholder="Enter new email id" type = "email">
+
+ 											<div class = "main-settings-form-buttons">
+ 												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+ 												<button type="button" class="btn btn-success">Save</button>
+
+ 												<hr>
+
+ 											</div>								
+ 										</div>
+
+ 									</div>
+
+ 									<div class = "main-settings-account-password">
+
+ 										<p>  <a class = "main-settings-edit" href = "#main-settings-form-password"> Change Password</a> </p>
+
+ 										<div class = "form-group main-settings-form" id = "main-settings-form-password">
+ 											<input class="form-control main-settings-form-input" type = "password" placeholder="Enter current password">
+
+ 											<input class="form-control main-settings-form-input" type = "password" placeholder="Enter new password">
+
+ 											<input class="form-control main-settings-form-input" type = "password" placeholder="Retype new password">
+
+ 											<div class = "main-settings-form-buttons">
+ 												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+ 												<button type="button" class="btn btn-success">Save</button>
+ 												<br>
+ 												<br>
+ 												<a href = "#" > Forgot password? </a> 
+
+ 											</div>									
+
+ 										</div>
+
+ 									</div>
+
+
+
+ 								</div> <!-- end of main-settings-account-content -->
+
+ 							</div> <!-- end of #main-settings-account -->
+ 							
+
+
+ 						</div> <!-- end of main-settings-container -->
+ 					</div>
+ 				</div>
+ 			</div>	

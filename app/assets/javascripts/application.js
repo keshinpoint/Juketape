@@ -265,3 +265,42 @@ $('.search-tag-container').fadeIn(400).siblings().hide();
 
 
 });
+
+
+// settings navigation js
+
+$(document).ready(function(){
+  $('.settings-navigation').on('click', function(e){
+    var settings_nav = $(this).find("a").attr('href');
+
+    $(this).addClass("settings-navigation-active");
+    $(this).siblings().removeClass("settings-navigation-active");
+    $(this).find("a").addClass("settings-anchor-active");
+    $(this).siblings().children("a").removeClass("settings-anchor-active");
+
+    $('.main-settings-container ' + settings_nav).show().siblings().hide();
+    e.preventDefault();
+      e.stopPropagation();
+
+  });
+
+  //settings edit slide downs the form
+
+  $('.main-settings-edit').on('click', function(e){
+    var settings_form = $(this).attr('href');
+    $('.main-settings-container ' + settings_form).slideDown();
+      e.preventDefault();
+        e.stopPropagation();
+  
+  });
+
+  //settings cancel button slides the forms
+
+  $('.settings-edit-cancel').on('click', function(e){ 
+    $(this).closest(".main-settings-form").slideUp();
+       e.preventDefault();
+         e.stopPropagation();
+
+  });
+});
+
