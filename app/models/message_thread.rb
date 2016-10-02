@@ -11,6 +11,14 @@ class MessageThread < ApplicationRecord
     messages.last
   end
 
+  def messages_for(artist)
+    if sender_id == artist.id
+      messages.where('id > ?', deleted_id_by_sender)
+    else
+      messages.where('id > ?', deleted_id_by_receiver)
+    end
+  end
+
   private
   def generate_slug
     self.slug = SecureRandom.urlsafe_base64(9)

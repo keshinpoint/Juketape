@@ -2,9 +2,11 @@
   <%= form_tag add_reply_message_thread_path(slug: thread.slug), method: :post, remote: true do |f| %>
     <%= text_area_tag :body, nil, class: 'form-control', rows: 5, placeholder: 'Reply', id: 'comment', required: true %>
     <div class='inbox-main-action-buttons pull-right'>
-      <button type='button' class='btn btn-danger'>
-        <i class='fa fa-trash' aria-hidden='true'></i> Delete
-      </button>
+      <%= link_to message_thread_path(slug: thread.slug), method: :delete, data: {confirm: 'Are you sure want to delete this message?'} do %>
+        <button type='button' class='btn btn-danger'>
+          <i class='fa fa-trash' aria-hidden='true'></i> Delete
+        </button>
+      <% end %>
       <button type='submit' class='btn btn-success'>
         <i class='fa fa-reply' aria-hidden='true'></i> Reply
       </button>

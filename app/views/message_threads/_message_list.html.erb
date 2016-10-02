@@ -25,7 +25,7 @@
             <hr>
           </div>
           <div class='inbox-main-message-body'>
-            <% thread.messages.each do |message| %>
+            <% thread.messages_for(current_user).each do |message| %>
               <% if message.sender == current_user %>
                 <div class='inbox-main-message-exchange pull-right inbox-main-message-you'>
                   <p><%= message.body %></p>

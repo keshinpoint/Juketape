@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
   end
   resources :notifications, only: [:index]
-  resources :message_threads, only: [:create], param: :slug do
+  resources :message_threads, only: [:create, :destroy], param: :slug do
     member do
       post :add_reply
     end

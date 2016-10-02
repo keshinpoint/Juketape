@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925065845) do
+ActiveRecord::Schema.define(version: 20161002102058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,14 +49,18 @@ ActiveRecord::Schema.define(version: 20160925065845) do
   end
 
   create_table "message_threads", force: :cascade do |t|
-    t.string   "slug",          null: false
+    t.string   "slug",                                   null: false
     t.text     "subject"
-    t.integer  "sender_id",     null: false
-    t.integer  "receiver_id",   null: false
+    t.integer  "sender_id",                              null: false
+    t.integer  "receiver_id",                            null: false
     t.datetime "sent_at"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.datetime "last_reply_at"
+    t.boolean  "deleted_by_sender",      default: false
+    t.boolean  "deleted_by_receiver",    default: false
+    t.integer  "deleted_id_by_sender",   default: 0
+    t.integer  "deleted_id_by_receiver", default: 0
   end
 
   create_table "messages", force: :cascade do |t|

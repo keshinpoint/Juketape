@@ -39,6 +39,14 @@ class MessageThreadsController < ApplicationController
   end
 
   def destroy
+    thread = current_user.message_threads.find_by_slug(params.require(:slug))
+    attrs = if thread.sender_id == current_user.id
+      { deleted_by_sender: true, deleted_id_by_sender: thread.last_message.id }
+    else
+      { deleted_by_receiver: true, deleted_id_by_receiver: thread.last_message.id }
+    end
+    thread.update_attributes(attrs)
+    redirect_to message_show_path(slug: current_user.recent_thread.slug)
   end
 
   private

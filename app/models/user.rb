@@ -50,7 +50,7 @@ class User < ApplicationRecord
   end
 
   def message_threads
-    MessageThread.where('message_threads.sender_id = ? or message_threads.receiver_id = ?', self.id, self.id).order(last_reply_at: :desc)
+    MessageThread.where('(sender_id = ? and deleted_by_sender = ?) or (receiver_id = ? and deleted_by_receiver = ?)', id, false, id, false).order(last_reply_at: :desc)
   end
 
   def recent_thread
