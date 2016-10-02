@@ -1,9 +1,12 @@
 <div class='search-navigation-bar'> 
-  <div class='search-navigation' id= 'search-navigation-user'>
-    <p class='search-navigation-p'> Search by name <span class='search-number'> <%= @name_search.count %></span> </p>
+
+  <div class='search-navigation search-navigation-active' id= 'search-navigation-user'>
+    <p class='search-navigation-p search-navigation-p-active'> By name <span class='search-number search-number-active'> <%= @name_search.count %></span> </p>
   </div>
+  <hr class = "search-navigation-hr">
+
   <div class='search-navigation' id='search-navigation-tag'>
-    <p class='search-navigation-p'> Search by tag  <span class='search-number'> <%= @tag_search.count %></span></p>
+    <p class='search-navigation-p'> By tag  <span class='search-number search-number-inactive'> <%= @tag_search.count %></span></p>
   </div>
 </div>
 
@@ -13,15 +16,17 @@
       <div class='main-search-results'> 
         <div class='search-header'>
           <h1> Search Juketape</h1>
-          <h3> Showing searches for <span> "<%= params[:search] %>" </span></h3>
         </div>
         <hr>
         <div class='search-main-container'>
           <div class='search-name-container'>
+             <h3 class = "search-keyword-header"> Searching profiles for names that include <span class = "search-main-keyword"> <%= params[:search] %> </span> </h3>
             <%= render partial: 'search_artists_list', locals: {artists: @name_search, search_by: 'name'} %>
           </div>
 
           <div class='search-tag-container'>
+             <h3 class = "search-keyword-header"> Searching profiles for tags that include <span class = "search-main-keyword"> <%= params[:search] %> </span> </h3>
+
             <%= render partial: 'search_artists_list', locals: {artists: @tag_search, search_by: 'tag'} %>
           </div>
         </div>
