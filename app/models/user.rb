@@ -57,4 +57,8 @@ class User < ApplicationRecord
     message_threads.first
   end
 
+  def invitation_with(artist)
+    Invitation.where('(initiator_id = ? AND invitee_id = ?) OR (initiator_id = ? AND invitee_id = ?)', id, artist.id, artist.id, id).first
+  end
+
 end

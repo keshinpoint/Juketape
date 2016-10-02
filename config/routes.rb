@@ -39,6 +39,9 @@ Rails.application.routes.draw do
       put :accept
       put :reject
     end
+    collection do
+      delete :disconnect
+    end
   end
   resources :notifications, only: [:index]
   resources :message_threads, only: [:create], param: :slug do

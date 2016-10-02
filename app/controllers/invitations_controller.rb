@@ -31,6 +31,13 @@ class InvitationsController < ApplicationController
     redirect_to notifications_path
   end
 
+  def disconnect
+    artist = User.find_by_username(params.require(:with_artist))
+    invitation = current_user.invitation_with(artist)
+    invitation.destroy
+    redirect_to artist_dashfolio_path(username: artist.username)
+  end
+
   private
   def invitation
     current_user.pending_invitations.find(params.require(:id))
