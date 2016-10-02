@@ -10,7 +10,7 @@
       <div class='col-md-4 dashfolio-profile-pic-connect-container'>
         <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
-          <% if current_user.is_connected_to?(artist) %>
+          <% if current_user.present? && current_user.is_connected_to?(artist) %>
             <%= form_tag new_message_path(), method: :post, style: 'display: inline-block;' do %>
               <%= hidden_field_tag :receiver, artist.username %>
               <button class='message-dashfolio'>
@@ -49,16 +49,22 @@
           <%= render partial: 'tags/index', locals: { artist: artist } %>
         </div>
 
-        <div class='location-container'>
-          <i class='fa fa-map-marker' aria-hidden='true'></i>
-          <span class='dashfolio-location'>
-            <% if artist == current_user %>
+        <% if artist == current_user %>
+          <div class='location-container'>
+            <i class='fa fa-map-marker' aria-hidden='true'></i>
+            <span class='dashfolio-location'>
               <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location' %>
-            <% else %>
+            </span>
+          </div>
+        <% elsif artist.location.present? %>
+          <div class='location-container'>
+            <i class='fa fa-map-marker' aria-hidden='true'></i>
+            <span class='dashfolio-location'>
               <%= artist.location %>
-            <% end %>
-          </span>
-        </div>
+            </span>
+          </div>
+        <% end %>
+
         <span class='connection-number-dashfolio'><strong><%= pluralize(artist.connections.count, 'connection') %></strong> </span>
         <div class='connection-container'>
           <% artist.connections.sample(4).each do |friend| %>
