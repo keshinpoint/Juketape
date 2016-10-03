@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :enforce_artist_setup
-  skip_before_action :require_login, only: [:dashfolio]
+  skip_before_action :require_login, only: [:dashfolio, :search]
 
   def dashfolio
     @artist = if params[:username].present?
