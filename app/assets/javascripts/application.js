@@ -21,6 +21,25 @@
 //= require local_time
 //= require_tree .
 
+//landing page password validity 
+
+$(document).ready(function () {
+
+    $('.password-main').on('keyup', function () {
+        var newPW = $(this).get(0); 
+        newPW.setCustomValidity("");
+
+        if (newPW.checkValidity() === false) {
+
+            newPW.setCustomValidity("Passwords must be atleast six characters long with one number");
+
+        }
+
+
+    });
+
+});
+
 
 
 $(document).ready( function() {
@@ -261,7 +280,7 @@ $(document).ready(function(){
 
     $(this).find("span").addClass("search-number-active").removeClass("search-number-inactive");   
     $(this).siblings().find(".search-number").removeClass("search-number-active").addClass("search-number-inactive");
-    
+
 
     $('.search-name-container').show().siblings().hide();
     e.preventDefault();
@@ -329,3 +348,27 @@ $(document).ready(function(){
   });
 });
 
+//settings password validation 
+
+$(document).ready(function () { //This confirms if the 2 passwords match
+//http://stackoverflow.com/questions/39823079/html5-custom-validation-for-passwords/39823092#39823092 
+    $('#confirm-password').on('keyup', function (e) { 
+
+        var pwd1 = $("#new-password").get(0); //get() gets the dom node, not the value
+        var pwd2 = $("#confirm-password").get(0);
+         pwd2.setCustomValidity("");
+
+        if (pwd1.value != pwd2.value) { 
+            document.getElementById("confirm-password").setCustomValidity("The passwords don't match"); //The document.getElementById("cnfrm-pw") selects the id, not the value
+        }
+
+        else {
+            document.getElementById("confirm-password").setCustomValidity("");
+            //empty string means no validation error
+        }
+        e.preventDefault();  //would still work if this wasn't present
+
+
+});
+
+});

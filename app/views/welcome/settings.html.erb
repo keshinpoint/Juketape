@@ -207,23 +207,23 @@
 
  										<p>  <a class = "main-settings-edit" href = "#main-settings-form-password"> Change Password</a> </p>
 
- 										<div class = "form-group main-settings-form" id = "main-settings-form-password">
- 											<input class="form-control main-settings-form-input" type = "password" placeholder="Enter current password">
+ 										<form class = "form-group main-settings-form" id = "main-settings-form-password">
+ 											<input class="form-control main-settings-form-input password-main" type = "password" placeholder="Enter current password" required pattern = '(?=.*\d)(.{6,})'>
 
- 											<input class="form-control main-settings-form-input" type = "password" placeholder="Enter new password">
+ 											<input class="form-control main-settings-form-input password-main" type = "password" placeholder="Enter new password" id = "new-password" pattern = '(?=.*\d)(.{6,})' required>
 
- 											<input class="form-control main-settings-form-input" type = "password" placeholder="Retype new password">
+ 											<input class="form-control main-settings-form-input" type = "password" placeholder="Retype new password" id = "confirm-password" pattern = '(?=.*\d)(.{6,})' required>
 
  											<div class = "main-settings-form-buttons">
  												<button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
- 												<button type="button" class="btn btn-success">Save</button>
+ 												<button class="btn btn-success" type= "submit">Save</button>
  												<br>
  												<br>
  												<a href = "#" > Forgot password? </a> 
 
  											</div>									
 
- 										</div>
+ 										</form>
 
  									</div>
 

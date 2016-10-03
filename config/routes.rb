@@ -87,6 +87,8 @@ Rails.application.routes.draw do
         get :new_message
         get :search
         get :settings
+        get :forgot_password
+        get :new_password
       end
     end
   end

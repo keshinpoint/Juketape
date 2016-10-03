@@ -4,5 +4,7 @@ Creating a rails message system: https://medium.com/@danamulder/tutorial-create-
 
 Fixing a div on scroll: http://stackoverflow.com/questions/1216114/how-can-i-make-a-div-stick-to-the-top-of-the-screen-once-its-been-scrolled-to
 
+Deployement to aws: https://www.sitepoint.com/deploy-your-rails-app-to-aws/
+
 
 https://css-tricks.com/adding-stroke-to-web-text/

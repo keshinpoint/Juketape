@@ -19,8 +19,8 @@
     <span class='input-group-addon' id='signup_password'>
       <em class='glyphicon glyphicon-lock'></em>
     </span>
-    <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-sm',
-                      required: 'true', 'aria-describedby': 'signup_password', pattern: '(?=.*\d)(.{6,})' %>
+    <%= f.password_field :password, placeholder: 'Password', class: 'form-control input-sm password-main', 
+                      id: 'signup-password', required: 'true', 'aria-describedby': 'signup_password', pattern: '(?=.*\d)(.{6,})' %>
   </div>
   <%= f.submit 'SIGN UP', class: 'btn btn-default signup-submit' %>
 <% end %>

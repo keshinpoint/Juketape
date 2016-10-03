@@ -41,4 +41,10 @@ class WelcomeController < ApplicationController
   def settings
   end
 
+  def forgot_password
+  end
+
+  def new_password
+  end
+
 end
