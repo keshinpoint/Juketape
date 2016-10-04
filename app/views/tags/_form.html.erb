@@ -3,10 +3,10 @@
     <i class='fa fa-plus-square' aria-hidden='true'></i>
     Tag
   </button>
-  <div class='input-group' id='add-tag-input-group'>
-    <%= form_for :tag, url: artist_tags_path(artist), html: { method: :post, id: 'add_tag_form' }, remote: true do |f| %>
+  <div id='add-tag-input-group'>
+    <%= form_for :tag, url: artist_tags_path(artist), html: { method: :post, id: 'add_tag_form', class: 'input-group' }, remote: true do |f| %>
       <%= text_field_tag :name, nil, placeholder: 'Add a tag', class: 'form-control', id: 'add-tag-input',
-            required: 'true' %>
+            required: 'true', maxlength: "15" %>
       <span class='input-group-btn'>
         <button class='btn btn-danger' id='cancel-tag-form-button' type='button'>
           <i class='fa fa-close' aria-hidden='true'></i>
