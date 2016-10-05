@@ -16,7 +16,6 @@ class SettingsController < ApplicationController
 
   def profile_pic
     current_user.update_attributes(user_attrs(:image))
-    binding.pry
     redirect_to settings_path, notice: 'Profile pic updated successfully.'
   end
 
