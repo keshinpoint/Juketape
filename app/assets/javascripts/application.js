@@ -121,6 +121,7 @@ $(document).on('turbolinks:load', function() {
     console.log(jqXHR.content);
     if(jqXHR.tags_count >= 5) {
       $('#add-tag-input-group').hide();
+      $('#add-tag-input').hide();
     }
 
   }).on('ajax:error', function(jqXHR, error) {
@@ -139,6 +140,11 @@ $(document).ready(function() {
     $('#add-tag-input-group').hide();
     $('#add-tag-form-button').show();
   });
+
+
+
+
+//js for tags
 
 
   $('.dashfolio-midbar-about a').on('click', function(e){
@@ -211,7 +217,6 @@ $(document).ready(function() {
   });
 
 });
-
 
 
 $(document).ready(function(){

@@ -1306,6 +1306,9 @@ min-width: 25px;
 
 /*start of settings styles  */
 
+
+
+
 .settings-navigation-bar {
     float: left;
     height: 100%;
@@ -1406,6 +1409,25 @@ border-left: 4px solid #027878;
 .main-settings-social-individual {
   width: 80%;
 }
+
+ @media only screen and (min-device-width: 570px) and (max-device-width: 1200px) {
+
+.settings-container-media {
+position: relative;
+left: 20%;
+}
+
+
+    }
+
+
+
+
+
+
+
+
+
 /* end of settings styles */
 
 
