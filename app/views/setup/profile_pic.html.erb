@@ -12,7 +12,7 @@
                 <div class='form-group'>
                   <br>
                   <p> Upload a profile picture </p>
-                  <%= f.file_field :image %>
+                  <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
                   <%= f.hidden_field :image_cache %>
                 </div>
               </div>

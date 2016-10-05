@@ -1,0 +1,14 @@
+<p>  <strong> Location </strong> : <span class='main-setting-profile-current-location'><%= current_user.location %></span> 
+  <a class='main-settings-edit' href='#main-settings-form-location'> <i class='fa fa-pencil' aria-hidden='true'></i></a>
+</p>
+<div class='form-group main-settings-form' id='main-settings-form-location'>
+  <%= form_for current_user, url: location_settings_path(), html: { method: :post }, remote: true do |f| %>
+    <div class='errors'></div>
+    <%= f.text_field :location, value: nil, class: 'form-control main-settings-form-input', placeholder: "Enter your new location", required: true %>
+    <div class='main-settings-form-buttons'>
+      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
+      <%= f.submit 'Save', class: 'btn btn-success' %>
+      <hr>
+    </div>
+  <% end %>                
+</div>

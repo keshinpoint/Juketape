@@ -1,0 +1,48 @@
+class SettingsController < ApplicationController
+  before_action :set_partial_name, only: [:act_name, :location, :email, :change_password]
+
+  def index
+  end
+
+  def act_name
+    current_user.update_attributes(user_attrs(:act_name))
+    render 'update_user' if request.xhr?
+  end
+
+  def location
+    current_user.update_attributes(user_attrs(:location))
+    render 'update_user' if request.xhr?
+  end
+
+  def profile_pic
+    current_user.update_attributes(user_attrs(:image))
+    binding.pry
+    redirect_to settings_path, notice: 'Profile pic updated successfully.'
+  end
+
+  def email
+    current_user.update_attributes(user_attrs(:email))
+    render 'update_user' if request.xhr?
+  end
+
+  def change_password
+    resp = current_user.update_password!(update_pwd_attrs)
+    sign_in current_user if resp == true
+    render 'update_user' if request.xhr?
+  end
+
+  private
+  def set_partial_name
+    @partial_name = action_name.to_s
+  end
+
+  def user_attrs(field)
+    params.require(:user).permit(field)
+  end
+
+  def update_pwd_attrs
+    # params.permit(:current_password, :new_password, :confirm_password)
+    params
+  end
+
+end

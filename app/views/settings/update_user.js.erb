@@ -1,0 +1,19 @@
+<% if current_user.errors.present? %>
+  $('.set_' + '<%= @partial_name %>' + ' .errors').html('<%= error_content %>');
+<% else %>
+  $('.set_' + '<%= @partial_name %>').html('<%= escape_javascript(render partial: @partial_name) %>');
+  //settings edit slide downs the form
+  $('.main-settings-edit').on('click', function(e){
+    var settings_form = $(this).attr('href');
+    $('.main-settings-container ' + settings_form).slideDown();
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  //settings cancel button slides the forms
+  $('.settings-edit-cancel').on('click', function(e){ 
+    $(this).closest(".main-settings-form").slideUp();
+    e.preventDefault();
+    e.stopPropagation();
+  });
+<% end %>

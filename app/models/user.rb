@@ -49,6 +49,21 @@ class User < ApplicationRecord
     return user if     user.authenticated?(password)
   end
 
+  def update_password!(attrs)
+    if authenticated?(attrs[:current_password])
+      if attrs[:new_password] == attrs[:confirm_password]
+        self.password = attrs[:new_password]
+        self.save
+      else
+        errors.add(:base, 'Please enter confirm password same as new password')
+        false
+      end
+    else
+      errors.add(:base, 'Please enter correct password')
+      false
+    end
+  end
+
   def message_threads
     MessageThread.where('(sender_id = ? and deleted_by_sender = ?) or (receiver_id = ? and deleted_by_receiver = ?)', id, false, id, false).order(last_reply_at: :desc)
   end

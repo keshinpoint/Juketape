@@ -44,6 +44,15 @@ Rails.application.routes.draw do
     end
   end
   resources :notifications, only: [:index]
+  resources :settings, only: [:index] do
+    collection do
+      post :act_name
+      post :location
+      post :profile_pic
+      post :email
+      post :change_password
+    end
+  end
   resources :message_threads, only: [:create, :destroy], param: :slug do
     member do
       post :add_reply

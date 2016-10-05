@@ -1,0 +1,71 @@
+<div class='settings-navigation-bar'>
+  <div class='settings-navigation-bar-contents'>    
+    <div class='settings-navigation settings-navigation-active' id='settings-navigation-profile'>
+      <a class='settings-navigation-a settings-anchor-active' href= '#main-settings-profile' > <i class='fa fa-user' aria-hidden='true'></i>
+        &nbsp;Profile
+      </a>
+    </div>
+    <hr>
+    <div class='settings-navigation' id= 'settings-navigation-account'>
+      <a class='settings-navigation-a' href= '#main-settings-account' >
+        <i class='fa fa-unlock-alt' aria-hidden='true'></i>
+        &nbsp;Account
+      </a>
+    </div>
+    <hr> 
+    <div class='settings-navigation' id='settings-navigation-profile'>
+      <%= link_to sign_out_path, method: :delete, class: 'settings-navigation-a' do %>
+        <i class='fa fa-sign-out'></i>&nbsp;Logout
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='main-settings-container'>
+        <div class='main-settings' id='main-settings-profile'>
+          <div class='main-settings-header'>
+            <h2> Profile Settings</h2>
+            <hr>
+          </div>
+          <div class='main-settings-profile-content'>
+            <div class='main-settings-profile-pic set_profile_pic'>
+              <%= render partial: 'profile_pic' %>
+            </div>
+            <div class='main-settings-profile-name set_act_name'>
+              <%= render partial: 'act_name' %>
+            </div>  
+            <div class='main-settings-profile-location set_location'>
+              <%= render partial: 'location' %>
+            </div>
+            <hr>
+            <div class='main-settings-profile-social'>
+              <%#= render partial: 'connect_socials' %>
+            </div>
+          </div>
+        </div>
+
+        <div class='main-settings' id='main-settings-account'>
+          <div class='main-settings-header'>
+            <h2> General Account Settings</h2>
+            <hr> 
+          </div>
+          <div class='main-settings-account-content'>
+            <div class='main-settings-account-username'>
+              <p>
+                <strong> Username </strong>  : <span class='main-setting-account-current-uname'><%= current_user.username %></span>
+              </p>
+            </div>
+            <div class='main-settings-account-email set_email'>
+              <%= render partial: 'email' %>
+            </div>
+            <div class='main-settings-account-password set_change_password'>
+              <%= render partial: 'change_password' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
