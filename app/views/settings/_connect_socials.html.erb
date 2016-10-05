@@ -1,35 +1,47 @@
 <p> <strong> Configure your social accounts </strong> </p>
 <div class='main-settings-profile-social-accounts'>
   <div class='main-settings-social-individual'>
-    <a class='btn btn-block btn-social btn-soundcloud'>
-      <span class='fa fa-soundcloud'></span>
-      Connect SoundCloud
-    </a> 
-    <button type='button' class='btn btn-danger main-settings-social-disconect'> <i class='fa fa-times' aria-hidden='true'></i>
-    </button>
+    <%= link_to connect_soundcloud_text, connect_soundcloud_link,
+        class: 'btn btn-block btn-social btn-soundcloud' %>
+    <% if current_user.soundcloud_network.present? %>
+      <%= link_to disconnect_network_artists_path(network_name: 'soundcloud'), method: :delete, data: {confirm: 'Are you sure want to disconnect SoundCloud account?'} do %>
+        <button type='button' class='btn btn-danger main-settings-social-disconect'>
+          <i class='fa fa-times' aria-hidden='true'></i>
+        </button>
+      <% end %>
+    <% end %>
   </div>
   <div class='main-settings-social-individual'>
-    <a class='btn btn-block btn-social btn-youtube'> <!--doesnt exist in the bootstrap-social plugin (gem), so have manually added the css styles -->
-      <span class='fa fa-youtube-play'></span>
-      Connect YouTube
-    </a>
-    <button type='button' class='btn btn-danger main-settings-social-disconect'> <i class='fa fa-times' aria-hidden='true'></i>
-    </button>
+    <%= link_to connect_youtube_text, connect_youtube_link,
+        class: 'btn btn-block btn-social btn-youtube' %>
+    <% if current_user.youtube_network.present? %>
+      <%= link_to disconnect_network_artists_path(network_name: 'youtube'), method: :delete, data: {confirm: 'Are you sure want to disconnect youtube account?'} do %>
+        <button type='button' class='btn btn-danger main-settings-social-disconect'>
+          <i class='fa fa-times' aria-hidden='true'></i>
+        </button>
+      <% end %>
+    <% end %>
   </div>
   <div class='main-settings-social-individual'>
-    <a class='btn btn-block btn-social btn-instagram'>
-      <span class='fa fa-instagram'></span>
-      Connect Instagram
-    </a>
-    <button type='button' class='btn btn-danger main-settings-social-disconect'> <i class='fa fa-times' aria-hidden='true'></i>
-    </button> 
+    <%= link_to connect_instagram_text, connect_instagram_link,
+        class: 'btn btn-block btn-social btn-instagram' %>
+    <% if current_user.instagram_network.present? %>
+      <%= link_to disconnect_network_artists_path(network_name: 'instagram'), method: :delete, data: {confirm: 'Are you sure want to disconnect instagram account?'} do %>
+        <button type='button' class='btn btn-danger main-settings-social-disconect'>
+          <i class='fa fa-times' aria-hidden='true'></i>
+        </button>
+      <% end %>
+    <% end %>
   </div>
   <div class='main-settings-social-individual'>
-    <a class='btn btn-block btn-social btn-facebook'>
-      <span class='fa fa-facebook'></span>
-      Connect Facebook
-    </a>
-    <button type='button' class='btn btn-danger main-settings-social-disconect'> <i class='fa fa-times' aria-hidden='true'></i>
-    </button>
+    <%= link_to connect_facebook_text, connect_facebook_link,
+        class: 'btn btn-block btn-social btn-facebook' %>
+    <% if current_user.facebook_network.present? %>
+      <%= link_to disconnect_network_artists_path(network_name: 'facebook'), method: :delete, data: {confirm: 'Are you sure want to disconnect facebook account?'} do %>
+        <button type='button' class='btn btn-danger main-settings-social-disconect'>
+          <i class='fa fa-times' aria-hidden='true'></i>
+        </button>
+      <% end %>
+    <% end %>
   </div>                  
 </div>

@@ -26,6 +26,14 @@ class ArtistsController < ApplicationController
     @tag_search = User.joins(:tags).where('tags.name ILIKE ?', "%#{key}%").uniq.paginate(page: params[:page], per_page: 10)
   end
 
+  def disconnect_network
+    if user_network.present?
+      user_network.revoke_access if user_network.is_a?(YoutubeNetwork)
+      user_network.destroy
+    end
+    redirect_to :back, notice: 'Successfully disconnected.'
+  end
+
   private
   def get_content
     case params[:content_type]
@@ -57,6 +65,18 @@ class ArtistsController < ApplicationController
       current_user.facebook_network.update_attributes(selected_videos: items)
     else
       true
+    end
+  end
+
+  def user_network
+    @network ||= if params[:network_name] == 'soundcloud'
+      current_user.soundcloud_network
+    elsif params[:network_name] == 'facebook'
+      current_user.facebook_network
+    elsif params[:network_name] == 'youtube'
+      current_user.youtube_network
+    elsif params[:network_name] == 'instagram'
+      current_user.instagram_network
     end
   end
 end

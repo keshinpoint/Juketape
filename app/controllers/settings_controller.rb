@@ -40,8 +40,7 @@ class SettingsController < ApplicationController
   end
 
   def update_pwd_attrs
-    # params.permit(:current_password, :new_password, :confirm_password)
-    params
+    params.permit(:current_password, :new_password, :confirm_password)
   end
 
 end
