@@ -639,9 +639,11 @@ text-align:center;
 font-size: 0px;
 margin-top: 10px;
 border-radius: 5px;
--webkit-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
+
+}
+
+.bio-header {
+
 }
 
 .tablink { 
@@ -649,11 +651,13 @@ box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
  
   display: inline-block;
   text-decoration: none !important; /* this removes the undlerline for anchor tags on hover */
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 18px;
+
   padding: 5px; /* adds some space between anchor tags and the border for the tablinks */
   text-align: center;
   width: 50%; 
+  color: gray;
+
   /* most important as it specifies the width of each of the anchor element is half of the border around it */
 }
 
@@ -664,7 +668,7 @@ box-shadow: 0px 0px 5px -2px rgba(0,0,0,0.75);
 /* animation styles for the about header container links */
 .about-header-container {  
 width: 240px;
-border:10px solid #027878; 
+ 
 margin-left: 35px;
 }
 
@@ -672,19 +676,17 @@ margin-left: 35px;
 /* this is the class for highlighting a selected element in the about header container, eg: bio and timeline */
 
 position: relative;
-color: white;
-background-color: #027878; 
-height: 100%;
+-webkit-text-fill-color: #027878;
 text-decoration: none !important;  
+ border-bottom: 5px solid #027878;
 }
 
 .about-header-container>a:hover {
   
-  background-color: #027878; 
+   
+  border-bottom:5px solid #027878;
   height: 100%;
   position: relative;  
-  color: white;
-  opacity: 0.8;
 }
 
 /* end of animation styles for the about header container links */
@@ -696,26 +698,26 @@ text-decoration: none !important;
 .music-header-container {
   position: relative;
   left: 61%;
-  border:10px solid #027878; 
+ 
 }
 
 .music-header-container-active {
   /* this is the class for highlighting a selected element in the music header container, eg: tacks and albums */
 
 position: relative;
-color: white;
-background-color: #027878;  
+-webkit-text-fill-color: #027878;  
 height: 100%;
 text-decoration: none !important;
+border-bottom:5px solid #027878; 
 
 }
 
 .music-header-container >a:hover{
-  background-color: #027878;  
+    
   height: 100%;
   position: relative;  
-  color: white;
-  opacity: 0.8;
+  color: gray;
+  border-bottom:5px solid #027878; 
  
 }
 
@@ -746,7 +748,7 @@ text-decoration: none !important;
 
 .dashfolio-audio-add-button {
   position: relative;
-  bottom: 90px;
+  bottom: 80px;
 }
 
 .dashfolio-picture-add-button {
@@ -761,11 +763,6 @@ text-decoration: none !important;
 
 /* end of the add media buttons and their specific styles */
 
-
-
-.about-header-container>a {
-padding-right: 10px;
-}
 
 #bio-dashfolio { /*makes the about section is a lil more towards the center with right padding */
   padding-left: 40px;
