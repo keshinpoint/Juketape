@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 });
 
-
+//making the midbar sticky and fixed on scroll
 
 $(document).ready( function() {
 
@@ -173,14 +173,19 @@ $(document).ready(function() {
     //
 
     $('.dashfolio-music').show();
-    $('#tracks-dashfolio').show();
+    
     $('.main-content ' + currentAttrValue2).fadeIn(400);
     $('.dashfolio-about').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
     e.preventDefault();
     e.stopPropagation();		
-  });	
+  });
+
+//this below sees toit that the individal trackscontainer under the music tab is active by default only on the first click
+  $('.dashfolio-midbar-music a').one('click', function(e){
+  $('#tracks-dashfolio').show();	
+  });
 
   $('.dashfolio-midbar-videos a').on('click', function(e){
    var currentAttrValue3 = $(this).attr('href');

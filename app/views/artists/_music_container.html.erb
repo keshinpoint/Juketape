@@ -3,6 +3,7 @@
     <a class='tracks-header tablink music-header-container-active' href='#tracks-dashfolio'>Tracks</a> 
     <a class='album-header tablink' href='#album-dashfolio'>Albums</a> 
   </div>
+
   <div class='music-content media-content'>
     <div class='tabcontent' id='tracks-dashfolio'>
       <% if artist.soundcloud_network.present? %>
@@ -16,7 +17,9 @@
             </a>
           </div>
         <% end %>
+  
         <ul class='music-tracks-list'>
+           <hr>
           <% artist.soundcloud_network.tracks.each do |source| %>
             <li class='music-track-list-items dashfolio-content-li'>
               <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>
@@ -42,7 +45,9 @@
             </a>
           </div>
         <% end %>
+
         <ul class='music-albums-list'>
+           <hr>
           <% artist.soundcloud_network.albums.each do |source| %>
             <li class='music-albums-list-items dashfolio-content-li'>
               <iframe width='100%' height='450' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>

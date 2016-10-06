@@ -324,6 +324,12 @@ box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
 
 }
 
+@media screen and (max-height: 1000px) {
+    .dashfolio-main-container {
+        min-height: 500px;
+    }
+}
+
 
 .bar {  
 
@@ -793,6 +799,20 @@ border-bottom:5px solid #027878;
 .music-content { /* the music tracks will display in the center of the dashfolio*/
   text-align: center;
 }
+
+.music-tracks-list, .music-albums-list {
+  bottom: 80px;
+  position: relative;
+}
+
+.music-tracks-list>hr {
+  margin-bottom: 30px;
+}
+
+.music-albums-list>hr {
+  margin-bottom: 30px;
+}
+
 
 .pictures-content { /* the pics will display in the center of the dashfolio */
   text-align: center;
