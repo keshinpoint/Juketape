@@ -1,0 +1,13 @@
+<p>  <strong> Email </strong> : <span class='main-setting-account-current-email'><%= current_user.email %></span>  <a class='main-settings-edit' href='#main-settings-form-email'> <i class='fa fa-pencil' aria-hidden='true'></i></a>
+</p>
+<div class='form-group main-settings-form' id='main-settings-form-email'>
+  <%= form_for current_user, url: email_settings_path(), html: { method: :post }, remote: true do |f| %>
+    <div class='errors'></div>
+    <%= f.text_field :email, value: nil, class: 'form-control main-settings-form-input', placeholder: "Enter new email id", required: true %>
+    <div class='main-settings-form-buttons'>
+      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
+      <%= f.submit 'Save', class: 'btn btn-success' %>
+      <hr>
+    </div>
+  <% end %>
+</div>

@@ -45,9 +45,8 @@ $(document).ready(function () {
 $(document).ready( function() {
 
   $(window).scroll( function() {
-    if ($(window).scrollTop() > $('#dashfolio-main-row').offset().top)
+    if (($('#dashfolio-main-row').length > 0) && $(window).scrollTop() > $('#dashfolio-main-row').offset().top)
       $('.dashfolio-content-dashbar').addClass('sticky');         
-
     else
       $('.dashfolio-content-dashbar').removeClass('sticky');
   } );

@@ -1,0 +1,17 @@
+<p>
+  <strong> Act name </strong> : <span class='main-setting-profile-current-name'><%= current_user.act_name %></span>
+  <a class='main-settings-edit' href='#main-settings-form-name'>
+    <i class='fa fa-pencil' aria-hidden='true'></i>
+  </a>
+</p>
+<div class='form-group main-settings-form' id='main-settings-form-name'>
+  <%= form_for current_user, url: act_name_settings_path(), html: { method: :post }, remote: true do |f| %>
+    <div class='errors'></div>
+    <%= f.text_field :act_name, value: nil, class: 'form-control main-settings-form-input', placeholder: "Enter your act's new name", required: true %>
+    <div class='main-settings-form-buttons'>
+      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
+      <%= f.submit 'Save', class: 'btn btn-success' %>
+      <hr>
+    </div>
+  <% end %>
+</div>

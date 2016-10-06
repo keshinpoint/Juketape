@@ -24,11 +24,14 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create]
   resources :registrations, only: [:create]
   resources :artists, only: [] do
-    get :dashfolio, on: :collection
-    get :fetch_content, on: :collection
-    put :filter_content, on: :collection
-    post :search, on: :collection
-    get :search, on: :collection
+    collection do
+      get :dashfolio
+      get :fetch_content
+      put :filter_content
+      post :search
+      get :search
+      delete :disconnect_network
+    end
     resources :tags, only: [:create, :destroy]
   end
   get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio
@@ -44,6 +47,15 @@ Rails.application.routes.draw do
     end
   end
   resources :notifications, only: [:index]
+  resources :settings, only: [:index] do
+    collection do
+      post :act_name
+      post :location
+      post :profile_pic
+      post :email
+      post :change_password
+    end
+  end
   resources :message_threads, only: [:create, :destroy], param: :slug do
     member do
       post :add_reply

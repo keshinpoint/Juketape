@@ -62,4 +62,10 @@ module ApplicationHelper
     return 'my_dashfolio' if @artist.present? && current_user == @artist
   end
 
+  def error_content
+    content_tag :ul do 
+      current_user.errors.full_messages.collect { |message| content_tag(:li, message) }.join('').html_safe
+    end
+  end
+
 end

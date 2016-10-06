@@ -40,7 +40,7 @@ class YoutubeNetwork < ApplicationRecord
     all_videos.select {|image| selected_videos.include?(image['id'])}
   end
 
-  # private
+  private
   def fetch_and_update_all_videos
     self.update_attributes(all_videos: get_videos)
   end
