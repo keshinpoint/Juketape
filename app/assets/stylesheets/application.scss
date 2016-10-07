@@ -1444,7 +1444,11 @@ left: 20%;
 
 
 
-
+@media (min-width: 1200px) {
+  .main-settings-container {
+    margin-left: 300px;
+  }
+}
 
 
 
