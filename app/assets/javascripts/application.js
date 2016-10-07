@@ -129,7 +129,7 @@ $(document).on('turbolinks:load', function() {
 });
 
 // Below is the javascript for static pages
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('#add-tag-form-button').on('click', function(){
     $('#add-tag-input-group').show();
     $(this).hide();

@@ -52,13 +52,9 @@
         <h2><%= artist.act_name %></h2>
         <p class='dashfolio-tagline'><%= artist.tag_line %></p>
         <% end %>
-        <div class='tag-container' id='tag-container'>
+        <div id='tag-container'>
           <%= render partial: 'tags/index', locals: { artist: artist } %>
         </div>
-
-        <% if artist.tags.count < 5 && artist == current_user %>
-        <%= render partial: 'tags/form', locals: { artist: artist } %>
-        <% end %>
 
         <% if artist == current_user %>
         <div class='location-container'>
