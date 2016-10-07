@@ -322,7 +322,7 @@ $(document).ready(function(){
 
 // settings navigation js
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
   $('.settings-navigation').on('click', function(e){
     var settings_nav = $(this).find("a").attr('href');
 

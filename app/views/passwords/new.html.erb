@@ -1,0 +1,16 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2 class='password-recovery-header'>Forgot Password?</h2>  
+      <hr>
+      <p class='password-recovery-instructions'> Please enter the email id associated with your JukeTape account, and we'll send you an email to recover your account </p>
+      <%= form_tag passwords_path, method: :post, class: 'form-inline' do %>
+        <div class='form-group'>
+          <%= label_tag :email, 'Email' %>
+          <%= email_field_tag :email, nil, class: 'form-control', placeholder: 'janedoe@example.com' %>
+        </div>
+        <button type='submit' class='btn btn-primary'>Send recovery instructions </button>
+      <% end %>
+    </div>
+  </div>
+</div>

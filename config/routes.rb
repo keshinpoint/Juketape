@@ -14,12 +14,10 @@ Rails.application.routes.draw do
   resources :users,
     controller: 'clearance/users',
     only: Clearance.configuration.user_actions do
-      resource :password,
-        controller: 'clearance/passwords',
-        only: [:create, :edit, :update]
     end
 
   resources :users, only: [:update]
+  resources :passwords, only: [:new, :create, :edit, :update]
 
   resource :session, only: [:new, :create]
   resources :registrations, only: [:create]

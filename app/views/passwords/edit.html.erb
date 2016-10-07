@@ -1,0 +1,27 @@
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+      <h2 class = "password-recovery-header"> Set new password </h2>  
+      <hr>
+      <p class = "password-recovery-instructions"> Please configure your new password </p>
+      <%= form_tag password_path(token: @user.confirmation_token), method: :put, class: 'form-group password-recovery-form' do %>
+        <div class='errors'>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        <%= label_tag :new_password, 'Enter your new password' %>
+        <%= password_field_tag :new_password, nil, class: 'form-control main-settings-form-input password-main', placeholder: "Passwords must be atleast 6 characters long with one number", required: true, pattern: '(?=.*\d)(.{6,})', id: 'new-password' %>
+        <%= label_tag :new_password, 'Retype your new password' %>
+        <%= password_field_tag :confirm_password, nil, class: 'form-control main-settings-form-input', placeholder: "Passwords must be atleast 6 characters long with one number", required: true, pattern: '(?=.*\d)(.{6,})', id: 'confirm-password' %>
+        <div>
+          <button type="button" class="btn btn-danger settings-edit-cancel">Cancel</button>
+          <button class="btn btn-success" type="submit">Save</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

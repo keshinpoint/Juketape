@@ -27,5 +27,16 @@ module FrontendBootstrap
     config.assets.precompile += %w(.svg .eot .woff .ttf)
 
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'gmail.com',
+      user_name:            'testbits001@gmail.com',
+      password:             'testbits001',
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
+    config.action_mailer.perform_deliveries = true
   end
 end
