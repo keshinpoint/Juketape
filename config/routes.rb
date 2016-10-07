@@ -83,6 +83,9 @@ Rails.application.routes.draw do
     get :authorize_instagram
   end
 
+  get '/terms_of_use' => 'static#terms_of_use', as: :terms_of_use_path
+  get '/contact_us' => 'static#contact_us', as: :contact_us_path
+
   scope '/static' do
     resources :welcome do
       collection do
