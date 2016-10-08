@@ -10,3 +10,5 @@ Deployement to aws: https://www.sitepoint.com/deploy-your-rails-app-to-aws/
 https://css-tricks.com/adding-stroke-to-web-text/
 
 settin up mail on rails - https://launchschool.com/blog/handling-emails-in-rails
+
+FA to png:http://fa2png.io/

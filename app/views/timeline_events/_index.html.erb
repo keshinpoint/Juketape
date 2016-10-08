@@ -1,10 +1,10 @@
 <%= render partial: 'timeline_events/form' if artist == current_user %>
 <% artist.ordered_timeline_events.each do  |event| %>
   <% if artist == current_user %>
-    <h3 class='timeline-title'><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></h3>
+    <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></h3>
     <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
-    <p class='timeline-description'><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></p>
-    <p class='timeline-location'><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></p>
+    <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></p>
+    <p class='timeline-location'><span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></span></p>
   <% else %>
     <h3 class='timeline-title'><%= event.title %></h3>
     <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>

@@ -46,8 +46,8 @@
       </div>
       <div class='col-md-4 dashfolio-profile-name-container'>
         <% if artist == current_user %>
-        <h2><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></h2>
-        <p class='dashfolio-tagline'><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></p>
+        <h2> <span class = "in-line-edit"><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></span></h2>
+        <p class='dashfolio-tagline'><span class = "in-line-edit"><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></span></p>
         <% else %>
         <h2><%= artist.act_name %></h2>
         <p class='dashfolio-tagline'><%= artist.tag_line %></p>
@@ -59,7 +59,7 @@
         <% if artist == current_user %>
         <div class='location-container'>
           <i class='fa fa-map-marker' aria-hidden='true'></i>
-          <span class='dashfolio-location'>
+          <span class='dashfolio-location in-line-edit'>
             <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location' %>
           </span>
         </div>
