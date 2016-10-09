@@ -1,7 +1,7 @@
 <div class='tag-container'>
   <div class='tags-list'>
     <% artist.tags.each do |tag| %>
-      <span class='dashfolio-tag tag_item_<%= tag.id %>'>
+      <span class='dashfolio-tag close-tag tag_item_<%= tag.id %>'>
         <%= tag.name %>
         <% if artist == current_user %>
           <span class='close'>

@@ -1,8 +1,9 @@
 <div class='add-tag-dashfolio'>
-  <button type='button' class='btn btn-primary' id='add-tag-form-button'>
+  <button type='button' class='btn btn-primary' id='add-tag-form-button' data-toggle='tooltip' data-placement='right' title='<%= tags_tooltip(current_user, artist) %>'>
     <i class='fa fa-plus-square' aria-hidden='true'></i>
     Tag
   </button>
+
   <div id='add-tag-input-group'>
     <%= form_for :tag, url: artist_tags_path(artist), html: { method: :post, id: 'add_tag_form', class: 'input-group' }, remote: true do |f| %>
       <%= text_field_tag :name, nil, placeholder: 'Add a tag', class: 'form-control', id: 'add-tag-input',

@@ -8,13 +8,18 @@
   <div class='about-content'>
     <div class='tabcontent' id='bio-dashfolio' style='display: block;'>
       <p>
-        <span class = "in-line-edit">
+       
         <% if artist == current_user %>
+         <span class = "in-line-edit">
           <%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add your Bio' %>
+          </span>
+
         <% else %>
+        
           <%= artist.bio %>
+     
         <% end %>
-      </span>
+      
       </p>
     </div>
     <div class='tabcontent' id='timeline-dashfolio'>

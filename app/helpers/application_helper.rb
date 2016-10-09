@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def unable_send_message_tooltip(current_user, artist)
-    return 'Please Login to send messages' if current_user.nil?
+    return 'Please login to send messages' if current_user.nil?
     if current_user != artist && !current_user.is_connected_to?(artist)
       return 'The user needs to be in your network to send messages'
     end
@@ -52,6 +52,10 @@ module ApplicationHelper
     return 'You have already connected with this user' if current_user.is_connected_to?(artist)
     return 'You cannot connect with yourself' if current_user == artist
     return 'You have a pending connection request' if current_user.already_invited?(artist)
+  end
+
+  def tags_tooltip(current_user, artist)
+    return 'Tags are keywords that describe you for users to easily find you' if current_user == artist
   end
 
   def get_unseen_klass(current_user, message)
