@@ -9,3 +9,8 @@
     <i class='fa fa-twitter' aria-hidden='true'></i> Follow us on Twitter! </a>
   </div>
 </div>
+
+
+  <% unless action_name.eql?('dashfolio') %>
+      <%= render partial: 'shared/footer' %>
+    <% end %>
