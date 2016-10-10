@@ -25,20 +25,54 @@
 
 $(document).ready(function () {
 
-    $('.password-main').on('keyup', function () {
-        var newPW = $(this).get(0); 
-        newPW.setCustomValidity("");
+  $('.password-main').on('keyup', function () {
+    var newPW = $(this).get(0); 
+    newPW.setCustomValidity("");
 
-        if (newPW.checkValidity() === false) {
+    if (newPW.checkValidity() === false) {
 
-            newPW.setCustomValidity("Passwords must be atleast six characters long with one number");
+      newPW.setCustomValidity("Passwords must be atleast six characters long with one number");
 
-        }
+    }
 
 
-    });
+  });
 
 });
+
+//setting min height of search result and the dashfolio contents
+
+$(document).ready(function() {
+  function setHeight() {
+    windowHeight = $(window).innerHeight();
+    $('.main-search-results, .dashfolio-content-all, .content_body_message_threads_show, .content_body_notifications_index, .content_body_message_threads_new, .content_body_settings_index').css('min-height', windowHeight);
+  
+  };
+  setHeight();
+  
+  $(window).resize(function() {
+    setHeight();
+  });
+});
+
+//setting the border of the dashfolio content to the end of the browser window
+$(document).ready(function(){
+  var height_from_top = $('.dashfolio-main-row').offset().top; //gets height of the main row from the top
+  console.log(height_from_top);
+
+  var windowHeight = $(window).innerHeight(); //gets height of entire window
+  console.log(windowHeight);
+
+  var elementHeight = $('.dashfolio-content-dashbar').height(); //gets height of the midbar
+  console.log(elementHeight);
+
+  var height_from_bottom = windowHeight - height_from_top + elementHeight;
+  console.log(height_from_bottom);
+
+  $('.dashfolio-main-container').css('min-height', height_from_bottom);
+
+});
+
 
 //making the midbar sticky and fixed on scroll
 
@@ -146,8 +180,8 @@ $(document).on('turbolinks:load', function() {
 //js for tags
 
 
-  $('.dashfolio-midbar-about a').on('click', function(e){
-    var currentAttrValue1 = $(this).attr('href');   
+$('.dashfolio-midbar-about a').on('click', function(e){
+  var currentAttrValue1 = $(this).attr('href');   
 
     //below adds the active styles to midbar navigation icons
     $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
@@ -163,8 +197,8 @@ $(document).on('turbolinks:load', function() {
 
   });
 
-  $('.dashfolio-midbar-music a').on('click', function(e){
-    var currentAttrValue2 = $(this).attr('href');
+$('.dashfolio-midbar-music a').on('click', function(e){
+  var currentAttrValue2 = $(this).attr('href');
 
 
     //below adds the active styles to midbar navigation icons
@@ -182,12 +216,12 @@ $(document).on('turbolinks:load', function() {
   });
 
 //this below sees toit that the individal trackscontainer under the music tab is active by default only on the first click
-  $('.dashfolio-midbar-music a').one('click', function(e){
+$('.dashfolio-midbar-music a').one('click', function(e){
   $('#tracks-dashfolio').show();	
-  });
+});
 
-  $('.dashfolio-midbar-videos a').on('click', function(e){
-   var currentAttrValue3 = $(this).attr('href');
+$('.dashfolio-midbar-videos a').on('click', function(e){
+ var currentAttrValue3 = $(this).attr('href');
 
 
     //below adds the active styles to midbar navigation icons
@@ -203,8 +237,8 @@ $(document).on('turbolinks:load', function() {
     e.stopPropagation();
   });
 
-  $('.dashfolio-midbar-pictures a').on('click', function(e){
-   var currentAttrValue4 = $(this).attr('href');
+$('.dashfolio-midbar-pictures a').on('click', function(e){
+ var currentAttrValue4 = $(this).attr('href');
 
 
     //below adds the active styles to midbar navigation icons
@@ -361,23 +395,23 @@ $(document).on('turbolinks:load', function() {
 
 $(document).ready(function () { //This confirms if the 2 passwords match
 //http://stackoverflow.com/questions/39823079/html5-custom-validation-for-passwords/39823092#39823092 
-    $('#confirm-password').on('keyup', function (e) { 
+$('#confirm-password').on('keyup', function (e) { 
 
         var pwd1 = $("#new-password").get(0); //get() gets the dom node, not the value
         var pwd2 = $("#confirm-password").get(0);
-         pwd2.setCustomValidity("");
+        pwd2.setCustomValidity("");
 
         if (pwd1.value != pwd2.value) { 
             document.getElementById("confirm-password").setCustomValidity("The passwords don't match"); //The document.getElementById("cnfrm-pw") selects the id, not the value
-        }
+          }
 
-        else {
+          else {
             document.getElementById("confirm-password").setCustomValidity("");
             //empty string means no validation error
-        }
+          }
         e.preventDefault();  //would still work if this wasn't present
 
 
-});
+      });
 
 });

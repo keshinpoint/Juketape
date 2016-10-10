@@ -10,17 +10,18 @@
 
 <body class='<%= "#{controller_name} #{action_name} #{my_dashfolio_class}" %>'>
 
- <div class="letter_s">
+ <div class="content_body_<%= "#{controller_name}" %>_<%= "#{action_name}" %>">
 
   <%= render partial: 'shared/header' %>
   <%= render partial: 'shared/flash_messages' %>
 
   <%= yield %>
 
-  <%= render partial: 'shared/footer' %>
+
 
 </div>
 
+  <%= render partial: 'shared/footer' %>
 
 </body>
 </html>
