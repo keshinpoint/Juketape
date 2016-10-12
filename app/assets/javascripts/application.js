@@ -57,7 +57,7 @@ $(document).ready(function() {
 
 //setting the border of the dashfolio content to the end of the browser window
 $(document).ready(function(){
-  var height_from_top = $('.dashfolio-main-row').offset().top; //gets height of the main row from the top
+  var height_from_top = $('.dashfolio-main-row').offset.top; //gets height of the main row from the top
   console.log(height_from_top);
 
   var windowHeight = $(window).innerHeight(); //gets height of entire window
