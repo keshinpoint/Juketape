@@ -312,26 +312,9 @@ $(document).ready(function() {
 
 //search navigation JS
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
 
-  $('#search-navigation-user').on('click', function(e){
-    $(this).addClass("seach-navigation-active");
-    $(this).siblings().removeClass("seach-navigation-active");
-
-    $(this).find("p").addClass("search-navigation-p-active");
-    $(this).siblings().children("p").removeClass("search-navigation-p-active");
-
-    $(this).find("span").addClass("search-number-active").removeClass("search-number-inactive");   
-    $(this).siblings().find(".search-number").removeClass("search-number-active").addClass("search-number-inactive");
-
-
-    $('.search-name-container').show().siblings().hide();
-    e.preventDefault();
-
-  });
-
-
-  $('#search-navigation-tag').on('click', function(e){ 
+  $('.search-navigation').on('click', function(e){ 
     $(this).addClass("seach-navigation-active");
     $(this).siblings().removeClass("seach-navigation-active");
 
@@ -346,7 +329,8 @@ $(document).ready(function(){
     $(this).siblings().children("span").removeClass("search-number-active");
     $(this).siblings().children("span").addClass("search-number-inactive");
 
-    $('.search-tag-container').show().siblings().hide();
+    var container = $(this).data('container');
+    $('.' + container).show().siblings().hide();
     e.preventDefault();
   });
 
