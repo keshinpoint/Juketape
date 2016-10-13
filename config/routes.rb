@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   resources :settings, only: [:index] do
     collection do
       post :act_name
-      post :location
+      post :user_location
       post :profile_pic
       post :email
       post :change_password

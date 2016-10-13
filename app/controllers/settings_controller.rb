@@ -1,5 +1,5 @@
 class SettingsController < ApplicationController
-  before_action :set_partial_name, only: [:act_name, :location, :email, :change_password]
+  before_action :set_partial_name, only: [:act_name, :user_location, :email, :change_password]
 
   def index
   end
@@ -9,7 +9,7 @@ class SettingsController < ApplicationController
     render 'update_user' if request.xhr?
   end
 
-  def location
+  def user_location
     current_user.update_attributes(user_attrs(:location))
     render 'update_user' if request.xhr?
   end

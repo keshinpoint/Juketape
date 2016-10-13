@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+
+# Clearance gem messages overriding
+  flashes:
+    failure_after_create: Bad email or password.
+    failure_after_update: Password can't be blank.
+    failure_when_forbidden: Please double check the URL or try submitting
+      the form again.
+    failure_when_not_signed_in: Please login or sign-up to view the page.
