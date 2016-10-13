@@ -9,3 +9,6 @@
 
 <%= link_to connect_facebook_text, connect_facebook_link,
   class: 'btn btn-block btn-social btn-facebook' %>
+<% if current_user.facebook_network.present? %>
+  <%= render partial: 'select_facebook_pages', locals: {fb_pages: current_user.facebook_network.all_pages} %>
+<% end %>

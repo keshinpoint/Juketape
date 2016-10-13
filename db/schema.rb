@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002102058) do
+ActiveRecord::Schema.define(version: 20161013131328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20161002102058) do
     t.string   "selected_videos", default: [],              array: true
     t.json     "all_videos",      default: [],              array: true
     t.string   "display_name"
+    t.string   "page_id",         default: ""
+    t.json     "all_pages",       default: [],              array: true
   end
 
   create_table "instagram_networks", force: :cascade do |t|

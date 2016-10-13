@@ -3,6 +3,7 @@ class FacebookNetwork < ApplicationRecord
 
   belongs_to :user
   validates :token, presence: true
+  after_create :fetch_and_update_pages_and_videos#, :update_display_name
 
   def load_facebook
     @graph ||= Koala::Facebook::API.new(fb_token)
@@ -17,7 +18,11 @@ class FacebookNetwork < ApplicationRecord
   end
 
   def all_videos
-    @all_videos ||= videos
+    @all_videos ||= get_videos
+  end
+
+  def videos
+    all_videos.select {|video| selected_videos.include?(video['id'])}
   end
 
   def user_videos
@@ -37,13 +42,25 @@ class FacebookNetwork < ApplicationRecord
     end
   end
 
+  def update_fb_page(p_id)
+    self.page_id = p_id
+    self.all_videos = get_videos
+    save
+  end
+
   private
+
+  def fetch_and_update_pages_and_videos
+    self.all_pages = fb_pages
+    self.all_videos = get_videos
+    save
+  end
 
   # This is the token of the facebook, and this method can be removed once the 
   # offline access for the application has been granted by the facebook api.
   def fb_token
-    # token
-    ENV['FB_TOKEN']
+    token
+    # ENV['FB_TOKEN']
   end
 
   def get_page_token
@@ -51,16 +68,14 @@ class FacebookNetwork < ApplicationRecord
     load_facebook.get_page_access_token(page_id)
   end
 
-  def videos
+  def get_videos
     begin
       videos = load_facebook_page.get_connections('me', 'videos')
       videos.map do |video|
         {
-          id: video['id'],
-          name: video['name'],
-          picture: video['picture'],
-          source: video['source'],
-          updated_time: video['updated_time']
+          'id' => video['id'],
+          'name' => video['name'],
+          'url' => "http://www.facebook.com/video/embed?video_id=#{video['id']}"
         }
       end
     rescue

@@ -42,6 +42,7 @@
           <i class='fa fa-times' aria-hidden='true'></i>
         </button>
       <% end %>
+      <%= render partial: 'select_facebook_pages', locals: {fb_pages: current_user.facebook_network.all_pages} %>
     <% end %>
   </div>                  
 </div>

@@ -1,0 +1,33 @@
+<% if fb_pages.present? %>
+  <%= link_to "<span class='fa fa-facebook'></span>Update your FacebookPage".html_safe,
+        '#', class: 'btn btn-block btn-social btn-facebook',
+        data: {toggle: 'modal', target: '#facebook_pages_modal'} %>
+  <div class='modal fade' id='facebook_pages_modal' aria-labelledby='facebook_pages_modal_label'>
+    <div class='modal-dialog' role='document'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+          <h4 class='modal-title' id='facebook_pages_modal_label'>Facebook Pages</h4>
+        </div>
+        <%= form_tag fb_page_settings_path(), method: :put, remote: true do %>
+          <div class='modal-body'>
+            <div class='tracks_container_modal'>
+              <% fb_pages.each do |page| %>
+                <div class='radio'>
+                  <label>
+                    <input class='styled' type='radio' name='page_id' value='<%= page['id'] %>' <%= 'checked=true' if current_user.facebook_network.try(:page_id).to_s.eql?(page['id']) %> >
+                    <%= page['name'] %>
+                  </label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class='modal-footer'>
+            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+            <button type='submit' class='btn btn-success'>Update</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

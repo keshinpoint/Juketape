@@ -53,6 +53,7 @@ Rails.application.routes.draw do
       post :profile_pic
       post :email
       post :change_password
+      put :fb_page
     end
   end
   resources :message_threads, only: [:create, :destroy], param: :slug do

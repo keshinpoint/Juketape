@@ -15,7 +15,8 @@ class ArtistsController < ApplicationController
   def fetch_content
     render status: 200,
            partial: 'filter_content_form',
-           locals: { content_type: params[:content_type], content: get_content, container: params[:container] } and return
+           locals: { content_type: params[:content_type], content: get_content,
+            container: params[:container], selected_content: get_selected_content} and return
   end
 
   def filter_content
@@ -52,13 +53,32 @@ class ArtistsController < ApplicationController
       current_user.soundcloud_network.all_albums
     when 'youtube_videos'
       current_user.youtube_network.all_videos
+    when 'facebook_videos'
+      current_user.facebook_network.all_videos
+    else
+      []
+    end
+  end
+
+  def get_selected_content
+    case params[:content_type]
+    when 'instagram_images'
+      current_user.instagram_network.selected_images
+    when 'soundcloud_tracks'
+      current_user.soundcloud_network.selected_tracks
+    when 'soundcloud_albums'
+      current_user.soundcloud_network.selected_albums
+    when 'youtube_videos'
+      current_user.youtube_network.selected_videos
+    when 'facebook_videos'
+      current_user.facebook_network.selected_videos
     else
       []
     end
   end
 
   def update_content
-    items = params.require(:selected_items)
+    items = params[:selected_items] || []
     case params[:content_type]
     when 'instagram_images'
       current_user.instagram_network.update_attributes(selected_images: items)

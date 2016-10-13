@@ -30,6 +30,13 @@ class SettingsController < ApplicationController
     render 'update_user' if request.xhr?
   end
 
+  def fb_page
+    network = current_user.facebook_network
+    network.update_fb_page(params.require(:page_id)) if
+      current_user.facebook_network.present?
+    redirect_to settings_path
+  end
+
   private
   def set_partial_name
     @partial_name = action_name.to_s

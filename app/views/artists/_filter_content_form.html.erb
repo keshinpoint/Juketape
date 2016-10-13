@@ -12,7 +12,7 @@
           <li class='dashfolio-content-li'>
             <%= image_tag(image['url'], class: 'img-thumbnail', size: '150x150') %><br/>
             <span>
-              <input id="checkbox<%= image['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= image['id'] %>'>
+              <input id="checkbox<%= image['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= image['id'] %>' <%= 'checked=true' if selected_content.include?(image['id'].to_s) %>>
               <label for="checkbox<%= image['id'] %>">&nbsp;&nbsp;Select</label>
             </span>
           </li>
@@ -22,7 +22,7 @@
           <li class='dashfolio-content-li'>
             <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= file['url'] %>"></iframe><br/>
             <span>
-              <input id="checkbox<%= file['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= file['id'] %>'>
+              <input id="checkbox<%= file['id'] %>" class="styled" type="checkbox" name='selected_items[]' value='<%= file['id'] %>' <%= 'checked=true' if selected_content.include?(file['id'].to_s) %>>
               <label for="checkbox<%= file['id'] %>">&nbsp;&nbsp;Select</label>
             </span>
           </li>
