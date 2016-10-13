@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     resources :tags, only: [:create, :destroy]
   end
   get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio
+  get 'connections/:username' => 'artists#connections', as: :artist_connections
   resources :timeline_events, only: [:create, :update]
   post '/invite' => 'invitations#invite', as: :invite_artist
   resources :invitations, only: [:new, :create] do

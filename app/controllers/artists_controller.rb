@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class ArtistsController < ApplicationController
   before_action :enforce_artist_setup
   skip_before_action :require_login, only: [:dashfolio, :search]
@@ -32,6 +34,11 @@ class ArtistsController < ApplicationController
       user_network.destroy
     end
     redirect_to :back, notice: 'Successfully disconnected.'
+  end
+
+  def connections
+    artist = User.find_by_username(params.require(:username))
+    @connections = artist.connections.paginate(page: params[:page], per_page: 10)
   end
 
   private

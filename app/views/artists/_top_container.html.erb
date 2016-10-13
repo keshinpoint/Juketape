@@ -31,7 +31,7 @@
               </button>
             <% end %>
           <% elsif current_user.present? && current_user.is_connected_to?(artist) %>
-            <%= link_to disconnect_invitations_path(with_artist: artist.username), method: :delete do %>
+            <%= link_to disconnect_invitations_path(with_artist: artist.username), method: :delete, data: {confirm: "Are you sure want to disconnect with #{artist.act_name} ?"} do %>
               <button class='connect-dashfolio'>
                 <i class='fa fa-user-plus' aria-hidden='true'></i> Disconnect
               </button>
@@ -81,7 +81,7 @@
           </div>
           <% end %>
           <div>
-            <a class='all-connection-anchor' href='javascrip:void(0)'> See all connections </a>
+            <%= link_to 'See all connections', artist_connections_path(username: artist.username), class: 'all-connection-anchor' %>
           </div>
         </div>
       </div>

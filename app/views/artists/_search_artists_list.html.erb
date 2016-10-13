@@ -1,3 +1,4 @@
+<h3 class = "search-keyword-header"> Searching profiles for <%= search_by %>s that include <span class = "search-main-keyword"> <%= params[:search] %> </span> </h3>
 <% artists.each do |artist| %>
   <%= link_to artist_dashfolio_path(username: artist.username), target: '_blank' do %>
     <div class='search-name-individual col-md-8'>
