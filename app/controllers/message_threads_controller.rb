@@ -17,7 +17,9 @@ class MessageThreadsController < ApplicationController
   end
 
   def index
-    redirect_to message_show_path(slug: current_user.recent_thread.slug)
+    if current_user.recent_thread.present?
+      redirect_to message_show_path(slug: current_user.recent_thread.slug)
+    end
   end
 
   def show
@@ -46,7 +48,7 @@ class MessageThreadsController < ApplicationController
       { deleted_by_receiver: true, deleted_id_by_receiver: thread.last_message.id }
     end
     thread.update_attributes(attrs)
-    redirect_to message_show_path(slug: current_user.recent_thread.slug)
+    redirect_to artist_inbox_path()
   end
 
   private
