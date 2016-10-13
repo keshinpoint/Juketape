@@ -61,11 +61,15 @@ html, body {
 border-style: none;
 border: none;
 border-radius: 0px;
-background: #4c4c4c; /* Old browsers */
-background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #1c1c1c 100%, #3f3f3f 100%, #111111 100%, #2b2b2b 100%, #303030 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#1c1c1c 100%,#3f3f3f 100%,#111111 100%,#2b2b2b 100%,#303030 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #4c4c4c 0%,#595959 12%,#1c1c1c 100%,#3f3f3f 100%,#111111 100%,#2b2b2b 100%,#303030 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#303030',GradientType=0 ); /* IE6-9 */
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,666666+0,595959+0,474747+49,131313+100 */
+background: rgb(76,76,76); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(76,76,76,1) 0%, rgba(102,102,102,1) 0%, rgba(89,89,89,1) 0%, rgba(71,71,71,1) 49%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(76,76,76,1) 0%,rgba(102,102,102,1) 0%,rgba(89,89,89,1) 0%,rgba(71,71,71,1) 49%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(76,76,76,1) 0%,rgba(102,102,102,1) 0%,rgba(89,89,89,1) 0%,rgba(71,71,71,1) 49%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+
+
 margin-bottom: 0; /* important as it eliminates the space between navbar and jumbotron image*/
 
 }
@@ -387,8 +391,8 @@ box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
 .bar {  
 
   width: 30px;
-  height: 340px;
-  max-height: 350px;
+  height: 380px;
+
   display: inline-block;
   margin-left: -5px;
   padding: 0;
@@ -638,12 +642,13 @@ width: 250px; /*makes the connections profile pis stack up to 4 per row, only ch
   border-radius: 10px;
    display: inline-block;
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2d2d2d+0,070707+100,131313+100 */
-background: rgb(45,45,45); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(45,45,45,1) 0%, rgba(7,7,7,1) 100%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(45,45,45,1) 0%,rgba(7,7,7,1) 100%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,474747+0,232323+0,0f0f0f+100,131313+100 */
+background: rgb(76,76,76); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(35,35,35,1) 0%, rgba(15,15,15,1) 100%, rgba(19,19,19,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(76,76,76,1) 0%,rgba(71,71,71,1) 0%,rgba(35,35,35,1) 0%,rgba(15,15,15,1) 100%,rgba(19,19,19,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(76,76,76,1) 0%,rgba(71,71,71,1) 0%,rgba(35,35,35,1) 0%,rgba(15,15,15,1) 100%,rgba(19,19,19,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+
 
 
 }
@@ -783,6 +788,11 @@ text-decoration: none !important;
  
 }
 
+.music-hr {
+     bottom: 80px;
+    position: relative;
+}
+
 .music-header-container-active {
   /* this is the class for highlighting a selected element in the music header container, eg: tacks and albums */
 
@@ -877,8 +887,11 @@ border-bottom:5px solid #027878;
 }
 
 .music-tracks-list, .music-albums-list {
-  bottom: 80px;
-  position: relative;
+
+
+      bottom: 50px;
+    position: relative;
+
 }
 
 .music-tracks-list>hr {
