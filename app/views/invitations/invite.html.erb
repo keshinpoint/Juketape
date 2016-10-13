@@ -24,9 +24,9 @@
                 <%= f.text_field :known_by, class: 'form-control', disabled: true, required: true %>
               </div>
               <%= f.submit 'Submit', class: 'btn btn-success' %>
-              <button type='button' class='btn btn-danger'>
-                <%= link_to 'Cancel', artist_dashfolio_path(username: params[:invitee]), style: 'color: #fff;' %>
-              </button>
+              <%= link_to artist_dashfolio_path(username: params[:invitee]), style: 'color: #fff;' do %>
+                <button type='button' class='btn btn-danger'> Cancel</button>
+              <% end %>
             <% end %>
           </div>
         </div>
