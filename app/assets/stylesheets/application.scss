@@ -788,6 +788,11 @@ text-decoration: none !important;
  
 }
 
+.music-hr {
+     bottom: 80px;
+    position: relative;
+}
+
 .music-header-container-active {
   /* this is the class for highlighting a selected element in the music header container, eg: tacks and albums */
 
@@ -882,8 +887,11 @@ border-bottom:5px solid #027878;
 }
 
 .music-tracks-list, .music-albums-list {
-  bottom: 80px;
-  position: relative;
+
+
+      bottom: 50px;
+    position: relative;
+
 }
 
 .music-tracks-list>hr {
