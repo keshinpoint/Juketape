@@ -31,7 +31,7 @@
             </li>
           <% end %>
         </ul>
-      <% else %>
+      <% elsif artist == current_user %>
         <div class='dashfolio-add-media dashfolio-audio-add-button'>
           <%= link_to connect_soundcloud_text, connect_soundcloud_link,
               class: 'btn btn-block btn-social btn-soundcloud' %>
@@ -62,7 +62,7 @@
             </li>
           <% end %>
         </ul>
-      <% else %>
+      <% elsif artist == current_user %>
         <div class='dashfolio-add-media dashfolio-audio-add-button'>
           <%= link_to connect_soundcloud_text, connect_soundcloud_link,
               class: 'btn btn-block btn-social btn-soundcloud' %>

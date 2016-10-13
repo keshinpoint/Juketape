@@ -31,7 +31,7 @@
             </li>
           <% end if artist.instagram_network.present? %>
         </ul>
-      <% else %>
+      <% elsif artist == current_user %>
         <div class='dashfolio-add-media dashfolio-picture-add-button'>
           <%= link_to connect_instagram_text, connect_instagram_link,
                   class: 'btn btn-block btn-social btn-instagram' %>
