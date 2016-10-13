@@ -1,7 +1,7 @@
 class MessageThreadsController < ApplicationController
 
   def new
-    @receiver = User.find_by_username(params.require(:receiver))
+    @receiver = User.find_by_username(params.require(:username))
   end
 
   def create

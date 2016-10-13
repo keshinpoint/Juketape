@@ -59,7 +59,7 @@ Rails.application.routes.draw do
       post :add_reply
     end
   end
-  post 'messages/new' => 'message_threads#new', as: :new_message
+  get 'messages/new/:username' => 'message_threads#new', as: :new_message
   get '/inbox' => 'message_threads#index', as: :artist_inbox
   get '/inbox/:slug' => 'message_threads#show', as: :message_show
 

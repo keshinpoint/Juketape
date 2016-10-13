@@ -11,8 +11,7 @@
         <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
           <% if current_user.present? && current_user.is_connected_to?(artist) %>
-          <%= form_tag new_message_path(), method: :post, style: 'display: inline-block;' do %>
-          <%= hidden_field_tag :receiver, artist.username %>
+          <%= link_to new_message_path(username: artist.username), style: 'display: inline-block;' do %>
           <button class='message-dashfolio'>
             <i class='fa fa-envelope' aria-hidden='true'></i>
           </button>
