@@ -88,7 +88,7 @@ $(document).ready( function() {
 } );
 
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500);
 
 });
@@ -175,8 +175,6 @@ $(document).on('turbolinks:load', function() {
   });
 
 
-
-
 //js for tags
 
 
@@ -257,7 +255,7 @@ $('.dashfolio-midbar-pictures a').on('click', function(e){
 });
 
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
 
 
   $('.music-header-container a').on('click', function(e){
