@@ -17,6 +17,13 @@ class TimelineEventsController < ApplicationController
     end
   end
 
+  def destroy
+    event.destroy if event.present?
+    if request.xhr?
+      render 'create'
+    end
+  end
+
   private
 
   def event

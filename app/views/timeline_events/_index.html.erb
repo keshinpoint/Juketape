@@ -5,6 +5,7 @@
     <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
     <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></p>
     <p class='timeline-location'><span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></span></p>
+    <p><%= link_to 'Delete', timeline_event_path(event), class: 'btn btn-danger', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} %></p>
   <% else %>
     <h3 class='timeline-title'><%= event.title %></h3>
     <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
