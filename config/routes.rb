@@ -34,7 +34,9 @@ Rails.application.routes.draw do
   end
   get 'dashfolio/:username' => 'artists#dashfolio', as: :artist_dashfolio
   get 'connections/:username' => 'artists#connections', as: :artist_connections
-  resources :timeline_events, only: [:create, :update, :destroy]
+  resources :timeline_events, only: [:create, :update, :destroy] do
+    put :update_dates, on: :member
+  end
   get '/invite/:username' => 'invitations#invite', as: :invite_artist
   resources :invitations, only: [:new, :create] do
     member do

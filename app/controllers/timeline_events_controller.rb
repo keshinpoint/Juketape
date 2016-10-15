@@ -17,6 +17,13 @@ class TimelineEventsController < ApplicationController
     end
   end
 
+  def update_dates
+    params[:timeline_event][:at_present] ||= false
+    if event.update_attributes(event_date_params)
+      render 'create' if request.xhr?
+    end
+  end
+
   def destroy
     event.destroy if event.present?
     if request.xhr?
@@ -37,5 +44,9 @@ class TimelineEventsController < ApplicationController
   def event_params
     params.require(:timeline_event).permit(:title, :description,
       :start_date, :end_date, :location, :at_present)
+  end
+
+  def event_date_params
+    params.require(:timeline_event).permit(:start_date, :end_date, :at_present)
   end
 end

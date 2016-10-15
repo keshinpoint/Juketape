@@ -30,7 +30,7 @@
           <span class="input-group-addon"> <em class="glyphicon glyphicon-calendar"> </em> </span>
           <%= f.text_field :end_date, placeholder: 'End date', class: 'form-control datepicker_input timeline-form-end-date', disabled: true, required: true %>
         </div>
-        <label><%= f.check_box :at_present, {id: 'event_end_date_checkbox', checked: true}, true, false %> Present</label>
+        <label><%= f.check_box :at_present, {class: 'event_end_date_checkbox', checked: true}, true, false %> Present</label>
       </div>
       <%= f.submit 'Create Event', class: 'btn btn-success' %>
       <button type="button" class="btn btn-danger" id = "timeline-event-cancel"> Cancel </button>

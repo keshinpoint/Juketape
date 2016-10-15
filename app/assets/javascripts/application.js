@@ -114,8 +114,16 @@ $(document).on('turbolinks:load', function() {
     $errorObj.html(error.responseText);
   });
 
-  $('#event_end_date_checkbox').on('change', function() {
-    $('.timeline-form-end-date').prop('disabled', function(i, v) { return !v; });
+  $('.event_end_date_checkbox').on('change', function() {
+    $(this).closest('form').find('.timeline-form-end-date').prop('disabled', function(i, v) { return !v; });
+  });
+
+  $('.timeline-date').on('click', function() {
+    $(this).hide().siblings('.timeline-date-edit').slideDown();
+  })
+
+  $('.timeline-event-date-cancel').on('click', function() {
+    $(this).parents('.timeline-date-edit').hide().siblings('.timeline-date').show();
   });
 
   $('.timeline-event-add').on('click', function(){

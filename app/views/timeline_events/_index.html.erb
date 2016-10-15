@@ -1,16 +1,36 @@
 <%= render partial: 'timeline_events/form' if artist == current_user %>
 <% artist.ordered_timeline_events.each do  |event| %>
-  <% if artist == current_user %>
-    <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></h3>
-    <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
-    <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></p>
-    <p class='timeline-location'><span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></span></p>
-    <p><%= link_to 'Delete', timeline_event_path(event), class: 'btn btn-danger', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} %></p>
-  <% else %>
-    <h3 class='timeline-title'><%= event.title %></h3>
-    <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
-    <p class='timeline-description'><%= event.description %></p>
-    <p class='timeline-location'><%= event.location %></p>
-  <% end %>
+  <div class='event_container'>
+    <% if artist == current_user %>
+      <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></h3>
+      <p class='timeline-date'><span class='in-line-edit'><%= event.start_date %> - <%= event.end_time %></span></p>
+      <div class='timeline-date-edit'>
+        <%= form_for event, url: update_dates_timeline_event_path(event), html: {class: 'dashfolio-timeline-form-edit', id: "dashfolio-timeline-form-edit-#{event.id}", method: :put}, remote: true do |f| %>
+          <div class='errors'></div>
+          <div class='form-group form-inline'>
+            <div class="input-group">
+               <span class="input-group-addon"> <em class="glyphicon glyphicon-calendar"> </em> </span>
+              <%= f.text_field :start_date, value: event.start_date, placeholder: 'Start date', class: 'form-control datepicker_input', required: true, id: "event_#{event.id}_start_date" %>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"> <em class="glyphicon glyphicon-calendar"> </em> </span>
+              <%= f.text_field :end_date, value: event.end_date, placeholder: 'End date', class: 'form-control datepicker_input timeline-form-end-date', disabled: event.at_present?, required: true, id: "event_#{event.id}_end_date" %>
+            </div>
+            <label><%= f.check_box :at_present, {class: 'event_end_date_checkbox', checked: event.at_present?}, true, false %> Present</label>
+          </div>
+          <%= f.submit 'Update dates', class: 'btn btn-success' %>
+          <button type="button" class="btn btn-danger timeline-event-date-cancel"> Cancel </button>
+        <% end %>
+      </div>
+      <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></p>
+      <p class='timeline-location'><span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></span></p>
+      <p><%= link_to 'Delete', timeline_event_path(event), class: 'btn btn-danger', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} %></p>
+    <% else %>
+      <h3 class='timeline-title'><%= event.title %></h3>
+      <p class='timeline-date'><%= event.start_date %> - <%= event.end_time %></p>
+      <p class='timeline-description'><%= event.description %></p>
+      <p class='timeline-location'><%= event.location %></p>
+    <% end %>
+  </div>
   <hr/>
 <% end %>
