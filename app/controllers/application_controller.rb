@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_login
-  helper_method :soundcloud_oauth, :youtube_oauth, :facebook_oauth, :instagram_oauth
+  helper_method :soundcloud_oauth, :youtube_oauth, :facebook_oauth, :instagram_oauth, :can_connect_with?
 
   def authenticate(params)
     User.authenticate(
@@ -42,6 +42,14 @@ class ApplicationController < ActionController::Base
     @ig_oauth ||= Instagram.new({
       redirect_uri: authorize_instagram_url()
     })
+  end
+
+  def can_connect_with?(current_user, artist)
+    if current_user.nil? || (current_user == artist) || current_user.is_connected_to?(artist) || current_user.already_invited?(artist)
+      false
+    else
+      true
+    end
   end
 
   private

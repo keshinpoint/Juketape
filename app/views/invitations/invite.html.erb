@@ -3,11 +3,11 @@
     <div class='col-md-12'>
       <h3> Send Connection Request </h3>
       <div class='connection-invite'>
-        <p> How do you know <strong> <%= params[:invitee_act_name] %> </strong> ? </p>
+        <p> How do you know <strong> <%= @invitee.act_name %> </strong> ? </p>
         <div class='panel panel-default'>           
           <div class='panel-body connection-invite-panel'>
             <%= form_for :invitation, url: invitations_path(), html: {method: :post} do |f| %>
-              <%= hidden_field_tag :invitee, params[:invitee] %>
+              <%= hidden_field_tag :invitee, @invitee.username %>
               <div class='radio'>
                 <label><%= f.radio_button :known_by, 'Friend', checked: true %>Friend</label>
               </div>
@@ -24,7 +24,7 @@
                 <%= f.text_field :known_by, class: 'form-control', disabled: true, required: true %>
               </div>
               <%= f.submit 'Submit', class: 'btn btn-success' %>
-              <%= link_to artist_dashfolio_path(username: params[:invitee]), style: 'color: #fff;' do %>
+              <%= link_to artist_dashfolio_path(username: @invitee.username), style: 'color: #fff;' do %>
                 <button type='button' class='btn btn-danger'> Cancel</button>
               <% end %>
             <% end %>

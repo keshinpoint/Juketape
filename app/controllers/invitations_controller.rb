@@ -1,6 +1,11 @@
 class InvitationsController < ApplicationController
 
   def invite
+    @invitee = User.find_by_username(params.require(:username))
+    unless can_connect_with?(current_user, @invitee)
+      flash[:notice] = "You can not send invitation request to this artist #{@invitee.act_name}"
+      redirect_to dashfolio_artists_path()
+    end
   end
 
   def create

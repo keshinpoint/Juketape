@@ -30,14 +30,6 @@ module ApplicationHelper
     end
   end
 
-  def can_connect_with?(current_user, artist)
-    if current_user.nil? || (current_user == artist) || current_user.is_connected_to?(artist) || current_user.already_invited?(artist)
-      false
-    else
-      true
-    end
-  end
-
   def unable_send_message_tooltip(current_user, artist)
     return 'Please login to send messages' if current_user.nil?
     if current_user != artist && !current_user.is_connected_to?(artist)

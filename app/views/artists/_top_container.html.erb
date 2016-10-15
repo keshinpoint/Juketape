@@ -23,9 +23,7 @@
           </button>
           <% end %>
           <% if can_connect_with?(current_user, artist) %>
-            <%= form_tag invite_artist_path(), method: :post, style: 'display: inline-block;' do %>
-              <%= hidden_field_tag :invitee, artist.username %>
-              <%= hidden_field_tag :invitee_act_name, artist.act_name %>
+            <%= link_to invite_artist_path(username: artist.username), style: 'display: inline-block;' do %>
               <button class='connect-dashfolio' type="submit">
                 <i class='fa fa-user-plus' aria-hidden='true'></i> connect
               </button>
