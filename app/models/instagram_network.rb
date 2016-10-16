@@ -16,13 +16,14 @@ class InstagramNetwork < ApplicationRecord
     all_images.select {|image| selected_images.include?(image['id'])}
   end
 
-  private
-  def fetch_and_update_all_images
-    self.update_attributes(all_images: get_images)
+  def self.sync_data
+    all.each do |network|
+      network.update_attributes(all_images: network.get_images)
+    end
   end
 
   def get_images
-    load_instagram.recent_images.map do |image|
+    load_instagram.all_images.map do |image|
       {
         id: image['id'],
         link: image['link'],
@@ -32,6 +33,11 @@ class InstagramNetwork < ApplicationRecord
         username: image['user']['username']
       }
     end
+  end
+
+  private
+  def fetch_and_update_all_images
+    self.update_attributes(all_images: get_images)
   end
 
   def update_display_name
