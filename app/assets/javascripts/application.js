@@ -118,7 +118,7 @@ $(document).on('turbolinks:load', function() {
     $(this).closest('form').find('.timeline-form-end-date').prop('disabled', function(i, v) { return !v; });
   });
 
-  $('.timeline-date').on('click', function() {
+  $('.my_dashfolio .timeline-date').on('click', function() {
     $(this).hide().siblings('.timeline-date-edit').slideDown();
   })
 
