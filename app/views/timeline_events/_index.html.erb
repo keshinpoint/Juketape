@@ -4,11 +4,11 @@
     <% if artist == current_user %>
       <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span>
 
-        <%= link_to 'Delete', timeline_event_path(event), class: 'btn btn-danger pull-right', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} %>
+        <%= link_to timeline_event_path(event), class: 'btn btn-danger pull-right', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
 
+        <% end %>
 
-
-      
 
 
       </h3> 
