@@ -41,6 +41,18 @@ class Instagram
     JSON.parse(result.body)['data']
   end
 
+  def all_images(max_id=nil)
+    params = {access_token: access_token}
+    params[:max_id] = max_id if max_id.present?
+    result = base_connection.get("/v1/users/#{get_user['id']}/media/recent", params)
+    data = JSON.parse(result.body)['data']
+    @images ||= []
+    @images = @images.concat(data).uniq
+    pagination = JSON.parse(result.body)['pagination']
+    return @images unless pagination.present?
+    all_images(@images.last['id'])
+  end
+
 
   private
   def get(url)

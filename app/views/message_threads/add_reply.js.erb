@@ -3,4 +3,6 @@ $(".inbox-main-message-body").animate({ scrollTop: $('.inbox-main-message-body')
 $('.inbox-main-reply-body form').trigger("reset");
 $('.message_thread_<%= @thread.slug %>').prependTo('.inbox-preview-items');
 $('.message_thread_<%= @thread.slug %> p.inbox-preview-date').html('<%= local_time(@message.sent_at).html_safe %>');
+$('.message_thread_<%= @thread.slug %> .label-info').remove();
+$('.message_thread_<%= @thread.slug %> p.inbox-preview-name').prepend("<span class='label label-info'><i class='fa fa-reply' aria-hidden='true'></i></span>");
 LocalTime.run();
