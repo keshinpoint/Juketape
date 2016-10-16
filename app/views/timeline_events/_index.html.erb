@@ -3,18 +3,8 @@
   <div class='event_container'>
     <% if artist == current_user %>
       <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span>
-
         <%= link_to 'Delete', timeline_event_path(event), class: 'btn btn-danger pull-right', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} %>
-
-
-
-      
-
-
       </h3> 
-
-      <p></p>
-
       <p class='timeline-date'><span class='in-line-edit'><%= event.start_date %> - <%= event.end_time %></span></p>
       <div class='timeline-date-edit'>
         <%= form_for event, url: update_dates_timeline_event_path(event), html: {class: 'dashfolio-timeline-form-edit', id: "dashfolio-timeline-form-edit-#{event.id}", method: :put}, remote: true do |f| %>

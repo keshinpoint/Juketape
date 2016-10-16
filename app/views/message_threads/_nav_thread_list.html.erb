@@ -8,8 +8,11 @@
         </div>
         <div class="inbox-preview-name-container">
           <p class="inbox-preview-name">
-            <span class='label label-info'><%= thread.sender == current_user ? 'To' : 'from' %> <i class="fa fa-reply" aria-hidden="true"></i>
-</span>
+            <% if (thread.messages_for(current_user).count > 1) && (thread.last_message.sender == current_user)   %>
+              <span class='label label-info'>
+                <i class="fa fa-reply" aria-hidden="true"></i>
+              </span>
+            <% end %>
             <strong><%= artist.act_name %></strong>
           </p>
           <p class="inbox-preview-subject"><%= truncate(thread.subject, length: 35) %></p>
