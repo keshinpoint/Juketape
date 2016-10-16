@@ -207,6 +207,14 @@ bottom:0;
 
 }
 
+.navbar-default .navbar-nav > li > a {
+    color: #C3C3C3;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #C3C3C3;
+}
+
 .search .footer {
 
   
@@ -1576,3 +1584,19 @@ margin-bottom: 20px;
 }
 
 /* end of terms and services */
+
+
+/* start of contact us */
+
+.contact-header {
+  font-family: "neutra-demi";
+  font-size: 40px;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.github-contact-us {
+  width: 50%;
+}
+
+/* end of contact us */

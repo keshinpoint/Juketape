@@ -45,7 +45,7 @@ $(document).ready(function () {
 $(document).on('turbolinks:load',function() {
   function setHeight() {
     windowHeight = $(window).innerHeight();
-    $('.main-search-results, .dashfolio-content-all, .content_body_message_threads_show, .content_body_notifications_index, .content_body_message_threads_new, .content_body_settings_index, .content_body_message_threads_index, .content_body_setup_act_name, .content_body_setup_tag_line, .content_body_setup_profile_pic, .content_body_setup_social_media, .content_body_artists_connections').css('min-height', windowHeight);
+    $('.main-search-results, .dashfolio-content-all, .content_body_message_threads_show, .content_body_notifications_index, .content_body_message_threads_new, .content_body_settings_index, .content_body_message_threads_index, .content_body_setup_act_name, .content_body_setup_tag_line, .content_body_setup_profile_pic, .content_body_setup_social_media, .content_body_artists_connections, .content_contact_us').css('min-height', windowHeight);
   
   };
   setHeight();
