@@ -9,7 +9,7 @@ if ENV['BRANCH']
 end
 
 if ENV['DEPLOY_USER']
-  set :tmp_dir, "/tmp/portal-#{ENV['DEPLOY_USER']}"
+  set :tmp_dir, "/tmp/juketape-#{ENV['DEPLOY_USER']}"
 end
 
 set :scm, :git
@@ -17,7 +17,7 @@ set :scm, :git
 set :deploy_to, "/home/deploy/apps/juketape-#{fetch(:rails_env, 'production')}"
 
 set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml}
+# set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :use_sudo, false
@@ -51,15 +51,4 @@ namespace :puma do
   end
 
   before :start, :make_dirs
-end
-
-namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      invoke 'puma:restart'
-    end
-  end
-
-  after  :finishing, :restart
 end
