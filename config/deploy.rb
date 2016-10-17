@@ -38,7 +38,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 lock '3.6.1'
 
 set :application, 'juketape'
-set :repo_url, 'git@https://github.com/kesh92/Juketape.git' # Edit this to match your repository
+set :repo_url, 'git@github.com:kesh92/juketape.git' # Edit this to match your repository
 set :branch, :master
 set :deploy_to, '/home/deploy/juketape'
 set :pty, true
