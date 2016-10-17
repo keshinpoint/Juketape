@@ -19,6 +19,8 @@ gem 'mini_magick'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'local_time'
 gem 'will_paginate', '~> 3.1.0'
+gem 'figaro'
+gem 'puma'
 
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -39,4 +41,9 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
