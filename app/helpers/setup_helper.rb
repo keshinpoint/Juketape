@@ -46,7 +46,7 @@ module SetupHelper
 
   def connect_facebook_text
     if current_user.facebook_network.present?
-      "<span class='fa fa-facebook'></span>Connected Facebook".html_safe
+      "<span class='fa fa-facebook'></span>Connected Facebook as #{current_user.facebook_network.display_name}".html_safe
     else
       "<span class='fa fa-facebook'></span>Connect Facebook".html_safe
     end

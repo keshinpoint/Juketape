@@ -3,7 +3,7 @@ class FacebookNetwork < ApplicationRecord
 
   belongs_to :user
   validates :token, presence: true
-  after_create :fetch_and_update_pages_and_videos#, :update_display_name
+  after_create :fetch_and_update_pages_and_videos, :update_display_name
 
   def load_facebook
     @graph ||= Koala::Facebook::API.new(fb_token)
@@ -30,6 +30,10 @@ class FacebookNetwork < ApplicationRecord
     all_videos.select { |x| selected_items.include?(x[:id].to_s) }
   end
 
+  def user_info
+    load_facebook_page.get_object('me')
+  end
+
   def stats
     begin
       page = load_facebook_page.get_object('me')
@@ -48,12 +52,22 @@ class FacebookNetwork < ApplicationRecord
     save
   end
 
+  def self.sync_data
+    all.each do |network|
+      network.send(:fetch_and_update_pages_and_videos)
+    end
+  end
+
   private
 
   def fetch_and_update_pages_and_videos
     self.all_pages = fb_pages
     self.all_videos = get_videos
     save
+  end
+
+  def update_display_name
+    self.update_attributes(display_name: user_info['name'])
   end
 
   # This is the token of the facebook, and this method can be removed once the 
@@ -70,7 +84,7 @@ class FacebookNetwork < ApplicationRecord
 
   def get_videos
     begin
-      videos = load_facebook_page.get_connections('me', 'videos')
+      videos = load_facebook_page.get_connections('me', 'videos?limit=10000')
       videos.map do |video|
         {
           'id' => video['id'],
@@ -85,7 +99,7 @@ class FacebookNetwork < ApplicationRecord
 
   def fb_pages
     begin
-      pages = load_facebook.get_connections('me', 'accounts')
+      pages = load_facebook.get_connections('me', 'accounts?limit=100')
       pages.delete_if {|page| page['category'].eql?('Application')}
       pages.map do |page|
         {
