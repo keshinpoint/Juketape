@@ -12,8 +12,8 @@
       </div>
       <div class='form-group'>
         <label>Description</label>
-        <%= f.text_field :description, placeholder: 'Enter the details of your timeline experience',
-              class: 'form-control timeline-description-form', required: true %>
+        <%= f.text_area :description, placeholder: 'Enter the details of your timeline experience',
+              class: 'form-control timeline-description-form', required: true, rows: 4 %>
       </div>
       <div class='form-group'>
         <label>Location</label>
