@@ -157,6 +157,13 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
   color: white;
 }
 
+.navbar-form .radio input[type="radio"], .navbar-form .checkbox input[type="checkbox"] { /*space between the radio check box and its label -remember me */
+
+    margin-left: 0;
+    margin-right: 10px;
+    position: relative;
+}
+
 /* end of logged out header- login form */
 
 
@@ -207,6 +214,11 @@ bottom:0;
 
 }
 
+.sessions .footer {
+margin-top: 15px;   
+}
+
+
 .navbar-default .navbar-nav > li > a {
     color: #C3C3C3;
 }
@@ -224,7 +236,7 @@ bottom:0;
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('landing_page_cover.jpg');
+    background-image: image-url('landing_page_cover4.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
