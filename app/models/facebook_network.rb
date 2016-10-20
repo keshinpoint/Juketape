@@ -53,9 +53,11 @@ class FacebookNetwork < ApplicationRecord
   end
 
   def self.sync_data
+    puts "Syncing data for Facebook on #{date.current}"
     all.each do |network|
       network.send(:fetch_and_update_pages_and_videos)
     end
+    puts 'Done for Facebook'
   end
 
   private

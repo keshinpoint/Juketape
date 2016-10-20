@@ -40,6 +40,14 @@ class YoutubeNetwork < ApplicationRecord
     all_videos.select {|image| selected_videos.include?(image['id'])}
   end
 
+  def self.sync_data
+    puts "Syncing data for Youtube on #{date.current}"
+    all.each do |network|
+      network.send(:fetch_and_update_all_videos)
+    end
+    puts 'Done for Youtube'
+  end
+
   private
   def fetch_and_update_all_videos
     self.update_attributes(all_videos: get_videos)

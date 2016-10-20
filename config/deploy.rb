@@ -15,6 +15,7 @@ end
 set :scm, :git
 
 set :deploy_to, "/home/deploy/apps/juketape-#{fetch(:rails_env, 'production')}"
+set :whenever_roles, -> {[:sync_networks]}
 
 set :pty, true
 # set :linked_files, %w{config/database.yml config/application.yml}

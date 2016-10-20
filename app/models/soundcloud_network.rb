@@ -21,6 +21,14 @@ class SoundcloudNetwork < ApplicationRecord
     load_soundcloud.get('/me')
   end
 
+  def self.sync_data
+    puts "Syncing data for SoundCloud on #{date.current}"
+    all.each do |network|
+      network.send(:fetch_and_update_all_tracks_and_albums)
+    end
+    puts 'Done for SoundCloud'
+  end
+
   private
   def update_display_name
     self.update_attributes(display_name: user_info['username'])

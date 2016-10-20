@@ -31,6 +31,7 @@ gem 'bootstrap-social-rails'
 gem 'bootstrap-tooltip-rails'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5' #gives jquery ui
 gem 'best_in_place', '~> 3.0.1'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'pry-byebug'
@@ -46,4 +47,5 @@ group :development do
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+  gem 'cap-deploy-tagger'
 end

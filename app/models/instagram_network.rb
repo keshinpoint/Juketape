@@ -17,9 +17,11 @@ class InstagramNetwork < ApplicationRecord
   end
 
   def self.sync_data
+    puts "Syncing data for Instagram on #{date.current}"
     all.each do |network|
       network.update_attributes(all_images: network.get_images)
     end
+    puts "Done for Instagram"
   end
 
   def get_images
