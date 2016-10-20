@@ -39,8 +39,8 @@ class ArtistsController < ApplicationController
   end
 
   def connections
-    artist = User.find_by_username(params.require(:username))
-    @connections = artist.connections.paginate(page: params[:page], per_page: 10)
+    @artist = User.find_by_username(params.require(:username))
+    @connections = @artist.connections.paginate(page: params[:page], per_page: 10)
   end
 
   private
