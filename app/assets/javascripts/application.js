@@ -21,6 +21,9 @@
 //= require local_time
 //= require_tree .
 
+
+// forcing page to 80%
+
 //landing page password validity 
 
 $(document).ready(function () {
