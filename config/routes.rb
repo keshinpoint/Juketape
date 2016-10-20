@@ -26,7 +26,6 @@ Rails.application.routes.draw do
       get :dashfolio
       get :fetch_content
       put :filter_content
-      post :search
       get :search
       delete :disconnect_network
     end

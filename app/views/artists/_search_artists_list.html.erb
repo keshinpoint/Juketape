@@ -1,4 +1,4 @@
-<h3 class = "search-keyword-header"> Searching profiles for <%= search_by %>s that include <span class = "search-main-keyword"> <%= params[:search] %> </span> </h3>
+<h3 class = "search-keyword-header"> Searching profiles for <%= search_by %>s that include <span class = "search-main-keyword"> <%= params[:term] %> </span> </h3>
 <% artists.each do |artist| %>
   <%= link_to artist_dashfolio_path(username: artist.username), target: '_blank' do %>
     <div class='search-name-individual col-md-8'>
@@ -24,6 +24,6 @@
   <% end %>
 <% end %>
 <div class='paginator'>
-  <%= will_paginate artists, params: {search_by: search_by, search: params[:search]} %>
+  <%= will_paginate artists, params: {search_by: search_by, term: params[:term]} %>
 </div>
 

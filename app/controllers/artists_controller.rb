@@ -24,7 +24,7 @@ class ArtistsController < ApplicationController
   end
 
   def search
-    key = params[:search]
+    key = params[:term]
     @name_search = User.where('act_name ILIKE ?', "%#{key}%").uniq.paginate(page: params[:page], per_page: 10)
     @location_search = User.where('location ILIKE ?', "%#{key}%").uniq.paginate(page: params[:page], per_page: 10)
     @tag_search = User.joins(:tags).where('tags.name ILIKE ?', "%#{key}%").uniq.paginate(page: params[:page], per_page: 10)

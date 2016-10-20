@@ -109,7 +109,6 @@ $(document).on('turbolinks:load', function() {
       $(".inbox-main-message-body").scrollTop($('.inbox-main-message-body')[0].scrollHeight);
     };
     $('.pagination > a').attr('data-remote', 'true');
-    $('.pagination > a').attr('method', 'post');
   });
 
   $('form.dashfolio-timeline-form').on('ajax:error', function(jqXHR, error) {
