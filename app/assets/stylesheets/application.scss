@@ -11,7 +11,7 @@
 
 .input-sm {
    height: 25px !important;
-   font-size: 10px !important;
+   font-size: 11px !important;
     line-height: 0;    
 }
 
@@ -37,6 +37,18 @@
 
 .alert {
   margin-bottom: 0px !important;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+.btn-social {
+font-size: 12px;  
+}
+
+.btn-social > *:first-child {
+  line-height: 31px;  /* this ensures the social icons of the ipsum library are aligned with the new 12 px font size of the text in the buttons */
 }
 
 /* end of overriding certain styles */
@@ -339,8 +351,8 @@ margin-top: 15px;
 .onboarding-submit {
     
  display: inline-block; /*inline-block elements are like inline elements but they can have a width and height */
-  padding: 15px 25px;
-  font-size: 15px;
+  padding: 13px 20px;
+  font-size: 12px;
   cursor: pointer; /* adds a hand pointer */
   text-align: center;
   color: white;  
@@ -367,9 +379,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 /* begin onboarding-three style (profile pic upload) */
 
 .profile-image-onboarding {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 .skip-onboarding {
