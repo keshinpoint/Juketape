@@ -7,6 +7,27 @@
 @import "custom_styles";
 @import "bootstrap/bootstrap-tooltip";
 
+/* overriding certain styles */
+
+.input-sm {
+   height: 25px !important;
+   font-size: 10px !important;
+    line-height: 0; 
+
+   
+}
+.input-group-btn> .btn {
+   height: 25px !important;
+}
+
+.input-group-addon {
+
+    font-size: 10px !important; /* sets the addon icons aligned with forms */
+ 
+}
+
+/* end of overriding certain styles */
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -22,6 +43,7 @@ html, body {
   width:100%;
   float:left;
   cursor: default;
+  font-size: 10px;
 }
 
 * {
@@ -83,6 +105,9 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     border-color: transparent;
 }
 
+.search-button-header {
+  padding: 0px 10px 0px 10px; /* makes the magnification icon the center overriding bootstrap */
+}
 
 .navbar button {
 
