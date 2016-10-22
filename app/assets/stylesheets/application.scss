@@ -12,18 +12,31 @@
 .input-sm {
    height: 25px !important;
    font-size: 10px !important;
-    line-height: 0; 
-
-   
+    line-height: 0;    
 }
+
 .input-group-btn> .btn {
    height: 25px !important;
+}
+
+.navbar button {
+    height: 25px !important;
+    padding: 0px 12px 0px 12px;
 }
 
 .input-group-addon {
 
     font-size: 10px !important; /* sets the addon icons aligned with forms */
  
+}
+
+.navbar-form .radio, .navbar-form .checkbox {
+
+    vertical-align: bottom;
+}
+
+.alert {
+  margin-bottom: 0px !important;
 }
 
 /* end of overriding certain styles */
@@ -43,7 +56,7 @@ html, body {
   width:100%;
   float:left;
   cursor: default;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 * {
@@ -95,6 +108,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 margin-bottom: 0; /* important as it eliminates the space between navbar and jumbotron image*/
 
 }
+
+
 .input-group {
 
 	height: 12px;
@@ -112,6 +127,12 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 .navbar button {
 
 	height: 30px;
+}
+
+
+.navbar-header { /* pushes the logo and searh bar along with the login form */
+    bottom: 8px;
+    position: relative;
 }
 
 .outside-container{
@@ -169,7 +190,7 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 
 .navbar-form .login-checkbox { /* this is the remember me checkbox in the login form in the header */
   
-  margin-top: 5px;
+ 
   margin-right: 100px;
 }
 
@@ -293,6 +314,10 @@ margin-top: 15px;
 
 .landing_page_container3>p {
   align: justify;
+}
+
+.feature-header { /* the headers for value propositions */
+  font-size: 20px;
 }
 
 /* end  of landing page styles and headers */
