@@ -4,4 +4,10 @@ class Invitation < ApplicationRecord
 
   enum status: [:pending, :accepted, :rejected]
   validates :initiator_id, uniqueness: { scope: :invitee_id }
+  after_create :increment_invitee_notif_count
+
+  private
+  def increment_invitee_notif_count
+    invitee.increment!(:connection_notif_count, 1)
+  end
 end

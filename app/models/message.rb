@@ -1,8 +1,9 @@
 class Message < ApplicationRecord
   belongs_to :message_thread, required: false
-  validates :sender_id, :body, :sent_at, presence: true
+  validates :sender_id, :sender_id, :body, :sent_at, presence: true
   belongs_to :sender, class_name: 'User'
-  after_create :update_thread_last_reply_at
+  belongs_to :receiver, class_name: 'User'
+  after_create :update_thread_last_reply_at, :increment_reciever_notif_counter
 
   def seen!
     update_attributes!(seen: true)
@@ -15,6 +16,10 @@ class Message < ApplicationRecord
       deleted_by_sender: false,
       deleted_by_receiver: false
     })
+  end
+
+  def increment_reciever_notif_counter
+    receiver.increment!(:message_notif_count, 1)
   end
 
 end

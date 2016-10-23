@@ -17,6 +17,8 @@ class MessageThreadsController < ApplicationController
   end
 
   def index
+    current_user.update_attributes(message_notif_count: 0) if
+      current_user.message_notif_count > 0
     if current_user.recent_thread.present?
       redirect_to message_show_path(slug: current_user.recent_thread.slug)
     end
@@ -33,7 +35,10 @@ class MessageThreadsController < ApplicationController
     @message = @thread.messages.create({
       body: params.require(:body),
       sender_id: current_user.id,
-      sent_at: Time.current
+      sent_at: Time.current,
+      receiver_id: @thread.sender_id == current_user.id ?
+        @thread.receiver_id :
+        @thread.sender_id
     })
     unless @message.valid?
       render json: { error: "Failed to send reply" }, status: 424
@@ -61,7 +66,8 @@ class MessageThreadsController < ApplicationController
       messages_attributes: [{
         body: params.require(:body),
         sender_id: current_user.id,
-        sent_at: Time.current
+        sent_at: Time.current,
+        receiver_id: @receiver.id
       }]
     }
   end

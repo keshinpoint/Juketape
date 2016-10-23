@@ -1,15 +1,19 @@
 <ul class='navbar navbar-right navbar-icons' style='list-style-type: none;'>
-  <li>
+  <li class='nav-notification-container'>
+    <% if current_user.message_notif_count > 0 %>
+      <div class='nav-counter nav-notif-counter'>
+        <%= current_user.message_notif_count %>
+      </div>
+    <% end %>
     <%= link_to artist_inbox_path do %>
       <i class='fa fa-envelope fa-2x navbar-icon-fa' aria-hidden='true'></i>
-        <!--<span class='label'>23</span> -->
       </i>
     <% end %>
   </li>
   <li class='nav-notification-container'>
-    <% if current_user.pending_invitations.count > 0 %>
-      <div id='nav-notif-counter' class='nav-counter'>
-        <%= current_user.pending_invitations.count %>
+    <% if current_user.connection_notif_count > 0 %>
+      <div class='nav-counter nav-notif-counter'>
+        <%= current_user.connection_notif_count %>
       </div>
     <% end %>
     <%= link_to notifications_path do %>

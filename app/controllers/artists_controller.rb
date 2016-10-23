@@ -2,7 +2,7 @@ require 'will_paginate/array'
 
 class ArtistsController < ApplicationController
   before_action :enforce_artist_setup
-  skip_before_action :require_login, only: [:dashfolio, :search]
+  skip_before_action :require_login, only: [:dashfolio, :search, :connections]
 
   def dashfolio
     @artist = if params[:username].present?

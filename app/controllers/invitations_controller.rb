@@ -31,7 +31,8 @@ class InvitationsController < ApplicationController
   end
 
   def reject
-    invitation.rejected!
+    # invitation.rejected!
+    invitation.destroy
     flash[:notice] = "Connection rejected successfully"
     redirect_to notifications_path
   end

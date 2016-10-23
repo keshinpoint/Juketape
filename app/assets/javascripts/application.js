@@ -92,7 +92,7 @@ $(document).ready( function() {
 
 
 $(document).on('turbolinks:load', function() {
-  $('#nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500);
+  $('.nav-notif-counter').css({ opacity: 0 }).animate({ top: '-1px', opacity: 1 }, 500);
 
 });
 
