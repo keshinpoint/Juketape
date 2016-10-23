@@ -300,7 +300,7 @@ margin-top: 15px;
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('landing_page_cover.jpg');
+    background-image: image-url('landing_page_cover4.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1337,7 +1337,7 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
     float: left;
     height: 100%;;
     position: fixed;
-    width: 400px;
+    width: 300px;
     z-index: 1;
     border-right: 1px solid #dddddd;
 
@@ -1349,9 +1349,9 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
   padding: 7px;
   margin: 0 auto;
 
-  width: 250px;
+  width: 200px;
   height: 40px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .search-navigation:hover {
@@ -1429,7 +1429,7 @@ min-width: 25px;
 }
 
 .main-search-results {
-     margin-left: 200px;
+     margin-left: 300px; /* same as width as search-navigation-bar */
     position: relative;
     width: 80%;
 ;
@@ -1461,20 +1461,20 @@ min-width: 25px;
 }
 
 .search-name-individual{
-      border: 2px solid #CAC5C5;
+    border: 1px solid #CAC5C5;
     border-radius: 5px;
     box-shadow: 4px 7px 22px -20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     margin-left: 12px;
     margin-right: 100px;
-    padding: 10px;
+    padding: 5px 8px;
     margin-bottom: 20px;
 }
 
 .search-profile-pic-container {
   display: inline-block;
   position: relative;
-  bottom: 22px;
+  bottom: 15px;
 }
 
 .search-profile-name-tag-container {
@@ -1483,10 +1483,10 @@ min-width: 25px;
 }
 
 .search-profile-pic {
-     border-radius: 15px;
+     border-radius: 10px;
     bottom: 15px;
     display: inline-block;
-    height: 100px;
+    height: 95px;
     object-fit: contain;
     position: relative;
     width: 100px;
@@ -1525,7 +1525,7 @@ color: #4F4E4E;
     float: left;
     height: 100%;
     position: fixed;
-    width: 400px;
+    width: 300px;
     z-index: 1;
     border-right: 1px solid #DDDDDD;
 
@@ -1537,7 +1537,7 @@ color: #4F4E4E;
   margin: 0 auto;
   width: 200px;
   height: 40px;
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 
 }
@@ -1560,7 +1560,7 @@ border-left: 4px solid #027878;
 
 .settings-navigation-bar-contents {
 
-  padding: 100px;
+  padding: 100px 50px;
 
 }
 
@@ -1604,8 +1604,8 @@ border-left: 4px solid #027878;
 }
 
 .main-settings-current-pic {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   object-fit: contain;
   border-radius: 10px;
 }
