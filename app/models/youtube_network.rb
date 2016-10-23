@@ -41,11 +41,11 @@ class YoutubeNetwork < ApplicationRecord
   end
 
   def self.sync_data
-    puts "Syncing data for Youtube on #{date.current}"
+    puts "***** Syncing data for Youtube on #{Date.current} *****"
     all.each do |network|
       network.send(:fetch_and_update_all_videos)
     end
-    puts 'Done for Youtube'
+    puts '***** Done for Youtube *****'
   end
 
   private

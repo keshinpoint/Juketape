@@ -22,11 +22,11 @@ class SoundcloudNetwork < ApplicationRecord
   end
 
   def self.sync_data
-    puts "Syncing data for SoundCloud on #{date.current}"
+    puts "***** Syncing data for SoundCloud on #{Date.current} *****"
     all.each do |network|
       network.send(:fetch_and_update_all_tracks_and_albums)
     end
-    puts 'Done for SoundCloud'
+    puts '***** Done for SoundCloud *****'
   end
 
   private
