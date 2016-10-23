@@ -6,7 +6,7 @@
         <p> <strong>Tag Line </strong> </p>
         <div class='panel panel-default'>
           <div class='panel-body'>
-            <%= form_for current_user, url: profile_pic_setup_index_path(), html: { method: :post } do |f| %>
+            <%= form_for current_user, url: dashfolio_picture_setup_index_path(), html: { method: :post } do |f| %>
               <div class='form-group'>
                 <p> What's the tagline you'd like to be known by? </p>
                 <%= f.text_field :tag_line, value: current_user.tag_line, class: 'form-control', placeholder: 'eg: Singer of opera and lover of hummus', required: true %>

@@ -6,7 +6,7 @@
         <p> <strong> Profile Picture </strong> </p>
         <div class='panel panel-default'>
           <div class='panel-body'>
-            <%= form_for current_user, url: social_media_setup_index_path(), html: { method: :post }, multipart: true do |f| %>
+            <%= form_for current_user, url: social_accounts_setup_index_path(), html: { method: :post }, multipart: true do |f| %>
               <div class='form-group'>
                 <%= image_tag(current_user.image.thumb.url || 'generic_avatar.png', class: 'profile-image-onboarding hidden-xs') %>
                 <div class='form-group'>

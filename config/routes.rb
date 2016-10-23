@@ -66,15 +66,15 @@ Rails.application.routes.draw do
   get '/inbox' => 'message_threads#index', as: :artist_inbox
   get '/inbox/:slug' => 'message_threads#show', as: :message_show
 
-  resources :setup, only: [], path: :profile do
+  resources :setup, only: [] do
     collection do
-      get :act_name
-      get :tag_line
-      post :tag_line
-      get :profile_pic
-      post :profile_pic
-      get :social_media
-      post :social_media
+      get :name, action: :act_name, as: :act_name
+      get :tagline, action: :tag_line
+      post :tagline, action: :tag_line
+      get :dashfolio_picture, action: :profile_pic
+      post :dashfolio_picture, action: :profile_pic
+      get :social_accounts, action: :social_media, as: :social_media
+      post :social_accounts, action: :social_media
       get :finalize_setup
     end
   end
