@@ -30,13 +30,13 @@
       <ul class='video-list'>
         <% artist.youtube_network.videos.each do |video| %>
           <li class='video-list-items dashfolio-content-li'>
-            <iframe width='400' height='225' src='<%= video['url'] %>' frameborder='0' allowfullscreen></iframe>
+            <iframe width='310' height='174' src='<%= video['url'] %>' frameborder='0' allowfullscreen></iframe>
           </li>
         <% end if artist.youtube_network.present? %>
 
         <% artist.facebook_network.videos.each do |video| %>
           <li class='video-list-items dashfolio-content-li'>
-            <iframe width='400' height='225' src='<%= video['url'] %>' frameborder='0' allowfullscreen></iframe>
+            <iframe width='310' height='174' src='<%= video['url'] %>' frameborder='0' allowfullscreen></iframe>
           </li>
         <% end if artist.facebook_network.present? %>
       </ul>
