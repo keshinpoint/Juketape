@@ -1150,8 +1150,8 @@ opacity: 0.5;
 .inbox-preview-profile-pic{
 
   object-fit: contain;
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 8px;
 
 }
@@ -1159,18 +1159,18 @@ opacity: 0.5;
 .message-full-preview{
   position: relative;
   width: 100%;
-  margin-left: 300px;
+  margin-left: 400px;
 }
 
 .inbox-sender-info-container{
--webkit-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
--moz-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
+-webkit-box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
+-moz-box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
+box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
 width: 75%;
-border-radius: 10px;
+border-radius: 5px;
 cursor: pointer;
 margin-bottom: 20px;
-border:2px solid #FDB632;
+border:1px solid #bcbcbc;
 padding: 10px; 
 
 }
@@ -1187,7 +1187,7 @@ padding: 10px;
 .inbox-main-profile-pic {
   width: 50px;
   height: 50px;
-  border-radius: 15px;
+  border-radius: 10px;
   object-fit: contain;
   display: inline-block;
   position: relative;
@@ -1197,6 +1197,7 @@ padding: 10px;
 
 .inbox-main-name-tagline-container {
   display: inline-block;
+  margin-left: 5px;
 } 
 
 .inbox-main-message-subject {
@@ -1206,10 +1207,13 @@ padding: 10px;
 
 .inbox-main-message-container {
   width: 75%;
-  border:2px solid #027878;
+  border:1px solid #bcbcbc;
   padding: 18px;
-  border-radius: 10px;
-
+  border-radius: 5px;
+-webkit-box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+-moz-box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+margin-bottom: 10px;
 }
 
 .inbox-main-message-body {
@@ -1273,14 +1277,14 @@ clear: both;
 /*start of new message styles */
 
 .new-message-to-info-container {
-   border: 2px solid #fdb632;
-    border-radius: 10px;
-    box-shadow: 4px 7px 22px -20px rgba(0, 0, 0, 0.3);
+   border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    box-shadow: 4px 7px 20px -20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     margin-bottom: 20px;
     margin-left: 12px;
     margin-right: 100px;
-    padding: 10px;
+    padding: 10px 10px 1px 10px;
 
     width: 81%;
 
