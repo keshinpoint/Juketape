@@ -3,10 +3,10 @@
 <div class='form-group main-settings-form' id='main-settings-form-email'>
   <%= form_for current_user, url: email_settings_path(), html: { method: :post }, remote: true do |f| %>
     <div class='errors'></div>
-    <%= f.text_field :email, value: nil, class: 'form-control main-settings-form-input', placeholder: "Enter new email id", required: true %>
+    <%= f.text_field :email, value: nil, class: 'form-control input-sm main-settings-form-input', placeholder: "Enter new email id", required: true %>
     <div class='main-settings-form-buttons'>
-      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
-      <%= f.submit 'Save', class: 'btn btn-success' %>
+      <button type='button' class='btn btn-danger btn-sm settings-edit-cancel'>Cancel</button>
+      <%= f.submit 'Save', class: 'btn btn-success btn-sm' %>
       <hr>
     </div>
   <% end %>

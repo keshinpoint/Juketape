@@ -9,8 +9,8 @@
     <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
     <%= f.hidden_field :image_cache %>
     <div class='main-settings-profile-pic-buttons'>
-      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
-      <%= f.submit 'Upload', class: 'btn btn-success' %>
+      <button type='button' class='btn btn-danger settings-edit-cancel btn-sm'>Cancel</button>
+      <%= f.submit 'Upload', class: 'btn btn-success btn-sm' %>
       <hr>
     </div>
   <% end %>

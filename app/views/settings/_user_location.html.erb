@@ -4,10 +4,10 @@
 <div class='form-group main-settings-form' id='main-settings-form-location'>
   <%= form_for current_user, url: user_location_settings_path(), html: { method: :post }, remote: true do |f| %>
     <div class='errors'></div>
-    <%= f.text_field :location, value: nil, class: 'form-control main-settings-form-input', placeholder: "Enter your new location", required: true %>
+    <%= f.text_field :location, value: nil, class: 'form-control main-settings-form-input input-sm', placeholder: "Enter your new location", required: true %>
     <div class='main-settings-form-buttons'>
-      <button type='button' class='btn btn-danger settings-edit-cancel'>Cancel</button>
-      <%= f.submit 'Save', class: 'btn btn-success' %>
+      <button type='button' class='btn btn-danger btn-sm settings-edit-cancel'>Cancel</button>
+      <%= f.submit 'Save', class: 'btn btn-success btn-sm' %>
       <hr>
     </div>
   <% end %>                

@@ -7,6 +7,58 @@
 @import "custom_styles";
 @import "bootstrap/bootstrap-tooltip";
 
+/* overriding certain styles */
+
+.input-sm {
+   height: 25px !important;
+   font-size: 11px !important;
+    line-height: 0;    
+}
+
+.input-group-btn> .btn {
+   height: 25px !important;
+}
+
+.navbar button {
+    height: 25px !important;
+    padding: 0px 12px 0px 12px;
+}
+
+.input-group-addon {
+
+    font-size: 10px !important; /* sets the addon icons aligned with forms */
+ 
+}
+
+.navbar-form .radio, .navbar-form .checkbox {
+
+    vertical-align: bottom;
+}
+
+.alert {
+  margin-bottom: 0px !important;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+.btn-social {
+font-size: 12px;  
+}
+
+.btn-social > *:first-child {
+  line-height: 31px;  /* this ensures the social icons of the ipsum library are aligned with the new 12 px font size of the text in the buttons */
+}
+
+.dropdown-menu {
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.176);
+font-size: 12px;
+}
+
+
+/* end of overriding certain styles */
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -22,6 +74,7 @@ html, body {
   width:100%;
   float:left;
   cursor: default;
+  font-size: 12px;
 }
 
 * {
@@ -73,6 +126,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
 margin-bottom: 0; /* important as it eliminates the space between navbar and jumbotron image*/
 
 }
+
+
 .input-group {
 
 	height: 12px;
@@ -83,10 +138,19 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
     border-color: transparent;
 }
 
+.search-button-header {
+  padding: 0px 10px 0px 10px; /* makes the magnification icon the center overriding bootstrap */
+}
 
 .navbar button {
 
 	height: 30px;
+}
+
+
+.navbar-header { /* pushes the logo and searh bar along with the login form */
+    bottom: 8px;
+    position: relative;
 }
 
 .outside-container{
@@ -144,7 +208,7 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 
 .navbar-form .login-checkbox { /* this is the remember me checkbox in the login form in the header */
   
-  margin-top: 5px;
+ 
   margin-right: 100px;
 }
 
@@ -236,7 +300,7 @@ margin-top: 15px;
 
 .jumbotron {
     margin-bottom: 0px;
-    background-image: image-url('landing_page_cover.jpg');
+    background-image: image-url('landing_page_cover4.jpg');
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -270,6 +334,10 @@ margin-top: 15px;
   align: justify;
 }
 
+.feature-header { /* the headers for value propositions */
+  font-size: 20px;
+}
+
 /* end  of landing page styles and headers */
 
 /* onboarding-one styles */
@@ -289,8 +357,8 @@ margin-top: 15px;
 .onboarding-submit {
     
  display: inline-block; /*inline-block elements are like inline elements but they can have a width and height */
-  padding: 15px 25px;
-  font-size: 15px;
+  padding: 13px 20px;
+  font-size: 12px;
   cursor: pointer; /* adds a hand pointer */
   text-align: center;
   color: white;  
@@ -317,9 +385,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 /* begin onboarding-three style (profile pic upload) */
 
 .profile-image-onboarding {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 .skip-onboarding {
@@ -390,9 +459,9 @@ margin-bottom: 9px;
 }
 
 .dashfolio-main-container {
-  border-left: 2px solid gray;
-  border-right: 2px solid gray;
-    border-bottom: 2px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
   border-radius: 10px;
 
   -webkit-box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
@@ -410,8 +479,8 @@ box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
 
 .bar {  
 
-  width: 30px;
-  height: 380px;
+  width: 20px;
+  height: 350px;
 
   display: inline-block;
   margin-left: -5px;
@@ -457,9 +526,9 @@ box-shadow: 0px 2px 20px -12px rgba(0,0,0,0.75);
 
 .profile-pic-dashfolio {
 
-  margin-top: 10px;
-  width: 250px;
-  height: 250px;  
+  margin-top: 15px;
+  width: 210px;
+  height: 210px;  
   object-fit: contain;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
@@ -479,7 +548,7 @@ margin-top:17px;
 .message-dashfolio {
 
 width: 70px;
-height: 40px;
+height: 35px;
 border-radius: 10px;
 color: white;
 
@@ -506,7 +575,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f5087', end
 .connect-dashfolio {
 
 
-height: 40px;
+height: 35px;
 border-radius: 10px;
 color: white;
 
@@ -516,8 +585,8 @@ background: -webkit-linear-gradient(top,  rgba(180,221,180,1) 0%,rgba(67,142,89,
 background: linear-gradient(to bottom,  rgba(180,221,180,1) 0%,rgba(67,142,89,1) 0%,rgba(0,188,28,1) 0%,rgba(14,145,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#0e9100',GradientType=0 ); /* IE6-9 */
 
-padding: 0px 20px;
-font-size: 15px;
+padding: 5px 20px;
+font-size: 12px;
 border: none;
 
 }
@@ -529,6 +598,7 @@ border: none;
 
 .dashfolio-profile-name-container>h2 {
  font-family: 'neutra-demi'; 
+ font-size: 25px;
 } 
 
 .tag-container {
@@ -559,6 +629,7 @@ height: 0;
   /*http://stackoverflow.com/questions/39482063/creating-a-tag-box */
   margin-right: 4px;
   float: left;
+  font-size: 11px;
  
 }
 
@@ -585,7 +656,6 @@ height: 0;
 
 .dashfolio-tag span.close { 
  margin-left: 10px;
- margin-top: 2px;
  font-size: 14px;
  color: #fff;
 }
@@ -617,7 +687,7 @@ display: none;
 
 .location-container { /* has the no. of connections and preview of connections in dashfolio top container*/
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 12px;
   padding-bottom: 15px;
    
 
@@ -628,15 +698,15 @@ display: none;
 }
 
 .connection-number-dashfolio {
-  font-size: 20px;
+  font-size: 17px;
   color: #696969;
      
 }
 
 .dashfolio-connection {
 
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   margin-top: 5px;
   margin-left: 1px;
@@ -652,12 +722,12 @@ width: 250px; /*makes the connections profile pis stack up to 4 per row, only ch
 .connection-profile-pic {
   max-width: 100%;
   max-height: 100%; /*the max width sets the profile images to fit the above 30x30 px dimension set above */
-  border-radius: 15px;
+  border-radius: 17px;
 }
 
 .dashfolio-content-dashbar {
   
-  height: 60px;
+  height: 50px;
   margin-top: -7px; /*removes gap between midbar and the vertical theme bar */ 
   border-radius: 5px;
    display: inline-block;
@@ -685,7 +755,7 @@ width: 80%;
 .dashfolio-midbar-icons > li {
 float: left;
 position: relative;
-  padding-top: 15px;
+  padding-top: 10px;
   padding-left: 25px;
   padding-right: 25px;
  
@@ -708,7 +778,7 @@ position: relative;
 
 .dashfolio-midbar-icons > li:hover {
 background: #111; 
-height: 60px;
+height: 50px;
 text-decoration: none;
 }
 
@@ -720,15 +790,15 @@ background: #111;
 .dashfolio-midbar-active {
   text-decoration: none;
   background: #111; 
-  height: 60px;
+  height: 50px;
   /* note: webkit text decorations override normal ones */
-border-bottom: 6px solid #027878;
+border-bottom: 4px solid #027878;
 }
 
 
 .dashfolio-midbar-about {
 font-family: 'neutra-demi'; 
-font-size: 20px;
+font-size: 15px;
 font-color: white;
 margin-left: 40px;
 color: white;
@@ -758,7 +828,7 @@ border-radius: 5px;
  
   display: inline-block;
   text-decoration: none !important; /* this removes the undlerline for anchor tags on hover */
-  font-size: 18px;
+  font-size: 14px;
 
   padding: 5px; /* adds some space between anchor tags and the border for the tablinks */
   text-align: center;
@@ -959,8 +1029,8 @@ border-bottom:5px solid #027878;
   -webkit-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
 -moz-box-shadow: inset -3px -1px 15px 5px rgba(0,0,0,0.01);
 box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
-    height: 370px;
-    width: 250px;
+    height: 330px;
+    width: 230px;
     border-radius: 10px;
     border-style: solid;
     border-color: #ececec;
@@ -972,10 +1042,10 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 }
 
 .picture-image {  
-    height: 284px;
+    height: 240px;
     object-fit: contain;
     margin: 0 auto;
-    width: 228px;
+    width: 200px;
     background-color: black;
 }
 
@@ -1080,8 +1150,8 @@ opacity: 0.5;
 .inbox-preview-profile-pic{
 
   object-fit: contain;
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 8px;
 
 }
@@ -1089,18 +1159,18 @@ opacity: 0.5;
 .message-full-preview{
   position: relative;
   width: 100%;
-  margin-left: 300px;
+  margin-left: 400px;
 }
 
 .inbox-sender-info-container{
--webkit-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
--moz-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
-box-shadow: 4px 7px 22px -20px rgba(0,0,0,0.62);
+-webkit-box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
+-moz-box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
+box-shadow: 1px 3px 22px -20px rgba(0,0,0,0.62);
 width: 75%;
-border-radius: 10px;
+border-radius: 5px;
 cursor: pointer;
 margin-bottom: 20px;
-border:2px solid #FDB632;
+border:1px solid #bcbcbc;
 padding: 10px; 
 
 }
@@ -1117,7 +1187,7 @@ padding: 10px;
 .inbox-main-profile-pic {
   width: 50px;
   height: 50px;
-  border-radius: 15px;
+  border-radius: 10px;
   object-fit: contain;
   display: inline-block;
   position: relative;
@@ -1127,6 +1197,7 @@ padding: 10px;
 
 .inbox-main-name-tagline-container {
   display: inline-block;
+  margin-left: 5px;
 } 
 
 .inbox-main-message-subject {
@@ -1136,10 +1207,13 @@ padding: 10px;
 
 .inbox-main-message-container {
   width: 75%;
-  border:2px solid #027878;
+  border:1px solid #bcbcbc;
   padding: 18px;
-  border-radius: 10px;
-
+  border-radius: 5px;
+-webkit-box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+-moz-box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+box-shadow: 3px 3px 22px -20px rgba(0,0,0,0.62);
+margin-bottom: 10px;
 }
 
 .inbox-main-message-body {
@@ -1203,14 +1277,14 @@ clear: both;
 /*start of new message styles */
 
 .new-message-to-info-container {
-   border: 2px solid #fdb632;
-    border-radius: 10px;
-    box-shadow: 4px 7px 22px -20px rgba(0, 0, 0, 0.3);
+   border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    box-shadow: 4px 7px 20px -20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     margin-bottom: 20px;
     margin-left: 12px;
     margin-right: 100px;
-    padding: 10px;
+    padding: 10px 10px 1px 10px;
 
     width: 81%;
 
@@ -1267,7 +1341,7 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
     float: left;
     height: 100%;;
     position: fixed;
-    width: 400px;
+    width: 300px;
     z-index: 1;
     border-right: 1px solid #dddddd;
 
@@ -1279,9 +1353,9 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
   padding: 7px;
   margin: 0 auto;
 
-  width: 250px;
+  width: 200px;
   height: 40px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .search-navigation:hover {
@@ -1359,7 +1433,7 @@ min-width: 25px;
 }
 
 .main-search-results {
-     margin-left: 200px;
+     margin-left: 300px; /* same as width as search-navigation-bar */
     position: relative;
     width: 80%;
 ;
@@ -1391,20 +1465,20 @@ min-width: 25px;
 }
 
 .search-name-individual{
-      border: 2px solid #CAC5C5;
+    border: 1px solid #CAC5C5;
     border-radius: 5px;
     box-shadow: 4px 7px 22px -20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     margin-left: 12px;
     margin-right: 100px;
-    padding: 10px;
+    padding: 5px 8px;
     margin-bottom: 20px;
 }
 
 .search-profile-pic-container {
   display: inline-block;
   position: relative;
-  bottom: 22px;
+  bottom: 15px;
 }
 
 .search-profile-name-tag-container {
@@ -1413,10 +1487,10 @@ min-width: 25px;
 }
 
 .search-profile-pic {
-     border-radius: 15px;
+     border-radius: 10px;
     bottom: 15px;
     display: inline-block;
-    height: 100px;
+    height: 95px;
     object-fit: contain;
     position: relative;
     width: 100px;
@@ -1455,7 +1529,7 @@ color: #4F4E4E;
     float: left;
     height: 100%;
     position: fixed;
-    width: 400px;
+    width: 300px;
     z-index: 1;
     border-right: 1px solid #DDDDDD;
 
@@ -1467,7 +1541,7 @@ color: #4F4E4E;
   margin: 0 auto;
   width: 200px;
   height: 40px;
-  font-size: 20px;
+  font-size: 17px;
   text-align: center;
 
 }
@@ -1490,7 +1564,7 @@ border-left: 4px solid #027878;
 
 .settings-navigation-bar-contents {
 
-  padding: 100px;
+  padding: 100px 50px;
 
 }
 
@@ -1534,8 +1608,8 @@ border-left: 4px solid #027878;
 }
 
 .main-settings-current-pic {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+  height: 220px;
   object-fit: contain;
   border-radius: 10px;
 }

@@ -1,6 +1,7 @@
 <div class='container'>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class = "col-sm-1"> </div>
+    <div class='col-md-10'>
       <h1> New Message </h1>
       <hr>
       <div class='new-message-to-info-container col-md-10'>
@@ -24,7 +25,7 @@
         <%= hidden_field_tag :receiver, @receiver.username %>
         <div class=' col-md-10 form-group'>
           <label>Subject</label>
-          <%= text_field_tag 'subject', nil, class: 'form-control', required: true %>
+          <%= text_field_tag 'subject', nil, class: 'form-control input-sm', required: true %>
         </div>
         <div class='col-md-10 form-group'>
           <label for='formGroupExampleInput2'> Message </label>
@@ -32,15 +33,15 @@
         </div>
         <div class='container'>
           <div class='row'>
-            <div class='col-md-4' > </div>
-            <div class='col-md-4' > </div>
-            <div class='new-message-action-buttons col-md-4'>
+            <div class='col-md-2' > </div>
+            <div class='col-md-2' > </div>
+            <div class='new-message-action-buttons col-md-8'>
               <%= link_to artist_dashfolio_path(username: @receiver.username) do %>
-                <button type='button' class='btn btn-danger'>
+                <button type='button' class='btn btn-danger btn-sm'>
                   <i class='fa fa-close' aria-hidden='true'></i> Cancel
                 </button>
               <% end %>
-              <button type='submit' class='btn btn-success'>
+              <button type='submit' class='btn btn-success btn-sm'>
                 <i class='fa fa-paper-plane' aria-hidden='true'></i> Send
               </button>
             </div>
@@ -48,5 +49,6 @@
         </div>
       <% end %>
     </div>
+    <div class = "col-sm-1"> </div>
   </div>
 </div>
