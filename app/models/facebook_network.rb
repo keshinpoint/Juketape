@@ -22,7 +22,13 @@ class FacebookNetwork < ApplicationRecord
   end
 
   def videos
+    return all_videos if sync_always?
     all_videos.select {|video| selected_videos.include?(video['id'])}
+  end
+
+  def selected_video_ids
+    return selected_videos unless sync_always?
+    all_videos.map { |i| i['id'].to_s }
   end
 
   def user_videos

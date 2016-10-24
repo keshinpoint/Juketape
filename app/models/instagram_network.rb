@@ -13,7 +13,13 @@ class InstagramNetwork < ApplicationRecord
   end
 
   def images
+    return all_images if sync_always?
     all_images.select {|image| selected_images.include?(image['id'])}
+  end
+
+  def selected_image_ids
+    return selected_images unless sync_always?
+    all_images.map { |i| i['id'].to_s }
   end
 
   def self.sync_data

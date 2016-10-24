@@ -31,6 +31,14 @@
     </ul>
   </div>
   <div class='modal-footer'>
+    <label class='sync_with_networks'>
+      <% if sync_always == true %>
+        <input type='checkbox' name='sync_always' checked='true'>
+      <% else %>
+        <input type='checkbox' name='sync_always'>
+      <% end %>
+      Keep it Sync with Network
+    </label>
     <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
     <button type='submit' class='btn btn-primary save_content'>Save to Dashfolio</button>
   </div>

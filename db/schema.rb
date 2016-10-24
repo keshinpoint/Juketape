@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023071343) do
+ActiveRecord::Schema.define(version: 20161024155522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,24 +19,26 @@ ActiveRecord::Schema.define(version: 20161023071343) do
     t.string   "token",           default: ""
     t.string   "secret",          default: ""
     t.string   "page_token",      default: ""
-    t.integer  "user_id",                      null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "selected_videos", default: [],              array: true
-    t.json     "all_videos",      default: [],              array: true
+    t.integer  "user_id",                         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "selected_videos", default: [],                 array: true
+    t.json     "all_videos",      default: [],                 array: true
     t.string   "display_name"
     t.string   "page_id",         default: ""
-    t.json     "all_pages",       default: [],              array: true
+    t.json     "all_pages",       default: [],                 array: true
+    t.boolean  "sync_always",     default: false
   end
 
   create_table "instagram_networks", force: :cascade do |t|
     t.string   "access_token",    default: ""
-    t.integer  "user_id",                      null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "selected_images", default: [],              array: true
-    t.json     "all_images",      default: [],              array: true
+    t.integer  "user_id",                         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "selected_images", default: [],                 array: true
+    t.json     "all_images",      default: [],                 array: true
     t.string   "display_name"
+    t.boolean  "sync_always",     default: false
   end
 
   create_table "invitations", force: :cascade do |t|
@@ -77,16 +79,18 @@ ActiveRecord::Schema.define(version: 20161023071343) do
   end
 
   create_table "soundcloud_networks", force: :cascade do |t|
-    t.string   "access_token",                 null: false
-    t.string   "refresh_token",   default: ""
-    t.integer  "user_id",                      null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "selected_tracks", default: [],              array: true
-    t.string   "selected_albums", default: [],              array: true
-    t.json     "all_tracks",      default: [],              array: true
-    t.json     "all_albums",      default: [],              array: true
+    t.string   "access_token",                       null: false
+    t.string   "refresh_token",      default: ""
+    t.integer  "user_id",                            null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.string   "selected_tracks",    default: [],                 array: true
+    t.string   "selected_albums",    default: [],                 array: true
+    t.json     "all_tracks",         default: [],                 array: true
+    t.json     "all_albums",         default: [],                 array: true
     t.string   "display_name"
+    t.boolean  "sync_tracks_always", default: false
+    t.boolean  "sync_albums_always", default: false
   end
 
   create_table "tags", force: :cascade do |t|
@@ -132,12 +136,13 @@ ActiveRecord::Schema.define(version: 20161023071343) do
     t.string   "access_token",    default: ""
     t.string   "refresh_token",   default: ""
     t.string   "expires_in",      default: ""
-    t.integer  "user_id",                      null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "selected_videos", default: [],              array: true
-    t.json     "all_videos",      default: [],              array: true
+    t.integer  "user_id",                         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "selected_videos", default: [],                 array: true
+    t.json     "all_videos",      default: [],                 array: true
     t.string   "display_name"
+    t.boolean  "sync_always",     default: false
   end
 
 end

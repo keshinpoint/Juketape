@@ -10,11 +10,23 @@ class SoundcloudNetwork < ApplicationRecord
   end
 
   def tracks
+    return all_tracks if sync_tracks_always?
     all_tracks.select {|track| selected_tracks.include?(track['id'].to_s)}
   end
 
   def albums
+    return all_tracks if sync_albums_always?
     all_albums.select {|album| selected_albums.include?(album['id'].to_s)}
+  end
+
+  def selected_track_ids
+    return selected_tracks unless sync_tracks_always?
+    all_tracks.map { |i| i['id'].to_s }
+  end
+
+  def selected_album_ids
+    return selected_albums unless sync_albums_always?
+    all_albums.map { |i| i['id'].to_s }
   end
 
   def user_info

@@ -6,7 +6,7 @@
 <div class='form-group main-settings-form' id='main-settings-form-pic'>
   <%= form_for current_user, url: profile_pic_settings_path(), html: { method: :post }, multipart: true do |f| %>
     <div class='errors'></div>
-    <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+    <%= f.file_field :image, accept: 'image/png,image/gif,image/jpeg,image/jpg', required: true %>
     <%= f.hidden_field :image_cache %>
     <div class='main-settings-profile-pic-buttons'>
       <button type='button' class='btn btn-danger settings-edit-cancel btn-sm'>Cancel</button>

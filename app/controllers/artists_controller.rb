@@ -16,10 +16,12 @@ class ArtistsController < ApplicationController
     render status: 200,
            partial: 'filter_content_form',
            locals: { content_type: params[:content_type], content: get_content,
-            container: params[:container], selected_content: get_selected_content} and return
+            container: params[:container], selected_content: get_selected_content,
+            sync_always: get_sync_always} and return
   end
 
   def filter_content
+    params[:sync_always] ||= false
     update_content
   end
 
@@ -64,17 +66,34 @@ class ArtistsController < ApplicationController
   def get_selected_content
     case params[:content_type]
     when 'instagram_images'
-      current_user.instagram_network.selected_images
+      current_user.instagram_network.selected_image_ids
     when 'soundcloud_tracks'
-      current_user.soundcloud_network.selected_tracks
+      current_user.soundcloud_network.selected_track_ids
     when 'soundcloud_albums'
-      current_user.soundcloud_network.selected_albums
+      current_user.soundcloud_network.selected_album_ids
     when 'youtube_videos'
-      current_user.youtube_network.selected_videos
+      current_user.youtube_network.selected_video_ids
     when 'facebook_videos'
-      current_user.facebook_network.selected_videos
+      current_user.facebook_network.selected_video_ids
     else
       []
+    end
+  end
+
+  def get_sync_always
+    case params[:content_type]
+    when 'instagram_images'
+      current_user.instagram_network.sync_always
+    when 'soundcloud_tracks'
+      current_user.soundcloud_network.sync_tracks_always
+    when 'soundcloud_albums'
+      current_user.soundcloud_network.sync_albums_always
+    when 'youtube_videos'
+      current_user.youtube_network.sync_always
+    when 'facebook_videos'
+      current_user.facebook_network.sync_always
+    else
+      false
     end
   end
 
@@ -82,15 +101,15 @@ class ArtistsController < ApplicationController
     items = params[:selected_items] || []
     case params[:content_type]
     when 'instagram_images'
-      current_user.instagram_network.update_attributes(selected_images: items)
+      current_user.instagram_network.update_attributes(selected_images: items, sync_always: params[:sync_always])
     when 'soundcloud_tracks'
-      current_user.soundcloud_network.update_attributes(selected_tracks: items)
+      current_user.soundcloud_network.update_attributes(selected_tracks: items, sync_tracks_always: params[:sync_always])
     when 'soundcloud_albums'
-      current_user.soundcloud_network.update_attributes(selected_albums: items)
+      current_user.soundcloud_network.update_attributes(selected_albums: items, sync_albums_always: params[:sync_always])
     when 'youtube_videos'
-      current_user.youtube_network.update_attributes(selected_videos: items)
+      current_user.youtube_network.update_attributes(selected_videos: items, sync_always: params[:sync_always])
     when 'facebook_videos'
-      current_user.facebook_network.update_attributes(selected_videos: items)
+      current_user.facebook_network.update_attributes(selected_videos: items, sync_always: params[:sync_always])
     else
       true
     end
