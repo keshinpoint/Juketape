@@ -296,17 +296,39 @@ margin-top: 15px;
   
 }
 
-
-
-.jumbotron {
-    margin-bottom: 0px;
-    background-image: image-url('landing_page_cover4.jpg');
-    background-position: 0% 25%;
+.slide1, .slide2, .slide3 {
+ height: 380px;
     background-size: cover;
-    background-repeat: no-repeat;
-    color: white;    
-    height: 400px;
-    margin-bottom: 20px;
+    background-position: center center;
+}
+
+.slide1 {
+    background-image: image-url("landing_page_cover5.jpg");
+}
+.slide2 {
+    background-image: image-url("landing_page_cover.jpg");
+}
+.slide3 {
+    background-image: image-url("landing_page_cover4.jpg");
+}
+
+
+
+.signup-container {
+position: absolute; 
+bottom: 90px; 
+right: 0; 
+left: 0; 
+color: white;
+}
+
+.signup-form-column {
+ position: relative;
+ top: 30px; 
+}
+
+.signup-container-tagline {
+  font-size: 16px;
 }
 
 .signup-form {

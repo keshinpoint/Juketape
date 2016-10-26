@@ -1,11 +1,26 @@
 <div class='outside-container'>
-  <div class='jumbotron'>
-    <div class='container-fluid'>
+  <div class='carousel slide carousel-fade' data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="slide1"></div>
+        </div>
+        <div class="item">
+            <div class="slide2"></div>
+        </div>
+        <div class="item">
+            <div class="slide3"></div>
+        </div>
+    </div><!-- .carousel-inner --> 
+
+
+
+
+    <div class='container-fluid signup-container'>
       <div class='row'>
         <div class= 'col-sm-8'></div>
-        <div class='col-sm-4'>
+        <div class='col-sm-4 signup-form-column'>
           <h2> A platform for every creative </h2>
-          <p> Create a portfolio - Build a network </p>
+          <p class = "signup-container-tagline"> Create a portfolio - Build a network </p>
           <%= render partial: 'shared/signup_form' %>
         </div>
       </div>
@@ -58,6 +73,11 @@
 
         So sign up, and ride the waves of the digital revolution that is coming your way.
       </p>
+
+    </div>
+
+    <div class = "col-xs-5">
+
 
     </div>
 
