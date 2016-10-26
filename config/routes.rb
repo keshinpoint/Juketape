@@ -88,6 +88,7 @@ Rails.application.routes.draw do
 
   get '/terms_of_use' => 'static#terms_of_use', as: :terms_of_use_path
   get '/contact_us' => 'static#contact_us', as: :contact_us_path
+  get '/privacy_policy' => 'static#privacy_policy', as: :privacy_policy_path
 
   scope '/static' do
     resources :welcome do
