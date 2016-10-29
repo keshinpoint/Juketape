@@ -39,6 +39,10 @@
   margin-bottom: 0px !important;
 }
 
+h1, .h1 {
+    font-size: 33px;
+}
+
 h3 {
   font-size: 21px;
 }
@@ -1384,7 +1388,7 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 
   width: 200px;
   height: 40px;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .search-navigation:hover {
@@ -1475,13 +1479,13 @@ min-width: 25px;
 }
 
 .search-keyword-header{
-  font-size: 20px;
+  font-size: 15px;
   color: gray;
   margin-bottom: 20px;
 }
 
 .search-main-keyword {
-  color: #2E7DC3;
+  color: black;
   text-decoration: underline;
 }
 
