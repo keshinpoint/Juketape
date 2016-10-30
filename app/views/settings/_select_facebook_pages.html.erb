@@ -1,6 +1,6 @@
 <% if fb_pages.present? %>
   <%= link_to "<span class='fa fa-facebook'></span>Update your FacebookPage".html_safe,
-        '#', class: 'btn btn-block btn-social btn-facebook',
+        '#', class: 'btn btn-block',
         data: {toggle: 'modal', target: '#facebook_pages_modal'} %>
   <div class='modal fade' id='facebook_pages_modal' aria-labelledby='facebook_pages_modal_label'>
     <div class='modal-dialog' role='document'>
