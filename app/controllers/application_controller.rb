@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def soundcloud_oauth
-    @sc_oauth ||= SoundCloud.new({
+    SoundCloud.new({
       client_id: ENV['SC_CLIENT_ID'],
       client_secret: ENV['SC_SECRET'],
       redirect_uri: authorize_soundcloud_url()
@@ -25,14 +25,14 @@ class ApplicationController < ActionController::Base
   end
 
   def youtube_oauth
-    @youtube_client = Yt::Account.new(
+    Yt::Account.new(
       scopes: ['youtube'],
       redirect_uri: authorize_youtube_url
     )
   end
 
   def facebook_oauth
-    @oauth ||= Koala::Facebook::OAuth.new(
+    Koala::Facebook::OAuth.new(
       ENV['FB_APP_ID'],
       ENV['FB_SECRET'],
       authorize_facebook_url()
@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram_oauth
-    @ig_oauth ||= Instagram.new({
+    Instagram.new({
       redirect_uri: authorize_instagram_url()
     })
   end
