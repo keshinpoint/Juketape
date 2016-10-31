@@ -153,6 +153,11 @@ $(document).on('turbolinks:load', function() {
       data: { content_type: content_type, container: container }
     }).done(function(resp) {
       $modal.find('.modal-content').html(resp);
+      $('.sync_with_networks input[type=checkbox]').on('change', function() {
+        if($(this).prop('checked') == true) {
+          $('input[name="selected_items[]"]').prop("checked", true);
+        }
+      });
     });
 
   }); //end of $('#filterContentModal')
