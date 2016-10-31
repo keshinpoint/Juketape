@@ -19,7 +19,7 @@ set :whenever_roles, -> {[:sync_networks]}
 
 set :pty, true
 # set :linked_files, %w{config/database.yml config/application.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :use_sudo, false
 set :deploy_tag, Time.now.utc.strftime("%Y%m%d%H%M%S")
