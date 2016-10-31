@@ -19,7 +19,6 @@ gem 'mini_magick'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'local_time'
 gem 'will_paginate', '~> 3.1.0'
-gem 'figaro'
 gem 'puma'
 
 gem 'sass-rails', '~> 5.0'
