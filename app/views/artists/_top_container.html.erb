@@ -43,8 +43,8 @@
       </div>
       <div class='col-md-4 dashfolio-profile-name-container'>
         <% if artist == current_user %>
-        <h2> <span class = "in-line-edit"><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name' %></span></h2>
-        <p class='dashfolio-tagline'><span class = "in-line-edit"><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line' %></span></p>
+        <h2> <span class = "in-line-edit"><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-container-input-in-place' %></span></h2>
+        <p class='dashfolio-tagline'><span class = "in-line-edit"><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-container-input-in-place' %></span></p>
         <% else %>
         <h2><%= artist.act_name %></h2>
         <p class='dashfolio-tagline'><%= artist.tag_line %></p>
@@ -55,14 +55,14 @@
 
         <% if artist == current_user %>
         <div class='location-container'>
-          <i class='fa fa-map-marker' aria-hidden='true'></i>
+          <i class='fa fa-home' aria-hidden='true'></i>
           <span class='dashfolio-location in-line-edit'>
-            <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location' %>
+            <%= best_in_place artist, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Location', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-location-input-in-place' %>
           </span>
         </div>
         <% elsif artist.location.present? %>
         <div class='location-container'>
-          <i class='fa fa-map-marker' aria-hidden='true'></i>
+          <i class='fa fa-home' aria-hidden='true'></i>
           <span class='dashfolio-location'>
             <%= artist.location %>
           </span>

@@ -2,7 +2,7 @@
 <% artist.ordered_timeline_events.each do  |event| %>
   <div class='event_container'>
     <% if artist == current_user %>
-      <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span>
+      <h3 class='timeline-title'><span class = "in-line-edit"><%= best_in_place event, :title, as: :input, ok_button: 'Save', cancel_button: 'Cancel', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-container-input-in-place' %></span>
 
         <%= link_to timeline_event_path(event), class: 'btn btn-danger btn-sm pull-right', method: :delete, remote: true, data: {confirm: 'Are you sure want to delete the timeline event ?'} do %>
         <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -32,8 +32,9 @@
           <button type="button" class="btn btn-danger timeline-event-date-cancel btn-sm"> Cancel </button>
         <% end %>
       </div>
-      <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :input, ok_button: 'Save', cancel_button: 'Cancel' %></span></p>
-      <p class='timeline-location'><span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location' %></span></p>
+      <p class='timeline-description'><span class = "in-line-edit"><%= best_in_place event, :description, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'timeline-description-input-in-place' %></span></p>
+      <p class='timeline-location'><strong><i class="fa fa-map-marker" aria-hidden="true"></i>
+<span class = "in-line-edit"><%= best_in_place event, :location, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add location', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'timeline-location-input-in-place' %></span></strong></p>
       
     <% else %>
       <h3 class='timeline-title'><%= event.title %></h3>

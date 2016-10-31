@@ -11,7 +11,7 @@
        
         <% if artist == current_user %>
          <span class = "in-line-edit">
-          <%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add your Bio' %>
+          <%= best_in_place artist, :bio, as: :textarea, ok_button: 'Save', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', cancel_button: 'Cancel',  place_holder: 'Add your Bio', inner_class: 'bio-input-in-place' %>
           </span>
           
         <% else %>

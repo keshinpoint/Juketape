@@ -63,6 +63,50 @@ font-size: 12px;
 
 /* end of overriding certain styles */
 
+/* begin best in place styles */
+
+.bio-input-in-place{
+  width: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.in-place-save {
+margin-right: 5px;
+font-size: 10px;
+margin-left: 5px;
+}
+
+.in-place-cancel {
+
+font-size: 10px;
+}
+
+.dashfolio-profile-name-container>.in-place-save {
+margin-left: 100px;
+  
+}
+
+.top-container-input-in-place {
+  width: 100%;
+}
+
+.top-location-input-in-place {
+width: 80%;  
+}
+
+.timeline-description-input-in-place {
+  width: 100%;
+ max-height: 200px;
+  overflow-y: scroll;
+}
+
+.timeline-location-input-in-place {
+ width: 80%;  
+}
+
+/* end of best in place styles */
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
