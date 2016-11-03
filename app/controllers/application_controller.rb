@@ -32,14 +32,9 @@ class ApplicationController < ActionController::Base
   end
 
   def facebook_oauth
-    puts "*"*100
-    puts Rails.env
-    puts "~"*50
-    puts ENV['FB_APP_ID']
-    puts "*"*100
     @oauth ||= Koala::Facebook::OAuth.new(
-      ENV['FB_APP_ID'],
-      ENV['FB_SECRET'],
+      Rails.application.secrets.fb_app_id,
+      Rails.application.secrets.fb_secret,
       authorize_facebook_url()
     )
   end
