@@ -53,3 +53,19 @@ namespace :puma do
 
   before :start, :make_dirs
 end
+
+namespace :deploy do
+  task :clear_cache do
+    on roles(:app) do
+      within current_path.to_s do
+        with rails_env: fetch(:rails_env) do
+          execute :rake, 'cache:clear'
+          execute :rake, 'tmp:cache:clear'
+          execute "rm -rf #{shared_path}/tmp/cache"
+          execute "rm -rf #{release_path}/tmp/cache"
+        end
+      end
+    end
+  end
+  after :cleanup, :clear_cache
+end
