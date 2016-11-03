@@ -1,8 +1,8 @@
 class Instagram
   attr_accessor :client_id, :client_secret, :redirect_uri, :access_token
   def initialize(options={})
-    @client_id = 'eaeb8d2006f3489a9fcd939ec6997ca4' # ENV['INSTAGRAM_CLIENT_ID']
-    @client_secret = 'ef603aab6b1e4611956e59531a61e7ca' # ENV['INSTAGRAM_CLIENT_SECRET']
+    @client_id = Rails.application.secrets.instagram_client_id
+    @client_secret = Rails.application.secrets.instagram_client_secret
     @redirect_uri = options[:redirect_uri]
     @access_token = options[:access_token]
   end

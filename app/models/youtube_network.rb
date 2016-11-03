@@ -17,8 +17,8 @@ class YoutubeNetwork < ApplicationRecord
 
   def get_new_access_token
     data = {
-      client_id: ENV['YT_CLIENT_ID'],
-      client_secret: ENV['YT_CLIENT_SECRET'],
+      client_id: Rails.application.secrets.yt_client_id,
+      client_secret: Rails.application.secrets.yt_client_secret,
       refresh_token: refresh_token,
       grant_type: 'refresh_token'
     }

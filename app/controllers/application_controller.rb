@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 
   def soundcloud_oauth
     @sc_oauth ||= SoundCloud.new({
-      client_id: ENV['SC_CLIENT_ID'],
-      client_secret: ENV['SC_SECRET'],
+      client_id: Rails.application.secrets.sc_client_id,
+      client_secret: Rails.application.secrets.sc_secret,
       redirect_uri: authorize_soundcloud_url()
     })
   end
