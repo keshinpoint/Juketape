@@ -11,4 +11,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+  def store_dir
+    "uploads/#{model.class.to_s.underscore.pluralize}/#{mounted_as}/#{model.id}"
+  end
+
 end
