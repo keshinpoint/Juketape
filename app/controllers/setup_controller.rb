@@ -27,7 +27,7 @@ class SetupController < ApplicationController
 
   def finalize_setup
     current_user.update_attributes(finalized_setup: true)
-    redirect_to dashfolio_artists_path()
+    redirect_to artist_dashfolio_path(username: current_user.username)
   end
 
   def authorize_soundcloud
