@@ -108,6 +108,14 @@ width: 80%;
 
 /* end of best in place styles */
 
+/* modal styles */
+.modal-body {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+/* end of modal styles */
+
 body {
    
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -638,19 +646,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0113e', end
 }
 
 .bars-to-left {
-background: #C1c1c1;
+
 height: 350px;
 }
 
 .dashfolio-profile-pic-connect-container{ /* houses the profile pic with message connect icon */
   text-align: center;
   
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c1c1c1+0,e2e2e2+100 */
-background: rgb(193,193,193); /* Old browsers */
-background: -moz-linear-gradient(left, rgba(193,193,193,1) 0%, rgba(226,226,226,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(193,193,193,1) 0%,rgba(226,226,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(193,193,193,1) 0%,rgba(226,226,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1c1c1', endColorstr='#e2e2e2',GradientType=1 ); /* IE6-9 */
 
 
 height: 350px;
@@ -726,12 +728,7 @@ border: none;
 
 .dashfolio-profile-name-container {
   position: relative;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e2e2e2+0,c1c1c1+100 */
-background: rgb(226,226,226); /* Old browsers */
-background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(193,193,193,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(193,193,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(226,226,226,1) 0%,rgba(193,193,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#c1c1c1',GradientType=1 ); /* IE6-9 */
+
 
 height: 350px;
  

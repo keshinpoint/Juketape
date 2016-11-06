@@ -92,6 +92,13 @@ class SetupController < ApplicationController
     end
   end
 
+   def fb_page
+    network = current_user.facebook_network
+    network.update_fb_page(params.require(:page_id)) if
+      current_user.facebook_network.present?
+    redirect_to settings_path
+  end
+
   def authorize_instagram
     unless params[:error].present?
       token = instagram_oauth.get_access_token(params[:code])
