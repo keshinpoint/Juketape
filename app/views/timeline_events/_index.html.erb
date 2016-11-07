@@ -40,7 +40,7 @@
       <h3 class='timeline-title'><%= event.title %></h3>
       <p class='timeline-date'><%= local_date(event.start_date) %> - <%= event.at_present? ? event.end_time : local_date(event.end_time) %></p>
       <p class='timeline-description'><%= event.description %></p>
-      <p class='timeline-location'><%= event.location %></p>
+      <p class='timeline-location'><strong><i class="fa fa-map-marker" aria-hidden="true"></i><%= event.location %></strong></p>
     <% end %>
   </div>
   <hr/>
