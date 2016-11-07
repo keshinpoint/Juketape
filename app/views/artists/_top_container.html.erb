@@ -30,8 +30,8 @@
             <% end %>
           <% elsif current_user.present? && current_user.is_connected_to?(artist) %>
             <%= link_to disconnect_invitations_path(with_artist: artist.username), method: :delete, data: {confirm: "Are you sure want to disconnect with #{artist.act_name} ?"} do %>
-              <button class='connect-dashfolio'>
-                <i class='fa fa-user-plus' aria-hidden='true'></i> Disconnect
+              <button class='disconnect-dashfolio'>
+                <i class='fa fa-user-times' aria-hidden='true'></i> Disconnect
               </button>
             <% end %>
           <% elsif artist != current_user %>
