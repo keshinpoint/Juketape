@@ -116,27 +116,6 @@ width: 80%;
 /* end of modal styles */
 
 
-/*start of screen media styles */ 
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
-/* b/w extra small phones and medium sized devices */
-
-.signup-form-column {
-  text-align: center;
-}
-
-
-.signup-form >.input-group {
-    margin: 0 auto;
-    padding: 5px;
-    width: 70%;
-}
-
-
-}
-
-
-/* end of screen media styles */ 
 
 body {
    
@@ -1883,3 +1862,48 @@ margin-bottom: 20px;
 }
 
 /* end of contact us */
+
+
+
+/*start of screen media styles */ 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
+/* b/w extra small phones and medium sized devices */
+
+.signup-form-column { /* landing page */
+  text-align: center;
+}
+
+
+.signup-form >.input-group { /* landing page */
+    margin: 0 auto;
+    padding: 5px;
+    width: 70%;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { /* header form, for removing white borders when screen size shrinks */
+    border-color: transparent;
+}
+
+.panel-default { /* onboarding page */
+    width: 100%;
+}
+
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 901px) {
+
+.navbar-right >.input-group {
+  width: 150px;
+}
+
+.navbar-right {
+  float: right !important;
+    margin-right: -15px;
+    float: center !important;
+}
+
+}
+
+/* end of screen media styles */ 
