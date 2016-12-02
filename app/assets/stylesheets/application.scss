@@ -26,8 +26,7 @@
 
 .input-group-addon {
 
-    font-size: 10px !important; /* sets the addon icons aligned with forms */
- 
+    font-size: 10px !important; /* sets the addon icons aligned with forms */ 
 }
 
 .navbar-form .radio, .navbar-form .checkbox {
@@ -115,6 +114,29 @@ width: 80%;
 }
 
 /* end of modal styles */
+
+
+/*start of screen media styles */ 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
+/* b/w extra small phones and medium sized devices */
+
+.signup-form-column {
+  text-align: center;
+}
+
+
+.signup-form >.input-group {
+    margin: 0 auto;
+    padding: 5px;
+    width: 70%;
+}
+
+
+}
+
+
+/* end of screen media styles */ 
 
 body {
    
