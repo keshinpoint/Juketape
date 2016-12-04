@@ -197,7 +197,7 @@ $('.dashfolio-midbar-about a').on('click', function(e){
   var currentAttrValue1 = $(this).attr('href');   
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-about').show()
@@ -215,7 +215,7 @@ $('.dashfolio-midbar-music a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-music').show();
@@ -228,7 +228,7 @@ $('.dashfolio-midbar-music a').on('click', function(e){
     e.stopPropagation();		
   });
 
-//this below sees toit that the individal trackscontainer under the music tab is active by default only on the first click
+//this below sees to it that the individal trackscontainer under the music tab is active by default only on the first click
 $('.dashfolio-midbar-music a').one('click', function(e){
   $('#tracks-dashfolio').show();	
 });
@@ -238,7 +238,7 @@ $('.dashfolio-midbar-videos a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").find(".midbar-icon").removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-video').show();
@@ -255,7 +255,7 @@ $('.dashfolio-midbar-pictures a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-pictures').show();

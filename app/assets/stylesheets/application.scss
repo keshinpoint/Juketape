@@ -938,6 +938,14 @@ height: 50px;
 text-decoration: none;
 }
 
+.dashfolio-midbar-icons:hover {
+  background: #111; 
+height: 50px;
+text-decoration: none;
+}
+
+
+
 .dashfolio-midbar-icons > li.active {
 background: #111; 
 
@@ -961,9 +969,6 @@ color: white;
 
 }
 
-.dashfolio-midbar-pictures {
-   margin-right: 65px; /* pushes the pictures, which is the farthest to the right on he midbar, a little to the left */
-}
 
 .header-info {
 display: none;
@@ -1887,6 +1892,24 @@ margin-bottom: 20px;
 
 .panel-default { /* onboarding page */
     width: 100%;
+}
+
+.dashfolio-profile-name-container {
+text-align: center;
+height: 300px;
+}
+
+.connection-container {
+  margin: 0 auto;
+}
+
+
+.dashfolio-profile-pic-connect-container {
+    height: 300px;
+}
+
+.my_dashfolio .dashfolio-profile-pic-connect-container {
+    height: 250px;
 }
 
 }
