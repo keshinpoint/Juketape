@@ -907,6 +907,10 @@ left: 10%;
 width: 80%;
 }
 
+.dashfolio-midbar-icons {
+  text-align: center;
+  margin: 0 auto;
+}
 
 .dashfolio-midbar-icons > li {
 float: left;
@@ -944,6 +948,10 @@ height: 50px;
 text-decoration: none;
 }
 
+.midbar-icon {
+  top:10px;
+  position: relative;
+}
 
 
 .dashfolio-midbar-icons > li.active {
@@ -964,8 +972,8 @@ border-bottom: 4px solid #027878;
 font-family: 'neutra-demi'; 
 font-size: 15px;
 font-color: white;
-margin-left: 40px;
 color: white;
+width: 100px;
 
 }
 

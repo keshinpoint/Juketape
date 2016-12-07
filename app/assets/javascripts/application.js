@@ -238,7 +238,7 @@ $('.dashfolio-midbar-videos a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().parent().addClass("dashfolio-midbar-active").find(".midbar-icon").removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-video').show();
