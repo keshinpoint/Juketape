@@ -288,13 +288,13 @@ $(document).on('turbolinks:load', function(){
 
   });
 
-  $('.about-header-container a').on('click', function(e){
+  $('.about-header-container-col a').on('click', function(e){
 
     var attribute_tabcontent_about = $(this).attr('href');
     $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
 
     $(this).addClass("about-header-container-active");
-    $(this).siblings().removeClass("about-header-container-active");
+    $(this).parent().siblings().find(".tablink").removeClass("about-header-container-active");
     $('.dashfolio-music').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
