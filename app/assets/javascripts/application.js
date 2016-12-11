@@ -230,7 +230,7 @@ $('.dashfolio-midbar-music a').on('click', function(e){
 
 //this below sees to it that the individal trackscontainer under the music tab is active by default only on the first click
 $('.dashfolio-midbar-music a').one('click', function(e){
-  $('#tracks-dashfolio').show();	
+  $('#tracks-dashfolio').show();  	
 });
 
 $('.dashfolio-midbar-videos a').on('click', function(e){
@@ -277,16 +277,32 @@ $(document).on('turbolinks:load', function(){
 
     var attribute_tabcontent_music = $(this).attr('href');
     $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
-
     $(this).addClass("music-header-container-active");
-    $(this).siblings().removeClass("music-header-container-active");
+    $(this).parent().siblings().find(".tablink").removeClass("music-header-container-active");
     $('.dashfolio-about').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
+
+
+
     e.preventDefault(); 
-    e.stopPropagation();		 
+    e.stopPropagation();
+
 
   });
+
+  $('.tracks-header').on('click', function() {
+    $('.dashfolio-tracks-add-container').show();
+    $('.dashfolio-album-add-container').hide();
+
+  });
+
+  $('.album-header').on('click', function() {
+    $('.dashfolio-tracks-add-container').hide();
+    $('.dashfolio-album-add-container').show();
+  });
+
+ 
 
   $('.about-header-container-col a').on('click', function(e){
 
