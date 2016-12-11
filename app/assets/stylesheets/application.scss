@@ -1000,7 +1000,8 @@ border-radius: 5px;
   font-size: 14px;
 
   padding: 5px; /* adds some space between anchor tags and the border for the tablinks */
-  text-align: center; 
+  text-align: center;
+  width: 50%; 
   color: gray;
 
   /* most important as it specifies the width of each of the anchor element is half of the border around it */
