@@ -1656,14 +1656,12 @@ min-width: 25px;
     margin-right: 100px;
     padding: 5px 8px;
     margin-bottom: 20px;
-    min-width: 400px;
-    min-height: 150px;
 }
 
 .search-profile-pic-container {
-  display: block;
-  position: initial;
-  float: left;
+  display: inline-block;
+  position: relative;
+  bottom: 15px;
 }
 
 .search-profile-name-tag-container {
@@ -1672,20 +1670,18 @@ min-width: 25px;
 }
 
 .search-profile-pic {
-  border-radius: 10px;
-  display: inline-block;
-  height: 95px;
-  object-fit: contain;
-  position: relative;
-  width: 100px;
+     border-radius: 10px;
+    bottom: 15px;
+    display: inline-block;
+    height: 95px;
+    object-fit: contain;
+    position: relative;
+    width: 100px;
 }
 
 .search-tagline-container{
-  display: block;
+  display: inline-block;
   margin-left: 10px;
-  max-width: 68%;
-  float: left;
-  position: initial;
 }
 
 .search-tags-list {
