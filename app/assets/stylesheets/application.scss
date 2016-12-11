@@ -133,6 +133,9 @@ body {
   .container {
     height: 100%;
   }
+  .content_body {
+    height: 100%;
+  }
 }
 
 html, body {
@@ -1510,7 +1513,14 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 
 
 /* start of search styles */
+/* gje */
 .search-navigation-bar {
+/*    float: left;
+    height: 100%;;
+    position: fixed;
+    width: 300px;
+    z-index: 1;
+*/  
   border-right: 1px solid #dddddd;
 
   height: 100%;
@@ -1525,6 +1535,8 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
   cursor: pointer;
   padding: 7px;
   margin: 0 auto;
+
+  //width: 200px;
   height: 40px;
   font-size: 16px;
   border-left: 4px solid transparent;  
@@ -1542,13 +1554,16 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 
 
 #search-navigation-user {
+
+
+  // margin-top: 200px;
   padding-bottom: 40px;
 
 }
 
 
 #search-navigation-tag {
-
+// padding-top: 15px;
 }
 
 
