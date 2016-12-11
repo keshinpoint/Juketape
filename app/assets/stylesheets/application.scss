@@ -980,6 +980,7 @@ width: 100px;
 
 .header-info {
 display: none;
+max-width:250px;
 text-align:center;
 font-size: 0px;
 margin-top: 10px;
@@ -1039,7 +1040,11 @@ text-decoration: none !important;
 
 /* animation styles for the music header container links */
 
-
+.music-header-container {
+  position: relative;
+  left: 61%;
+ 
+}
 
 .music-hr {
      bottom: 80px;
@@ -1092,6 +1097,10 @@ border-bottom:5px solid #027878;
 
 }
 
+.dashfolio-audio-add-button {
+  position: relative;
+  bottom: 80px;
+}
 
 .dashfolio-picture-add-button {
    position: relative;
