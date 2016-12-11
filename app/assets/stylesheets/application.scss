@@ -1557,15 +1557,16 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
   //width: 200px;
   height: 40px;
   font-size: 16px;
+  border-left: 4px solid transparent;  
 }
 
 .search-navigation:hover {
-  border-left: 4px solid #027878;  
+  border-left-color: #027878;  
 }
 
 
 .seach-navigation-active {
-  border-left: 4px solid #027878;
+  border-left-color: #027878;
 }
 
 
