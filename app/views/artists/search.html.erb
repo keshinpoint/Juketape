@@ -1,24 +1,24 @@
-<div class='search-navigation-bar'> 
+<div class='search-navigation-bar col-xs-12 col-sm-3'> 
 
-  <div class='search-navigation search-navigation-active' id='search-navigation-user' data-container='search-name-container'>
+  <div class='search-navigation search-navigation-active col-xs-4 col-sm-12' id='search-navigation-user' data-container='search-name-container'>
     <p class='search-navigation-p search-navigation-p-active'> Act name <span class='search-number search-number-active'> <%= @name_search.count %></span> </p>
   </div>
-  <hr class = "search-navigation-hr"> 
+  <hr class = "search-navigation-hr hidden-xs"> 
 
 
-  <div class='search-navigation' id='search-navigation-location' data-container='search-location-container'>
+  <div class='search-navigation col-xs-4 col-sm-12' id='search-navigation-location' data-container='search-location-container'>
     <p class='search-navigation-p'> Location  <span class='search-number search-number-inactive'> <%= @location_search.count %></span></p>
   </div>
 
-    <hr class = "search-navigation-hr">
+    <hr class = "search-navigation-hr hidden-xs">
 
-   <div class='search-navigation' id='search-navigation-tag' data-container='search-tag-container'>
+   <div class='search-navigation col-xs-4 col-sm-12' id='search-navigation-tag' data-container='search-tag-container'>
     <p class='search-navigation-p'> Tag  <span class='search-number search-number-inactive'> <%= @tag_search.count %></span></p>
   </div>
 
 </div>
 
-<div class='container'>
+<div class='container col-xs-12 col-sm-9'>
   <div class='row'>
     <div class='col-md-12'>
       <div class='main-search-results'> 
