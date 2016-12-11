@@ -197,7 +197,7 @@ $('.dashfolio-midbar-about a').on('click', function(e){
   var currentAttrValue1 = $(this).attr('href');   
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-about').show()
@@ -215,7 +215,7 @@ $('.dashfolio-midbar-music a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-music').show();
@@ -228,9 +228,9 @@ $('.dashfolio-midbar-music a').on('click', function(e){
     e.stopPropagation();		
   });
 
-//this below sees toit that the individal trackscontainer under the music tab is active by default only on the first click
+//this below sees to it that the individal trackscontainer under the music tab is active by default only on the first click
 $('.dashfolio-midbar-music a').one('click', function(e){
-  $('#tracks-dashfolio').show();	
+  $('#tracks-dashfolio').show();  	
 });
 
 $('.dashfolio-midbar-videos a').on('click', function(e){
@@ -238,7 +238,7 @@ $('.dashfolio-midbar-videos a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-video').show();
@@ -255,7 +255,7 @@ $('.dashfolio-midbar-pictures a').on('click', function(e){
 
 
     //below adds the active styles to midbar navigation icons
-    $(this).parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
+    $(this).parent().parent().addClass("dashfolio-midbar-active").siblings().removeClass("dashfolio-midbar-active");
     //
 
     $('.dashfolio-pictures').show();
@@ -277,24 +277,40 @@ $(document).on('turbolinks:load', function(){
 
     var attribute_tabcontent_music = $(this).attr('href');
     $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
-
     $(this).addClass("music-header-container-active");
-    $(this).siblings().removeClass("music-header-container-active");
+    $(this).parent().siblings().find(".tablink").removeClass("music-header-container-active");
     $('.dashfolio-about').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
+
+
+
     e.preventDefault(); 
-    e.stopPropagation();		 
+    e.stopPropagation();
+
 
   });
 
-  $('.about-header-container a').on('click', function(e){
+  $('.tracks-header').on('click', function() {
+    $('.dashfolio-tracks-add-container').show();
+    $('.dashfolio-album-add-container').hide();
+
+  });
+
+  $('.album-header').on('click', function() {
+    $('.dashfolio-tracks-add-container').hide();
+    $('.dashfolio-album-add-container').show();
+  });
+
+ 
+
+  $('.about-header-container-col a').on('click', function(e){
 
     var attribute_tabcontent_about = $(this).attr('href');
     $('.about-content ' + attribute_tabcontent_about).fadeIn(400).siblings().hide();
 
     $(this).addClass("about-header-container-active");
-    $(this).siblings().removeClass("about-header-container-active");
+    $(this).parent().siblings().find(".tablink").removeClass("about-header-container-active");
     $('.dashfolio-music').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();

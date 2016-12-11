@@ -121,27 +121,6 @@ width: 80%;
 /* end of modal styles */
 
 
-/*start of screen media styles */ 
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
-/* b/w extra small phones and medium sized devices */
-
-.signup-form-column {
-  text-align: center;
-}
-
-
-.signup-form >.input-group {
-    margin: 0 auto;
-    padding: 5px;
-    width: 70%;
-}
-
-
-}
-
-
-/* end of screen media styles */ 
 
 body {
    
@@ -939,6 +918,10 @@ left: 10%;
 width: 80%;
 }
 
+.dashfolio-midbar-icons {
+  text-align: center;
+  margin: 0 auto;
+}
 
 .dashfolio-midbar-icons > li {
 float: left;
@@ -970,6 +953,18 @@ height: 50px;
 text-decoration: none;
 }
 
+.dashfolio-midbar-icons:hover {
+  background: #111; 
+height: 50px;
+text-decoration: none;
+}
+
+.midbar-icon {
+  top:10px;
+  position: relative;
+}
+
+
 .dashfolio-midbar-icons > li.active {
 background: #111; 
 
@@ -988,18 +983,14 @@ border-bottom: 4px solid #027878;
 font-family: 'neutra-demi'; 
 font-size: 15px;
 font-color: white;
-margin-left: 40px;
 color: white;
+width: 100px;
 
 }
 
-.dashfolio-midbar-pictures {
-   margin-right: 65px; /* pushes the pictures, which is the farthest to the right on he midbar, a little to the left */
-}
 
 .header-info {
 display: none;
-max-width:250px;
 text-align:center;
 font-size: 0px;
 margin-top: 10px;
@@ -1019,8 +1010,7 @@ border-radius: 5px;
   font-size: 14px;
 
   padding: 5px; /* adds some space between anchor tags and the border for the tablinks */
-  text-align: center;
-  width: 50%; 
+  text-align: center; 
   color: gray;
 
   /* most important as it specifies the width of each of the anchor element is half of the border around it */
@@ -1060,11 +1050,7 @@ text-decoration: none !important;
 
 /* animation styles for the music header container links */
 
-.music-header-container {
-  position: relative;
-  left: 61%;
- 
-}
+
 
 .music-hr {
      bottom: 80px;
@@ -1117,10 +1103,6 @@ border-bottom:5px solid #027878;
 
 }
 
-.dashfolio-audio-add-button {
-  position: relative;
-  bottom: 80px;
-}
 
 .dashfolio-picture-add-button {
    position: relative;
@@ -1905,3 +1887,66 @@ margin-bottom: 20px;
 }
 
 /* end of contact us */
+
+
+
+/*start of screen media styles */ 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
+/* b/w extra small phones and medium sized devices */
+
+.signup-form-column { /* landing page */
+  text-align: center;
+}
+
+
+.signup-form >.input-group { /* landing page */
+    margin: 0 auto;
+    padding: 5px;
+    width: 70%;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { /* header form, for removing white borders when screen size shrinks */
+    border-color: transparent;
+}
+
+.panel-default { /* onboarding page */
+    width: 100%;
+}
+
+.dashfolio-profile-name-container {
+text-align: center;
+height: 300px;
+}
+
+.connection-container {
+  margin: 0 auto;
+}
+
+
+.dashfolio-profile-pic-connect-container {
+    height: 300px;
+}
+
+.my_dashfolio .dashfolio-profile-pic-connect-container {
+    height: 250px;
+}
+
+}
+
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 901px) {
+
+.navbar-right >.input-group {
+  width: 150px;
+}
+
+.navbar-right {
+  float: right !important;
+    margin-right: -15px;
+    float: center !important;
+}
+
+}
+
+/* end of screen media styles */ 
