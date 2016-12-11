@@ -7,7 +7,7 @@
         <div class='bar bar-second'> </div>
         <div class='bar bar-third'> </div>
       </div>
-      <div class='col-md-4 dashfolio-profile-pic-connect-container'>
+      <div class='col-xs-4 dashfolio-profile-pic-connect-container'>
         <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'profile-pic-dashfolio') %>
         <div class='message-connect-buttons'>
           <% if current_user.present? && current_user.is_connected_to?(artist) %>
@@ -41,7 +41,7 @@
           <% end %>
         </div>
       </div>
-      <div class='col-md-4 dashfolio-profile-name-container'>
+      <div class='col-xs-4 dashfolio-profile-name-container'>
         <% if artist == current_user %>
         <h2> <span class = "in-line-edit"><%= best_in_place artist, :act_name, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Act Name', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-container-input-in-place' %></span></h2>
         <p class='dashfolio-tagline'><span class = "in-line-edit"><%= best_in_place artist, :tag_line, as: :input, ok_button: 'Save', cancel_button: 'Cancel', place_holder: 'Add Tag Line', ok_button_class: 'btn btn-sm in-place-save btn-success',  cancel_button_class: 'btn btn-sm in-place-cancel btn-danger', inner_class: 'top-container-input-in-place' %></span></p>
