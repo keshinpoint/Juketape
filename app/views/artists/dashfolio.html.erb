@@ -18,6 +18,30 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="shareModal" role="dialog">
+    <div class="modal-dialog share-modal-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Share your Dashfolio</h4>
+        </div>
+        <div class="modal-body">
+          <p>Share your Juketape dashfolio with your friends, family or the world, and show of all your content in one, easy to manage space.</p>
+          <input type="text" class='form-control' readonly="true" value='<%= artist_dashfolio_url(username: current_user.username) %>'/>
+        </div>
+        <div class="modal-footer">
+          <a href="https://twitter.com/share" class="twitter-share-button btn flt-right" data-text="My Dashfolio in Juketape - " data-url="<%= artist_dashfolio_url(username: current_user.username) %>" data-size="large">Tweet</a>
+          <button type="button" class="btn btn-default">Facebook</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% content_for :head do %>
+    <script src="//platform.twitter.com/widgets.js"></script>
+  <% end %>
 <% end %>
 </div>
 
