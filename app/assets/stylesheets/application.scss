@@ -1846,6 +1846,14 @@ margin-bottom: 20px;
 @media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
 /* between xs and sm */
 
+.search-profile-pic {
+
+      height: 60px;
+    object-fit: contain;
+    width: 60px;
+    position: relative;
+    top: 10px;
+}
 
 }
 
