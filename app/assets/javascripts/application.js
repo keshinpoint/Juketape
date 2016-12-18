@@ -230,7 +230,8 @@ $('.dashfolio-midbar-music a').on('click', function(e){
 
 //this below sees to it that the individal trackscontainer under the music tab is active by default only on the first click
 $('.dashfolio-midbar-music a').one('click', function(e){
-  $('#tracks-dashfolio').show();  	
+  $('#tracks-dashfolio').show();  
+  $('.dashfolio-album-add-container').hide();	
 });
 
 $('.dashfolio-midbar-videos a').on('click', function(e){
