@@ -1,28 +1,56 @@
 <h3 class = "search-keyword-header"> Searching profiles for <%= search_by %>s that include <span class = "search-main-keyword"> <%= params[:term] %> </span> </h3>
 <% artists.each do |artist| %>
-  <%= link_to artist_dashfolio_path(username: artist.username), target: '_blank' do %>
-    <div class='search-name-individual col-md-8'>
-      <div class='search-profile-name-tag-container'>
-        <div class='search-profile-pic-container'>
-          <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'search-profile-pic') %> 
-        </div>
-        <div class='search-tagline-container'>
-          <div class='search-profile-name'>
-            <p class='search-artist-name'> <strong><%= artist.act_name %></strong> </p>
+<div class = "container">
+
+  <div class = "row">
+
+
+
+    <div class = "col-xs-12 col-sm-8">
+
+       <div class = "container">
+
+            <div class = "row">
+
+      <%= link_to artist_dashfolio_path(username: artist.username), target: '_blank' do %>
+
+      <div class='search-name-individual col-xs-12 col-sm-8'>
+        <div class='search-profile-name-tag-container'>
+
+         
+
+              <div class='search-profile-pic-container col-xs-2 col-sm-3 col-md-2'>
+                <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'search-profile-pic') %> 
+              </div>
+              <div class='search-tagline-container col-xs-10 col-sm-9 col-md-10'>
+                <div class='search-profile-name'>
+                  <p class='search-artist-name'> <strong><%= artist.act_name %></strong> </p>
+                </div>
+                <div class='search-tagline'>
+                  <p class='search-artist-tagline'><%= artist.tag_line %></p>
+                </div>
+                <div class='search-tags-list'>
+                  <% artist.tags.each do |tag| %>
+                  <span class='dashfolio-tag'><%= tag.name %></span>
+                  <% end %>
+                </div>
+              </div>
+
+            </div> <!--end of search-profile-name-tag-container --> 
           </div>
-          <div class='search-tagline'>
-            <p class='search-artist-tagline'><%= artist.tag_line %></p>
-          </div>
-          <div class='search-tags-list'>
-            <% artist.tags.each do |tag| %>
-              <span class='dashfolio-tag'><%= tag.name %></span>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
+
+        
+  
+
 <% end %>
+</div>
+
+      </div>
+  </div>
+  </div>
+</div>
+<% end %>
+
 <div class='paginator'>
   <%= will_paginate artists, params: {search_by: search_by, term: params[:term]} %>
 </div>

@@ -1504,12 +1504,11 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 /* start of search styles */
 
 .search-navigation-bar {
-    float: left;
-    height: 100%;;
-    position: fixed;
-    width: 300px;
+    height: 100%;
     z-index: 1;
     border-right: 1px solid #dddddd;
+    position: relative;
+    top: 200px;
 
 }
 
@@ -1518,10 +1517,8 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
   cursor: pointer;
   padding: 7px;
   margin: 0 auto;
-
-  width: 200px;
-  height: 40px;
   font-size: 16px;
+  padding-bottom: 20px;
 }
 
 .search-navigation:hover {
@@ -1529,23 +1526,8 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 }
 
 
-.seach-navigation-active {
+.search-navigation-active {
   border-left: 4px solid #027878;
-}
-
-
-
-#search-navigation-user {
-
-
-  margin-top: 200px;
-  padding-bottom: 40px;
-
-}
-
-
-#search-navigation-tag {
-padding-top: 15px;
 }
 
 
@@ -1567,7 +1549,8 @@ padding-top: 15px;
 }
 
 .search-navigation-hr {
-  width: 60%;
+  width: 80%;
+  float: left;
 }
 
 .search-number {
@@ -1599,10 +1582,7 @@ min-width: 25px;
 }
 
 .main-search-results {
-     margin-left: 300px; /* same as width as search-navigation-bar */
-    position: relative;
-    width: 80%;
-;
+
   
    
 }
@@ -1642,29 +1622,22 @@ min-width: 25px;
 }
 
 .search-profile-pic-container {
-  display: inline-block;
-  position: relative;
-  bottom: 15px;
 }
 
 .search-profile-name-tag-container {
-  top: 15px;
-  position: relative;
+
 }
 
 .search-profile-pic {
-     border-radius: 10px;
+    border-radius: 10px;
     bottom: 15px;
-    display: inline-block;
-    height: 95px;
+      height: 90px;
     object-fit: contain;
-    position: relative;
-    width: 100px;
+    width: 90px;
 }
 
 .search-tagline-container{
-  display: inline-block;
-  margin-left: 10px;
+
 }
 
 .search-tags-list {
@@ -1870,6 +1843,12 @@ margin-bottom: 20px;
 
 /*start of screen media styles */ 
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+/* between xs and sm */
+
+
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 992px) {
 /* b/w extra small phones and medium sized devices */
 
@@ -1909,6 +1888,28 @@ height: 300px;
 .my_dashfolio .dashfolio-profile-pic-connect-container {
     height: 250px;
 }
+
+.search-navigation-bar {
+position: relative;
+top: 0px; 
+border: none; 
+}
+
+.search-navigation { /* the fixed property should be removed as in xs to sm screens, the seach index slides to the top */
+  position: static;  
+}
+
+.search-navigation:hover {
+  border-bottom: 2px solid #027878; 
+  border-left: none; 
+}
+
+
+.search-navigation-active {
+border-bottom: 2px solid #027878;  
+border-left: none;
+}
+
 
 }
 

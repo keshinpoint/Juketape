@@ -345,8 +345,8 @@ $(document).ready(function() {
 $(document).on('turbolinks:load', function() {
 
   $('.search-navigation').on('click', function(e){ 
-    $(this).addClass("seach-navigation-active");
-    $(this).siblings().removeClass("seach-navigation-active");
+    $(this).addClass("search-navigation-active");
+    $(this).siblings().removeClass("search-navigation-active");
 
     $(this).find("p").addClass("search-navigation-p-active");
     $(this).siblings().children("p").removeClass("search-navigation-p-active");
