@@ -1269,10 +1269,10 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 .inbox-preview
 {
   
-    width:400px;
+    width:350px;
     height:100%;
-    float:left;
-    position: absolute;
+
+    position: fixed;
     z-index:1;
     overflow-y: scroll; /* makes it scrollable */
     /*http://stackoverflow.com/questions/13337646/scroll-inside-of-a-fixed-sidebar */ 
@@ -1323,9 +1323,8 @@ opacity: 0.5;
 }
 
 .message-full-preview{
-  position: relative;
-  width: 100%;
-  margin-left: 400px;
+
+
 }
 
 .inbox-sender-info-container{
@@ -1372,7 +1371,7 @@ padding: 10px;
 }
 
 .inbox-main-message-container {
-  width: 75%;
+  width: 85%;
   border:1px solid #bcbcbc;
   padding: 18px;
   border-radius: 5px;
@@ -1384,7 +1383,7 @@ margin-bottom: 10px;
 
 .inbox-main-message-body {
    overflow-y: scroll;
-   max-height: 300px;  
+   max-height: 200px;  
 }
 
 .inbox-main-action-buttons {

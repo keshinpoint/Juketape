@@ -1,6 +1,4 @@
-<div class='container'>
-  <div class='row'>
-    <div class='col-xs-10' >
+
       <div class='message-full-preview'>
         <h1 class='inbox-title'> Inbox </h1>
         <% artist = thread.sender == current_user ? thread.receiver : thread.sender %>
@@ -42,6 +40,4 @@
           <%= render partial: 'reply_form', locals: { thread: thread } %>
         </div>
       </div>
-    </div>
-  </div>
-</div> 
+ 
