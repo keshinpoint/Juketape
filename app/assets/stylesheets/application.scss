@@ -1310,7 +1310,7 @@ opacity: 0.5;
 .inbox-peview-divider {
   position: relative;
   right: 20px;
-  width: 350px;
+  width: 300px;
 }
 
 .inbox-preview-profile-pic{
@@ -1917,7 +1917,11 @@ border-bottom: 2px solid #027878;
 border-left: none;
 }
 
+.inbox-preview{
+  
+position: static;
 
+}
 }
 
 
