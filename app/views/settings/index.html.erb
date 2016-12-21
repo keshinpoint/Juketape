@@ -1,28 +1,39 @@
-<div class='settings-navigation-bar'>
-  <div class='settings-navigation-bar-contents'>    
-    <div class='settings-navigation settings-navigation-active' id='settings-navigation-profile'>
+<div class = "container">
+  <div class = "row">
+<div class='col-xs-12 col-md-3 settings-navigation-bar'>
+  <div class='settings-navigation-bar-contents'> 
+ 
+
+
+    <div class='col-xs-4 col-md-10 settings-navigation settings-navigation-active' id='settings-navigation-profile'>
       <a class='settings-navigation-a settings-anchor-active' href= '#main-settings-profile' > <i class='fa fa-user' aria-hidden='true'></i>
         &nbsp;Profile
       </a>
     </div>
-    <hr>
-    <div class='settings-navigation' id= 'settings-navigation-account'>
+
+
+     <hr class = "search-navigation-hr hidden-xs hidden-sm"> 
+
+    <div class='settings-navigation col-xs-4 col-md-10' id= 'settings-navigation-account'>
       <a class='settings-navigation-a' href= '#main-settings-account' >
         <i class='fa fa-unlock-alt' aria-hidden='true'></i>
         &nbsp;Account
       </a>
-    </div>
-    <hr> 
-    <div class='settings-navigation' id='settings-navigation-profile'>
+ 
+  </div>
+     <hr class = "search-navigation-hr hidden-xs hidden-sm"> 
+
+    <div class='col-xs-4 col-md-10 settings-navigation' id='settings-navigation-profile'>
       <%= link_to sign_out_path, method: :delete, class: 'settings-navigation-a' do %>
         <i class='fa fa-sign-out'></i>&nbsp;Logout
       <% end %>
     </div>
+
+
   </div>
 </div>
-<div class='container'>
-  <div class='row'>
-    <div class='col-md-12'>
+
+    <div class='col-xs-12 col-md-9'>
       <div class='main-settings-container'>
         <div class='main-settings' id='main-settings-profile'>
           <div class='main-settings-header'>
@@ -67,7 +78,10 @@
         </div>
       </div>
     </div>
-  </div>
+
+
+
+</div>
 </div>
 
 <script>

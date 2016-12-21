@@ -1664,10 +1664,10 @@ color: #4F4E4E;
 
 
 .settings-navigation-bar {
-    float: left;
+ 
     height: 100%;
-    position: fixed;
-    width: 300px;
+  
+
     z-index: 1;
     border-right: 1px solid #DDDDDD;
 
@@ -1702,7 +1702,7 @@ border-left: 4px solid #027878;
 
 .settings-navigation-bar-contents {
 
-  padding: 100px 50px;
+  padding: 200px 20px;
 
 }
 
@@ -1721,7 +1721,7 @@ border-left: 4px solid #027878;
 }  
 
 .main-settings-container {
-  margin-left: 200px;
+
 }
 
 .main-settings-header {
@@ -1779,13 +1779,6 @@ left: 20%;
     }
 
 
-
-
-@media (min-width: 1200px) {
-  .main-settings-container {
-    margin-left: 300px;
-  }
-}
 
 
 
@@ -1922,6 +1915,29 @@ border-left: none;
 position: static;
 
 }
+
+.settings-navigation-bar-contents {
+    padding: 50px;
+}
+
+.settings-navigation-bar {
+  border: none;
+  margin-bottom: 50px;
+}
+
+.settings-navigation:hover {
+ 
+  border-bottom: 4px solid #027878;
+  color: #027878;
+  border-left: none;
+}
+
+.settings-navigation-active {
+border-bottom: 4px solid #027878;
+border-left: none;
+  
+}
+
 }
 
 
