@@ -41,6 +41,10 @@
       </li>
       <li class='divider'></li>
       <li>
+        <%= link_to "<i class='fa fa fa-commenting'></i> Feedback".html_safe, feedback_path() %>
+      </li>
+      <li class='divider'></li>
+      <li>
         <%= link_to "<i class='fa fa-sign-out'></i> Sign-out".html_safe, sign_out_path, method: :delete %>
       </li>
     </ul>

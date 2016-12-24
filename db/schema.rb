@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024155522) do
+ActiveRecord::Schema.define(version: 20161219155220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 20161024155522) do
     t.text     "bio"
     t.integer  "message_notif_count",                default: 0
     t.integer  "connection_notif_count",             default: 0
+    t.string   "invite_code",                        default: ""
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end

@@ -1457,6 +1457,52 @@ clear: both;
 
 /* end of new message styles */
 
+/* Start of Invitation page */
+
+.invitation-title {
+  font-family: "neutra-demi";
+}
+
+.email-tag {
+  cursor: default;
+  background-color: blue;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+  margin-top: 3px; /*incase tags go in next line, will space */
+  color:#fff;
+  background:#7687A3;
+  padding-right: 10px;
+  margin-right: 4px;
+  float: left;
+
+  span.close { 
+    margin-left: 10px;
+    font-size: 14px;
+    color: #fff;
+
+    >a {
+      color: white;
+    }
+  }
+}
+
+#add-email-button {
+  padding-bottom: 1.84em;
+}
+
+.invite_users_container {
+  .emails_list {
+    padding: 1em 0;
+  }  
+}
+
+.email_holder {
+  display: inline-block;
+  width: 100%
+}
+
+/* End of Invitation page */
+
 /* start the notifications styles */
 
 .notif-title {
@@ -1956,3 +2002,14 @@ border-left: none;
 }
 
 /* end of screen media styles */ 
+
+
+.twitter-share-button, .fb-share-button {
+  float: left;
+  margin-top: 0.5em;
+  margin-right: 1em;
+}
+
+#inviteRequestModal {
+  color: black;
+}

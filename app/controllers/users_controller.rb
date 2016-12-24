@@ -8,6 +8,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_info
+    user = User.where(email: params[:email]).first
+    render json: { user_act_name: user.try(:act_name) }, status: 200
+  end
+
   private
 
   def user_params

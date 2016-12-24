@@ -2,7 +2,10 @@ class RegistrationsController < Clearance::UsersController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if !valid_invitation_code?
+      flash[:notice] = "Please use a valid Invite code."
+      render 'sessions/new'
+    elsif @user.save
       UserMailer.welcome_email(@user).deliver_now
       sign_in @user
       redirect_back_or url_after_create
@@ -16,5 +19,9 @@ class RegistrationsController < Clearance::UsersController
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def valid_invitation_code?
+    User.exists?(invite_code: params[:invite_code])
   end
 end

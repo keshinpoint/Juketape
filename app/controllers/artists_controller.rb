@@ -45,6 +45,9 @@ class ArtistsController < ApplicationController
     @connections = @artist.connections.paginate(page: params[:page], per_page: 10)
   end
 
+  def feedback
+  end
+
   private
   def get_content
     case params[:content_type]

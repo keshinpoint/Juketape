@@ -1,0 +1,11 @@
+<p>Hello</p>
+
+<p><%= @user.act_name %> has requested you to join Juketape. Juketape is the new digital portfolio network for the artists, from the artists and by the artists.</p>
+
+<p>Please click on the link </p>
+
+<p><%= link_to 'Sign up', root_url(code: @user.invite_code.html_safe) %></p>
+
+<p>or simply copy the invite code while sign-up.</p>
+
+<p><%= @user.invite_code %></p>

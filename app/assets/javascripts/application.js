@@ -175,6 +175,68 @@ $(document).on('turbolinks:load', function() {
   }).on('ajax:error', function(jqXHR, error) {
     console.log('Its Error')
   });
+
+  // Adding emails in the invite page
+  $('#add-email-button').on('click', function (e) {
+    e.preventDefault();
+    if($('.invite_users_container .email_holder').length >= 5) {
+      return false;
+    }
+    var location = $(this).data('url');
+    var userEmail = $('#input_user_email').val();
+    $('.invite_users_container .errors').text('');
+    if(userEmail == "") {
+      $('.invite_users_container .errors').text('Please enter email address');
+      return;
+    }
+    $(this).addClass("disabled");
+    $.ajax({
+      method: 'GET',
+      url: location,
+      data: { email: userEmail }
+    }).done(function(resp) {
+      if(resp.user_act_name == null) {
+        $("#input_user_email").val('');
+        $('.invite_users_container .emails_list').append('<div class="email_holder"><span class="email-tag"><span class="email">' + userEmail + '</span><span class="close">x</span></span></div>');
+        $('#send_invitations').removeAttr('disabled');
+        if($('.invite_users_container .email_holder').length >= 5) {
+          $('#add-email-button').attr('disabled', 'disabled');
+        }
+        removeEmailOnClose();
+      } else {
+        $('.invite_users_container .errors').text('User already existed with the given Email, please give some other email')
+      }
+      $('#add-email-button').removeClass("disabled");
+    });
+  }); //end of $('#add-email-button')
+
+  var removeEmailOnClose = function() {
+    $('.email-tag .close').on('click', function(){
+      $(this).parents('.email_holder').remove();
+      $('#add-email-button').removeAttr('disabled');
+      if($('.invite_users_container .email_holder').length == 0) {
+        $('#send_invitations').attr('disabled', 'disabled');
+      }
+    });
+  };
+
+  $('#send_invitations').on('click', function(){
+    var $emails = $('.invite_users_container .emails_list .email');
+    var emails = []
+    for(var i=0; i<$emails.length; i++) {
+      emails.push($emails[i].textContent);
+    }
+    if(emails.length == 0)
+      return;
+
+    $(this).addClass("disabled");
+    $.ajax({
+      method: 'POST',
+      url: '/invitations/send_invitations',
+      type: 'HTML',
+      data: { emails: emails}
+    })
+  });
 });
 
 // Below is the javascript for static pages

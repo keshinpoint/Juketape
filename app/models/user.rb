@@ -19,6 +19,7 @@ class User < ApplicationRecord
     class_name: 'Invitation', foreign_key: :invitee_id
   has_many :invited_connections, through: :accepted_invitations_as_invitee, source: :initiator
   has_many :initiated_connections, through: :accepted_invitations_as_initiator, source: :invitee
+  before_validation :generate_invite_code, on: :create
 
   def email_optional?
     true
@@ -76,4 +77,14 @@ class User < ApplicationRecord
     Invitation.where('(initiator_id = ? AND invitee_id = ?) OR (initiator_id = ? AND invitee_id = ?)', id, artist.id, artist.id, id).first
   end
 
+  def send_invitations(emails)
+    UserMailer.invitation_email(self, emails).deliver_now
+  end
+
+  private
+
+  def generate_invite_code
+    self.invite_code = SecureRandom.urlsafe_base64(6)
+    generate_invite_code if User.exists?(invite_code: invite_code)
+  end
 end

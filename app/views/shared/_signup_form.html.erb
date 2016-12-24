@@ -23,5 +23,39 @@
                       id: 'signup-password', required: 'true', 'aria-describedby': 'signup_password', pattern: '(?=.*\d)(.{6,})' %>
   </div>
 
+  <div class='input-group input-group-sm'>
+    <span class='input-group-addon' id='signup_invitecode'>
+      <em class='glyphicon glyphicon-barcode'></em>
+    </span>
+    <%= text_field_tag :invite_code, params[:code], class: 'form-control input-sm', placeholder: 'Invite Code', required: 'true', 'aria-describedby': 'signup_invitecode' %>
+  </div>
+  <a href='javascript:void(0);' data-toggle="modal" data-target="#inviteRequestModal">
+    <h6>Don't have a valid invite code? Request one here.</h6>
+  </a>
+
   <%= f.submit 'SIGN UP', class: 'btn btn-default signup-submit' %>
 <% end %>
+
+<div class="modal fade" id="inviteRequestModal" role="dialog">
+  <div class="modal-dialog share-modal-container">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Request for Invite code</h4>
+      </div>
+      <%= form_tag request_invite_invitations_path, method: :post, remote: true do %>
+        <div class="modal-body">
+          <p>Please give us your email, we will send you an email with an <b>Invite Code.</b> Use this invite code for signup.</p>
+          <div class='form-group'>
+            <label>Email</label>
+            <input type="email" class='form-control' required="true" name='email' placeholder="Enter your email" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success"'>Request</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+  skip_before_action :require_login, only: [:request_invite]
 
   def invite
     @invitee = User.find_by_username(params.require(:username))
@@ -6,6 +7,14 @@ class InvitationsController < ApplicationController
       flash[:notice] = "You can not send invitation request to this artist #{@invitee.act_name}"
       redirect_to dashfolio_artists_path()
     end
+  end
+
+  def invitation_page
+  end
+
+  def send_invitations
+    current_user.send_invitations(params.require(:emails))
+    redirect_to invitation_page_artist_path, notice: 'Successfully sent invitations to given emails'
   end
 
   def create
@@ -42,6 +51,11 @@ class InvitationsController < ApplicationController
     invitation = current_user.invitation_with(artist)
     invitation.destroy
     redirect_to artist_dashfolio_path(username: artist.username)
+  end
+
+  def request_invite
+    UserMailer.send_requested_invitation(params.require(:email)).deliver_now
+    redirect_to root_path(), notice: 'We have recieved your request, and you will hear from us soon.'
   end
 
   private

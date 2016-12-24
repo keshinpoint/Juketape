@@ -1,0 +1,30 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h1 class='notif-title'> Invite </h1>
+      <hr>
+      <h5>Invite your friends and colleagues to try the beta version of Juketape. Just enter their email addresses and Juketape will automatically send them the invites to their inboxes. </h5>
+      <div class='invite_users_container'>
+        <div class='container'>
+          <div class='row emails_list'></div>
+        </div>
+        <br/>
+        <div class='container'>
+          <div class='row'>
+            <!-- <form> -->
+              <div class='errors'></div>
+              <div class='col-md-4 input-group' id='add-email-input-group'>
+                <input type='email' class='form-control' id='input_user_email' placeholder="Enter email" required="true"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-danger" id="add-email-button" type="submit" data-url="<%= user_info_users_path %>">Add</button>
+                </span>
+              </div>
+            <!-- </form> -->
+            <br/>
+            <button type='submit' class='btn btn-success' id='send_invitations' disabled="true">Send Invites</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

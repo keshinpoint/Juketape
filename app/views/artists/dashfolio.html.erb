@@ -18,8 +18,60 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="shareModal" role="dialog">
+    <div class="modal-dialog share-modal-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Share your Dashfolio</h4>
+        </div>
+        <div class="modal-body">
+          <p>Share your Juketape dashfolio with your friends, family or the world, and show of all your content in one, easy to manage space.</p>
+          <input type="text" class='form-control' readonly="true" value='<%= artist_dashfolio_url(username: @artist.username) %>'/>
+        </div>
+        <div class="modal-footer">
+          <div class="fb-share-button"
+            data-href="<%= artist_dashfolio_url(username: @artist.username) %>"
+            data-layout="button"
+            data-size="large"
+            data-mobile-iframe="true">
+          </div>
+          <a href="https://twitter.com/share" class="twitter-share-button btn flt-right" data-text="My Dashfolio in Juketape - " data-url="<%= artist_dashfolio_url(username: @artist.username) %>" data-size="large">Tweet</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% content_for :head do %>
+    <script src="//platform.twitter.com/widgets.js"></script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=346097002396782";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+  <% end %>
 <% end %>
 </div>
+
+<% content_for :meta_tags do %>
+  <meta property="og:url"           content="<%= artist_dashfolio_url(username: @artist.username) %>" />
+  <meta property="og:type"          content="profile" />
+  <meta property="og:title"         content='<%= "#{@artist.act_name}'s dashfolio" %>' />
+  <meta property="og:description"   content='<%= "Check out #{@artist.act_name}'s creative content on Juketape" %>' />
+  <meta property="og:image"         content="<%= asset_url('Juketape_logo_v2_smal-whiteborder.png') %>" />
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@juketape">
+  <meta name="twitter:title" content='<%= "#{@artist.act_name}'s dashfolio" %>'>
+  <meta name="twitter:description" content='<%= "Check out #{@artist.act_name}'s creative content on Juketape" %>'>
+  <meta name="twitter:image" content='<%= asset_url('Juketape_logo_v2_smal-whiteborder.png') %>'>
+<% end %>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

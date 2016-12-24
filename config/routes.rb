@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     only: Clearance.configuration.user_actions do
     end
 
-  resources :users, only: [:update]
+  resources :users, only: [:update] do
+    get :user_info, on: :collection
+  end
   resources :passwords, only: [:new, :create, :edit, :update]
 
   resource :session, only: [:new, :create]
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
     put :update_dates, on: :member
   end
   get '/invite/:username' => 'invitations#invite', as: :invite_artist
+  get '/invite' => 'invitations#invitation_page', as: :invitation_page_artist
   resources :invitations, only: [:new, :create] do
     member do
       put :accept
@@ -44,6 +47,8 @@ Rails.application.routes.draw do
     end
     collection do
       delete :disconnect
+      post :send_invitations
+      post :request_invite
     end
   end
   resources :notifications, only: [:index]
@@ -86,6 +91,7 @@ Rails.application.routes.draw do
     get :authorize_instagram
   end
 
+  get '/feedback' => 'artists#feedback', as: :feedback
   get '/terms_of_use' => 'static#terms_of_use', as: :terms_of_use_path
   get '/contact_us' => 'static#contact_us', as: :contact_us_path
   get '/privacy_policy' => 'static#privacy_policy', as: :privacy_policy_path
