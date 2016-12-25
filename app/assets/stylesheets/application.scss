@@ -1047,6 +1047,9 @@ margin: 0 auto;
 
 }
 
+.dashfolio-music, .dashfolio-video, .dashfolio-pictures { /* they are hidden by default as soon as someone comes into the dashfolio */
+  display: none;
+}
 
 .header-info {
 display: none;
