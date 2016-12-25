@@ -24,7 +24,6 @@
     </div>
 
     <div class = "col-sm-8 col-xs-0 dashfolio-album-add-container">
-
       <% if artist.soundcloud_network.present? %>
       <% if artist == current_user %>
       <div class='dashfolio-add-media dashfolio-audio-add-button'>
@@ -62,14 +61,6 @@
   <div class='tabcontent' id='tracks-dashfolio'>
     <% if artist.soundcloud_network.present? %>
     <% if artist == current_user %>
-    <div class='dashfolio-add-media dashfolio-audio-add-button'>
-      <a class='btn btn-block btn-social btn-soundcloud' data-toggle='modal'
-      data-target='#filterContentModal' data-url='<%= fetch_content_artists_path %>'
-      data-content='soundcloud_tracks', data-container='dashfolio-music'>
-      <span class='fa fa-soundcloud'> </span>
-      Add tracks
-    </a>
-  </div>
   <% end %>
 
 
@@ -85,23 +76,13 @@
   </ul>
 
   <% elsif artist == current_user %>
-  <div class='dashfolio-add-media dashfolio-audio-add-button'>
-    <%= link_to connect_soundcloud_text, connect_soundcloud_link,
-    class: 'btn btn-block btn-social btn-soundcloud' %>
-  </div>
+ 
   <% end %>
 </div>
+
 <div class='tabcontent' id='album-dashfolio' >
   <% if artist.soundcloud_network.present? %>
   <% if artist == current_user %>
-  <div class='dashfolio-add-media dashfolio-audio-add-button'>
-    <a class='btn btn-block btn-social btn-soundcloud' data-toggle='modal'
-    data-target='#filterContentModal' data-url='<%= fetch_content_artists_path %>'
-    data-content='soundcloud_albums', data-container='dashfolio-music'>
-    <span class='fa fa-soundcloud'> </span>
-    Add albums
-  </a>
-</div>
 <% end %>
 <hr class = "music-hr">
 
@@ -116,10 +97,7 @@
   <% end %>
 </ul>
 <% elsif artist == current_user %>
-<div class='dashfolio-add-media dashfolio-audio-add-button'>
-  <%= link_to connect_soundcloud_text, connect_soundcloud_link,
-  class: 'btn btn-block btn-social btn-soundcloud' %>
-</div>
+
 <% end %>
 </div>
 </div> 
