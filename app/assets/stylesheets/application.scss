@@ -1999,6 +1999,14 @@ border-left: none;
 
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 992px) {
+
+.feedback-button {
+width: 100px;
+word-wrap:break-word;
+}
+
+}
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 901px) {
 
