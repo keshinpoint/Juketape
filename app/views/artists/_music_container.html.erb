@@ -55,50 +55,48 @@
 
 </div>
 
+<hr class = "music-hr">
 
 
 <div class='music-content media-content'>
   <div class='tabcontent' id='tracks-dashfolio'>
     <% if artist.soundcloud_network.present? %>
     <% if artist == current_user %>
-  <% end %>
-
-
-  <hr class = "music-hr">
-
-  <ul class='music-tracks-list'>
-
-    <% artist.soundcloud_network.tracks.each do |source| %>
-    <li class='music-track-list-items dashfolio-content-li'>
-      <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>
-    </li>
     <% end %>
-  </ul>
-
-  <% elsif artist == current_user %>
- 
-  <% end %>
-</div>
-
-<div class='tabcontent' id='album-dashfolio' >
-  <% if artist.soundcloud_network.present? %>
-  <% if artist == current_user %>
-<% end %>
-<hr class = "music-hr">
 
 
+    <ul class='music-tracks-list'>
 
-<ul class='music-albums-list'>
+      <% artist.soundcloud_network.tracks.each do |source| %>
+      <li class='music-track-list-items dashfolio-content-li'>
+        <iframe width='100%' height='166' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>
+      </li>
+      <% end %>
+    </ul>
 
-  <% artist.soundcloud_network.albums.each do |source| %>
-  <li class='music-albums-list-items dashfolio-content-li'>
-    <iframe width='100%' height='450' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>
-  </li>
-  <% end %>
-</ul>
-<% elsif artist == current_user %>
+    <% elsif artist == current_user %>
 
-<% end %>
-</div>
+    <% end %>
+  </div>
+
+  <div class='tabcontent' id='album-dashfolio' >
+    <% if artist.soundcloud_network.present? %>
+    <% if artist == current_user %>
+    <% end %>
+
+
+
+    <ul class='music-albums-list'>
+
+      <% artist.soundcloud_network.albums.each do |source| %>
+      <li class='music-albums-list-items dashfolio-content-li'>
+        <iframe width='100%' height='450' scrolling='no' frameborder='no' src="<%= source['url'] %>"></iframe>
+      </li>
+      <% end %>
+    </ul>
+    <% elsif artist == current_user %>
+
+    <% end %>
+  </div>
 </div> 
 </div>
