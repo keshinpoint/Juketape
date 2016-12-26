@@ -29,11 +29,10 @@
     </span>
     <%= text_field_tag :invite_code, params[:code], class: 'form-control input-sm', placeholder: 'Invite Code', required: 'true', 'aria-describedby': 'signup_invitecode' %>
   </div>
-  <a href='javascript:void(0);' data-toggle="modal" data-target="#inviteRequestModal">
-    <h6>Don't have a valid invite code? Request one here.</h6>
-  </a>
 
-  <%= f.submit 'SIGN UP', class: 'btn btn-default signup-submit' %>
+  <%= f.submit 'Sign Up', class: 'btn btn-success signup-submit' %>
+
+  <button class = "btn btn-default invite-code-request" data-toggle="modal" data-target="#inviteRequestModal"> Request Invite Code </button>
 <% end %>
 
 <div class="modal fade" id="inviteRequestModal" role="dialog">
