@@ -10,9 +10,9 @@
           <div class='search-name-container'>
             <% @connections.each do |artist| %>
               <%= link_to artist_dashfolio_path(username: artist.username), target: '_blank' do %>
-                <div class='search-name-individual col-xs-8'>
+                <div class='search-name-individual col-xs-12 col-sm-8'>
                   <div class='search-profile-name-tag-container'>
-                    <div class='search-profile-pic-container'>
+                    <div class='search-profile-pic-container col-xs-2 col-sm-3 col-md-2'>
                       <%= image_tag(artist.image.thumb.url || 'generic_avatar.png', class: 'search-profile-pic') %> 
                     </div>
                     <div class='search-tagline-container'>
@@ -41,6 +41,9 @@
     </div>
   </div>
 </div>
+
+        
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
