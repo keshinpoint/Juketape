@@ -213,7 +213,8 @@ margin-bottom: 0; /* important as it eliminates the space between navbar and jum
 
 .outside-container{
      min-height:100%; /* this makes sure that the contents of any html page wrapped withhin this has the full length of the browser */
-     position:relative; 
+     position:relative;
+     
 }
 
 /* logged in header */
@@ -361,8 +362,9 @@ margin-top: 15px;
 }
 
 .slide1 {
-    background-image: image-url("landing_page_cover5.jpg");
+    background-image: image-url("cover-new-3.jpg");
 }
+/*
 .slide2 {
     background-image: image-url("landing_page_cover.jpg");
 }
@@ -370,7 +372,7 @@ margin-top: 15px;
     background-image: image-url("landing_page_cover4.jpg");
 }
 
-
+*/
 
 .signup-container {
 position: absolute; 
@@ -1952,7 +1954,9 @@ margin-bottom: 20px;
   padding: 10px;
 }
 
-
+.feedback-midrow-buttons {
+  text-align: center;
+}
 /* end of feedback page styles */
 
 
