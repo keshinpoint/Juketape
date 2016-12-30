@@ -784,9 +784,6 @@ background: -moz-linear-gradient(top,  rgba(2,137,135,1) 0%, rgba(2,132,128,1) 5
 background: -webkit-linear-gradient(top,  rgba(2,137,135,1) 0%,rgba(2,132,128,1) 56%,rgba(2,120,120,1) 99%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(2,137,135,1) 0%,rgba(2,132,128,1) 56%,rgba(2,120,120,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#028987', endColorstr='#027878',GradientType=0 ); /* IE6-9 */
-
-
-
 }
 
 
@@ -1304,8 +1301,12 @@ box-shadow: inset -3px -1px 25px 15px 5px rgba(0,0,0,0.01);
 
 /* start of connection invite page */
 
-#connection-invite-other{
+.invite-form{
   display: none;
+}
+
+.invite-char-counter{
+  color: gray;
 }
 
 /* end of connection invite page */

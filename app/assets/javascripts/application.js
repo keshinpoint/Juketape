@@ -387,18 +387,63 @@ $(document).on('turbolinks:load', function(){
 
 //conenction request invite 
 
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
+
+// first we take care of the friend radio button, since that's checked by default and we need to make sure
+// the  $('input[type=radio]').change(function() only gets triggeed when the radio buttons are clicked o changed
+// since the friend radio is clicked by default, that wont get triggered, and I had to create them again just for that
+     function updateCountdown() {
+
+      var char_limit = 300;
+      var remaining = char_limit - $('.invite-message').val().length;
+      var char_counter = $('.invite-friend-counter');
+      char_counter.text(remaining);
+   
+
+    }
+    
+
+    $(".invite-message-friend").prop('maxLength', 300); //enforce max length as 300 for invite messages
+    updateCountdown();
+    $('.invite-message-friend').val("I would like to add you to my creative network on Juketape.");
+    $('.invite-message-friend').focus(updateCountdown);
+    $('.invite-message-friend').change(updateCountdown);
+    $('.invite-message-friend').keyup(updateCountdown);
+
+    
 	
   $('input[type=radio]').change(function() {
-    if ($('#connection-invite-other-radio').is(':checked')) {
-      $('#connection-invite-other').show();
-      $('#connection-invite-other input').prop('disabled', false);
-    } 
-    else {
-      $('#connection-invite-other').hide();
-      $('#connection-invite-other input').prop('disabled', true);
+    if ($('.invite-radio').is(':checked')) {
+      var invite_forms = $('.invite-form'); //hides all the invite form messages paremt divs first
+      invite_forms.hide().children().prop('disabled', true); //just in case, disables the form messages
+      var next_form = $(this).parent().parent().next('.invite-form'); //the radio button  is $(this), its parent is the label
+      //contd.frm above; the labels parent is the radio button div. The next sibling is the form field for the message  
+      next_form.show();
+      next_form.find('.invite-message').prop('disabled', false); //enabling the form field
+      next_form.find('.invite-message').val("I would like to add you to my creative network on Juketape.");
+
     }
+
+    function updateCountdown() {
+
+      var char_limit = 300;
+      var remaining = char_limit - next_form.find('.invite-message').val().length;
+      var char_counter = next_form.find('.invite-char-counter');
+      char_counter.text(remaining);
+   
+
+    }
+
+    $(".invite-message").prop('maxLength', 300); //enforce max length as 300 for invite messages
+    updateCountdown();
+    $('.invite-message').change(updateCountdown);
+    $('.invite-message').keyup(updateCountdown);
+
   });
+
+
+
+
 });
 
 
