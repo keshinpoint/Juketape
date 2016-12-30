@@ -1590,26 +1590,44 @@ margin: 30px 30px 30px 0px; /* top right bottom left */
 }
 
 .notif-profile-pic-container {
-    display: inline-block; 
+
 }
 
 .notif-profile-pic {
-  width: 60px;
-  height: 60px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   border-radius: 10px;
+    bottom: 15px;
  
 }
 
 .notif-name-tag-container {
-  display: inline-block;
-  margin-left: 20px;
+
   margin-bottom: 13px;
 }
 
 
+.notification-message{
+  margin-top: 10px;
+  text-align: center;
+}
 
+.notification-invite-name-message {
+  font-weight: bold;
+}
 
+.notification-main-action-buttons{
+  margin-top: 35px;
+}
+
+.notification-message-invite-divider{
+  width: 80%;
+}
+
+.notification-profile-name-tag-container{
+  padding-bottom: 10px;
+}
 /* end the notifications styles */
 
 
@@ -1737,6 +1755,7 @@ min-width: 25px;
 }
 
 .search-profile-name-tag-container {
+
 
 }
 

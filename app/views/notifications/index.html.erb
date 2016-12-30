@@ -7,36 +7,57 @@
       <% if @pending_invitations.count > 0 %>
         <% @pending_invitations.each do |invitation| %>
           <% initiator = invitation.initiator %>
-          <div class='notif-container'>         
-            <div class='notif-profile-pic-container'>
+        <div class='search-name-individual col-xs-12 col-sm-12'>
+          <div class = "container">
+              <div class = "row">
+
+                <div class = "notification-message col-xs-12">
+                
+
+                <h4> <span class = "notification-invite-name-message"> Keshav </span> says "I would like to add you to my creative network on Juketape."</h4>
+              </div>
+              </div>
+                <hr class = "notification-message-invite-divider"> 
+            </div>
+
+          <div class='notification-profile-name-tag-container col-xs-9'>        
+            <div class='search-profile-pic-container col-xs-3 col-sm-3 col-md-2'>
               <%= image_tag(initiator.image.thumb.url || 'generic_avatar.png', class: 'notif-profile-pic') %>
             </div>
-            <div class='notif-name-tag-container'>
-              <div class='notif-name'>
-                <h4><%= initiator.act_name %></h4>
+            <div class='search-tagline-container col-xs-12 col-sm-9'>
+              <div class='search-profile-name'>
+                <p class='search-artist-name'> <strong><%= initiator.act_name %></strong> </p>
               </div>
-              <div class='notif-tagine'>
-                <p><%= initiator.tag_line %></p>
+              <div class='search-tagline'>
+                <p class='search-artist-tagline'><%= initiator.tag_line %></p>
               </div>
-              <div class='tag-container' id='tag-container'>
+              <div class='search-tag-list' id='tag-container'>
                 <% initiator.tags.each do |tag| %>
                   <span class='dashfolio-tag'>
                     <%= tag.name %>
                   </span>
                 <% end %>
               </div>
-            </div> <!--end of tags -->
-            <div class='inbox-main-action-buttons pull-right'>
+            </div> <!--end of search-tag-container -->  
+         
+
+          </div> 
+
+
+            <div class='notification-main-action-buttons col-xs-3'>
               <%= link_to reject_invitation_path(invitation), method: :put do %>
-                <button type='button' class='btn btn-danger'> <i class='fa fa-times' aria-hidden='true'></i>
+                <button type='button' class='btn btn-sm btn-danger'> <i class='fa fa-times' aria-hidden='true'></i>
                 </i> </button>
               <% end %>
               <%= link_to accept_invitation_path(invitation), method: :put do %>
-                <button type='button' class='btn btn-success'> <i class='fa fa-check' aria-hidden='true'></i>
-                Accept </button>
+                <button type='button' class='btn btn-sm btn-success'> <i class='fa fa-check' aria-hidden='true'></i>
+                <span class = "hidden-xs"> Accept</span> </button>
               <% end %>
             </div>
-          </div>
+
+            
+
+        </div><!--end of search-name-individual -->
         <% end %>
       <% else %>
         <h5>You don't have any pending connection requests</h5>
