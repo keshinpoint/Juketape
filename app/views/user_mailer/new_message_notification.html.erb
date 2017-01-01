@@ -1,0 +1,9 @@
+<p>Hello</p>
+
+<p><%= @sender.act_name %> has sent you a new message.</p>
+
+<p><b><%= @message.body %></b></p>
+
+<p>Please click on the link to see message thread.</p>
+
+<%= link_to "see the message", message_show_url(slug: @message.message_thread.slug) %>.

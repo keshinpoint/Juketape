@@ -17,14 +17,14 @@ class MessageThreadsController < ApplicationController
   end
 
   def index
-    current_user.update_attributes(message_notif_count: 0) if
-      current_user.message_notif_count > 0
     if current_user.recent_thread.present?
       redirect_to message_show_path(slug: current_user.recent_thread.slug)
     end
   end
 
   def show
+    current_user.update_attributes(message_notif_count: 0) if
+      current_user.message_notif_count > 0
     @thread = current_user.message_threads.find_by_slug(params.require(:slug))
     last_msg = @thread.last_message
     last_msg.seen! unless last_msg.sender == current_user

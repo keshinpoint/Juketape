@@ -1,0 +1,9 @@
+<p>Hello</p>
+
+<p><%= @initiator.act_name %> has requested you to join his network.</p>
+
+<p>Please click on the link to manage the connection requests.</p>
+
+<%= link_to "Accept Connection request", notifications_url %>
+
+<p>View <%= @initiator.act_name %> profile <%= link_to "here", artist_dashfolio_url(username: @initiator.username) %>.

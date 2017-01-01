@@ -392,14 +392,13 @@ $(document).on('turbolinks:load', function() {
 // first we take care of the friend radio button, since that's checked by default and we need to make sure
 // the  $('input[type=radio]').change(function() only gets triggeed when the radio buttons are clicked o changed
 // since the friend radio is clicked by default, that wont get triggered, and I had to create them again just for that
-     function updateCountdown() {
-
-      var char_limit = 300;
-      var remaining = char_limit - $('.invite-message').val().length;
-      var char_counter = $('.invite-friend-counter');
-      char_counter.text(remaining);
-   
-
+    function updateCountdown() {
+      if($('.invite-message').val() != undefined) {
+        var char_limit = 300;
+        var remaining = char_limit - $('.invite-message').val().length;
+        var char_counter = $('.invite-friend-counter');
+        char_counter.text(remaining);
+      }
     }
     
 
@@ -423,17 +422,6 @@ $(document).on('turbolinks:load', function() {
       next_form.find('.invite-message').val("I would like to add you to my creative network on Juketape.");
 
     }
-
-    function updateCountdown() {
-
-      var char_limit = 300;
-      var remaining = char_limit - next_form.find('.invite-message').val().length;
-      var char_counter = next_form.find('.invite-char-counter');
-      char_counter.text(remaining);
-   
-
-    }
-
     $(".invite-message").prop('maxLength', 300); //enforce max length as 300 for invite messages
     updateCountdown();
     $('.invite-message').change(updateCountdown);

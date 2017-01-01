@@ -3,7 +3,8 @@ class Message < ApplicationRecord
   validates :sender_id, :sender_id, :body, :sent_at, presence: true
   belongs_to :sender, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
-  after_create :update_thread_last_reply_at, :increment_reciever_notif_counter
+  after_create :update_thread_last_reply_at, :increment_reciever_notif_counter,
+    :send_new_message_notification
 
   def seen!
     update_attributes!(seen: true)
@@ -20,6 +21,10 @@ class Message < ApplicationRecord
 
   def increment_reciever_notif_counter
     receiver.increment!(:message_notif_count, 1)
+  end
+
+  def send_new_message_notification
+    UserMailer.new_message_notification(self, sender, receiver).deliver_now
   end
 
 end

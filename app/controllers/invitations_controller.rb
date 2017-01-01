@@ -25,6 +25,7 @@ class InvitationsController < ApplicationController
       sent_at: Date.current
     })
     if invitation.valid?
+      UserMailer.connection_request_email(invitation, current_user, invitee).deliver_now
       flash[:notice] = "Connection request to #{invitee.act_name} has sent successfully"
       redirect_to artist_dashfolio_path(username: invitee.username)
     else
