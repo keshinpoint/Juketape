@@ -389,10 +389,6 @@ $(document).on('turbolinks:load', function(){
 
 $(document).on('turbolinks:load', function() {
 
-// first we take care of the friend radio button, since that's checked by default and we need to make sure
-// the  $('input[type=radio]').change(function() only gets triggeed when the radio buttons are clicked o changed
-// since the friend radio is clicked by default, that wont get triggered, and I had to create them again just for that 
-	
   $('input[type=radio]').change(function() {
     if ($('.invite-radio').is(':checked')) {
       var invite_forms = $('.invite-form'); //hides all the invite form messages paremt divs first
