@@ -9,16 +9,13 @@
           <% initiator = invitation.initiator %>
         <div class='search-name-individual col-xs-12 col-sm-12'>
           <div class = "container">
-              <div class = "row">
-
-                <div class = "notification-message col-xs-12">
-                
-
-                <h4> <span class = "notification-invite-name-message"> Keshav </span> says "I would like to add you to my creative network on Juketape."</h4>
+            <div class = "row">
+              <div class = "notification-message col-xs-12">
+                <h4> <span class = "notification-invite-name-message"> <%= invitation.initiator.act_name %> </span> says "<%= invitation.welcome_message %>"</h4>
               </div>
-              </div>
-                <hr class = "notification-message-invite-divider"> 
             </div>
+            <hr class = "notification-message-invite-divider"> 
+          </div>
 
           <div class='notification-profile-name-tag-container col-xs-9'>        
             <div class='search-profile-pic-container col-xs-3 col-sm-3 col-md-2'>

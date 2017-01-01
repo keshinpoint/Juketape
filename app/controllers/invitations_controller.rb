@@ -22,6 +22,7 @@ class InvitationsController < ApplicationController
     invitation = current_user.invitations.create({
       invitee_id: invitee.id,
       known_by: params.require(:invitation)[:known_by],
+      welcome_message: params.require(:invitation)[:welcome_message],
       sent_at: Date.current
     })
     if invitation.valid?

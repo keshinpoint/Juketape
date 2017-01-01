@@ -13,7 +13,7 @@
             </div>
 
             <div class='form-group invite-form' id='connection-invite-friend' style = "display: block;">
-              <%= f.text_area :known_by, class: 'form-control invite-message invite-message-friend', required: true, rows: 4 do %> 
+              <%= f.text_area :welcome_message, class: 'form-control invite-message invite-message-friend', required: true, rows: 4 do %> 
                 I would like to add you to my creative network on Juketape. 
               <% end %>
               <span class= "invite-char-counter invite-friend-counter pull-right"> </span> 
@@ -24,7 +24,7 @@
             </div>
 
             <div class='form-group invite-form' id='connection-invite-work'>
-              <%= f.text_area :known_by, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
+              <%= f.text_area :welcome_message, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
               <span class= "invite-char-counter pull-right">300</span> 
             </div>
 
@@ -33,7 +33,7 @@
             </div>
 
             <div class='form-group invite-form' id='connection-invite-study'>
-              <%= f.text_area :known_by, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
+              <%= f.text_area :welcome_message, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
               <span class= "invite-char-counter pull-right">300</span> 
             </div>
 
@@ -41,7 +41,7 @@
               <label><%= f.radio_button :known_by, 'Other', class: 'invite-radio', id: 'connection-invite-other-radio' %> Other </label>
             </div>
             <div class='form-group invite-form' id='connection-invite-other'>
-              <%= f.text_area :known_by, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
+              <%= f.text_area :welcome_message, class: 'form-control invite-message', disabled: true, required: true, rows: 4 %>
               <span class= "invite-char-counter pull-right">300</span> 
             </div>
             <%= f.submit 'Submit', class: 'btn btn-success' %>

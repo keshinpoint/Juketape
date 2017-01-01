@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219155220) do
+ActiveRecord::Schema.define(version: 20170101184121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,14 +42,15 @@ ActiveRecord::Schema.define(version: 20161219155220) do
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.integer  "initiator_id",             null: false
-    t.integer  "invitee_id",               null: false
+    t.integer  "initiator_id",                 null: false
+    t.integer  "invitee_id",                   null: false
     t.boolean  "accepted"
     t.string   "known_by"
     t.date     "sent_at"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "status",       default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "status",          default: 0
+    t.text     "welcome_message", default: ""
   end
 
   create_table "message_threads", force: :cascade do |t|
