@@ -37,6 +37,10 @@ class User < ApplicationRecord
     invited_friends.include?(friend)
   end
 
+  def sent_invitaion_req?(friend)
+    invitations.map(&:invitee).include?(friend)
+  end
+
   def invited_friends
     invitations.map(&:invitee) + pending_invitations.map(&:initiator)
   end

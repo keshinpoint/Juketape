@@ -48,6 +48,12 @@
                 <i class='fa fa-user-times' aria-hidden='true'></i> Disconnect
               </button>
             <% end %>
+          <% elsif current_user.already_invited?(artist) && current_user.sent_invitaion_req?(artist) %>
+            <%= link_to disconnect_invitations_path(with_artist: artist.username), method: :delete, data: {confirm: "Are you sure want to cancel connection request with #{artist.act_name} ?"} do %>
+              <button class='disconnect-dashfolio'>
+                <i class='fa fa-user-times' aria-hidden='true'></i> Cancel Request
+              </button>
+            <% end %>
           <% elsif artist != current_user %>
             <button class='connect-dashfolio disabled' style='opacity: 0.3;' data-toggle='tooltip' data-placement='right' title='<%= unable_connect_tooltip(current_user, artist) %>'>
               <i class='fa fa-user-plus' aria-hidden='true'></i> Connect
