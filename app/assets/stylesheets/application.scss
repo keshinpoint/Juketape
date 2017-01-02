@@ -355,16 +355,17 @@ margin-top: 15px;
   
 }
 
+/*
 .slide1, .slide2, .slide3 {
- height: 380px;
+
     background-size: cover;
     background-position: center center;
 }
 
 .slide1 {
-    background-image: image-url("cover-new-3.jpg");
+   
 }
-/*
+
 .slide2 {
     background-image: image-url("landing_page_cover.jpg");
 }
@@ -374,12 +375,43 @@ margin-top: 15px;
 
 */
 
+.jumbotron {
+   background-image: image-url("cover-new-3.jpg");
+    height: 400px;
+}
+
+.landing-page-title {
+  font-family: neutra-demi;
+  text-shadow: 3px 2px 0px rgba(50, 50, 50, 1);
+} 
+
+.landing-page-title-desciption {
+    text-shadow: 3px 2px 0px rgba(50, 50, 50, 1);
+    margin-left: 180px;
+    bottom: 10px;
+    position: relative;
+
+}
+
+
+
+.signup-form-background {
+     background: rgba(15, 15, 15, 0.43);
+    padding-bottom: 20px;
+    padding-top: 10px;
+    position: relative;
+    border-radius: 10px;
+    padding-right: 5px;
+    padding-left: 10px;
+
+}
+
 .signup-container {
-position: absolute; 
-bottom: 50px; 
 right: 0; 
 left: 0; 
 color: white;
+bottom: 20px;
+position: relative;
 }
 
 
@@ -413,6 +445,7 @@ color: white;
 
 .feature-header { /* the headers for value propositions */
   font-size: 20px;
+  font-weight: bold;
 }
 
 /* end  of landing page styles and headers */
@@ -2001,6 +2034,7 @@ margin-bottom: 20px;
 
 .signup-form-column { /* landing page */
   text-align: center;
+
 }
 
 
