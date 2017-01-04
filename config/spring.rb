@@ -5,5 +5,6 @@
   tmp/caching-dev.txt
   .env
   .env.production
+  .env.staging
   .env.development
 ).each { |path| Spring.watch(path) }
