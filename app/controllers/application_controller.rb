@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 
   def soundcloud_oauth
     @sc_oauth ||= SoundCloud.new({
-      client_id: Rails.application.secrets.sc_client_id,
-      client_secret: Rails.application.secrets.sc_secret,
+      client_id: ENV['SC_CLIENT_ID'],
+      client_secret: ENV['SC_SECRET'],
       redirect_uri: authorize_soundcloud_url()
     })
   end
@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
 
   def facebook_oauth
     @oauth ||= Koala::Facebook::OAuth.new(
-      Rails.application.secrets.fb_app_id,
-      Rails.application.secrets.fb_secret,
+      ENV['FB_APP_ID'],
+      ENV['FB_SECRET'],
       authorize_facebook_url()
     )
   end

@@ -67,5 +67,14 @@ namespace :deploy do
       end
     end
   end
+
+  # To COPY the .env file from shared path to current path of the application repo
+  task :copy_env do
+    on roles(:app) do
+      execute :cp, shared_path.join('.env'), release_path.join('.env')
+    end
+  end
+
+  after :updating, :copy_env
   after :cleanup, :clear_cache
 end

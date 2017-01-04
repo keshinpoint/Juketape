@@ -53,8 +53,8 @@ class SetupController < ApplicationController
   def authorize_youtube
     result = YoutubeNetwork.conn.post '/o/oauth2/token', {
       code: params[:code],
-      client_id: Rails.application.secrets.yt_client_id,
-      client_secret: Rails.application.secrets.yt_client_secret,
+      client_id: ENV['YT_CLIENT_ID'],
+      client_secret: ENV['YT_CLIENT_SECRET'],
       redirect_uri: authorize_youtube_url,
       grant_type: 'authorization_code'
     }
