@@ -14,6 +14,10 @@ end
 
 set :scm, :git
 
+if ENV['DEPLOY_ENV']
+  set :rails_env, ENV['DEPLOY_ENV']
+end
+
 set :deploy_to, "/home/deploy/apps/juketape-#{fetch(:rails_env, 'production')}"
 set :whenever_roles, -> {[:sync_networks]}
 
