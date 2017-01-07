@@ -14,6 +14,12 @@
         <%= form_tag fb_page_settings_path(), method: :put, remote: true do %>
           <div class='modal-body'>
             <div class='tracks_container_modal'>
+              <div class='radio'>
+                <label>
+                  <input class='styled' type='radio' name='page_id' value='' <%= 'checked=true' if current_user.facebook_network.try(:page_id).to_s.eql?('') %> >
+                  Main Account
+                </label>
+              </div>
               <% fb_pages.each do |page| %>
                 <div class='radio'>
                   <label>
