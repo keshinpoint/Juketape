@@ -49,8 +49,8 @@
           <div class='panel-body'>
             <%= form_for current_user, url: tagline_setup_index_path(), html: { method: :post } do |f| %>
               <div class='form-group'>
-                <p> How would you or your act like to be known by on Juketape? </p>
-                <%= f.text_field :act_name, value: current_user.act_name, class: 'form-control input-sm', placeholder: 'eg: The Beatles', required: true %>
+                <p> How would you like to be known by on Juketape? </p>
+                <%= f.text_field :act_name, value: current_user.act_name, class: 'form-control input-sm', placeholder: 'eg: The Beatles, Frank Sinatra', required: true %>
               </div>
               <%= f.submit 'Next', class: 'onboarding-submit' %>
             <% end %>
