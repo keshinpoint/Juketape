@@ -32,7 +32,7 @@ class SettingsController < ApplicationController
 
   def fb_page
     network = current_user.facebook_network
-    network.update_fb_page(params.require(:page_id)) if
+    network.update_fb_page(params[:page_id]) if
       current_user.facebook_network.present?
     redirect_to :back
   end

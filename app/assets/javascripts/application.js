@@ -336,8 +336,7 @@ $('.dashfolio-midbar-pictures a').on('click', function(e){
 $(document).on('turbolinks:load', function(){
 
 
-  $('.music-header-container a').on('click', function(e){
-
+  $('.music-header-container a.tablink').on('click', function(e){
     var attribute_tabcontent_music = $(this).attr('href');
     $('.music-content ' + attribute_tabcontent_music).fadeIn(400).siblings().hide();
     $(this).addClass("music-header-container-active");
@@ -345,13 +344,8 @@ $(document).on('turbolinks:load', function(){
     $('.dashfolio-about').hide();
     $('.dashfolio-video').hide();
     $('.dashfolio-pictures').hide();
-
-
-
     e.preventDefault(); 
     e.stopPropagation();
-
-
   });
 
   $('.tracks-header').on('click', function() {
