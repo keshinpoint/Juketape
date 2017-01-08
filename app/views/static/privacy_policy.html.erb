@@ -184,4 +184,8 @@ ga('send', 'pageview');
 
 </script>
 
-  <%= render partial: 'shared/footer' %>
+<% if signed_in? %>
+      <%= render partial: 'shared/footer_logged_in' %>
+    <% else %>
+      <%= render partial: 'shared/footer_logged_out' %>
+    <% end %>

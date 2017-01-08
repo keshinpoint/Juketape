@@ -169,6 +169,13 @@
       </div>
     </div>
 
+    <% if signed_in? %>
+      <%= render partial: 'shared/footer_logged_in' %>
+    <% else %>
+      <%= render partial: 'shared/footer_logged_out' %>
+    <% end %>
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -183,4 +190,6 @@ ga('set', 'page', '/terms_of_use.html');
 ga('send', 'pageview');
 
 </script>
-    <%= render partial: 'shared/footer' %>
+
+
+
