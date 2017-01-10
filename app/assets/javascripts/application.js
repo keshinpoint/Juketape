@@ -102,7 +102,9 @@ $(document).on('turbolinks:load', function() {
   $(function() {
     $('.best_in_place').best_in_place();
     $('.datepicker_input').datepicker({
-      dateFormat: "dd/mm/yy"
+      dateFormat: "dd/mm/yy",
+      changeMonth: true,
+      changeYear: true
     });
     $('[data-toggle="tooltip"]').tooltip();
     if ($('.inbox-main-message-body').length > 0) {
