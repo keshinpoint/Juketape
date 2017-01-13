@@ -31,12 +31,11 @@ module Juketape
     config.action_mailer.default_url_options = { host: 'localhost:3000' }
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      address:              'smtp.gmail.com',
+      address:              'email-smtp.us-west-2.amazonaws.com',
       port:                 587,
-      domain:               'gmail.com',
-      user_name:            'testbits001@gmail.com',
-      password:             'testbits001',
-      authentication:       'plain',
+      user_name:            ENV["SES_SMTP_USERNAME"],
+      password:             ENV["SES_SMTP_PASSWORD"],
+      authentication:       'login',
       enable_starttls_auto: true
     }
     config.action_mailer.perform_deliveries = true
